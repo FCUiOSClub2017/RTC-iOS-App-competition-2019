@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect('coming-soon');
+    return redirect('./coming-soon');
 });
 
 Route::get('/coming-soon', function () {
