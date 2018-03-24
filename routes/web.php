@@ -11,14 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect('./coming-soon');
-});
 
-Route::get('/coming-soon', function () {
-    return view('coming-soon');
-})->name('coming-soon');
 
-Auth::routes();
+$route = function () { 
+    Route::get('/', function () {
+        return redirect()->route('coming-soon');
+    });
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/coming-soon', function () {
+        return view('coming-soon');
+    })->name('coming-soon');
+
+    Auth::routes();
+
+    Route::get('/home', 'HomeController@index')->name('home');
+};
+
+if (App::environment('server')) 
+    Route::prefix('2018')->group($route);
+if (App::environment('local')) 
+    $route();
