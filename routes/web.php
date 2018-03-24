@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('coming-soon');
 });
+
+Route::get('/coming-soon', function () {
+    return view('coming-soon');
+})->name('coming-soon');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

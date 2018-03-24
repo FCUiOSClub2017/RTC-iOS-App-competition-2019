@@ -12,4 +12,13 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+   .js('resources/assets/js/coming-soon.js', 'public/js')
+   .sass('resources/assets/sass/app.scss', 'public/css')
+   .sass('resources/assets/sass/coming-soon.scss', 'public/css');
+
+mix.copy('node_modules/startbootstrap-coming-soon/img/bg-mobile-fallback.jpg', 'public/img/bg-mobile-fallback.jpg');
+mix.copy('node_modules/startbootstrap-coming-soon/mp4/bg.mp4', 'public/mp4/bg.mp4');
+mix.copy('resources/assets/svg/fcu.svg', 'public/svg/fcu.svg');
+mix.copy('resources/assets/svg/iosclub.svg', 'public/svg/iosclub.svg');
+
+mix.disableNotifications();
