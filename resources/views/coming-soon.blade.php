@@ -30,7 +30,7 @@
     <div class="social-icons">
         <ul class="list-unstyled text-center mb-0">
             <li class="list-unstyled-item">
-                <a href="https://www.fcu.edu.tw/"><img width="70%" src="svg/fcu.svg" alt="FCU Official Website"></a>
+                <a href="http://www.fcu.edu.tw/"><img width="70%" src="svg/fcu.svg" alt="FCU Official Website"></a>
             </li>
             <li class="list-unstyled-item">
                 <a href="https://www.facebook.com/FCURTC"><i class="fab fa-apple"></i></a>
