@@ -7,8 +7,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ config('app.name', 'Coming Soon') }}</title>
-    <script src="{{ asset('js/coming-soon.js') }}" defer></script>
-    <link href="{{ asset('css/coming-soon.css') }}" rel="stylesheet">
+    <script src="./js/coming-soon.js" defer></script>
+    <link href="./css/coming-soon.css" rel="stylesheet">
 </head>
 
 <body>
