@@ -1,8 +1,4 @@
-@php
-    $route_prefix = '';
-    if(App::environment('server'))
-        $route_prefix = '/app2018';
-@endphp
+ {{$route_prefix = ''}} @if(App::environment('server')) {{$route_prefix = '/app2018'}} @endif
 <!DOCTYPE html>
 <html lang="en">
 
