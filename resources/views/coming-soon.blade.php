@@ -1,5 +1,3 @@
-{{dd(route('coming-soon'))}}
-
 <!DOCTYPE html>
 <html lang="en">
 
