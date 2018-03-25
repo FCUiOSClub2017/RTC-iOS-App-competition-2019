@@ -1,3 +1,8 @@
+@php
+    $route_prefix = '';
+    if(App::environment('server'))
+        $route_prefix = '/app2018';
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,11 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ config('app.name', 'Coming Soon') }}</title>
     @if (APP::envirament('server'))
-        <script src="/app2018/js/coming-soon.js" defer></script>
-        <link href="/app2018/css/coming-soon.css" rel="stylesheet"> 
+        <script src="{{$route_prefix}}/js/coming-soon.js" defer></script>
+        <link href="{{$route_prefix}}/css/coming-soon.css" rel="stylesheet"> 
     @else
-        <script src="/js/coming-soon.js" defer></script>
-        <link href="/css/coming-soon.css" rel="stylesheet">
+        <script src="{{$route_prefix}}/js/coming-soon.js" defer></script>
+        <link href="{{$route_prefix}}/css/coming-soon.css" rel="stylesheet">
     @endif
 </head>
 
@@ -35,13 +40,13 @@
     <div class="social-icons">
         <ul class="list-unstyled text-center mb-0">
             <li class="list-unstyled-item">
-                <a href="http://www.fcu.edu.tw/"><img width="70%" src="svg/fcu.svg" alt="FCU Official Website"></a>
+                <a href="http://www.fcu.edu.tw/"><img width="70%" src="{{$route_prefix}}/svg/fcu.svg" alt="FCU Official Website"></a>
             </li>
             <li class="list-unstyled-item">
                 <a href="https://www.facebook.com/FCURTC"><i class="fab fa-apple"></i></a>
             </li>
             <li class="list-unstyled-item">
-                <a href="https://iosclub.tw"><img width="50%" src="svg/iosclub.svg" alt="FCU iOSClub Official Website"></a>
+                <a href="https://iosclub.tw"><img width="50%" src="{{$route_prefix}}/svg/iosclub.svg" alt="FCU iOSClub Official Website"></a>
             </li>
         </ul>
     </div>
