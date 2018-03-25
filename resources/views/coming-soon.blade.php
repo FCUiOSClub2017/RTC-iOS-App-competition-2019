@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ config('app.name', 'Coming Soon') }}</title>
-    <script src="{{$route_prefix}}/js/coming-soon.js" defer></script>
+    <script src="{{$route_prefix}}/js/coming-soon.js"></script>
     <link href="{{$route_prefix}}/css/coming-soon.css" rel="stylesheet">
 </head>
 
@@ -41,6 +41,14 @@
             </li>
         </ul>
     </div>
+    <script>
+        $('body').vide({
+            mp4: "{{$route_prefix}}/mp4/bg.mp4",
+            poster: "{{$route_prefix}}/img/bg-mobile-fallback.jpg"
+        }, {
+            posterType: 'jpg'
+        });
+    </script>
 </body>
 
 </html>
