@@ -15,7 +15,7 @@ Artisan::command('deploy', function () {
     $this->comment(base_path());
     $cmd = 'cd '.base_path().';git fetch origin 2>&1;/usr/bin/git reset --hard origin/master 2>&1;php artisan clear-compiled;php artisan view:clear;php artisan config:clear;php artisan queue:restart;composer install';
     exec($cmd, $output, $return);
-    $this->comment($output);
+    $this->comment(serialize($output));
     $this->comment($return);
     $this->comment(Artisan::call('migrate'));
     ;
