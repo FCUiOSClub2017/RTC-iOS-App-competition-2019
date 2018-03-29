@@ -10,10 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return redirect()->route('app-competition-home');
-});
-Route::prefix('2018')->group(function () {
     Route::get('/', function () {
         return redirect()->route('coming-soon');
     })->name('app-competition-home');
@@ -25,4 +21,3 @@ Route::prefix('2018')->group(function () {
     Auth::routes();
 
     Route::get('/home', 'HomeController@index')->name('home');
-});
