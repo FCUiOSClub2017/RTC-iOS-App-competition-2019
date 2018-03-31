@@ -23,8 +23,7 @@ Artisan::command('git:deploy', function () {
     ;
 })->describe('Deploy project');
 
-Artisan::command('git:push {msg?}', function ($msg) {
-    $this->comment(base_path());
+Artisan::command('git:push {msg="update"}', function ($msg) {
     $cmd = 'cd '.base_path().' && git add . && git commit -m '.$msg.' && git push origin master';
     exec($cmd, $output, $return);
     $this->comment(serialize($output));
