@@ -11,12 +11,21 @@
 |
 */
 
-Artisan::command('deploy', function () {
+Artisan::command('git:deploy', function () {
     $this->comment(base_path());
     $cmd = 'cd '.base_path().';git fetch origin 2>&1;/usr/bin/git reset --hard origin/master 2>&1;php artisan clear-compiled;php artisan view:clear;php artisan config:clear;php artisan queue:restart;composer install';
     exec($cmd, $output, $return);
-    $this->comment(serialize($output));
     $this->comment($return);
+    $this->comment(Artisan::call('migrate'));
+    $this->comment(Artisan::call('migrate'));
+    $this->comment(Artisan::call('migrate'));
     $this->comment(Artisan::call('migrate'));
     ;
 })->describe('Deploy project');
+
+Artisan::command('git:push {msg?}', function ($msg) {
+    $this->comment(base_path());
+    $cmd = 'cd '.base_path().' && git add . && git commit -m '.$msg.' && git push origin master';
+    exec($cmd, $output, $return);
+    $this->comment(serialize($output));
+})->describe('Push project to github');
