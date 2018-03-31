@@ -12,6 +12,14 @@ try {
     window.Popper = require('popper.js').default;
     require('bootstrap');
     require('vide');
+    require('jquery.easing/jquery.easing');
+    require('jquery-hoverintent');
+    require('jquery-sticky/jquery.sticky');
+
+    require('./bell/lockfixed.min.js');
+    require('superfish/src/js/superfish');
+
+
 } catch (e) {}
 
 /**
@@ -65,6 +73,7 @@ import brands from '@fortawesome/fontawesome-free-brands'
 fontawesome.library.add(regular)
 fontawesome.library.add(solid)
 fontawesome.library.add(brands)
+fontawesome.config.searchPseudoElements= true
 
 /**
  * Import RxJS

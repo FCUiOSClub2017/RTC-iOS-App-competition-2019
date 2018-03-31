@@ -11,9 +11,9 @@
 |
 */
 Route::get('/', function () {
-    \App\Jobs\RegistedAccount::dispatch();
+    // \App\Jobs\RegistedAccount::dispatch();
     
-    // return redirect()->route('coming-soon');
+    return view('welcome');
 })->name('app-competition-home');
 
 Route::get('/coming-soon', function () {

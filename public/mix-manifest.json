@@ -3,6 +3,7 @@
     "/css/app.css": "/css/app.css",
     "/css/coming-soon.css": "/css/coming-soon.css",
     "/js/coming-soon.js": "/js/coming-soon.js",
+    "/js/plugin.js": "/js/plugin.js",
     "/img/bg-mobile-fallback.jpg": "/img/bg-mobile-fallback.jpg",
     "/mp4/bg.mp4": "/mp4/bg.mp4"
 }
