@@ -25,3 +25,8 @@ Artisan::command('git:push {msg="update"}', function ($msg) {
     exec($cmd, $output, $return);
     $this->comment(serialize($output));
 })->describe('Push project to github');
+
+
+Artisan::command('redis:test', function () {
+    \App\Jobs\RegistedAccount::dispatch();
+})->describe('Push project to github');

@@ -10,14 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-    Route::get('/', function () {
-        return redirect()->route('coming-soon');
-    })->name('app-competition-home');
+Route::get('/', function () {
+    \App\Jobs\RegistedAccount::dispatch();
+    
+    // return redirect()->route('coming-soon');
+})->name('app-competition-home');
 
-    Route::get('/coming-soon', function () {
-        return view('coming-soon');
-    })->name('coming-soon');
+Route::get('/coming-soon', function () {
+    return view('coming-soon');
+})->name('coming-soon');
 
-    Auth::routes();
+Auth::routes();
 
-    Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+
