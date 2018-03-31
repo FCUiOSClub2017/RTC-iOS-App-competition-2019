@@ -29,6 +29,6 @@ class RegistedAccount implements ShouldQueue
      */
     public function handle()
     {
-        while(100000);
+        dump("help");
     }
 }
