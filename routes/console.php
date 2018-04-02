@@ -13,11 +13,11 @@
 
 Artisan::command('git:deploy', function () {
     $this->comment(base_path());
-    $cmd = 'cd '.base_path().' && git fetch origin 2>&1  && git reset --hard origin/master 2>&1 && composer install';
+    $cmd = 'cd '.base_path().' && git fetch origin 2>&1  && git reset --hard origin/master 2>&1 && composer install && npm install && npm run prod';
     exec($cmd, $output, $return);
     $this->comment(serialize($output));
     $this->comment(Artisan::call('migrate'));
-    ;
+
 })->describe('Deploy project');
 
 Artisan::command('git:push {msg="update"}', function ($msg) {
@@ -33,9 +33,6 @@ Artisan::command('git:push {msg="update"}', function ($msg) {
     exec($cmd, $output, $return);
     $this->comment(serialize($output));
     
-    $cmd = 'npm run prod';
-    exec($cmd, $output, $return);
-    $this->comment(serialize($output));
 })->describe('Push project to github');
 
 
