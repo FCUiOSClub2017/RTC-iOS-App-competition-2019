@@ -11,14 +11,12 @@ try {
     window.$ = window.jQuery = require('jquery');
     window.Popper = require('popper.js').default;
     require('bootstrap');
-    require('vide');
     require('jquery.easing/jquery.easing');
     require('jquery-hoverintent');
     require('jquery-sticky/jquery.sticky');
     require('./bell/lockfixed.min.js');
     require('superfish/src/js/superfish');
     require('stellar.js')
-
 } catch (e) {}
 
 /**

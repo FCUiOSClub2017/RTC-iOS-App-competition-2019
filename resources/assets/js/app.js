@@ -15,6 +15,7 @@ window.Vue = require("vue");
  */
 
 Vue.component("navbar", require("./components/navbar.vue"));
+
 Rx.DOM.ready().subscribe(() => {
     const app = new Vue({
         el: "#app"
@@ -50,15 +51,6 @@ Rx.DOM.ready().subscribe(() => {
             $(".scrolltop").fadeOut();
         }
     });
-    // Background image via data tag
-    $("[data-block-bg-img]").each(function() {
-        // @todo - invoke backstretch plugin if multiple images
-        var $this = $(this),
-            bgImg = $this.data("block-bg-img");
-
-        $this.css("backgroundImage", "url(" + bgImg + ")").addClass("block-bg-img");
-    });
-
 
     $(".scrolltop, #logo a").click(function() {
         $("html, body").animate({

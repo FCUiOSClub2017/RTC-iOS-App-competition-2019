@@ -32,7 +32,7 @@
     <!-- Page Content
     ================================================== -->
     <!-- Hero -->
-    <section class="hero" data-stellar-background-ratio="0.4" data-stellar-offset-parent="true">
+    <section class="hero" data-stellar-background-ratio="0.4">
       <div class="container text-center">
         <div class="row">
           <div class="col-md-12">
@@ -41,12 +41,12 @@
         </div>
         <div class="col-md-12">
           <h1>
-            A theme with personality
+            {{-- A theme with personality --}}
           </h1>
           <p class="tagline">
-            This is a powerful theme with some great features that you can use in your future projects.
+            {{-- This is a powerful theme with some great features that you can use in your future projects. --}}
           </p>
-          <a class="btn btn-full" href="#about">Get Started Now</a>
+          <a class="btn btn-full" href="#about"> 進入 </a>
         </div>
       </div>
     </section>
@@ -118,22 +118,11 @@
       </div>
     </section>
     <!-- /About -->
-    <!-- Parallax -->
-    <section class="block text-center">
-      <h2>
-        Welcome to a perfect theme
-      </h2>
-      <p>
-        This is the most powerful theme with thousands of options that you have never seen before.
-      </p>
-      <img alt="Bell - A perfect theme" class="gadgets-img hidden-md-down" src="img/gadgets.png">
-    </section>
-    <!-- /Parallax -->
     <!-- Features -->
     <section class="features" id="features">
       <div class="container">
-        <h2 class="text-center">
-          Features
+        <h2 class="text-center display-2">
+          大賽報名
         </h2>
         <div class="row">
           <div class="feature-col col-lg-4 col-xs-12">
