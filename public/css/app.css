@@ -9994,6 +9994,10 @@ a.text-dark:focus {
   }
 }
 
+* {
+  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -10006,14 +10010,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
 }
 
 p {
   line-height: 1.55;
   color: #fff;
   font-size: 400;
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -10052,7 +10056,7 @@ a:hover {
 
 .btn {
   background-color: #0878a4;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "AppleEN", "AppleTC-Medium", "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 800;
   color: #fff;
   padding: 15px 45px;
@@ -10170,7 +10174,7 @@ section {
 }
 
 .hero .tagline {
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
   font-size: 26px;
   margin: 45px 0 75px 0;
   color: #fff;
@@ -10206,7 +10210,7 @@ section {
   margin: 0;
   padding: 5px 0;
   line-height: 1;
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -10357,7 +10361,7 @@ section {
   text-decoration: none;
   display: inline-block;
   color: #fff;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "AppleEN", "AppleTC-Medium", "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 15px;
   outline: none;
@@ -10519,7 +10523,7 @@ body.mobile-nav-active #mobile-nav {
   display: inline-block;
   width: 160px;
   height: 160px;
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
   font-weight: 500;
   color: #666;
   border: 6px solid #0878a4;
@@ -10535,7 +10539,7 @@ body.mobile-nav-active #mobile-nav {
   line-height: 70px;
   top: -25px;
   right: -15px;
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
   font-size: 18px;
   background-color: #E04F00;
   position: absolute;
@@ -10610,7 +10614,7 @@ body.mobile-nav-active #mobile-nav {
 }
 
 .features .feature-col p {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "AppleEN", "AppleTC-Medium", "Roboto", Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #999;
 }
@@ -10789,7 +10793,7 @@ body.mobile-nav-active #mobile-nav {
 
 .team .card-title-wrap .card-title,
 .team .card-title-wrap .card-text {
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
   display: block;
   margin: 0;
 }
@@ -10813,7 +10817,7 @@ body.mobile-nav-active #mobile-nav {
 }
 
 #contact h2 {
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
   color: #0878a4;
 }
 
@@ -10932,7 +10936,7 @@ body.mobile-nav-active #mobile-nav {
 
 .site-footer .bottom .list-inline a {
   color: #fff;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "AppleEN", "AppleTC-Medium", "Roboto", Helvetica, Arial, sans-serif;
   margin-right: 15px;
 }
 

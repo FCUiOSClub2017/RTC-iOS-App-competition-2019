@@ -16,7 +16,13 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/font.scss', 'public/css')
    .sass('resources/assets/sass/app.scss', 'public/css')
    .sass('resources/assets/sass/coming-soon.scss', 'public/css');
-   
+
+mix.combine([
+        'resources/assets/sass/apple/css/styles.css',
+        'resources/assets/sass/apple/css/font.css',
+    ], 'public/fonts/font.css');
+
+mix.copyDirectory('resources/assets/sass/apple/font', 'public/fonts');
 mix.copyDirectory('resources/assets/svg', 'public/svg');
 mix.copyDirectory('resources/assets/img', 'public/img');
 

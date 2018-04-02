@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <link href="{{asset('/css/font.css')}}" rel="stylesheet">
+  <link href="{{asset('/fonts/font.css')}}" rel="stylesheet">
   <link href="{{asset('/css/app.css')}}" rel="stylesheet">
   <title>{{config('app.name', 'Laravel')}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -152,7 +152,7 @@
     <!-- Features -->
     <section class="features" id="features">
       <div class="container">
-        <h2 class="text-center display-2">
+        <h2 class="text-center display-3">
           大賽報名
         </h2>
         <div class="row">

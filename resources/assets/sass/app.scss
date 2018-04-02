@@ -1,8 +1,15 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
 // Variables
 @import "variables";
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+* {
+    font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
+
+}
 
 .navbar-laravel {
     background-color: #fff;
@@ -15,14 +22,14 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "AppleEN","AppleTC-Medium","Raleway", Helvetica, Arial, sans-serif;
+    font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
 }
 
 p {
     line-height: 1.55;
     color: $text-color;
     font-size: 400;
-    font-family: "AppleEN","AppleTC-Medium","Raleway", Helvetica, Arial, sans-serif;
+    font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -61,7 +68,7 @@ a {
 
 .btn {
     background-color: $primary;
-    font-family: "AppleEN","AppleTC-Medium","Roboto", Helvetica, Arial, sans-serif;
+    font-family: "AppleEN", "AppleTC-Medium", "Roboto", Helvetica, Arial, sans-serif;
     font-weight: 800;
     color: $text-color;
     padding: 15px 45px;
@@ -175,7 +182,7 @@ section {
     }
 
     .tagline {
-        font-family: "AppleEN","AppleTC-Medium","Raleway", Helvetica, Arial, sans-serif;
+        font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
         font-size: 26px;
         margin: 45px 0 75px 0;
         color: $text-color;
@@ -202,7 +209,7 @@ section {
             margin: 0;
             padding: 5px 0;
             line-height: 1;
-            font-family: "AppleEN","AppleTC-Medium","Raleway", Helvetica, Arial, sans-serif;
+            font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -327,7 +334,7 @@ section {
             text-decoration: none;
             display: inline-block;
             color: $text-color;
-            font-family: "AppleEN","AppleTC-Medium","Roboto", Helvetica, Arial, sans-serif;
+            font-family: "AppleEN", "AppleTC-Medium", "Roboto", Helvetica, Arial, sans-serif;
             font-weight: 300;
             font-size: 15px;
             outline: none;
@@ -475,7 +482,7 @@ body.mobile-nav-active {
     display: inline-block;
     width: 160px;
     height: 160px;
-    font-family: "AppleEN","AppleTC-Medium","Raleway", Helvetica, Arial, sans-serif;
+    font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
     font-weight: 500;
     color: #666;
     border: 6px solid $primary;
@@ -489,7 +496,7 @@ body.mobile-nav-active {
         line-height: 70px;
         top: -25px;
         right: -15px;
-        font-family: "AppleEN","AppleTC-Medium","Raleway", Helvetica, Arial, sans-serif;
+        font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
         font-size: 18px;
         background-color: #E04F00;
         position: absolute;
@@ -557,7 +564,7 @@ body.mobile-nav-active {
             display: inline-block;
         }
         p {
-            font-family: "AppleEN","AppleTC-Medium","Roboto", Helvetica, Arial, sans-serif;
+            font-family: "AppleEN", "AppleTC-Medium", "Roboto", Helvetica, Arial, sans-serif;
             font-size: 14px;
             color: #999;
         }
@@ -738,7 +745,7 @@ body.mobile-nav-active {
 
         .card-title,
         .card-text {
-            font-family: "AppleEN","AppleTC-Medium","Raleway", Helvetica, Arial, sans-serif;
+            font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
             display: block;
             margin: 0;
         }
@@ -773,7 +780,7 @@ body.mobile-nav-active {
 }
 
 #contact h2 {
-    font-family: "AppleEN","AppleTC-Medium","Raleway", Helvetica, Arial, sans-serif;
+    font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
     color: $primary;
 }
 
@@ -893,7 +900,7 @@ body.mobile-nav-active {
 
 .site-footer .bottom .list-inline a {
     color: $text-color;
-    font-family: "AppleEN","AppleTC-Medium","Roboto", Helvetica, Arial, sans-serif;
+    font-family: "AppleEN", "AppleTC-Medium", "Roboto", Helvetica, Arial, sans-serif;
     margin-right: 15px;
 }
 

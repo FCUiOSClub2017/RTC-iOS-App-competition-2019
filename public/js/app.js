@@ -81724,7 +81724,8 @@ module.exports = Rx;
 
 __webpack_require__(501);
 __webpack_require__(507);
-module.exports = __webpack_require__(508);
+__webpack_require__(508);
+module.exports = __webpack_require__(509);
 
 
 /***/ }),
@@ -93134,10 +93135,16 @@ if (false) {
 /* 507 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: \r\nundefined\r\n^\r\n      File to import not found or unreadable: ./apple/style.\r\n      in D:\\xampp\\_webdata\\RTC-iOS-App-competition-2018\\resources\\assets\\sass\\app.scss (line 4, column 1)\n    at runLoaders (D:\\xampp\\_webdata\\RTC-iOS-App-competition-2018\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at D:\\xampp\\_webdata\\RTC-iOS-App-competition-2018\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at D:\\xampp\\_webdata\\RTC-iOS-App-competition-2018\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (D:\\xampp\\_webdata\\RTC-iOS-App-competition-2018\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (D:\\xampp\\_webdata\\RTC-iOS-App-competition-2018\\node_modules\\sass-loader\\lib\\loader.js:55:13)\n    at Object.done [as callback] (D:\\xampp\\_webdata\\RTC-iOS-App-competition-2018\\node_modules\\neo-async\\async.js:7921:18)\n    at options.error (D:\\xampp\\_webdata\\RTC-iOS-App-competition-2018\\node_modules\\node-sass\\lib\\index.js:294:32)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 508 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 509 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
