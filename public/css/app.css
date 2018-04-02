@@ -10010,6 +10010,7 @@ h3,
 h4,
 h5,
 h6 {
+  color: #0878a4;
   font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
 }
 
@@ -10022,6 +10023,18 @@ p {
 
 h1 {
   font-size: 62px;
+}
+
+@media (max-width: 992px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 32px;
+  }
 }
 
 h2 {
@@ -10084,7 +10097,7 @@ a:hover {
 
 section {
   padding: 85px 0;
-  background-color: rgba(8, 120, 164, 0.1);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .card {
@@ -10512,39 +10525,112 @@ body.mobile-nav-active #mobile-nav {
 }
 
 /* ==================================================
+  About Styling
+================================================== */
+
+.about p {
+  font-size: 150%;
+  color: #000;
+}
+
+/* ==================================================
   Stats Styling
 ================================================== */
 
-.stats-row {
+.timeline .stats-row {
   margin-top: 65px;
 }
 
-.stats-col .circle {
-  display: inline-block;
-  width: 160px;
-  height: 160px;
-  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
+.timeline .ratio-1-1 {
+  padding: 50%;
+}
+
+.timeline .stats-col .circle {
+  content: "";
   font-weight: 500;
   color: #666;
   border: 6px solid #0878a4;
   border-radius: 50%;
-  padding: 55px 25px 0 25px;
-  position: relative;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
-.stats-col .circle .stats-no {
+.timeline .stats-col .circle .stats-no {
   color: #fff;
-  width: 70px;
-  height: 70px;
-  line-height: 70px;
-  top: -25px;
-  right: -15px;
-  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
-  font-size: 18px;
   background-color: #E04F00;
+  width: 35%;
+  height: 35%;
+  display: table;
+  top: -4%;
+  right: -4%;
+  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 2rem;
   position: absolute;
   border-radius: 50%;
   font-weight: 700;
+  font-size: 150%;
+  z-index: 1;
+}
+
+.timeline .stats-col .circle .stats-no a {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.timeline .stats-col .circle .circle-overflow {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.timeline .stats-col .circle .circle-overflow * {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.timeline .stats-col .circle .circle-overflow .circle-content,
+.timeline .stats-col .circle .circle-overflow .circle-overlay {
+  height: 100%;
+  width: 100%;
+}
+
+.timeline .stats-col .circle .circle-overflow .circle-content a,
+.timeline .stats-col .circle .circle-overflow .circle-overlay a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: 75%;
+  max-height: 75%;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+.timeline .stats-col .circle .circle-overflow .circle-content a {
+  font-size: 275%;
+}
+
+.timeline .stats-col .circle .circle-overflow .circle-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  opacity: 0;
+  background-color: rgba(0, 61, 115, 0.75);
+}
+
+.timeline .stats-col .circle .circle-overflow .circle-overlay a {
+  font-size: 175%;
+}
+
+.timeline .stats-col .circle .circle-overflow:hover .circle-overlay {
+  opacity: 1;
 }
 
 /* ==================================================
@@ -10576,12 +10662,6 @@ body.mobile-nav-active #mobile-nav {
   padding-bottom: 45px;
 }
 
-.features h1,
-.features h2,
-.features h3 {
-  color: #0878a4;
-}
-
 .features .feature-col {
   display: table;
   padding-bottom: 45px;
@@ -10590,10 +10670,6 @@ body.mobile-nav-active #mobile-nav {
 .features .feature-col > div > div {
   display: table-cell;
   vertical-align: middle;
-}
-
-.features .feature-col > div > div:last-child {
-  padding-left: 20px;
 }
 
 .features .feature-col .card {
@@ -10950,19 +11026,6 @@ body.mobile-nav-active #mobile-nav {
 
 .site-footer .credits a {
   color: #0878a4;
-}
-
-@media (max-width: 992px) {
-  h1 {
-    font-size: 48px;
-    margin: 0;
-  }
-}
-
-@media (max-width: 576px) {
-  h1 {
-    font-size: 32px;
-  }
 }
 
 /* ==================================================

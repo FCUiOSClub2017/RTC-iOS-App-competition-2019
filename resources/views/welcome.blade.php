@@ -117,34 +117,94 @@
     <!-- #header -->
     <!-- About -->
     <section class="about" id="about">
-      <div class="container text-center">
-        <h2>
-          About Bell Theme
-        </h2>
-        <p>
-          Voluptua scripserit per ad, laudem viderer sit ex. Ex alia corrumpit voluptatibus usu, sed unum convenire id. Ut cum nisl moderatius, per nihil dicant commodo an. Eum tacimates erroribus ad. Atqui feugiat euripidis ea pri, sed veniam tacimates ex. Menandri temporibus an duo.
-        </p>
-        <div class="row stats-row">
-          <div class="stats-col text-center col-md-3 col-sm-6">
-            <div class="circle">
-              <span class="stats-no counterup">232</span> Satisfied Customers
+      <div class="container-fulid text-center px-3 px-md-4 px-lg-5">
+        <h2 class="display-4 mb-3">大賽簡介</h2>
+        <p>我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是內容</p>
+      </div>
+    </section>
+    <section class="timeline" id="timeline">
+      <div class="container-fulid text-center px-xl-5">
+        <h2 class="display-4 mb-5">競賽日程</h2>
+        <div class="no-gutters row stats-row justify-content-around justify-content-xl-around">
+          <div class="stats-col text-center col-8 col-sm-5 col-md-3 col-xl-2">
+            <div class="ratio-1-1">
+              <div class="circle">
+                <span class="stats-no"><a>33/33</a></span>
+                <div class="circle-overflow">
+                  <div class="circle-content">
+                    <a>hello~~~</a>
+                  </div>
+                  <div class="circle-overlay">
+                    <a>hello~~~</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="stats-col text-center col-md-3 col-sm-6">
-            <div class="circle">
-              <span class="stats-no counterup">79</span> Released Projects
+          <div class="stats-col text-center col-8 col-sm-5 col-md-3 col-xl-2">
+            <div class="ratio-1-1">
+              <div class="circle">
+                <span class="stats-no"><a>33/33</a></span>
+                <div class="circle-overflow">
+                  <div class="circle-content">
+                    <a>hello~~~</a>
+                  </div>
+                  <div class="circle-overlay">
+                    <a>hello~~~</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="stats-col text-center col-md-3 col-sm-6">
-            <div class="circle">
-              <span class="stats-no counterup">1,463</span> Hours Of Support
+          <div class="w-100 d-none d-sm-block d-md-none"></div>
+          <div class="stats-col text-center col-8 col-sm-5 col-md-3 col-xl-2">
+            <div class="ratio-1-1">
+              <div class="circle">
+                <span class="stats-no"><a>33/33</a></span>
+                <div class="circle-overflow">
+                  <div class="circle-content">
+                    <a>hello~~~</a>
+                  </div>
+                  <div class="circle-overlay">
+                    <a>hello~~~hello~~~hello~~~hello~~~hello~~~hello~~~hello~~~</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="stats-col text-center col-md-3 col-sm-6">
-            <div class="circle">
-              <span class="stats-no counterup">15</span> Hard Workers
+          <div class="w-100 d-none d-sm-block d-xl-none"></div>
+          <div class="col-1 d-none d-md-block d-xl-none"></div>
+          <div class="stats-col text-center col-8 col-sm-5 col-md-3 col-xl-2">
+            <div class="ratio-1-1">
+              <div class="circle">
+                <span class="stats-no"><a>33/33</a></span>
+                <div class="circle-overflow">
+                  <div class="circle-content">
+                    <a>hello~~~</a>
+                  </div>
+                  <div class="circle-overlay">
+                    <a>hello~~~</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          <div class="stats-col text-center col-8 col-sm-5 col-md-3 col-xl-2">
+            <div class="ratio-1-1">
+              <div class="circle">
+                <span class="stats-no"><a>33/33</a></span>
+                <div class="circle-overflow">
+                  <div class="circle-content">
+                    <a>hello~~~</a>
+                  </div>
+                  <div class="circle-overlay">
+                    <a>hello~~~</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-1 d-none d-md-block d-xl-none"></div>
         </div>
       </div>
     </section>
@@ -152,11 +212,9 @@
     <!-- Features -->
     <section class="features" id="features">
       <div class="container">
-        <h2 class="text-center display-3">
-          大賽報名
-        </h2>
-        <div class="row">
-          <div class="feature-col col-lg-4 col-xs-12">
+        <h2 class="text-center display-4">大賽報名</h2>
+        <div class="row justify-content-around">
+          <div class="feature-col col-12 col-md-5">
             <div class="card card-block text-center">
               <div>
                 <div class="feature-icon">
@@ -164,16 +222,14 @@
                 </div>
               </div>
               <div>
-                <h3>
-                  Custom Design
-                </h3>
+                <h3>報名</h3>
                 <p>
-                  Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
+                  報名註意事項
                 </p>
               </div>
             </div>
           </div>
-          <div class="feature-col col-lg-4 col-xs-12">
+          <div class="feature-col col-12 col-md-5">
             <div class="card card-block text-center">
               <div>
                 <div class="feature-icon">
@@ -181,81 +237,9 @@
                 </div>
               </div>
               <div>
-                <h3>
-                  Responsive Layout
-                </h3>
+                <h3>檔案上傳</h3>
                 <p>
-                  Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="feature-col col-lg-4 col-xs-12">
-            <div class="card card-block text-center">
-              <div>
-                <div class="feature-icon">
-                  <span class="fas fa-bell"></span>
-                </div>
-              </div>
-              <div>
-                <h3>
-                  Innovative Ideas
-                </h3>
-                <p>
-                  Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="feature-col col-lg-4 col-xs-12">
-            <div class="card card-block text-center">
-              <div>
-                <div class="feature-icon">
-                  <span class="fas fa-database"></span>
-                </div>
-              </div>
-              <div>
-                <h3>
-                  Good Documentation
-                </h3>
-                <p>
-                  Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="feature-col col-lg-4 col-xs-12">
-            <div class="card card-block text-center">
-              <div>
-                <div class="feature-icon">
-                  <span class="fas fa-utensils"></span>
-                </div>
-              </div>
-              <div>
-                <h3>
-                  Excellent Features
-                </h3>
-                <p>
-                  Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="feature-col col-lg-4 col-xs-12">
-            <div class="card card-block text-center">
-              <div>
-                <div class="feature-icon">
-                  <span class="fas fa-tachometer-alt"></span>
-                </div>
-              </div>
-              <div>
-                <h3>
-                  Retina Ready
-                </h3>
-                <p>
-                  Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
+                  初審後開放
                 </p>
               </div>
             </div>
@@ -265,7 +249,8 @@
     </section>
     <!-- /Features -->
     <!-- Call to Action -->
-    {{-- <section class="cta">
+    {{--
+    <section class="cta">
       <div class="container">
         <div class="row">
           <div class="col-lg-9 col-sm-12 text-lg-left text-center">
@@ -336,6 +321,7 @@
     </section>
     <!-- /Portfolio -->
     <!-- Team -->
+    {{--
     <section class="team" id="team">
       <div class="container">
         <h2 class="text-center">
@@ -440,9 +426,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
     <!-- /Team -->
     <!-- {{-- @com --}}ponent: footer -->
+    {{--
     <section id="contact">
       <div class="container">
         <div class="row">
@@ -497,14 +484,14 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
     <footer class="site-footer">
       <div class="bottom">
         <div class="container">
           <div class="row">
             <div class="col-lg-6 col-xs-12 text-lg-left text-center">
               <p class="copyright-text">
-                © BELL Theme
+                © AhKui
               </p>
               <div class="credits">
                 <!--
@@ -513,7 +500,7 @@
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Bell
               -->
-                <a href="https://bootstrapmade.com/">Bootstrap Templates</a> by BootstrapMade
+                <a href="http://www.fcu.edu.tw/">FCU</a> by Ahkui
               </div>
             </div>
             <div class="col-lg-6 col-xs-12 text-lg-right text-center">
