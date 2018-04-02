@@ -81763,7 +81763,7 @@ Rx.DOM.ready().subscribe(function () {
             if (target.length) {
                 $('html, body').animate({
                     scrollTop: target.offset().top
-                }, 350, 'easeInOutExpo');
+                }, 750, 'easeInOutExpo');
                 return false;
             }
         }
