@@ -13,13 +13,13 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .js('resources/assets/js/coming-soon.js', 'public/js')
+   .sass('resources/assets/sass/font.scss', 'public/css')
    .sass('resources/assets/sass/app.scss', 'public/css')
    .sass('resources/assets/sass/coming-soon.scss', 'public/css');
    
 mix.copyDirectory('resources/assets/svg', 'public/svg');
 mix.copyDirectory('resources/assets/img', 'public/img');
 
-    // 'node_modules/jquery.stellar/jquery.stellar.js',
 mix.scripts([
     'node_modules/jquery-migrate/dist/jquery-migrate.min.js',
     'resources/assets/js/bell/waypoints.min.js',
