@@ -265,7 +265,7 @@
     </section>
     <!-- /Features -->
     <!-- Call to Action -->
-    <section class="cta">
+    {{-- <section class="cta">
       <div class="container">
         <div class="row">
           <div class="col-lg-9 col-sm-12 text-lg-left text-center">
@@ -281,7 +281,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
     <!-- /Call to Action -->
     <!-- Portfolio -->
     <section class="portfolio" id="portfolio">
