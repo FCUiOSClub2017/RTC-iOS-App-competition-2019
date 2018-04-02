@@ -24,7 +24,7 @@ Artisan::command('git:push {msg="update"}', function ($msg) {
     $cmd = 'cd '.base_path().' && git add .';
     exec($cmd, $output, $return);
     $this->comment(serialize($output));
-    $cmd = 'git commit -m '.$msg.'';
+    $cmd = 'git commit -m "'.$msg.'"';
     exec($cmd, $output, $return);
     $this->comment(serialize($output));
     $cmd = 'git push origin master';

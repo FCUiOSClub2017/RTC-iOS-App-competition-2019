@@ -15,10 +15,9 @@ try {
     require('jquery.easing/jquery.easing');
     require('jquery-hoverintent');
     require('jquery-sticky/jquery.sticky');
-
     require('./bell/lockfixed.min.js');
     require('superfish/src/js/superfish');
-
+    require('stellar.js')
 
 } catch (e) {}
 
@@ -74,7 +73,7 @@ fontawesome.library.add(regular)
 fontawesome.library.add(solid)
 fontawesome.library.add(brands)
 fontawesome.config.searchPseudoElements= true
-
+window.Fontawesome = fontawesome;
 /**
  * Import RxJS
  */

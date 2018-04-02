@@ -4,9 +4,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+require("./bootstrap");
 
-window.Vue = require('vue');
+window.Vue = require("vue");
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -14,51 +14,78 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
+Vue.component("navbar", require("./components/navbar.vue"));
 Rx.DOM.ready().subscribe(() => {
     const app = new Vue({
-        el: '#app'
+        el: "#app"
     });
-    require('./bell/parallax.js');
-    require('./bell/navbar.js');
-
-});
-
-$(document).ready(() => {
+    $('[href="#"]').click(() => { event.preventDefault(); return false; });
+    $('a[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 350, 'easeInOutExpo');
+                return false;
+            }
+        }
+    });
     // Tooltip & popovers
-    $('[data-toggle="tooltip"]').tooltip();
-    $('[data-toggle="popover"]').popover();
+    $("[data-toggle=\"tooltip\"]").tooltip();
+    $("[data-toggle=\"popover\"]").popover();
     // Stick the header at top on scroll
-    $("#header").sticky({ topSpacing: 0, zIndex: '50' });
+    $("#header").sticky({ topSpacing: 0, zIndex: "50" });
     // Counting numbers
-    $('.counterup').counterUp({
+    $(".counterup").counterUp({
         delay: 10,
         time: 1000
     });
     //Scroll Top link
     $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
-            $('.scrolltop').fadeIn();
+            $(".scrolltop").fadeIn();
         } else {
-            $('.scrolltop').fadeOut();
+            $(".scrolltop").fadeOut();
         }
     });
     // Background image via data tag
-    $('[data-block-bg-img]').each(function() {
+    $("[data-block-bg-img]").each(function() {
         // @todo - invoke backstretch plugin if multiple images
         var $this = $(this),
-            bgImg = $this.data('block-bg-img');
+            bgImg = $this.data("block-bg-img");
 
-        $this.css('backgroundImage', 'url(' + bgImg + ')').addClass('block-bg-img');
+        $this.css("backgroundImage", "url(" + bgImg + ")").addClass("block-bg-img");
     });
 
 
-    $('.scrolltop, #logo a').click(function() {
+    $(".scrolltop, #logo a").click(function() {
         $("html, body").animate({
             scrollTop: 0
-        }, 1000, 'easeInOutExpo');
+        }, 1000, "easeInOutExpo");
         return false;
     });
-    console.clear();
-})
+
+    $("[data-bg-img]").each(function() {
+        var $this = $(this),
+            imagePath = $this.data("bg-img") || null;
+        if (imagePath !== null) {
+            $this.css("backgroundImage", "url(" + imagePath + ")");
+        }
+    });
+    $.stellar.positionProperty.parallaxPosition = {
+        setTop: function(el, t) {
+            var r = el.data("vpos") || null;
+            r !== null ? el.css(r) : el.css("top", t);
+        },
+        setLeft: function(el, t) {
+            var r = el.data("hpos") || null;
+            r !== null ? $.each(r, function(t, n) { el.css(t, n); }) : el.css("left", t);
+        }
+    };
+    $.stellar({
+        responsive: true,
+        positionProperty: "parallaxPosition",
+    });
+});

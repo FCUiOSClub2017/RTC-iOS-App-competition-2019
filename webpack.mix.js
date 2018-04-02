@@ -19,8 +19,8 @@ mix.js('resources/assets/js/app.js', 'public/js')
 mix.copyDirectory('resources/assets/svg', 'public/svg');
 mix.copyDirectory('resources/assets/img', 'public/img');
 
+    // 'node_modules/jquery.stellar/jquery.stellar.js',
 mix.scripts([
-    'node_modules/jquery.stellar/jquery.stellar.js',
     'node_modules/jquery-migrate/dist/jquery-migrate.min.js',
     'resources/assets/js/bell/waypoints.min.js',
     'resources/assets/js/bell/counterup.min.js',

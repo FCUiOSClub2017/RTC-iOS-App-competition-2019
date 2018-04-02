@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <link href="{{('/css/app.css')}}" rel="stylesheet">
-  <title>Bell Bootstrap 4 Theme</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="{{asset('/css/app.css')}}" rel="stylesheet">
+  <title>{{config('app.name', 'Laravel')}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta content="" name="keywords">
   <meta content="" name="description">
   <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
@@ -23,20 +23,20 @@
   <meta name="twitter:image" content="">
   <!-- Favicon -->
   <link href="img/favicon.ico" rel="icon">
-  <script src="{{('/js/app.js')}}"></script>
-  <script src="{{('/js/plugin.js')}}"></script>
+  <script src="{{asset('/js/app.js')}}"></script>
+  <script src="{{asset('/js/plugin.js')}}"></script>
 </head>
 
 <body>
-  <div id="app">
+  <div id="app" data-bg-img="img/bg.png" data-stellar-background-ratio="0.6" data-toggle="parallax-bg">
     <!-- Page Content
     ================================================== -->
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" data-stellar-background-ratio="0.4" data-stellar-offset-parent="true">
       <div class="container text-center">
         <div class="row">
           <div class="col-md-12">
-            <a class="hero-brand" href="index.html" title="Home"><img alt="Bell Logo" src="img/logo.png"></a>
+            <a class="hero-brand" title="Home"><h1><b>2018<br/>APP移動應用創新賽</b></h1></a>
           </div>
         </div>
         <div class="col-md-12">
@@ -52,51 +52,37 @@
     </section>
     <!-- /Hero -->
     <!-- Header -->
-    <header id="header">
-      <div class="container">
-        <div id="logo" class="float-left">
-          <a href="index.html"><img src="img/logo-nav.png" alt="" title="" /></img></a>
-          <!-- Uncomment below if you prefer to use a text image -->
-          <!--<h1><a href="#hero">Bell</a></h1>-->
-        </div>
-        <nav id="nav-menu-container">
-          <ul class="nav-menu">
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#team">Team</a></li>
+    <navbar mobile>
+      <h1 slot="logo"><a href="#">{{config('app.name', 'Laravel')}}</a></h1>
+      <ul slot="nav-content">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#team">Team</a></li>
+        <li class="menu-has-children">
+          <i class="fas fa-chevron-down"></i>
+          <a href="#">Drop Down</a>
+          <ul>
+            <li><a href="#">Drop Down 1</a></li>
             <li class="menu-has-children">
-              <i class="fas fa-chevron-down"></i>
-              <a href="#">Drop Down</a>
+              <i class="fas fa-chevron-right"></i>
+              <a href="#">Drop Down 2</a>
               <ul>
-                <li><a href="#">Drop Down 1</a></li>
-                
-                <li class="menu-has-children">
-                  <i class="fas fa-chevron-right"></i>
-                  <a href="#">Drop Down 2</a>
-                  
-                  <ul>
-                    <li><a href="#">Deep Drop Down 1</a></li>
-                    <li><a href="#">Deep Drop Down 2</a></li>
-                    <li><a href="#">Deep Drop Down 3</a></li>
-                    <li><a href="#">Deep Drop Down 4</a></li>
-                    <li><a href="#">Deep Drop Down 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Drop Down 3</a></li>
-                <li><a href="#">Drop Down 4</a></li>
-                <li><a href="#">Drop Down 5</a></li>
+                <li><a href="#">Deep Drop Down 1</a></li>
+                <li><a href="#">Deep Drop Down 2</a></li>
+                <li><a href="#">Deep Drop Down 3</a></li>
+                <li><a href="#">Deep Drop Down 4</a></li>
+                <li><a href="#">Deep Drop Down 5</a></li>
               </ul>
             </li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#">Drop Down 3</a></li>
+            <li><a href="#">Drop Down 4</a></li>
+            <li><a href="#">Drop Down 5</a></li>
           </ul>
-        </nav>
-        <!-- #nav-menu-container -->
-        <nav class="nav social-nav float-right d-none d-lg-inline">
-          <a href="#"><i class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-facebook"></i></a> <a href="#"><i class="fab fa-linkedin"></i></a> <a href="#"><i class="fas fa-envelope"></i></a>
-        </nav>
-      </div>
-    </header>
+        </li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </navbar>
     <!-- #header -->
     <!-- About -->
     <section class="about" id="about">
@@ -133,7 +119,7 @@
     </section>
     <!-- /About -->
     <!-- Parallax -->
-    <div class="block bg-primary block-pd-lg block-bg-overlay text-center" data-bg-img="img/parallax-bg.jpg" data-settings='{"stellar-background-ratio": 0.6}' data-toggle="parallax-bg">
+    <section class="block text-center">
       <h2>
         Welcome to a perfect theme
       </h2>
@@ -141,7 +127,7 @@
         This is the most powerful theme with thousands of options that you have never seen before.
       </p>
       <img alt="Bell - A perfect theme" class="gadgets-img hidden-md-down" src="img/gadgets.png">
-    </div>
+    </section>
     <!-- /Parallax -->
     <!-- Features -->
     <section class="features" id="features">
@@ -430,7 +416,7 @@
           Meet our team
         </h2>
         <div class="row">
-          <div class="col-sm-3 col-xs-6">
+          <div class="col-sm-3 col-xs-6 p-0">
             <div class="card card-block">
               <a href="#"><img alt="" class="team-img" src="img/team-1.jpg">
               <div class="card-title-wrap">
@@ -452,7 +438,7 @@
             </a>
           </div>
         </div>
-        <div class="col-sm-3 col-xs-6">
+        <div class="col-sm-3 col-xs-6 p-0">
           <div class="card card-block">
             <a href="#"><img alt="" class="team-img" src="img/team-2.jpg">
               <div class="card-title-wrap">
@@ -474,7 +460,7 @@
           </a>
         </div>
       </div>
-      <div class="col-sm-3 col-xs-6">
+      <div class="col-sm-3 col-xs-6 p-0">
         <div class="card card-block">
           <a href="#"><img alt="" class="team-img" src="img/team-3.jpg">
               <div class="card-title-wrap">
@@ -496,7 +482,7 @@
         </a>
       </div>
   </div>
-  <div class="col-sm-3 col-xs-6">
+  <div class="col-sm-3 col-xs-6 p-0">
     <div class="card card-block">
       <a href="#"><img alt="" class="team-img" src="img/team-4.jpg">
               <div class="card-title-wrap">
@@ -599,7 +585,7 @@
           <div class="col-lg-6 col-xs-12 text-lg-right text-center">
             <ul class="list-inline">
               <li class="list-inline-item">
-                <a href="index.html">Home</a>
+                <a href="{{route('app-competition-home')}}">Home</a>
               </li>
               <li class="list-inline-item">
                 <a href="#about">About Us</a>
