@@ -81763,9 +81763,11 @@ Rx.DOM.ready().subscribe(function () {
             if (target.length) {
                 $('html, body').animate({
                     scrollTop: target.offset().top
-                }, 750, 'easeInOutExpo');
-                return false;
+                }, 1000, 'easeInOutExpo');
+            } else {
+                event.preventDefault();
             }
+            return false;
         }
     });
     // Tooltip & popovers
