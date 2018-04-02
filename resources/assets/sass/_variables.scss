@@ -1,11 +1,24 @@
 
 // Body
-$body-bg: #f5f8fa;
+$body-bg: #f2eaed;
 
 // Typography
 $font-family-sans-serif: "Raleway", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
+$text-color: #F9FAE4;
+$primary: #16235a;
+$secondary: #a4a4bf;
+// $success:       $green !default;
+// $info:          $cyan !default;
+// $warning:       $yellow !default;
+// $danger:        $red !default;
+// $light:         $gray-100 !default;
+// $dark:          $gray-800 !default;
 
-$primary: #B18BF1;
+
+$primary-alpha-05: rgba($primary,0.05);
+$primary-alpha-1: rgba($primary,0.1);
+$primary-alpha-2: rgba($primary,0.2);
+$primary-alpha-6: rgba($primary,0.6);

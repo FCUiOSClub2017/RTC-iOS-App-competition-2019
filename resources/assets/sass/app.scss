@@ -23,7 +23,7 @@ h6 {
 
 p {
     line-height: 1.55;
-    color: #333;
+    color:$text-color;
     font-size: 400;
     font-family: "Raleway", Helvetica, Arial, sans-serif;
 }
@@ -66,17 +66,17 @@ a {
     background-color: $primary;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-weight: 800;
-    color: #fff;
+    color: $text-color;
     padding: 15px 45px;
     border-radius: 50px;
 
     &:hover {
         background-color: #E04F00;
-        color: #fff;
+        color: $text-color;
     }
 
     &:focus {
-        color: #fff;
+        color: $text-color;
     }
 }
 
@@ -92,7 +92,7 @@ a {
 
 section {
     padding: 85px 0;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: $primary-alpha-1;
 }
 
 .card {
@@ -113,7 +113,7 @@ section {
     height: 42px;
     border-radius: 50%;
     background: $primary;
-    color: #fff;
+    color: $text-color;
     text-align: center;
     font-size: 24px;
     &:hover,
@@ -134,7 +134,7 @@ section {
     background-image: url(../img/photo.png);
     background-size: cover;
     padding: 150px 0;
-    color: #fff;
+    color: $text-color;
     width: 100%;
     height: 100vh;
     background-position-x: 70% !important;
@@ -174,14 +174,14 @@ section {
     .hero-brand,
     h1,
     .tagline {
-        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.83);
+        text-shadow: 2px 2px 4px rgba($text-color, 0.83);
     }
 
     .tagline {
         font-family: "Raleway", Helvetica, Arial, sans-serif;
         font-size: 26px;
         margin: 45px 0 75px 0;
-        color: #fff;
+        color: $text-color;
     }
 }
 
@@ -221,7 +221,7 @@ section {
             a {
                 &,
                 &:hover {
-                    color: #fff;
+                    color: $text-color;
                 }
             }
         }
@@ -239,7 +239,7 @@ section {
         a {
             font-size: 24px;
             margin-left: 15px;
-            color: #fff;
+            color: $text-color;
             &:hover {
                 color: rgba(0, 0, 0, 0.75);
             }
@@ -299,7 +299,7 @@ section {
             >svg {
                 padding: 4px;
                 font-size: 1.5rem;
-                color: #fff;
+                color: $text-color;
                 top: 50%;
                 transform: translateY(-40%);
             }
@@ -329,7 +329,7 @@ section {
             padding: 22px 15px 18px 15px;
             text-decoration: none;
             display: inline-block;
-            color: #fff;
+            color: $text-color;
             font-family: "Roboto", Helvetica, Arial, sans-serif;
             font-weight: 300;
             font-size: 15px;
@@ -358,7 +358,7 @@ section {
                     transition: none;
                     padding: 10px 15px;
                     &:hover {
-                        color: #fff;
+                        color: $text-color;
                     }
                 }
             }
@@ -385,7 +385,7 @@ section {
     outline: none;
     cursor: pointer;
     svg {
-        color: #fff;
+        color: $text-color;
     }
     @media (max-width: map-get($grid-breakpoints, "lg")) {
         display: inline;
@@ -419,7 +419,7 @@ body.mobile-nav-active {
         li {
             position: relative;
             a {
-                color: #fff;
+                color: $text-color;
                 font-size: 16px;
                 overflow: hidden;
                 padding: 10px 22px 10px 15px;
@@ -429,7 +429,7 @@ body.mobile-nav-active {
                 display: block;
                 outline: none;
                 &:hover {
-                    color: #fff;
+                    color: $text-color;
                 }
             }
             li {
@@ -441,7 +441,7 @@ body.mobile-nav-active {
             position: absolute;
             right: 0;
             cursor: pointer;
-            color: #fff;
+            color: $text-color;
             padding: 5px;
             font-size: 2rem;
             margin: 10px 10px;
@@ -486,7 +486,7 @@ body.mobile-nav-active {
     padding: 55px 25px 0 25px;
     position: relative;
     .stats-no {
-        color: #fff;
+        color: $text-color;
         width: 70px;
         height: 70px;
         line-height: 70px;
@@ -506,7 +506,7 @@ body.mobile-nav-active {
   ================================================== */
 
 .block {
-    color: #fff;
+    color: $text-color;
     height: 490px;
     overflow: hidden;
     padding-top: 85px;
@@ -515,7 +515,7 @@ body.mobile-nav-active {
         margin-bottom: 15px;
     }
     p {
-        color: #fff;
+        color: $text-color;
         margin-bottom: 45px;
     }
 }
@@ -549,7 +549,7 @@ body.mobile-nav-active {
             height: 70px;
             margin-bottom: 15px;
             background: $primary;
-            color: #fff;
+            color: $text-color;
             font-size: 24px;
             text-align: center;
             line-height: 70px;
@@ -573,10 +573,10 @@ body.mobile-nav-active {
     padding: 25px 0;
     h2 {
         margin-bottom: 5px;
-        color: #fff;
+        color: $text-color;
     }
     p {
-        color: #fff;
+        color: $text-color;
         margin-bottom: 0;
         opacity: .75;
     }
@@ -633,11 +633,11 @@ body.mobile-nav-active {
                         transform: translateY(-50%);
                     }
                     .card-title {
-                        color: #fff;
+                        color: $text-color;
                         font-size: 30px;
                     }
                     .card-text {
-                        color: #fff;
+                        color: $text-color;
                         opacity: .75;
                         padding: 0 45px;
                     }
@@ -675,12 +675,12 @@ body.mobile-nav-active {
             width: 100%;
         }
         h4 {
-            color: #fff;
+            color: $text-color;
             text-transform: uppercase;
         }
         p {
             font-size: 11px;
-            color: #fff;
+            color: $text-color;
             opacity: .75;
             margin: 0;
             padding: 0 35px;
@@ -688,7 +688,7 @@ body.mobile-nav-active {
         .social-nav {
             margin-bottom: 45px;
             a {
-                color: #fff;
+                color: $text-color;
                 font-size: 16px;
                 margin: 0 4px;
                 &:hover {
@@ -708,7 +708,7 @@ body.mobile-nav-active {
 
                 .card-title,
                 .card-text {
-                    color: #fff;
+                    color: $text-color;
                 }
             }
         }
@@ -834,7 +834,7 @@ body.mobile-nav-active {
     background: $primary;
     border: 0;
     padding: 10px 24px;
-    color: #fff;
+    color: $text-color;
     -webkit-transition: 0.4s;
     -o-transition: 0.4s;
     transition: 0.4s;
@@ -855,7 +855,7 @@ body.mobile-nav-active {
 
 .site-footer h2,
 .site-footer p {
-    color: #fff;
+    color: $text-color;
 }
 
 .site-footer p {
@@ -869,7 +869,7 @@ body.mobile-nav-active {
 }
 
 .site-footer .social-nav a {
-    color: #fff;
+    color: $text-color;
     opacity: .25;
 }
 
@@ -893,7 +893,7 @@ body.mobile-nav-active {
 }
 
 .site-footer .bottom .list-inline a {
-    color: #fff;
+    color: $text-color;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     margin-right: 15px;
 }
