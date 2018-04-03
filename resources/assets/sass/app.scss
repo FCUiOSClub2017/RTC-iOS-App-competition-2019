@@ -8,7 +8,6 @@
 @import '~bootstrap/scss/bootstrap';
 * {
     font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
-
 }
 
 .navbar-laravel {
@@ -72,6 +71,11 @@ a {
 /* ==================================================
   Elements
   ================================================== */
+
+#app {
+    background-image: url("../img/bg.png");
+    background-repeat: round;
+}
 
 .btn {
     background-color: $primary;
@@ -185,7 +189,7 @@ section {
     .hero-brand,
     h1,
     .tagline {
-        color:$white;
+        color: $white;
         text-shadow: 2px 2px 4px rgba($text-color, 0.83);
     }
 
@@ -225,7 +229,8 @@ section {
                 padding: 2px 0;
                 font-size: 26px;
             }
-            @media (max-width: map-get($grid-breakpoints, "sm")) {
+            @media (max-width: map-get($grid-breakpoints,
+            "sm")) {
                 padding: 5px 0;
                 font-size: 20px;
             }
@@ -399,7 +404,8 @@ section {
     svg {
         color: $text-color;
     }
-    @media (max-width: map-get($grid-breakpoints, "lg")) {
+    @media (max-width: map-get($grid-breakpoints,
+    "lg")) {
         display: inline;
     }
 }
@@ -1000,7 +1006,8 @@ body.mobile-nav-active {
   Responsive Styling
   ================================================== */
 
-@media (max-width: map-get($grid-breakpoints, "lg")) {
+@media (max-width: map-get($grid-breakpoints,
+"lg")) {
     section,
     .block,
     .cta {

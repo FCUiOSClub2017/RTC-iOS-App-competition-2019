@@ -27,7 +27,7 @@
 </head>
 
 <body>
-  <div id="app" data-bg-img="img/bg.png" data-stellar-background-ratio="0.6" data-toggle="parallax-bg">
+  <div id="app" data-stellar-background-ratio="0.6">
     <!-- Page Content
     ================================================== -->
     <!-- Hero -->
