@@ -20,7 +20,7 @@ Route::get('/coming-soon', function () {
 })->name('coming-soon');
 
 Route::get('/', function () {
-    return redirect()->route('home');
+    // return redirect()->route('home');
     return redirect()->route('coming-soon');
 })->name('mainpage');
 
