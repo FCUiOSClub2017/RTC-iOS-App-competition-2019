@@ -10011,14 +10011,12 @@ h4,
 h5,
 h6 {
   color: #0878a4;
-  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
 }
 
 p {
   line-height: 1.55;
   color: #fff;
   font-size: 400;
-  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -10067,14 +10065,14 @@ a:hover {
   Elements
   ================================================== */
 
-#app {
+html,
+body {
   background-image: url(/images/bg.png?0810542ef2b280f51814ab82433aea75);
   background-repeat: round;
 }
 
 .btn {
   background-color: #0878a4;
-  font-family: "AppleEN", "AppleTC-Medium", "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 800;
   color: #fff;
   padding: 15px 45px;
@@ -10193,7 +10191,6 @@ section {
 }
 
 .hero .tagline {
-  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
   font-size: 26px;
   margin: 45px 0 75px 0;
   color: #fff;
@@ -10229,7 +10226,6 @@ section {
   margin: 0;
   padding: 5px 0;
   line-height: 1;
-  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -10380,7 +10376,6 @@ section {
   text-decoration: none;
   display: inline-block;
   color: #fff;
-  font-family: "AppleEN", "AppleTC-Medium", "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 15px;
   outline: none;
@@ -10572,7 +10567,6 @@ body.mobile-nav-active #mobile-nav {
   display: table;
   top: -4%;
   right: -4%;
-  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
   font-size: 2rem;
   position: absolute;
   border-radius: 50%;
@@ -10619,7 +10613,44 @@ body.mobile-nav-active #mobile-nav {
 }
 
 .timeline .stats-col .circle .circle-overflow .circle-content a {
-  font-size: 275%;
+  font-size: 170%;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .timeline .stats-col .circle .circle-overflow .circle-content a {
+    font-size: 190%;
+  }
+}
+
+@media (min-width: 768px) {
+  .timeline .stats-col .circle .circle-overflow .circle-content a {
+    font-size: 150%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .timeline .stats-col .circle .circle-overflow .circle-content a {
+    font-size: 140%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .timeline .stats-col .circle .circle-overflow .circle-content a {
+    font-size: 200%;
+  }
+}
+
+@media (min-width: 2000px) {
+  .timeline .stats-col .circle .circle-overflow .circle-content a {
+    font-size: 250%;
+  }
+}
+
+@media (min-width: 2400px) {
+  .timeline .stats-col .circle .circle-overflow .circle-content a {
+    font-size: 300%;
+  }
 }
 
 .timeline .stats-col .circle .circle-overflow .circle-overlay {
@@ -10632,7 +10663,46 @@ body.mobile-nav-active #mobile-nav {
 }
 
 .timeline .stats-col .circle .circle-overflow .circle-overlay a {
-  font-size: 175%;
+  max-width: 80%;
+  max-height: 80%;
+  font-size: 170%;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .timeline .stats-col .circle .circle-overflow .circle-overlay a {
+    font-size: 190%;
+  }
+}
+
+@media (min-width: 768px) {
+  .timeline .stats-col .circle .circle-overflow .circle-overlay a {
+    font-size: 150%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .timeline .stats-col .circle .circle-overflow .circle-overlay a {
+    font-size: 140%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .timeline .stats-col .circle .circle-overflow .circle-overlay a {
+    font-size: 200%;
+  }
+}
+
+@media (min-width: 2000px) {
+  .timeline .stats-col .circle .circle-overflow .circle-overlay a {
+    font-size: 250%;
+  }
+}
+
+@media (min-width: 2400px) {
+  .timeline .stats-col .circle .circle-overflow .circle-overlay a {
+    font-size: 300%;
+  }
 }
 
 .timeline .stats-col .circle .circle-overflow:hover .circle-overlay {
@@ -10696,7 +10766,6 @@ body.mobile-nav-active #mobile-nav {
 }
 
 .features .feature-col p {
-  font-family: "AppleEN", "AppleTC-Medium", "Roboto", Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #999;
 }
@@ -10875,7 +10944,6 @@ body.mobile-nav-active #mobile-nav {
 
 .team .card-title-wrap .card-title,
 .team .card-title-wrap .card-text {
-  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
   display: block;
   margin: 0;
 }
@@ -10899,7 +10967,6 @@ body.mobile-nav-active #mobile-nav {
 }
 
 #contact h2 {
-  font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
   color: #0878a4;
 }
 
@@ -11018,7 +11085,6 @@ body.mobile-nav-active #mobile-nav {
 
 .site-footer .bottom .list-inline a {
   color: #fff;
-  font-family: "AppleEN", "AppleTC-Medium", "Roboto", Helvetica, Arial, sans-serif;
   margin-right: 15px;
 }
 

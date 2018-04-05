@@ -81756,7 +81756,7 @@ Rx.DOM.ready().subscribe(function () {
     $('[href="#"]').click(function () {
         event.preventDefault();return false;
     });
-    $('a[href*="#"]:not([href="#"])').click(function () {
+    $('a[href*="#"]:not([href="#"],.goto-target)').click(function () {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -81764,12 +81764,28 @@ Rx.DOM.ready().subscribe(function () {
                 $('html, body').animate({
                     scrollTop: target.offset().top
                 }, 1000, 'easeInOutExpo');
-            } else {
                 event.preventDefault();
+                return false;
+            } else if (location.hostname == this.hostname && target.length == 0) {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 1000, 'easeInOutExpo');
+                event.preventDefault();
+                return false;
             }
-            return false;
         }
     });
+    Rx.DOM.scroll(document).subscribe(function (x) {
+        var Wscroll = $(window).scrollTop() + $('.nav').height();
+        $('section').each(function () {
+            var ThisOffset = $(this).offset();
+            if (Wscroll > ThisOffset.top && Wscroll < ThisOffset.top + $(this).outerHeight(true)) {
+                $('.menu-active').removeClass('menu-active');
+                $('a[href*="#' + $(this).attr('id') + '"]').parent().addClass('menu-active');
+            }
+        });
+    });
+
     // Tooltip & popovers
     $("[data-toggle=\"tooltip\"]").tooltip();
     $("[data-toggle=\"popover\"]").popover();
