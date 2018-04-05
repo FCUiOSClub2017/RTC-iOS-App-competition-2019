@@ -31,12 +31,6 @@ Rx.DOM.ready().subscribe(() => {
                 }, 1000, 'easeInOutExpo');
                 event.preventDefault();
                 return false;
-            } else if (location.hostname == this.hostname && target.length == 0) {
-                $('html, body').animate({
-                    scrollTop: 0
-                }, 1000, 'easeInOutExpo');
-                event.preventDefault();
-                return false;
             }
         }
     });

@@ -5,8 +5,6 @@
                 <div class="row no-gutters px-3 justify-content-end">
                     <div id="logo" class="col col-auto">
                         <slot name="logo"></slot>
-                        <!-- <a href="index.html"><img src="img/logo-nav.png" alt="" title="" /></img></a> -->
-                        <!-- Uncomment below if you prefer to use a text image -->
                     </div>
                     <div class="col">
                         <nav id="nav-menu-container" ref="navMenu">
@@ -15,7 +13,14 @@
                     </div>
                     <!-- #nav-menu-container -->
                     <nav class="col col-auto nav social-nav float-right d-none d-xl-inline">
-                        <a href="#"><i class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-facebook"></i></a> <a href="#"><i class="fab fa-linkedin"></i></a> <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#">
+                            <img class="svg-inline--fa fa-w-12" src="/svg/fcu.svg" alt="FCU Official Website">
+                        </a>
+                        <a href="https://www.facebook.com/FCURTC"><i class="fab fa-apple"></i></a>
+                        <a href="https://iosclub.tw">
+                            <img class="svg-inline--fa fa-w-12" src="/svg/iosclub.svg" alt="FCU iOSClub Official Website">
+                        </a>
+                        <a href="mailto:rtc@fcu.edu.tw"><i class="fas fa-envelope"></i></a>
                     </nav>
                 </div>
             </div>

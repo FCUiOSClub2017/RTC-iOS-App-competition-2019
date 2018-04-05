@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use Role;
+use Permission;
 
 class HomeController extends Controller
 {
@@ -14,6 +17,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('is.developer')->only('test');
     }
 
     /**
@@ -24,5 +28,26 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    /**
+     * show my permission.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function my_role()
+    {
+        dump(request()->user());
+        dump(request()->user()->getAllPermissions());
+        return "";
+    }
+    /**
+     * test the application.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function test()
+    {
+        return auth()->user()->name;
     }
 }

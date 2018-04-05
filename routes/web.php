@@ -12,7 +12,6 @@
 */
 Route::get('welcome', function () {
     // \App\Jobs\RegistedAccount::dispatch();
-    
     return view('welcome');
 })->name('home');
 
@@ -21,10 +20,13 @@ Route::get('/coming-soon', function () {
 })->name('coming-soon');
 
 Route::get('/', function () {
+    return redirect()->route('home');
     return redirect()->route('coming-soon');
 })->name('mainpage');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('user');
+Route::get('/test', 'HomeController@test')->name('test');
+Route::get('role', 'HomeController@my_role')->name('test');
 

@@ -5,7 +5,11 @@
     <li>
       <a href="{{URL::route('user')}}">你好，{{auth()->user()->name}}！</a>
     </li>
-    @endauth
+    @endauth @if (URL::current()!=URL::route('home') && URL::current()!=URL::secure('home'))
+    <li>
+      <a href="{{URL::route('home')}}">首頁</a>
+    </li>
+    @endif
     <li>
       <a href="{{URL::route('home')}}#about">簡介</a>
     </li>
@@ -18,11 +22,18 @@
     <li>
       <a href="{{URL::route('home')}}#sponsors">贊助商</a>
     </li>
-    @guest
+    @auth
     <li>
-      <a href="{{URL::route('login')}}">登入</a>
+      <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">登出</a>
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+      </form>
     </li>
-    @endguest {{$slot}} {{--
+    @else
+    <li>
+      <a href="{{ route('login') }}">登入</a>
+    </li>
+    @endauth {{$slot}} {{--
     <li class="menu-has-children">
       <i class="fas fa-chevron-down"></i>
       <a href="#">Drop Down</a>

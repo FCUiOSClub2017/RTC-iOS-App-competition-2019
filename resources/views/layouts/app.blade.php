@@ -41,8 +41,7 @@
         @component('components.navbar') @endcomponent
         <!-- Content -->
         @yield('content')
-        <!-- Footer -->
-        @include('components.footer')
+        <a class="scrolltop" href="#"><span class="fas fa-angle-up"></span></a>
     </div>
     <script>
     </script>

@@ -1,4 +1,4 @@
-<footer class="site-footer">
+<footer class="site-footer" id="footer">
   <div class="bottom">
     <div class="container">
       <div class="row">
@@ -42,4 +42,3 @@
     </div>
   </div>
 </footer>
-<a class="scrolltop" href="#"><span class="fas fa-angle-up"></span></a>

@@ -81766,12 +81766,6 @@ Rx.DOM.ready().subscribe(function () {
                 }, 1000, 'easeInOutExpo');
                 event.preventDefault();
                 return false;
-            } else if (location.hostname == this.hostname && target.length == 0) {
-                $('html, body').animate({
-                    scrollTop: 0
-                }, 1000, 'easeInOutExpo');
-                event.preventDefault();
-                return false;
             }
         }
     });
@@ -92992,6 +92986,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
@@ -93111,18 +93110,27 @@ var staticRenderFns = [
       },
       [
         _c("a", { attrs: { href: "#" } }, [
-          _c("i", { staticClass: "fab fa-twitter" })
+          _c("img", {
+            staticClass: "svg-inline--fa fa-w-12",
+            attrs: { src: "/svg/fcu.svg", alt: "FCU Official Website" }
+          })
         ]),
         _vm._v(" "),
-        _c("a", { attrs: { href: "#" } }, [
-          _c("i", { staticClass: "fab fa-facebook" })
+        _c("a", { attrs: { href: "https://www.facebook.com/FCURTC" } }, [
+          _c("i", { staticClass: "fab fa-apple" })
         ]),
         _vm._v(" "),
-        _c("a", { attrs: { href: "#" } }, [
-          _c("i", { staticClass: "fab fa-linkedin" })
+        _c("a", { attrs: { href: "https://iosclub.tw" } }, [
+          _c("img", {
+            staticClass: "svg-inline--fa fa-w-12",
+            attrs: {
+              src: "/svg/iosclub.svg",
+              alt: "FCU iOSClub Official Website"
+            }
+          })
         ]),
         _vm._v(" "),
-        _c("a", { attrs: { href: "#" } }, [
+        _c("a", { attrs: { href: "mailto:rtc@fcu.edu.tw" } }, [
           _c("i", { staticClass: "fas fa-envelope" })
         ])
       ]

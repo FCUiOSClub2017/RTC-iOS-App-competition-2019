@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/2018/home';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -51,7 +51,7 @@ class LoginController extends Controller
 
         $request->session()->invalidate();
 
-        return redirect('/2018');
+        return redirect('/');
     }
 
 }
