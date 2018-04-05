@@ -13,7 +13,10 @@
 
 Artisan::command('git:deploy', function () {
     $this->comment(base_path());
-    $cmd = 'cd '.base_path().' && git fetch origin 2>&1  && git reset --hard origin/master 2>&1 && composer install';
+    $cmd = 'cd '.base_path().' && git fetch origin 2>&1  && git reset --hard origin/master 2>&1';
+    exec($cmd, $output, $return);
+    $this->comment(serialize($output));
+    $cmd = 'composer install';
     exec($cmd, $output, $return);
     $this->comment(serialize($output));
     $this->comment(Artisan::call('migrate'));
