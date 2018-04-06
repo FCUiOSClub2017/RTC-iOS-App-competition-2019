@@ -1,3 +1,6 @@
+window.location.replace("#");
+if (typeof window.history.replaceState == 'function')
+    history.replaceState({}, '', window.location.href.slice(0, -1));
 
 window._ = require('lodash');
 
@@ -70,8 +73,9 @@ import brands from '@fortawesome/fontawesome-free-brands'
 fontawesome.library.add(regular)
 fontawesome.library.add(solid)
 fontawesome.library.add(brands)
-fontawesome.config.searchPseudoElements= true
+fontawesome.config.searchPseudoElements = true
 window.Fontawesome = fontawesome;
+
 /**
  * Import RxJS
  */
