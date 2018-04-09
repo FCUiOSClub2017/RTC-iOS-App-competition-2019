@@ -23,7 +23,6 @@ mix.combine([
 
 mix.copyDirectory('resources/assets/sass/apple/font', 'public/fonts');
 mix.copyDirectory('resources/assets/svg', 'public/svg');
-mix.copyDirectory('resources/assets/img', 'public/img');
 
 mix.scripts([
     'node_modules/jquery-migrate/dist/jquery-migrate.min.js',
@@ -32,7 +31,8 @@ mix.scripts([
 ],'public/js/plugin.js');
 
 
-mix.copy('node_modules/startbootstrap-coming-soon/img/bg-mobile-fallback.jpg', 'public/img/bg-mobile-fallback.jpg');
+mix.copy('node_modules/startbootstrap-coming-soon/img/bg-mobile-fallback.jpg', 'public/images/bg-mobile-fallback.jpg');
+mix.copy('node_modules/startbootstrap-coming-soon/img/fcu.png', 'public/images/fcu.png');
 mix.copy('node_modules/startbootstrap-coming-soon/mp4/bg.mp4', 'public/mp4/bg.mp4');
 
 mix.disableNotifications();
