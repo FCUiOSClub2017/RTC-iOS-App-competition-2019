@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="card-header bg-primary text-white h2">{{ __('密碼重置') }}</div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('password.request') }}">
+                    <form method="POST" action="{{ route('password.request',[],false) }}">
                         @csrf
                         <input type="hidden" name="token" value="{{ $token }}">
                         <div class="form-group row">

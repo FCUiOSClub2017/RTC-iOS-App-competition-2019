@@ -14,38 +14,38 @@
           <ul class="list-inline">
             @auth
             <li class="list-inline-item">
-              <a href="{{URL::route('user')}}">你好，{{auth()->user()->name}}！</a>
+              <a href="{{route('user',[],false)}}">你好，{{auth()->user()->name}}！</a>
             </li>
-            @endauth @if (URL::current()!=URL::route('home') && URL::current()!=URL::secure('home'))
+            @endauth @if (URL::current()!=route('home',[],false) && URL::current()!=route('home',[],false))
             <li class="list-inline-item">
-              <a href="{{URL::route('home')}}">首頁</a>
+              <a href="{{route('home',[],false)}}">首頁</a>
             </li>
             @endif
             <li class="list-inline-item">
-              <a href="{{URL::route('home')}}#about">簡介</a>
+              <a href="{{route('home',[],false)}}#about">簡介</a>
             </li>
             <li class="list-inline-item">
-              <a href="{{URL::route('home')}}#timeline">競賽</a>
+              <a href="{{route('home',[],false)}}#timeline">競賽</a>
             </li>
             <li class="list-inline-item">
-              <a href="{{URL::route('home')}}#award">獎項</a>
+              <a href="{{route('home',[],false)}}#award">獎項</a>
             </li>
             <li class="list-inline-item">
-              <a href="{{URL::route('home')}}#portal">報名</a>
+              <a href="{{route('home',[],false)}}#portal">報名</a>
             </li>
             <li class="list-inline-item">
-              <a href="{{URL::route('home')}}#sponsors">贊助商</a>
+              <a href="{{route('home',[],false)}}#sponsors">贊助商</a>
             </li>
             @auth
             <li class="list-inline-item">
-              <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">登出</a>
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              <a href="{{ route('logout',[],false) }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">登出</a>
+              <form id="logout-form" action="{{ route('logout',[],false) }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
               </form>
             </li>
             @else
             <li class="list-inline-item">
-              <a href="{{ route('login') }}">登入</a>
+              <a href="{{ route('login',[],false) }}">登入</a>
             </li>
             @endauth
           </ul>

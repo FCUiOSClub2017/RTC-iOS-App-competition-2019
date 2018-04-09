@@ -21,16 +21,16 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
-    <link rel="icon" href="{{asset('img/fcu.png')}}" type="image/png">
+    <link rel="icon" href="{{secure_asset('images/fcu.png')}}" type="image/png">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <!-- Styles -->
-    <link href="{{'/fonts/font.css'}}" rel="stylesheet">
-    <link href="{{'/css/app.css'}}" rel="stylesheet">
+    <link href="{{secure_asset('/fonts/font.css')}}" rel="stylesheet">
+    <link href="{{secure_asset('/css/app.css')}}" rel="stylesheet">
     <!-- Scripts -->
-    <script src="{{'/js/app.js'}}"></script>
-    <script src="{{'/js/plugin.js'}}"></script>
+    <script src="{{secure_asset('/js/app.js')}}"></script>
+    <script src="{{secure_asset('/js/plugin.js')}}"></script>
 </head>
 
 <body data-stellar-background-ratio="0.6">

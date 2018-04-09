@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="card-header">{{ __('註冊') }}</div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register',[],false) }}">
                         @csrf
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('用戶名稱') }}</label>
@@ -45,10 +45,10 @@
                                 </button>
                             </div>
                             <div class="col-md-8 offset-md-4 mt-2">
-                                <span> 已有帳號？ <a href="{{ route('login') }}">{{ __('點我登入！') }}</a></span>
+                                <span> 已有帳號？ <a href="{{ route('login',[],false) }}">{{ __('點我登入！') }}</a></span>
                             </div>
                             <div class="col-md-8 offset-md-4">
-                                <span> 忘記密碼？ <a href="{{ route('password.request') }}">{{ __('點我取回密碼！') }}</a></span>
+                                <span> 忘記密碼？ <a href="{{ route('password.request',[],false) }}">{{ __('點我取回密碼！') }}</a></span>
                             </div>
                         </div>
                     </form>

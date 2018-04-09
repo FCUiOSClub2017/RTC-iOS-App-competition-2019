@@ -10,7 +10,7 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    <form method="POST" action="{{ route('password.email') }}">
+                    <form method="POST" action="{{ route('password.email',[],false) }}">
                         @csrf
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('電子郵件') }}</label>
