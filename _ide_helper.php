@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.6.14 on 2018-04-06 04:19:16.
+ * Generated for Laravel 5.6.14 on 2018-04-09 18:53:00.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -12458,6 +12458,18 @@ namespace Illuminate\Support\Facades {
  
 }
 
+namespace Spatie\Permission\Models { 
+
+    class Permission {
+         
+    }
+
+    class Role {
+         
+    }
+ 
+}
+
 
 namespace  { 
 
@@ -14673,6 +14685,8 @@ namespace  {
 
     class Password extends \Illuminate\Support\Facades\Password {}
 
+    class Permission extends \Spatie\Permission\Models\Permission {}
+
     class Queue extends \Illuminate\Support\Facades\Queue {}
 
     class Redirect extends \Illuminate\Support\Facades\Redirect {}
@@ -14682,6 +14696,8 @@ namespace  {
     class Request extends \Illuminate\Support\Facades\Request {}
 
     class Response extends \Illuminate\Support\Facades\Response {}
+
+    class Role extends \Spatie\Permission\Models\Role {}
 
     class Route extends \Illuminate\Support\Facades\Route {}
 
