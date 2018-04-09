@@ -13,7 +13,7 @@
                     </div>
                     <!-- #nav-menu-container -->
                     <nav class="col col-auto nav social-nav float-right d-none d-xl-inline">
-                        <a href="#">
+                        <a href="http://www.fcu.edu.tw">
                             <img class="svg-inline--fa fa-w-12" src="/svg/fcu.svg" alt="FCU Official Website">
                         </a>
                         <a href="https://www.facebook.com/FCURTC"><i class="fab fa-apple"></i></a>

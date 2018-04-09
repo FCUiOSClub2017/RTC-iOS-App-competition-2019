@@ -17,7 +17,7 @@
       <a href="{{URL::route('home')}}#timeline">競賽</a>
     </li>
     <li>
-      <a href="{{URL::route('home')}}#register">報名</a>
+      <a href="{{URL::route('home')}}#portal">報名</a>
     </li>
     <li>
       <a href="{{URL::route('home')}}#sponsors">贊助商</a>

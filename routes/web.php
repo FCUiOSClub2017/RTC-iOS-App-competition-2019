@@ -10,19 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('welcome', function () {
-    // \App\Jobs\RegistedAccount::dispatch();
-    return view('welcome');
+Route::get('/', function () {
+    return view('home');
 })->name('home');
 
 Route::get('/coming-soon', function () {
     return view('coming-soon');
 })->name('coming-soon');
 
-Route::get('/', function () {
-    // return redirect()->route('home');
-    return redirect()->route('coming-soon');
-})->name('mainpage');
+Route::get('profile', function () {
+    return view('profile');
+})->name('profile');
 
 Auth::routes();
 

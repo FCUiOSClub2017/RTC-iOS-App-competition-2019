@@ -40412,6 +40412,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fortawesome_fontawesome_free_regular__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fortawesome_fontawesome_free_solid__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fortawesome_fontawesome_free_brands__ = __webpack_require__(202);
+window.location.replace("#");
+if (typeof window.history.replaceState == 'function') history.replaceState({}, '', window.location.href.slice(0, -1));
 
 window._ = __webpack_require__(172);
 
@@ -40486,6 +40488,7 @@ __WEBPACK_IMPORTED_MODULE_0__fortawesome_fontawesome__["a" /* default */].librar
 __WEBPACK_IMPORTED_MODULE_0__fortawesome_fontawesome__["a" /* default */].library.add(__WEBPACK_IMPORTED_MODULE_3__fortawesome_fontawesome_free_brands__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_0__fortawesome_fontawesome__["a" /* default */].config.searchPseudoElements = true;
 window.Fontawesome = __WEBPACK_IMPORTED_MODULE_0__fortawesome_fontawesome__["a" /* default */];
+
 /**
  * Import RxJS
  */
@@ -93109,7 +93112,7 @@ var staticRenderFns = [
           "col col-auto nav social-nav float-right d-none d-xl-inline"
       },
       [
-        _c("a", { attrs: { href: "#" } }, [
+        _c("a", { attrs: { href: "http://www.fcu.edu.tw" } }, [
           _c("img", {
             staticClass: "svg-inline--fa fa-w-12",
             attrs: { src: "/svg/fcu.svg", alt: "FCU Official Website" }
