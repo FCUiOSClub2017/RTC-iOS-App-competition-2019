@@ -8,8 +8,8 @@
 <!-- Content -->
 @section('content')
 @include('components.about')
-@include('components.timetable')
 @include('components.timeline')
+@include('components.award')
 @include('components.portal')
 @include('components.sponsors')
 {{--

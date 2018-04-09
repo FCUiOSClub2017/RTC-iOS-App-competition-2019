@@ -28,6 +28,9 @@
               <a href="{{URL::route('home')}}#timeline">競賽</a>
             </li>
             <li class="list-inline-item">
+              <a href="{{URL::route('home')}}#award">獎項</a>
+            </li>
+            <li class="list-inline-item">
               <a href="{{URL::route('home')}}#portal">報名</a>
             </li>
             <li class="list-inline-item">
