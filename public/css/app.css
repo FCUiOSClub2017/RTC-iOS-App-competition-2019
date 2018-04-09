@@ -10072,7 +10072,6 @@ a:hover {
 html,
 body {
   background-image: url(/images/bg.png?0810542ef2b280f51814ab82433aea75);
-  background-repeat: round;
   min-height: 100vh;
 }
 
@@ -10675,43 +10674,55 @@ body.mobile-nav-active #mobile-nav {
 .timeline .stats-col .circle .circle-overflow .circle-overlay a {
   max-width: 80%;
   max-height: 80%;
-  font-size: 170%;
+  font-size: 85%;
   width: 100%;
+}
+
+@media (min-width: 384px) {
+  .timeline .stats-col .circle .circle-overflow .circle-overlay a {
+    font-size: 105%;
+  }
 }
 
 @media (min-width: 576px) {
   .timeline .stats-col .circle .circle-overflow .circle-overlay a {
-    font-size: 190%;
+    font-size: 100%;
   }
 }
 
 @media (min-width: 768px) {
   .timeline .stats-col .circle .circle-overflow .circle-overlay a {
-    font-size: 150%;
+    font-size: 80%;
+  }
+}
+
+@media (min-width: 992px) {
+  .timeline .stats-col .circle .circle-overflow .circle-overlay a {
+    font-size: 104%;
   }
 }
 
 @media (min-width: 1200px) {
   .timeline .stats-col .circle .circle-overflow .circle-overlay a {
-    font-size: 140%;
+    font-size: 75%;
   }
 }
 
 @media (min-width: 1600px) {
   .timeline .stats-col .circle .circle-overflow .circle-overlay a {
-    font-size: 200%;
+    font-size: 105%;
   }
 }
 
 @media (min-width: 2000px) {
   .timeline .stats-col .circle .circle-overflow .circle-overlay a {
-    font-size: 250%;
+    font-size: 135%;
   }
 }
 
 @media (min-width: 2400px) {
   .timeline .stats-col .circle .circle-overflow .circle-overlay a {
-    font-size: 300%;
+    font-size: 165%;
   }
 }
 
