@@ -10670,7 +10670,6 @@ body.mobile-nav-active #mobile-nav {
   color: #fff;
   opacity: 0;
   background-color: rgba(0, 61, 115, 0.75);
-  z-index: -1;
 }
 
 .timeline .stats-col .circle .circle-overflow .circle-overlay a {

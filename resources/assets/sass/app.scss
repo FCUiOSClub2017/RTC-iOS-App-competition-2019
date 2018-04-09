@@ -620,7 +620,6 @@ body.mobile-nav-active {
                 color: $white;
                 opacity: 0;
                 background-color: rgba($primary-dark, 0.75);
-                z-index:-1;
             }
             &:hover {
                 .circle-overlay {
