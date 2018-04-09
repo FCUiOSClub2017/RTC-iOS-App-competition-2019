@@ -20,7 +20,7 @@
             <span class="stats-no"><a>5/23</a></span>
             <div class="circle-overflow">
               <div class="circle-content">
-                <a>作品
+                <a>計劃書
                   <br/>繳交截止</a>
               </div>
             </div>
