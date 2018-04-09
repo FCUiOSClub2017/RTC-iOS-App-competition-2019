@@ -10714,9 +10714,9 @@ body.mobile-nav-active #mobile-nav {
   }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 1920px) {
   .timeline .stats-col .circle .circle-overflow .circle-overlay a {
-    font-size: 130%;
+    font-size: 113%;
   }
 }
 
