@@ -1,6 +1,6 @@
 <section class="award" id="award">
     <div class="container text-center px-3 px-md-4 px-lg-5">
-        <h2 class="display-4 mb-3">大賽簡介</h2>
+        <h2 class="display-4 mb-3">得獎者獎項</h2>
         <table class="table table-bordered">
             <thead>
                 <tr class="bg-primary text-white">
