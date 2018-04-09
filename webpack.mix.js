@@ -32,7 +32,7 @@ mix.scripts([
 
 
 mix.copy('node_modules/startbootstrap-coming-soon/img/bg-mobile-fallback.jpg', 'public/images/bg-mobile-fallback.jpg');
-mix.copy('node_modules/startbootstrap-coming-soon/img/fcu.png', 'public/images/fcu.png');
+mix.copy('resources/assets/img/fcu.png', 'public/images/fcu.png');
 mix.copy('node_modules/startbootstrap-coming-soon/mp4/bg.mp4', 'public/mp4/bg.mp4');
 
 mix.disableNotifications();
