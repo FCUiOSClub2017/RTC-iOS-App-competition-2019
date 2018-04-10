@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Univercity;
 use Illuminate\Console\Command;
 
 class InitialUnivercityList extends Command

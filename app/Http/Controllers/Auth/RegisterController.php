@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\UserVerify;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -29,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = 'verify/notice';
 
     /**
      * Create a new controller instance.
@@ -50,7 +51,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:10|confirmed',
         ]);
@@ -82,8 +83,11 @@ class RegisterController extends Controller
      */
     protected function registered(Request $request, $user)
     {
-        $user->update(['verify' => true]);
-        // make send mail here
+        $verify = UserVerify::create([
+            'email'=>$user->email,
+            'token'=>str_random(40),
+        ]);
+        // send e-mail
     }
 
 }

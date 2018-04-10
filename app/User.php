@@ -35,4 +35,12 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    /**
+     * Get the phone record associated with the user.
+     */
+    public function user_verify()
+    {
+        return $this->hasOne('App\UserVerify');
+    }
 }

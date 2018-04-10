@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="card-header bg-primary h2 text-white">{{ __('登入') }}</div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login',[],false) }}">
+                    <form method="POST" action="{{ route('login',['tolen'=>'asdasd'],false) }}">
                         @csrf
                         <div class="form-group row">
                             <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('電子郵件') }}</label>

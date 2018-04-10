@@ -63,5 +63,6 @@ class Kernel extends HttpKernel
         'is.admin' => \App\Http\Middleware\IsAdmin::class,
         'is.participant' => \App\Http\Middleware\IsParticipant::class,
         'is.invigilator' => \App\Http\Middleware\IsInvigilator::class,
+        'is.verify' => \App\Http\Middleware\IsVerify::class,
     ];
 }
