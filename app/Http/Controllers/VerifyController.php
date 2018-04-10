@@ -41,10 +41,10 @@ class VerifyController extends Controller
         if(!$verify)
             abort(404);
         $user = $verify->user;
-        $verify->delete();
         $user->verify = true;
         $user->save();
         auth()->login($user);
+        $verify->delete();
         return redirect()->route('verify.success');
     }
 
