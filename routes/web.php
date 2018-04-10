@@ -25,8 +25,8 @@ Route::get('profile', function () {
 Auth::routes();
 
 Route::get('verify/notice', 'VerifyController@notice')->name('verify.notice');
-Route::get('verify/{token}', 'VerifyController@process')->name('verify.process');
 Route::get('verify/success', 'VerifyController@success')->name('verify.success');
+Route::get('verify/{token}', 'VerifyController@process')->name('verify.process');
 
 Route::get('/home', 'HomeController@index')->name('user');
 Route::get('/test', 'HomeController@test')->name('test');
