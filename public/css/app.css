@@ -10144,7 +10144,7 @@ section {
 .hero {
   display: table;
   position: relative;
-  background-image: url(/images/photo.png?9ba96b81e4c54027f12f04c1c04aa991);
+  background-color: white;
   background-size: cover;
   padding: 150px 0;
   color: #fff;

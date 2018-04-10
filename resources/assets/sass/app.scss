@@ -148,7 +148,8 @@ section {
 .hero {
     display: table;
     position: relative;
-    background-image: url(../img/photo.png);
+    background-color:white;
+    // background-image: url(../img/photo.png);
     background-size: cover;
     padding: 150px 0;
     color: $text-color;
