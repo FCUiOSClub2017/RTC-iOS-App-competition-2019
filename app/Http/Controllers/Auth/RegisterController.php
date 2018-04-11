@@ -83,10 +83,11 @@ class RegisterController extends Controller
      */
     protected function registered(Request $request, $user)
     {
-        $verify = UserVerify::create([
-            'email'=>$user->email,
+        $verify = new UserVerify([
             'token'=>str_random(40),
         ]);
+        $user->verify()->save($verify);
+        dd($user,$verify,$user->verify,$verify->user);
         $user->sendVerifyEmailNotification($verify->token);
         // send e-mail
     }

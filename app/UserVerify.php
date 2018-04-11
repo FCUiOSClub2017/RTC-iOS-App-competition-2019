@@ -21,7 +21,7 @@ class UserVerify extends Model
 
     protected $fillable = [
         'token', 
-        'email', 
+        'user_id', 
     ];
 
     /**
@@ -29,6 +29,8 @@ class UserVerify extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\User','email','email');
+        // dd($this->email,\App\User::where('email','=',$this->email)->first());
+        // return \App\User::whereEmail($this->email)->get()->first();
+        return $this->belongsTo('App\User');
     }
 }

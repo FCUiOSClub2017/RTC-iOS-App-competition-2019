@@ -37,10 +37,12 @@ class VerifyController extends Controller
      */
     public function process($token)
     {
-        $verify = UserVerify::whereToken($token)->get()->first();
+        $verify = UserVerify::where('token',$token)->get()->first();
+        // dd($verify);
         if(!$verify)
             abort(404);
         $user = $verify->user;
+        dd($verify,$user);
         $user->verify = true;
         $user->save();
         auth()->login($user);
@@ -55,6 +57,6 @@ class VerifyController extends Controller
      */
     public function success()
     {
-        return view('auth.verify.success');
+        return view('auth.verify.success','FK_user_vrify_email','email');
     }
 }

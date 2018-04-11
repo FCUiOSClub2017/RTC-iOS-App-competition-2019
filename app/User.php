@@ -69,4 +69,8 @@ class User extends Authenticatable
         $this->notify(new VerifyEmail($token));
     }
 
+    public function verify(){
+        return $this->hasOne('App\UserVerify');
+    }
+
 }
