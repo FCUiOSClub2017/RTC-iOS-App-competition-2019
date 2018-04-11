@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+use App\Notifications\ResetPassword;
+use App\Notifications\VerifyEmail;
 
 class User extends Authenticatable
 {
@@ -43,4 +45,28 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\UserVerify');
     }
+
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPassword($token));
+    }
+
+    /**
+     * Send the verify notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendVerifyEmailNotification($token)
+    {
+        $this->notify(new VerifyEmail($token));
+    }
+
 }

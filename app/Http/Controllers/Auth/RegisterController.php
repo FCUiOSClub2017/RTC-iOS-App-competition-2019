@@ -87,6 +87,7 @@ class RegisterController extends Controller
             'email'=>$user->email,
             'token'=>str_random(40),
         ]);
+        $user->sendVerifyEmailNotification($verify->token);
         // send e-mail
     }
 
