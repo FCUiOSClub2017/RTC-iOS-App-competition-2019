@@ -26,7 +26,7 @@ class VerifyController extends Controller
     public function notice()
     {
         if(request()->user()->verify)
-            return redirect()->route('home');
+            return redirect(route('home', [], false));
         return view('auth.verify.notice');
     }
 
@@ -45,7 +45,7 @@ class VerifyController extends Controller
         $user->save();
         auth()->login($user);
         $verify->delete();
-        return redirect()->route('verify.success');
+        return redirect(route('verify.success', [], false));
     }
 
     /**
