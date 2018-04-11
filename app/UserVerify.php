@@ -8,7 +8,7 @@ class UserVerify extends Model
 {
     public $timestamps = false;
 
-    protected $primaryKey = 'email';
+    protected $primaryKey = 'user_id';
 
     public static function boot()
     {

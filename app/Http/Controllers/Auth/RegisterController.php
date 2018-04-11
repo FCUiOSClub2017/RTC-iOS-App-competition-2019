@@ -87,7 +87,6 @@ class RegisterController extends Controller
             'token'=>str_random(40),
         ]);
         $user->verify()->save($verify);
-        dd($user,$verify,$user->verify,$verify->user);
         $user->sendVerifyEmailNotification($verify->token);
         // send e-mail
     }
