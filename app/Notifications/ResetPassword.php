@@ -29,9 +29,5 @@ class ResetPassword extends OriginalResetPassword
             ->line('你會收到這封郵件是因為我們收到了您請求重置密碼。')
             ->action('重置密碼', url(config('app.url').route('password.reset', $this->token, false)))
             ->line('如果你沒有請求重置密碼，請忽略此郵件。');
-        return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
     }
 }

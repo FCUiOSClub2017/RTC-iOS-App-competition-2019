@@ -51,7 +51,7 @@ Regards,<br>{{ config('app.name') }}
 {{-- Subcopy --}}
 @isset($actionText)
 @component('mail::subcopy')
-如果您無法點擊 "{{ $actionText }}", 您可以復制此連結到您的瀏覽器上: [{{ $actionUrl }}]({{ $actionUrl }})
+如果您無法點擊 "{{ $actionText }}", 您可以復制此鏈接到您的瀏覽器上: [{{ $actionUrl }}]({{ $actionUrl }})
 @endcomponent
 @endisset
 @endcomponent
