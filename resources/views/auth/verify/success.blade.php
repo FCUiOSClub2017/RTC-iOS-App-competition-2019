@@ -7,6 +7,7 @@
                         <div class="row my-5 justify-content-center">
                             <div class="col-auto my-4">
                                 <p class="text-primary h2">驗證完成，3 秒後轉跳至首頁！</p>
+                                <p class="text-primary h2">若 3 秒內沒有轉跳<a href="{{route('home',[],false)}}">點此！</a></p>
                             </div>
                         </div>
                     </form>
