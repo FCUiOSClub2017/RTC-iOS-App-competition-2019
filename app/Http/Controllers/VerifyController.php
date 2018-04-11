@@ -37,7 +37,7 @@ class VerifyController extends Controller
      */
     public function process($token)
     {
-        $verify = UserVerify::whereToken($token)->first();
+        $verify = UserVerify::whereToken($token)->get()->first();
         if(!$verify)
             abort(404);
         $user = $verify->user;
