@@ -39,15 +39,6 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the phone record associated with the user.
-     */
-    public function user_verify()
-    {
-        return $this->hasOne('App\UserVerify');
-    }
-
-
-    /**
      * Send the password reset notification.
      *
      * @param  string  $token
@@ -71,6 +62,10 @@ class User extends Authenticatable
 
     public function verify(){
         return $this->hasOne('App\UserVerify');
+    }
+
+    public function team_member(){
+        return $this->hasMany('App\TeamMember');
     }
 
 }

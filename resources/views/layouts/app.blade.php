@@ -31,6 +31,7 @@
     <!-- Scripts -->
     <script src="{{secure_asset('/js/app.js')}}"></script>
     <script src="{{secure_asset('/js/plugin.js')}}"></script>
+    @yield('head')
 </head>
 
 <body data-stellar-background-ratio="0.6">

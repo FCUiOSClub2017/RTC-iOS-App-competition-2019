@@ -29,8 +29,6 @@ class UserVerify extends Model
      */
     public function user()
     {
-        // dd($this->email,\App\User::where('email','=',$this->email)->first());
-        // return \App\User::whereEmail($this->email)->get()->first();
         return $this->belongsTo('App\User');
     }
 }

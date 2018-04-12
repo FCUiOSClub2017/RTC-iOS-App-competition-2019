@@ -17,4 +17,8 @@ class Univercity extends Model
         'name', 
         'course', 
     ];
+
+    public function team_member(){
+        return $this->hasMany('App\TeamMember');
+    }
 }

@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Auth\Notifications\ResetPassword as OriginalResetPassword;
 
-class ResetPassword extends OriginalResetPassword
+class ResetPassword extends OriginalResetPassword implements ShouldQueue
 {
     use Queueable;
 
