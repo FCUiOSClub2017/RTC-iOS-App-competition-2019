@@ -15,6 +15,7 @@ window.Vue = require("vue");
  */
 
 Vue.component("navbar", require("./components/navbar.vue"));
+Vue.component("teamedit", require("./components/TeamEdit.vue"));
 
 Rx.DOM.ready().subscribe(() => {
     const app = new Vue({

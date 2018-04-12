@@ -30,8 +30,8 @@ Route::get('verify/{token}', 'VerifyController@process')->name('verify.process')
 
 
 Route::get('team', 'TeamController@index')->name('team.info');
-Route::get('team/edit', 'TeamController@edit')->name('team.edit');
-Route::post('team/edit', 'TeamController@update')->name('team.update');
+Route::get('team/edit/{level?}', 'TeamController@edit')->name('team.edit');
+Route::post('team/edit/{level?}', 'TeamController@update')->name('team.update');
 
 Route::get('/home', 'HomeController@index')->name('user');
 Route::get('/test', 'HomeController@test')->name('test');

@@ -6,8 +6,21 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import "node_modules/vue-multiselect/dist/vue-multiselect.min";
+
 * {
     font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
+}
+
+input {
+    min-height: 40px;
+    padding: 0px 13px;
+    border-radius: 5px;
+    border: 1px solid #e8e8e8;
+    background: #fff;
+    font-size: 16px;
+    width: 100%;
+    color: #35495e;
 }
 
 .navbar-laravel {
@@ -148,8 +161,7 @@ section {
 .hero {
     display: table;
     position: relative;
-    background-color:white;
-    // background-image: url(../img/photo.png);
+    background-color: white; // background-image: url(../img/photo.png);
     background-size: cover;
     padding: 150px 0;
     color: $text-color;
@@ -1151,3 +1163,4 @@ body.mobile-nav-active {
         background-image: url(../img/sponsors/studioa.png);
     }
 }
+

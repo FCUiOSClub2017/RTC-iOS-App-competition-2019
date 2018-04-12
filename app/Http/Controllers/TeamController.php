@@ -36,10 +36,9 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($level=null)
     {
-        dump(request()->user());
-        return view('team.edit');
+        return view('team.edit',['level'=>$level]);
     }
 
     /**
@@ -47,7 +46,7 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update($level)
     {
         dump(request()->user());
         dump(request()->input());
