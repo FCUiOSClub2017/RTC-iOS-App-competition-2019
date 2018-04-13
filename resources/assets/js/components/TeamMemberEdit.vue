@@ -109,8 +109,9 @@ export default {
                 this.isLoadingForUnivercityName = false
             })
         },
-        onSelectUnivercityName(a,b){
-            console.log(a,b)
+        onSelectUnivercityName(value){
+            console.log(value)
+            this.selectedUnivercityName = value,
             this.asyncFindForUnivercityCourse("")
         },
         asyncFindForUnivercityCourse(query){
