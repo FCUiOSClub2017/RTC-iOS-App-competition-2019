@@ -13,7 +13,7 @@
                     v-model="selectedUnivercityName" 
                     :options="optionsForUnivercityName" 
                     :loading="isLoadingForUnivercityName" 
-                    :multiple="false" 
+                    :multiple="true" 
                     :searchable="true" 
                     :internal-search="false" 
                     :hide-selected="true" 
@@ -71,8 +71,8 @@ export default {
             level1: this._isShow("1"),
             level2: this._isShow("2"),
             level3: this._isShow("3"),
-            selectedUnivercityName: null,
-            selectedUnivercityCourse: null,
+            selectedUnivercityName: [],
+            selectedUnivercityCourse: [],
             optionsForUnivercityName: [],
             optionsForUnivercityCourse: [],
             isLoadingForUnivercityName: true,

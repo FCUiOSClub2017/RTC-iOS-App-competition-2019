@@ -38,6 +38,10 @@ class Authenticate
      */
     public function handle($request, Closure $next, ...$guards)
     {
+        if (!auth()->check()) {
+            return redirect()->secure(route('login',[],false));
+        }
+
         $this->authenticate($guards);
 
         return $next($request);
