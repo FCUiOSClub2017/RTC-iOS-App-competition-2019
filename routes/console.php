@@ -38,8 +38,10 @@ Artisan::command('git:push {msg="update"}', function ($msg) {
     
 })->describe('Push project to github');
 
-
+use Illuminate\Support\Facades\Redis;
 Artisan::command('redis:test', function () {
+    Redis::set('name', 'Taylor');
+    $this->comment(Redis::get('name'));
     \App\Jobs\RegistedAccount::dispatch();
 })->describe('Push project to github');
 

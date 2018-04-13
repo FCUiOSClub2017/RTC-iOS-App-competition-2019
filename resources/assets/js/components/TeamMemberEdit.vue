@@ -13,16 +13,17 @@
                     v-model="selectedUnivercityName" 
                     :options="optionsForUnivercityName" 
                     :loading="isLoadingForUnivercityName" 
-                    :multiple="true" 
                     :searchable="true" 
                     :internal-search="false" 
-                    :hide-selected="true" 
-                    :close-on-select="false" 
+                    :hide-selected="false" 
+                    :close-on-select="true" 
                     :clear-on-select="true" 
                     :show-no-results="false" 
-                    :max-height="600" 
+                    :show-labels="false"
+                    :max-height="300" 
                     @search-change="asyncFindForUnivercityName" 
-                    placeholder="請選擇學校" />
+                    @select="onSelectUnivercityName" 
+                    placeholder="" />
             </div>
             <div class="col-4">
                 <h4>學系</h4></div>
@@ -31,16 +32,16 @@
                     v-model="selectedUnivercityCourse" 
                     :options="optionsForUnivercityCourse" 
                     :loading="isLoadingForUnivercityCourse" 
-                    :multiple="false" 
                     :searchable="true" 
                     :internal-search="false" 
-                    :hide-selected="true" 
-                    :close-on-select="false" 
+                    :hide-selected="false" 
+                    :close-on-select="true" 
                     :clear-on-select="true" 
                     :show-no-results="false" 
-                    :max-height="600" 
+                    :max-height="300" 
+                    :show-labels="false"
                     @search-change="asyncFindForUnivercityCourse" 
-                    placeholder="請選擇學系" />
+                    placeholder="" />
             </div>
             <div class="col-4">
                 <h4>姓名</h4></div>
@@ -98,13 +99,19 @@ export default {
             // })
         },
         asyncFindForUnivercityName(query){
+            console.log(query)
             this.isLoadingForUnivercityName = true;
             axios.post('/univercity/name', { name: query }).then(response => {
                 this.optionsForUnivercityName = response.data
                 this.isLoadingForUnivercityName = false
             })
         },
+        onSelectUnivercityName(a,b){
+            console.log(a,b)
+            this.asyncFindForUnivercityCourse("")
+        },
         asyncFindForUnivercityCourse(query){
+            console.log(query)
             this.isLoadingForUnivercityCourse = true;
             axios.post('/univercity/course', { 
                 name: this.selectedUnivercityName,

@@ -41,8 +41,8 @@ class UnivercityController extends Controller
         if(!$name)
             return [];
         if (!$course) 
-            return Univercity::where('name', $name)->get(['course'])->unique('course')->flatten()->pluck('name');
-        return Univercity::where('name', $name)->where('course', $course)->orWhere('course', 'like', "%$course%")->get(['course'])->unique('course')->flatten()->pluck('name');
+            return Univercity::where('name', $name)->get()->unique('course')->flatten()->pluck('course');
+        return Univercity::where('name', $name)->where('course', $course)->orWhere('name', $name)->where('course', 'like', "%$course%")->get()->unique('course')->flatten()->pluck('course');
     }
 
 }
