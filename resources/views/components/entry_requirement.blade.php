@@ -2,7 +2,7 @@
     <div class="container-fulid text-center px-3 px-md-4 px-lg-5">
         <h2 class="display-4 mb-3">參賽要求</h2>
         <div class="row justify-content-center">
-            <div class="col-md-auto col-lg-3">
+            <div class="col-12 col-lg-3">
                 <div class="container">
                     <table class="table table-bordered align-middle">
                         <thead>
@@ -24,7 +24,7 @@
                     </table>
                 </div>
             </div>
-            <div class="col-md-auto col-lg-3">
+            <div class="col-12 col-lg-3">
                 <div class="container">
                     <table class="table table-bordered align-middle">
                         <thead>
@@ -43,7 +43,7 @@
                     </table>
                 </div>
             </div>
-            <div class="col-md-auto col-lg-3">
+            <div class="col-12 col-lg-3">
                 <div class="container">
                     <table class="table table-bordered align-middle">
                         <thead>
