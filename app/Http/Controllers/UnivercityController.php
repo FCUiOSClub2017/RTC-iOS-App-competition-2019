@@ -23,10 +23,6 @@ class UnivercityController extends Controller
         else
             $data = Univercity::where('name', $name)->orWhere('name', 'like', "%$name%")->get(['name'])->unique('name')->flatten()->pluck('name');
 
-        $expiresAt = now()->addMinutes(1);
-
-        Cache::put('key'.$name, $data, $expiresAt);
-        return Cache::get('key'.$name);
     }
 
     /**
@@ -36,13 +32,24 @@ class UnivercityController extends Controller
      */
     public function course()
     {
+
         $name = request()->name;
         $course = request()->course;
-        if(!$name)
-            return [];
-        if (!$course) 
-            return Univercity::where('name', $name)->get()->unique('course')->flatten()->pluck('course');
-        return Univercity::where('name', $name)->where('course', $course)->orWhere('name', $name)->where('course', 'like', "%$course%")->get()->unique('course')->flatten()->pluck('course');
+        if(Cache::has('key'.$name.'_'.$course))
+            return Cache::get('key'.$name.'_'.$course);
+        if(!$name){
+            $data = [];
+        }
+        else{
+            if (!$course) {
+                $data = Univercity::where('name', $name)->get()->unique('course')->flatten()->pluck('course');
+            }
+            $data = Univercity::where('name', $name)->where('course', $course)->orWhere('name', $name)->where('course', 'like', "%$course%")->get()->unique('course')->flatten()->pluck('course');
+        }
+        $expiresAt = now()->addMinutes(1);
+        Cache::put('key'.$name.'_'.$course, $data, $expiresAt);
+        return Cache::get('key'.$name.'_'.$course);
+
     }
 
 }
