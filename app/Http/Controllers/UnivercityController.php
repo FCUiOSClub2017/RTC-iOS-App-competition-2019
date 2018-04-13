@@ -40,7 +40,7 @@ class UnivercityController extends Controller
         if(Cache::has('key'.$name.'_'.$course))
             return Cache::get('key'.$name.'_'.$course);
         if(!$name){
-            $data = [];
+            $data = ['asd'];
         }
         else{
             if (!$course) {

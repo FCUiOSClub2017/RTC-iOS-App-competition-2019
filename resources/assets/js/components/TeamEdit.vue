@@ -4,7 +4,7 @@
             <div class="col-4" v-if="level0">
                 <TeamMemberEdit level="0"></TeamMemberEdit>
             </div>
-            <div class="col-1" v-if="level4"></div>
+            <div class="col-1" v-if="level0 && level4"></div>
             <div class="col-4" v-if="level4">
                 <TeamMemberEdit level="4"></TeamMemberEdit>
             </div>
@@ -18,7 +18,7 @@
             <div class="col-4" v-if="level2">
                 <TeamMemberEdit level="2"></TeamMemberEdit>
             </div>
-            <div class="col-1" v-if="level3"></div>
+            <div class="col-1" v-if="level2 && level3"></div>
             <div class="col-4" v-if="level3">
                 <TeamMemberEdit level="3"></TeamMemberEdit>
             </div>

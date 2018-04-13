@@ -28,8 +28,10 @@ class TeamController extends Controller
     public function index()
     {
         $user = auth()->user();
-        // dd($user->team_member);
-        
+        $teamMember = $user->team_member;
+        if ($teamMember->count() == 0) {
+            return redirect()->secure(route('team.edit',[],false));
+        }
         return view('team.info',['team'=>$user->team_member]);
     }
 
@@ -40,6 +42,12 @@ class TeamController extends Controller
      */
     public function edit($level=null)
     {
+        if ($level) if( ((int)$level) >= 5) abort(404);
+        $user = auth()->user();
+        $teamMember = $user->team_member;
+        if (!$level && $teamMember->count() != 0) {
+            return back();
+        }
         return view('team.edit',['level'=>$level]);
     }
 
