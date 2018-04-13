@@ -11,6 +11,10 @@
 @include('components.timeline')
 @include('components.award')
 @include('components.portal')
+@include('components.entry_requirement')
+@include('components.work_requirement')
+@include('components.competition_review')
+@include('components.related_statement')
 @include('components.sponsors')
 {{--
 <!-- Call to Action -->

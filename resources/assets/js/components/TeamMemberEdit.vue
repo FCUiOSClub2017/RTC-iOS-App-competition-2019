@@ -91,14 +91,6 @@ export default {
         this.asyncFindForUnivercityCourse("");
     },
     methods: {
-        asyncFind(query) {
-            console.log("find " + query)
-            // this.isLoading = true
-            // axios.post('api/filter/tags', { tag: query }).then(response => {
-            //     this.options = response.data
-            //     this.isLoading = false
-            // })
-        },
         asyncFindForUnivercityName(query){
             console.log(query)
             this.isLoadingForUnivercityName = true;

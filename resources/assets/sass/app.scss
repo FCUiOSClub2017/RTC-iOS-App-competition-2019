@@ -1,6 +1,6 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
+@import url("https://fonts.googleapis.com/earlyaccess/notosanstc.css");
 // Variables
 @import "variables";
 
@@ -9,7 +9,7 @@
 @import "node_modules/vue-multiselect/dist/vue-multiselect.min";
 
 * {
-    font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
+    font-family: "AppleEN", 'AppleTC-Medium', "Raleway", Helvetica, Arial, sans-serif;
 }
 
 input:not([type=checkbox]):not([type=radio]) {
