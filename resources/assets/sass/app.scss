@@ -12,7 +12,7 @@
     font-family: "AppleEN", "AppleTC-Medium", "Raleway", Helvetica, Arial, sans-serif;
 }
 
-input {
+input:not([type=checkbox]):not([type=radio]) {
     min-height: 40px;
     padding: 0px 13px;
     border-radius: 5px;
