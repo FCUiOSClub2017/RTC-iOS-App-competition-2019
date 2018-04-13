@@ -8,12 +8,9 @@
       </div>
     </div>
     <div class="col-md-12">
-      <h1>
-            {{-- A theme with personality --}}
+      <h1 class="h2">
+        大中華區最盛大APP競技殿堂<br/>台灣校園團隊展現實力的絕佳舞台
           </h1>
-      <p class="tagline">
-        {{-- This is a powerful theme with some great features that you can use in your future projects. --}}
-      </p>
       <a class="btn btn-full" href="#about"> 進入 </a>
     </div>
   </div>

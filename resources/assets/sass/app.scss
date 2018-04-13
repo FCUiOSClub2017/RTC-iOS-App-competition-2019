@@ -160,23 +160,43 @@ section {
 
 .hero {
     display: table;
-    position: relative;
-    background-color: white; // background-image: url(../img/photo.png);
+    position: relative; // background-color: white; 
+    background-image: url(../img/banner.png);
     background-size: cover;
     padding: 150px 0;
     color: $text-color;
     width: 100%;
     height: 100vh;
     background-position-x: 70% !important;
-    &:after {
+    .hero-brand:after {
         content: '';
-        z-index: 0;
+        z-index: -1;
         position: absolute;
-        background: rgba(0, 0, 0, 0.65);
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        @media (min-width: 1020) {
+            background-image: url(../img/banner-block.png);
+            width: 50%;
+            height: 80vh;
+            top: -5%;
+        }
+        @media (min-width: 1359px) {
+            background-image: url(../img/banner-block.png);
+            width: 50%;
+            height: 80vh;
+            right: 6%;
+            top: -5%;
+        }
+
+        @media (min-width: 1919px) {
+            background-image: url(../img/banner-block.png);
+            width: 50%;
+            height: 100vh;
+            right: 13%;
+            top: -15%;
+        }
+
     }
 
     .container {
@@ -195,6 +215,7 @@ section {
     .hero-brand {
         margin-bottom: 75px;
         display: inline-block;
+        posotion:relative;
         a {}
 
         &:hover {
@@ -1163,4 +1184,3 @@ body.mobile-nav-active {
         background-image: url(../img/sponsors/studioa.png);
     }
 }
-
