@@ -22,7 +22,9 @@ class UnivercityController extends Controller
             $data = Univercity::get(['name'])->unique('name')->flatten()->pluck('name');
         else
             $data = Univercity::where('name', $name)->orWhere('name', 'like', "%$name%")->get(['name'])->unique('name')->flatten()->pluck('name');
-
+        $expiresAt = now()->addMinutes(1);
+        Cache::put('key'.$name, $data, $expiresAt);
+        return Cache::get('key'.$name);
     }
 
     /**

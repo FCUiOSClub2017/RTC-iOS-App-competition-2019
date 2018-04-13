@@ -1,10 +1,15 @@
 <template>
     <div class="container">
-        <div class="row align-items-center justify-content-center" v-if="level0 || level1">
+        <div class="row align-items-center justify-content-center" v-if="level0 || level4">
             <div class="col-4" v-if="level0">
                 <TeamMemberEdit level="0"></TeamMemberEdit>
             </div>
-            <div class="col-1" v-if="level1"></div>
+            <div class="col-1" v-if="level4"></div>
+            <div class="col-4" v-if="level4">
+                <TeamMemberEdit level="4"></TeamMemberEdit>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-center" v-if="level1">
             <div class="col-4" v-if="level1">
                 <TeamMemberEdit level="1"></TeamMemberEdit>
             </div>
@@ -31,6 +36,7 @@ export default {
             level1: this._isShow("1"),
             level2: this._isShow("2"),
             level3: this._isShow("3"),
+            level4: this._isShow("4"),
             value: [],
             options: [],
             isLoading: true,

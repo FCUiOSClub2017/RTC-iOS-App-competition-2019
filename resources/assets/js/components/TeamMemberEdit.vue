@@ -2,7 +2,7 @@
     <div class="container pb-3">
         <div class="row align-items-center justify-content-center">
             <div class="col-12 text-center">
-                <h3 v-if="level0">指導老師</h3>
+                <h3 v-if="level0 || level4">指導老師</h3>
                 <h3 v-if="level1">隊長</h3>
                 <h3 v-if="level2 || level3">隊員</h3>
             </div>
@@ -72,8 +72,9 @@ export default {
             level1: this._isShow("1"),
             level2: this._isShow("2"),
             level3: this._isShow("3"),
-            selectedUnivercityName: [],
-            selectedUnivercityCourse: [],
+            level4: this._isShow("4"),
+            selectedUnivercityName: null,
+            selectedUnivercityCourse: null,
             optionsForUnivercityName: [],
             optionsForUnivercityCourse: [],
             isLoadingForUnivercityName: true,
@@ -111,12 +112,13 @@ export default {
             this.asyncFindForUnivercityCourse("")
         },
         asyncFindForUnivercityCourse(query){
-            console.log(query)
             this.isLoadingForUnivercityCourse = true;
-            axios.post('/univercity/course', { 
-                name: this.selectedUnivercityName,
+            var data = { 
+                name: this.selectedUnivercityName?this.selectedUnivercityName:"",
                 course: query
-            }).then(response => {
+            };
+            console.log(data)
+            axios.post('/univercity/course', data).then(response => {
                 this.optionsForUnivercityCourse = response.data
                 this.isLoadingForUnivercityCourse = false
             })
