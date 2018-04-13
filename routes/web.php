@@ -37,6 +37,6 @@ Route::get('/home', 'HomeController@index')->name('user');
 Route::get('/test', 'HomeController@test')->name('test');
 Route::get('role', 'HomeController@my_role')->name('test');
 
-Route::get('univercity/{name?}', 'UnivercityController@name')->name('univercity.name');
-Route::get('univercity/{name}/{course?}', 'UnivercityController@course')->name('univercity.course');
+Route::get('univercity/name', 'UnivercityController@name')->name('univercity.name');
+Route::get('univercity/course', 'UnivercityController@course')->name('univercity.course');
 

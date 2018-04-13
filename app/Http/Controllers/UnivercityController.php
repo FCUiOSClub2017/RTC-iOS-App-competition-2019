@@ -11,8 +11,9 @@ class UnivercityController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function name($name=null)
+    public function name()
     {
+        $name = request()->name;
         if(!$name)
             return Univercity::get(['name'])->unique('name')->flatten();
         return Univercity::where('name', $name)->orWhere('name', 'like', "%$name%")->get(['name'])->unique('name')->flatten();
@@ -23,11 +24,15 @@ class UnivercityController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function course($name,$course=null)
+    public function course()
     {
-        if(request()->user()->verify)
-            return redirect()->secure(route('home', [], false));
-        return view('auth.verify.notice');
+        $name = request()->name;
+        $course = request()->course;
+        if(!$name)
+            return [];
+        if (!$course) 
+            return Univercity::where('name', $name)->get(['course'])->unique('course')->flatten();
+        return Univercity::where('name', $name)->where('course', $course)->orWhere('course', 'like', "%$course%")->get(['course'])->unique('course')->flatten();
     }
 
 }

@@ -168,44 +168,14 @@ section {
     width: 100%;
     height: 100vh;
     background-position-x: 70% !important;
-    .hero-brand:after {
-        content: '';
-        z-index: -1;
-        position: absolute;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: 50% 0;
-        @media (min-width: 1020) {
-            background-image: url(../img/banner-block.png);
-            width: 50%;
-            height: 80vh;
-            top: -5%;
-        }
-        @media (min-width: 1359px) {
-            background-image: url(../img/banner-block.png);
-            width: 50%;
-            height: 80vh;
-            right: 6%;
-            top: -5%;
-        }
-
-        @media (min-width: 1919px) {
-            background-image: url(../img/banner-block.png);
-            width: 50%;
-            height: 100vh;
-            right: 13%;
-            top: -15%;
-        }
-
-    }
 
     .container {
-        position: relative;
+        position: absolute;
         z-index: 1;
-        text-align: center;
-        display: table-cell;
-        vertical-align: middle;
         width: 100%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 50%;
         >.row {
             margin-left: 0;
             margin-right: 0;
@@ -215,7 +185,7 @@ section {
     .hero-brand {
         margin-bottom: 75px;
         display: inline-block;
-        posotion:relative;
+        posotion: relative;
         a {}
 
         &:hover {
