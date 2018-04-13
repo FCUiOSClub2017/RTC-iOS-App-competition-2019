@@ -1,11 +1,7 @@
 <navbar>
   <h1 slot="logo"><a href="{{route('home',[],false)}}" class="goto-target">{{config('app.name', 'Laravel')}}</a></h1>
   <ul slot="nav-content">
-    @auth
-    <li>
-      <a href="{{route('user',[],false)}}">你好，{{auth()->user()->name}}！</a>
-    </li>
-    @endauth @if (URL::current()!=route('home',[],false) && URL::current()!=route('home',[],false))
+    @if (URL::current()!=route('home',[],false) && URL::current()!=route('home',[],false))
     <li>
       <a href="{{route('home',[],false)}}">首頁</a>
     </li>
@@ -22,15 +18,39 @@
     <li>
       <a href="{{route('home',[],false)}}#portal">報名</a>
     </li>
-    <li>
-      <a href="{{route('home',[],false)}}#sponsors">贊助商</a>
+    <li class="menu-has-children">
+      <i class="fas fa-chevron-down"></i>
+      <a href="#">更多</a>
+      <ul>
+        <li>
+          <a href="{{route('home',[],false)}}#entry_requirement">參賽要求</a>
+        </li>
+        <li>
+          <a href="{{route('home',[],false)}}#work_requirement">作品要求</a>
+        </li>
+        <li>
+          <a href="{{route('home',[],false)}}#competition_review">競賽評審</a>
+        </li>
+        <li>
+          <a href="{{route('home',[],false)}}#related_statement">相關聲明</a>
+        </li>
+        <li>
+          <a href="{{route('home',[],false)}}#sponsors">贊助商</a>
+        </li>
+      </ul>
     </li>
     @auth
-    <li>
-      <a href="{{ route('logout',[],false) }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">登出</a>
-      <form id="logout-form" action="{{ route('logout',[],false) }}" method="POST" style="display: none;">
-        {{ csrf_field() }}
-      </form>
+    <li class="menu-has-children">
+      <i class="fas fa-chevron-down"></i>
+      <a href="#">你好，{{auth()->user()->name}}！</a>
+      <ul>
+        <li>
+          <a href="{{ route('logout',[],false) }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">登出</a>
+          <form id="logout-form" action="{{ route('logout',[],false) }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+          </form>
+        </li>
+      </ul>
     </li>
     @else
     <li>

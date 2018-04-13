@@ -46,17 +46,21 @@
             <div class="col-4">
                 <h4>姓名</h4></div>
             <div class="col-8">
-                <input type="text" name="" value="" placeholder="">
+                <input type="text" v-model="name" name="name" placeholder="姓名">
             </div>
             <div class="col-4">
                 <h4>Email</h4></div>
             <div class="col-8">
-                <input type="email" name="" value="" placeholder="">
+                <input v-model="email" type="email" name="email" value="" placeholder="電子郵箱" @change="emailOnChange">
             </div>
+            <div class="col-4" v-if="emailDanger"></div>
+            <div class="col-8" v-if="emailDanger"><a class="text-danger">此電子郵箱已被其他隊伍註冊！</a></div>
+            <div class="col-4" v-if="emailPass"></div>
+            <div class="col-8" v-if="emailPass"><a class="text-success">此電子郵箱可以使用！</a></div>
             <div class="col-4">
                 <h4>手機號碼</h4></div>
             <div class="col-8">
-                <input type="tel" name="" value="" placeholder="">
+                <input type="tel" v-model="phone" name="phone" placeholder="手機號碼">
             </div>
         </div>
     </div>
@@ -80,6 +84,12 @@ export default {
             isLoadingForUnivercityName: true,
             isLoadingForUnivercityCourse: true,
             enableCourseSearch:false,
+            emailDanger:false,
+            emailPass:false,
+            email:null,
+            name:null,
+            phone:null,
+
         }
     },
     mounted: function() {
@@ -121,7 +131,24 @@ export default {
                     return false
             return true
         },
+        emailOnChange({ type, target }){
+            var data = { 
+                level: this.level,
+                email:target.value
+            };
 
+            console.log(event,target)
+            axios.post('/team/email', data).then(response => {
+                if(typeof(response.data.result) === "boolean"){
+                    this.emailDanger = !response.data.result
+                    this.emailPass = !this.emailDanger;
+                }else {
+                    this.emailDanger = false;
+                    this.emailPass = false;
+                }
+            });
+
+        },
     }
 }
 </script>

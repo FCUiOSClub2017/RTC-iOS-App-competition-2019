@@ -12,6 +12,7 @@
               </div>
               <div class="circle-overlay">
                 <a>至多三名學生以及一名指導老師 (參賽者必須是台灣的大專院校的在學學生與專任教師)</a>
+                {{-- <a>4⽉9⽇～5⽉8⽇填寫報名資料</a> --}}
               </div>
             </div>
           </div>
@@ -28,6 +29,7 @@
               </div>
               <div class="circle-overlay">
                 <a>請以A4版面書寫5~10頁以內，另作封面註明隊伍名稱與作品名稱，檔案格式請存成 PDF 檔</a>
+                {{-- <a>5⽉1⽇～5⽉23⽇參賽作品交件</a> --}}
               </div>
             </div>
           </div>
@@ -44,6 +46,7 @@
               </div>
               <div class="circle-overlay">
                 <a>獲選進入決賽之隊伍，必須在一周內提供每位成員的在學證明以及指導老師的教師資格證明</a>
+                {{-- <a>獲選進入決賽之隊伍，必須在一周內提供每位成員的在學證明以及指導老師的教師資格證明</a> --}}
               </div>
             </div>
           </div>
@@ -72,7 +75,7 @@
             <span class="stats-no"><a>8/02</a></span>
             <div class="circle-overflow" data-toggle="modal-hide" data-target="#date8-02">
               <div class="circle-content">
-                <a>決賽</a>
+                <a>決賽現場</a>
               </div>
               <div class="circle-overlay">
                 <a>決賽前五名支隊伍，將由主辦單位贊助機票、住宿，參加浙江大學舉辦之大中華區「2018年 APP 移動應用創新賽」總決賽</a>

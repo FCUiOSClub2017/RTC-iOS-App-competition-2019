@@ -93414,6 +93414,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -93432,7 +93436,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             optionsForUnivercityCourse: [],
             isLoadingForUnivercityName: true,
             isLoadingForUnivercityCourse: true,
-            enableCourseSearch: false
+            enableCourseSearch: false,
+            emailDanger: false,
+            emailPass: false,
+            email: null,
+            name: null,
+            phone: null
+
         };
     },
 
@@ -93476,6 +93486,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         _isShow: function _isShow(str) {
             if (this.level != "") if (this.level != str) return false;
             return true;
+        },
+        emailOnChange: function emailOnChange(_ref) {
+            var _this3 = this;
+
+            var type = _ref.type,
+                target = _ref.target;
+
+            var data = {
+                level: this.level,
+                email: target.value
+            };
+
+            console.log(event, target);
+            axios.post('/team/email', data).then(function (response) {
+                if (typeof response.data.result === "boolean") {
+                    _this3.emailDanger = !response.data.result;
+                    _this3.emailPass = !_this3.emailDanger;
+                } else {
+                    _this3.emailDanger = false;
+                    _this3.emailPass = false;
+                }
+            });
         }
     }
 });
@@ -93578,15 +93610,104 @@ var render = function() {
         _vm._v(" "),
         _vm._m(2),
         _vm._v(" "),
+        _c("div", { staticClass: "col-8" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.name,
+                expression: "name"
+              }
+            ],
+            attrs: { type: "text", name: "name", placeholder: "姓名" },
+            domProps: { value: _vm.name },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.name = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
         _vm._m(3),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-8" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.email,
+                expression: "email"
+              }
+            ],
+            attrs: {
+              type: "email",
+              name: "email",
+              value: "",
+              placeholder: "電子郵箱"
+            },
+            domProps: { value: _vm.email },
+            on: {
+              change: _vm.emailOnChange,
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.email = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _vm.emailDanger ? _c("div", { staticClass: "col-4" }) : _vm._e(),
+        _vm._v(" "),
+        _vm.emailDanger
+          ? _c("div", { staticClass: "col-8" }, [
+              _c("a", { staticClass: "text-danger" }, [
+                _vm._v("此電子郵箱已被其他隊伍註冊！")
+              ])
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.emailPass ? _c("div", { staticClass: "col-4" }) : _vm._e(),
+        _vm._v(" "),
+        _vm.emailPass
+          ? _c("div", { staticClass: "col-8" }, [
+              _c("a", { staticClass: "text-success" }, [
+                _vm._v("此電子郵箱可以使用！")
+              ])
+            ])
+          : _vm._e(),
         _vm._v(" "),
         _vm._m(4),
         _vm._v(" "),
-        _vm._m(5),
-        _vm._v(" "),
-        _vm._m(6),
-        _vm._v(" "),
-        _vm._m(7)
+        _c("div", { staticClass: "col-8" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.phone,
+                expression: "phone"
+              }
+            ],
+            attrs: { type: "tel", name: "phone", placeholder: "手機號碼" },
+            domProps: { value: _vm.phone },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.phone = $event.target.value
+              }
+            }
+          })
+        ])
       ]
     )
   ])
@@ -93614,43 +93735,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-8" }, [
-      _c("input", {
-        attrs: { type: "text", name: "", value: "", placeholder: "" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-4" }, [_c("h4", [_vm._v("Email")])])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-8" }, [
-      _c("input", {
-        attrs: { type: "email", name: "", value: "", placeholder: "" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-4" }, [_c("h4", [_vm._v("手機號碼")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-8" }, [
-      _c("input", {
-        attrs: { type: "tel", name: "", value: "", placeholder: "" }
-      })
-    ])
   }
 ]
 render._withStripped = true

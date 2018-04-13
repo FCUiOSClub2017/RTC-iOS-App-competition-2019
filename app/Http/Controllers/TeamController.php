@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\TeamMember;
 
 class TeamController extends Controller
 {
@@ -13,9 +15,9 @@ class TeamController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('is.verify');
-        $this->middleware('is.participant')->except('index');
+        // $this->middleware('auth');
+        // $this->middleware('is.verify');
+        // $this->middleware('is.participant')->except('index');
     }
 
     /**
@@ -51,5 +53,27 @@ class TeamController extends Controller
         dump(request()->user());
         dump(request()->input());
         return "";
+    }    
+    /**
+     * show my permission.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function uniqueEmail()
+    {
+        $email = request()->email;
+        $level = request()->level;
+        if($level == "0" || $level == "4")
+            return ['result' => true];
+        if (!$email) {
+            return [];
+        }
+        $userEmail = User::where('email',$email)->first();
+        $teamMemberEmail = TeamMember::where('email',$email)->first();
+        if ($userEmail || $teamMemberEmail) {
+            return ['result'=>false];
+        }
+        return ['result'=>true];
     }
+
 }
