@@ -33,6 +33,7 @@ Route::get('team', 'TeamController@index')->name('team.info');
 Route::get('team/edit/{level?}', 'TeamController@edit')->name('team.edit');
 Route::post('team/edit/{level?}', 'TeamController@update')->name('team.update');
 Route::post('team/email', 'TeamController@uniqueEmail')->name('team.check.email');
+Route::post('team/data/get/{level}', 'TeamController@getTeamData')->name('team.data.get');
 
 Route::get('/home', 'HomeController@index')->name('user');
 Route::get('/test', 'HomeController@test')->name('test');

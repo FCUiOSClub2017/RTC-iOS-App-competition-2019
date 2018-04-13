@@ -23,6 +23,7 @@
                 <TeamMemberEdit level="3"></TeamMemberEdit>
             </div>
         </div>
+            <input type="hidden" v-bind:name="'level'" v-bind:value="view_level">
     </div>
 </template>
 <script>
@@ -37,13 +38,13 @@ export default {
             level2: this._isShow("2"),
             level3: this._isShow("3"),
             level4: this._isShow("4"),
+            view_level:this.level?level:-1
             value: [],
             options: [],
             isLoading: true,
         }
     },
     mounted: function() {
-        console.log("team edit compoment mounted")
         // if(this.level!="")
         //     if(this.level!="0")
         //         this.level0 = false
@@ -55,8 +56,6 @@ export default {
         //         this.level3 = false
     },
     created: function() {
-        console.log("team edit compoment created")
-        console.log(this.level)
         // axios.post('api/filter/tags').then(response => {
         //     this.options = response.data
         //     this.isLoading = false

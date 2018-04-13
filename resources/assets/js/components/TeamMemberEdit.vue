@@ -46,12 +46,12 @@
             <div class="col-4">
                 <h4>姓名</h4></div>
             <div class="col-8">
-                <input type="text" v-model="name" name="name" placeholder="姓名">
+                <input type="text" v-model="name" v-bind:name="'name'+level" placeholder="姓名">
             </div>
             <div class="col-4">
                 <h4>Email</h4></div>
             <div class="col-8">
-                <input v-model="email" type="email" name="email" value="" placeholder="電子郵箱" @change="emailOnChange">
+                <input v-model="email" type="email" v-bind:name="'email'+level" placeholder="電子郵箱" @change="emailOnChange">
             </div>
             <div class="col-4" v-if="emailDanger"></div>
             <div class="col-8" v-if="emailDanger"><a class="text-danger">此電子郵箱已被其他隊伍註冊！</a></div>
@@ -60,8 +60,10 @@
             <div class="col-4">
                 <h4>手機號碼</h4></div>
             <div class="col-8">
-                <input type="tel" v-model="phone" name="phone" placeholder="手機號碼">
+                <input type="tel" v-model="phone" v-bind:name="'phone'+level" placeholder="手機號碼">
             </div>
+            <input type="hidden" v-bind:name="'univercity'+level" v-bind:value="selectedUnivercityName">
+            <input type="hidden" v-bind:name="'course'+level" v-bind:value="selectedUnivercityCourse">
         </div>
     </div>
 </template>
@@ -93,16 +95,13 @@ export default {
         }
     },
     mounted: function() {
-        console.log("team member edit compoment mounted")
     },
     created: function() {
-        console.log("team member edit compoment created")
         this.asyncFindForUnivercityName("");
         this.asyncFindForUnivercityCourse("");
     },
     methods: {
         asyncFindForUnivercityName(query){
-            console.log(query)
             this.isLoadingForUnivercityName = true;
             axios.post('/univercity/name', { name: query }).then(response => {
                 this.optionsForUnivercityName = response.data
@@ -110,8 +109,8 @@ export default {
             })
         },
         onSelectUnivercityName(value){
-            console.log(value)
             this.selectedUnivercityName = value,
+            this.selectedUnivercityCourse = null,
             this.asyncFindForUnivercityCourse("")
         },
         asyncFindForUnivercityCourse(query){
@@ -120,7 +119,6 @@ export default {
                 name: this.selectedUnivercityName?this.selectedUnivercityName:"",
                 course: query
             };
-            console.log(data)
             axios.post('/univercity/course', data).then(response => {
                 this.optionsForUnivercityCourse = response.data
                 this.isLoadingForUnivercityCourse = false
@@ -137,8 +135,6 @@ export default {
                 level: this.level,
                 email:target.value
             };
-
-            console.log(event,target)
             axios.post('/team/email', data).then(response => {
                 if(typeof(response.data.result) === "boolean"){
                     this.emailDanger = !response.data.result
@@ -148,7 +144,6 @@ export default {
                     this.emailPass = false;
                 }
             });
-
         },
     }
 }

@@ -56,12 +56,25 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update($level)
+    public function update($level=null)
     {
         dump(request()->user());
         dump(request()->input());
         return "";
-    }    
+    }
+
+    /**
+     * show my permission.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getTeamData($level)
+    {
+        dump(request()->user());
+        dump(request()->input());
+        return "";
+    }
+
     /**
      * show my permission.
      *
