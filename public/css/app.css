@@ -10504,7 +10504,7 @@ fieldset[disabled] .multiselect {
 }
 
 * {
-  font-family: "AppleEN", 'AppleTC-Medium', "Raleway", Helvetica, Arial, sans-serif;
+  font-family: "AppleEN", 'AppleTC-Medium', 'Noto Sans TC', "Raleway", Helvetica, Arial, sans-serif;
 }
 
 input:not([type=checkbox]):not([type=radio]) {
