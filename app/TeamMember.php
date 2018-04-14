@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use App\Notifications\CompleteTeamRegistration;
+use App\Notifications\UpdateTeamRegistration;
 
 class TeamMember extends Model
 {
@@ -21,6 +23,21 @@ class TeamMember extends Model
         'level', 
         'univercity_id',
     ];
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            $this->notify(new CompleteTeamRegistration());
+        });
+        static::saving(function ($model) {
+            $columns = $model->getDirty();
+            foreach ($columns as $column => $newValue) {
+                $this->notify(new UpdateTeamRegistration());
+            }
+        });
+    }
 
     /**
      * The attributes that should be hidden for arrays.
