@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use URL;
 use Illuminate\Support\ServiceProvider;
+use App\TeamMember;
+use App\Observers\TeamMemberObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        TeamMember::observe(TeamMemberObserver::class);
     }
 
     /**

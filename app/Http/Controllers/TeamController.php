@@ -84,6 +84,7 @@ class TeamController extends Controller
         }
         if(!$isAll && $level > 0 && $level<6)
             $this->parseData((int)$level);
+        // dd($level);
         return redirect()->secure(route('team.info',[],false));;
     }
 
@@ -91,6 +92,12 @@ class TeamController extends Controller
         $user = auth()->user();
         $request = request();
         $email=$request->input('email'.$level);
+        $isDuplication = User::whereEmail($email)->first();
+        if($isDuplication && $isDuplication->id != $user->id)
+        {
+            $this->errorMessage->push("此電子郵件 $email 已被其他隊伍使用！");
+            return;
+        }
         $data = collect([
             'name'=>$request->input('name'.$level),
             'email'=>$email,
