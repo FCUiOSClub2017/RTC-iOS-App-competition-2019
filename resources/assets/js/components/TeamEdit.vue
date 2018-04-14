@@ -1,90 +1,140 @@
 <template>
     <div class="container">
-        <div class="row align-items-center justify-content-center" v-if="level5 || level4">
-            <div class="col-4" v-if="level5">
-                <TeamMemberEdit ref="edit5" level="5"></TeamMemberEdit>
-            </div>
-            <div class="col-1" v-if="level5 && level4"></div>
-            <div class="col-4" v-if="level4">
-                <TeamMemberEdit ref="edit4" level="4"></TeamMemberEdit>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-5">
+                <div class="container pb-3">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-12 text-center">
+                            <h3>{{title}}</h3>
+                        </div>
+                        <div class="col-4">
+                            <h4>學校</h4></div>
+                        <div class="col-8">
+                            <Multiselect v-model="selectedUnivercityName" :options="optionsForUnivercityName" :loading="isLoadingForUnivercityName" :searchable="true" :internal-search="false" :hide-selected="false" :close-on-select="true" :clear-on-select="true" :show-no-results="false" :show-labels="false" :max-height="300" @search-change="asyncFindForUnivercityName" @select="onSelectUnivercityName" placeholder="" />
+                        </div>
+                        <div class="col-4">
+                            <h4>學系</h4></div>
+                        <div class="col-8">
+                            <Multiselect v-model="selectedUnivercityCourse" :options="optionsForUnivercityCourse" :loading="isLoadingForUnivercityCourse" :searchable="true" :internal-search="false" :hide-selected="false" :close-on-select="true" :clear-on-select="true" :show-no-results="false" :max-height="300" :show-labels="false" @search-change="asyncFindForUnivercityCourse" placeholder="" />
+                        </div>
+                        <div class="col-4">
+                            <h4>姓名</h4></div>
+                        <div class="col-8">
+                            <input type="text" v-model="name" v-bind:name="'name'" placeholder="姓名">
+                        </div>
+                        <div class="col-4">
+                            <h4>Email</h4></div>
+                        <div class="col-8">
+                            <input v-model="email" type="email" v-bind:name="'email'" placeholder="電子郵箱" @change="emailOnChange">
+                        </div>
+                        <div class="col-4" v-if="emailDanger"></div>
+                        <div class="col-8" v-if="emailDanger">
+                            <a class="text-danger">此電子郵箱已被其他隊伍註冊！</a>
+                        </div>
+                        <div class="col-4" v-if="emailPass"></div>
+                        <div class="col-8" v-if="emailPass">
+                            <a class="text-success">此電子郵箱可以使用！</a>
+                        </div>
+                        <div class="col-4">
+                            <h4>手機號碼</h4></div>
+                        <div class="col-8">
+                            <input type="tel" v-model="phone" v-bind:name="'phone'" placeholder="手機號碼" v-bind:required="required">
+                        </div>
+                        <input type="hidden" v-bind:name="'univercity'" v-bind:value="selectedUnivercityName">
+                        <input type="hidden" v-bind:name="'course'" v-bind:value="selectedUnivercityCourse">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row align-items-center justify-content-center" v-if="level1">
-            <div class="col-4" v-if="level1">
-                <TeamMemberEdit ref="edit1" level="1"></TeamMemberEdit>
-            </div>
-        </div>
-        <div class="row align-items-center justify-content-center" v-if="level2 || level3">
-            <div class="col-4" v-if="level2">
-                <TeamMemberEdit ref="edit2" level="2"></TeamMemberEdit>
-            </div>
-            <div class="col-1" v-if="level2 && level3"></div>
-            <div class="col-4" v-if="level3">
-                <TeamMemberEdit ref="edit3" level="3"></TeamMemberEdit>
-            </div>
-        </div>
-        <input type="hidden" v-bind:name="'level'" v-bind:value="view_level">
     </div>
 </template>
 <script>
-import TeamMemberEdit from './TeamMemberEdit'
+import Multiselect from 'vue-multiselect'
 export default {
-    props: ['level'],
-    components: { TeamMemberEdit },
+    props: ['title'],
+    components: { Multiselect },
     data() {
         return {
-            level5: this._isShow("5"),
-            level1: this._isShow("1"),
-            level2: this._isShow("2"),
-            level3: this._isShow("3"),
-            level4: this._isShow("4"),
-            view_level: this.level ? this.level : -1,
-            value: [],
-            options: [],
-            isLoading: true,
-            univercityNameData:null,
+            selectedUnivercityName: null,
+            selectedUnivercityCourse: null,
+            optionsForUnivercityName: [],
+            optionsForUnivercityCourse: [],
+            isLoadingForUnivercityName: true,
+            isLoadingForUnivercityCourse: true,
+            enableCourseSearch: false,
+            emailDanger: false,
+            emailPass: false,
+            email: null,
+            name: null,
+            phone: null,
+            required: true,
         }
     },
-    mounted: function() {
-        //
-    },
+    mounted: function() {},
     created: function() {
-        axios.post('/univercity/name', { name: "" }).then(response => {
-            this.univercityNameData = response.data
-        })
+        this.getTeamData()
     },
     methods: {
-        defaultUnivercityNameData() {
-            if (this.univercityNameData != null)
-                return this.univercityNameData
-            return false;
-        },
-        checkEmailWithOther(data) {
-            var email = data.email;
-            var exceptLevel = data.level;
-            var i;
-            console.log(this.$refs)
-            for (i = 1; i <= 5; i++) {
-                if (this.$refs['edit' + i] != undefined && i != exceptLevel){
-                    console.log(this.$refs['edit' + i]["get email"])
-                    if (this.$refs['edit' + i].email == this.$refs['edit' + exceptLevel].email) {
-                        if (i == 5 && exceptLevel == 4)
-                            continue;
-                        if (i == 4 && exceptLevel == 5)
-                            continue;
-                        return false;
-                    }
+        getTeamData() {
+            axios.patch(window.location.href).then(response => {
+                var data = response.data.result
+                if (data) {
+                    this.email = data.email
+                    this.name = data.name
+                    this.phone = data.phone
+                    this.selectedUnivercityName = data.univercity.name
+                    this.selectedUnivercityCourse = data.univercity.course
+                    this.asyncFindForUnivercityName("")
+                    this.asyncFindForUnivercityCourse("")
                 }
+                this.asyncFindForUnivercityName("")
+                this.asyncFindForUnivercityCourse("")
+            })
+        },
+        asyncFindForUnivercityName(query) {
+            this.isLoadingForUnivercityName = true;
+            axios.post('/univercity/name', { name: query }).then(response => {
+                this.optionsForUnivercityName = response.data
+                this.isLoadingForUnivercityName = false
+            })
+        },
+        onSelectUnivercityName(value) {
+            this.selectedUnivercityName = value,
+                this.selectedUnivercityCourse = null,
+                this.asyncFindForUnivercityCourse("")
+        },
+        asyncFindForUnivercityCourse(query) {
+            this.isLoadingForUnivercityCourse = true;
+            var data = {
+                name: this.selectedUnivercityName ? this.selectedUnivercityName : "",
+                course: query
+            };
+            axios.post('/univercity/course', data).then(response => {
+                this.optionsForUnivercityCourse = response.data
+                this.isLoadingForUnivercityCourse = false
+            })
+        },
+        emailOnChange({ type, target }) {
+            var data = {
+                level: this.level,
+                email: target.value
+            };
+            if (data.email == "" || data.email == null) {
+                this.emailDanger = false;
+                this.emailPass = false;
+                return;
             }
-            return true;
+            console.log(data)
+            axios.put(window.location.href, data).then(response => {
+                if (typeof(response.data.result) === "boolean") {
+                    this.emailDanger = !response.data.result
+                    this.emailPass = !this.emailDanger;
+                } else {
+                    this.emailDanger = false;
+                    this.emailPass = false;
+                }
+            });
         },
-        _isShow(str) {
-            if (this.level != "")
-                if (this.level != str)
-                    return false
-            return true
-        },
-
     }
 }
 </script>

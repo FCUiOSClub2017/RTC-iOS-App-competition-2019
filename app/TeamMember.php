@@ -35,10 +35,12 @@ class TeamMember extends Model
     /**
      * Get the user that owns the phone.
      */
-    public function level_label()
+    static public function levelText($data=null)
     {
+        if($data==null)
+            $data = $this->level;
         $name="NaN";
-        switch ($this->level) {
+        switch ($data) {
             case 4:
             case 5:
                 $name = "指導老師";

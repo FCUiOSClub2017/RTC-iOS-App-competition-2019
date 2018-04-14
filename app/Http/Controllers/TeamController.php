@@ -34,9 +34,6 @@ class TeamController extends Controller
     {
         $user = auth()->user();
         $teamMember = $user->team_member()->orderBy('level')->get();
-        if ($teamMember->count() == 0) {
-            return redirect()->secure(route('team.edit',[],false));
-        }
         $data = $teamMember->pluck('level');
         for ($i=1; $i < 6; $i++) { 
             if(!$data->contains($i))
@@ -53,17 +50,10 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit($level=null)
+    public function edit($level)
     {
-        if ($level!=null) {
-            if( (((int)$level) > 5 || ((int)$level) < 1) ) {
-                return redirect()->secure(route('team.info',[],false));
-            }
-        }
-        $user = auth()->user();
-        $teamMember = $user->team_member;
-        if (!$level && $teamMember->count() != 0) 
-            return redirect()->secure(route('team.info',[],false));
+        if( (((int)$level) > 5 || ((int)$level) < 1) ) 
+            return back();
         return view('team.edit',['level'=>$level]);
     }
 
@@ -72,49 +62,35 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update($level=null)
+    public function update($level)
     {
-        $isAll = request()->input('level') == "-1";
-        if ($isAll) {
-            $this->parseData(1);
-            $this->parseData(2);
-            $this->parseData(3);
-            $this->parseData(4);
-            $this->parseData(5);
-        }
-        if(!$isAll && $level > 0 && $level<6)
-            $this->parseData((int)$level);
-        // dd($level);
-        return redirect()->secure(route('team.info',[],false));;
-    }
-
-    private function parseData($level){
+        if( (((int)$level) > 5 || ((int)$level) < 1) ) 
+            return back();
         $user = auth()->user();
         $request = request();
-        $email=$request->input('email'.$level);
-        $isDuplication = User::whereEmail($email)->first();
-        if($isDuplication && $isDuplication->id != $user->id)
+        $email=$request->input('email');
+        $isDuplicationMember = TeamMember::whereEmail($email)->first();
+        if(((int)$level) > 3)
+            $isDuplicationMember = TeamMember::whereEmail($email)->where('level','<>',4)->where('level','<>',5)->first();
+        $isDuplication = $isDuplicationMember || $isDuplicationMember;
+        if($isDuplication)
         {
-            $this->errorMessage->push("此電子郵件 $email 已被其他隊伍使用！");
-            return;
+            return redirect()->back()->withErrors(['error'=>"此電子郵件 $email 已被其他隊伍使用！"]);
         }
-        $data = collect([
-            'name'=>$request->input('name'.$level),
-            'email'=>$email,
-            'phone'=>$request->input('phone'.$level),
-        ]);
-        $data = $data->map(function ($value, $key) { 
-            if($value==null) return "";
-            return $value ;
-        });
-        $univercity = Univercity::where('name',request()->input('univercity'.$level))->where('course',request()->input('course'.$level))->first();
+        $univercity = Univercity::where('name',request()->input('univercity'))->where('course',request()->input('course'))->first();
         if($univercity){
+            $data = collect([
+                'name'=>$request->input('name'),
+                'email'=>$email,
+                'phone'=>$request->input('phone'),
+            ]);
             $data->put('univercity_id',$univercity->id);
             $team_member = TeamMember::updateOrCreate([
                 'level'=>$level,
                 'user_id'=>$user->id,
             ],$data->toArray());
         }
+        return redirect()->secure(route('team.info',[],false));
     }
 
     /**

@@ -29,7 +29,7 @@
     @foreach ($team as $member)
     <div class="row text-center align-items-center mt-3">
         <div class="col-12 col-sm-5 col-lg-1 my-1">
-            <a class="h5">{{$member->level_label()}}</a>
+            <a class="h5">{{\App\TeamMember::levelText($member->level)}}</a>
         </div>
         <div class="col-12 col-sm-5 col-lg-2 my-1">
             <a class="h5">{{$member->univercity?$member->univercity->name:null}}
