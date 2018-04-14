@@ -1,29 +1,29 @@
 <template>
     <div class="container">
-        <div class="row align-items-center justify-content-center" v-if="level0 || level4">
-            <div class="col-4" v-if="level0">
-                <TeamMemberEdit level="0"></TeamMemberEdit>
+        <div class="row align-items-center justify-content-center" v-if="level5 || level4">
+            <div class="col-4" v-if="level5">
+                <TeamMemberEdit ref="edit5" level="5"></TeamMemberEdit>
             </div>
-            <div class="col-1" v-if="level0 && level4"></div>
+            <div class="col-1" v-if="level5 && level4"></div>
             <div class="col-4" v-if="level4">
-                <TeamMemberEdit level="4"></TeamMemberEdit>
+                <TeamMemberEdit ref="edit4" level="4"></TeamMemberEdit>
             </div>
         </div>
         <div class="row align-items-center justify-content-center" v-if="level1">
             <div class="col-4" v-if="level1">
-                <TeamMemberEdit level="1"></TeamMemberEdit>
+                <TeamMemberEdit ref="edit1" level="1"></TeamMemberEdit>
             </div>
         </div>
         <div class="row align-items-center justify-content-center" v-if="level2 || level3">
             <div class="col-4" v-if="level2">
-                <TeamMemberEdit level="2"></TeamMemberEdit>
+                <TeamMemberEdit ref="edit2" level="2"></TeamMemberEdit>
             </div>
             <div class="col-1" v-if="level2 && level3"></div>
             <div class="col-4" v-if="level3">
-                <TeamMemberEdit level="3"></TeamMemberEdit>
+                <TeamMemberEdit ref="edit3" level="3"></TeamMemberEdit>
             </div>
         </div>
-            <input type="hidden" v-bind:name="'level'" v-bind:value="view_level">
+        <input type="hidden" v-bind:name="'level'" v-bind:value="view_level">
     </div>
 </template>
 <script>
@@ -33,42 +33,50 @@ export default {
     components: { TeamMemberEdit },
     data() {
         return {
-            level0: this._isShow("0"),
+            level5: this._isShow("5"),
             level1: this._isShow("1"),
             level2: this._isShow("2"),
             level3: this._isShow("3"),
             level4: this._isShow("4"),
-            view_level:this.level?level:-1,
+            view_level: this.level ? this.level : -1,
             value: [],
             options: [],
             isLoading: true,
+            univercityNameData:null,
         }
     },
     mounted: function() {
-        // if(this.level!="")
-        //     if(this.level!="0")
-        //         this.level0 = false
-        //     if(this.level!="1")
-        //         this.level1 = false
-        //     if(this.level!="2")
-        //         this.level2 = false
-        //     if(this.level!="3")
-        //         this.level3 = false
+        //
     },
     created: function() {
-        // axios.post('api/filter/tags').then(response => {
-        //     this.options = response.data
-        //     this.isLoading = false
-        // })
+        axios.post('/univercity/name', { name: "" }).then(response => {
+            this.univercityNameData = response.data
+        })
     },
     methods: {
-        asyncFind(query) {
-            console.log("find " + query)
-            // this.isLoading = true
-            // axios.post('api/filter/tags', { tag: query }).then(response => {
-            //     this.options = response.data
-            //     this.isLoading = false
-            // })
+        defaultUnivercityNameData() {
+            if (this.univercityNameData != null)
+                return this.univercityNameData
+            return false;
+        },
+        checkEmailWithOther(data) {
+            var email = data.email;
+            var exceptLevel = data.level;
+            var i;
+            console.log(this.$refs)
+            for (i = 1; i <= 5; i++) {
+                if (this.$refs['edit' + i] != undefined && i != exceptLevel){
+                    console.log(this.$refs['edit' + i]["get email"])
+                    if (this.$refs['edit' + i].email == this.$refs['edit' + exceptLevel].email) {
+                        if (i == 5 && exceptLevel == 4)
+                            continue;
+                        if (i == 4 && exceptLevel == 5)
+                            continue;
+                        return false;
+                    }
+                }
+            }
+            return true;
         },
         _isShow(str) {
             if (this.level != "")

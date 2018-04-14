@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use URL;
 
 class LoginController extends Controller
 {
@@ -38,6 +39,18 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    /**
+     * Show the application's login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showLoginForm()
+    {
+        if(!session()->has('from')){
+            session()->put('from', url()->previous());
+        }
+        return view('auth.login');
+    }
 
     /**
      * Log the user out of the application.
@@ -67,7 +80,7 @@ class LoginController extends Controller
         $this->clearLoginAttempts($request);
 
         return $this->authenticated($request, $this->guard()->user())
-                ?: redirect()->secure($this->redirectPath());
+                ?: redirect()->secure(session()->pull('from',$this->redirectTo));
     }
 
 }

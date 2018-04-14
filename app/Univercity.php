@@ -18,6 +18,15 @@ class Univercity extends Model
         'course', 
     ];
 
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'id',
+    ];
+
     public function team_member(){
         return $this->hasMany('App\TeamMember');
     }

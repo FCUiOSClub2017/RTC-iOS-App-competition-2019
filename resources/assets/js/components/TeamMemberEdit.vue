@@ -2,7 +2,7 @@
     <div class="container pb-3">
         <div class="row align-items-center justify-content-center">
             <div class="col-12 text-center">
-                <h3 v-if="level0 || level4">指導老師</h3>
+                <h3 v-if="level5 || level4">指導老師</h3>
                 <h3 v-if="level1">隊長</h3>
                 <h3 v-if="level2 || level3">隊員</h3>
             </div>
@@ -60,7 +60,7 @@
             <div class="col-4">
                 <h4>手機號碼</h4></div>
             <div class="col-8">
-                <input type="tel" v-model="phone" v-bind:name="'phone'+level" placeholder="手機號碼">
+                <input type="tel" v-model="phone" v-bind:name="'phone'+level" placeholder="手機號碼" v-bind:required="required">
             </div>
             <input type="hidden" v-bind:name="'univercity'+level" v-bind:value="selectedUnivercityName">
             <input type="hidden" v-bind:name="'course'+level" v-bind:value="selectedUnivercityCourse">
@@ -74,7 +74,7 @@ export default {
     components: { Multiselect },
     data() {
         return {
-            level0: this._isShow("0"),
+            level5: this._isShow("5"),
             level1: this._isShow("1"),
             level2: this._isShow("2"),
             level3: this._isShow("3"),
@@ -91,16 +91,40 @@ export default {
             email:null,
             name:null,
             phone:null,
-
+            required:this.setRequired(),
         }
     },
     mounted: function() {
     },
     created: function() {
-        this.asyncFindForUnivercityName("");
-        this.asyncFindForUnivercityCourse("");
+        this.defaultData()
     },
     methods: {
+        defaultData(){
+            var result = this.$parent.defaultUnivercityNameData();
+            if(!result){
+                setTimeout(this.defaultData,100);
+                return ;
+            }
+            this.optionsForUnivercityName = result;
+            this.isLoadingForUnivercityName = false
+            this.isLoadingForUnivercityCourse = false
+            this.getTeamData()
+        },
+        getTeamData(){
+            axios.post('/team/data/get/'+this.level, {}).then(response => {
+                var data = response.data.result
+                console.log(response.data)
+                if(data){
+                    this.email = data.email
+                    this.name = data.name
+                    this.phone = data.phone
+                    this.selectedUnivercityName = data.univercity.name
+                    this.selectedUnivercityCourse = data.univercity.course
+                    this.asyncFindForUnivercityCourse(this.selectedUnivercityCourse)
+                }
+            })
+        },
         asyncFindForUnivercityName(query){
             this.isLoadingForUnivercityName = true;
             axios.post('/univercity/name', { name: query }).then(response => {
@@ -135,15 +159,37 @@ export default {
                 level: this.level,
                 email:target.value
             };
-            axios.post('/team/email', data).then(response => {
-                if(typeof(response.data.result) === "boolean"){
-                    this.emailDanger = !response.data.result
-                    this.emailPass = !this.emailDanger;
-                }else {
-                    this.emailDanger = false;
-                    this.emailPass = false;
-                }
-            });
+            if(data.email == "" || data.email == null)
+            {
+                this.emailDanger = false;
+                this.emailPass = false;
+                return;
+            }
+            var result = this.$parent.checkEmailWithOther(data);
+            if(!result)
+            {
+                this.emailDanger = !result
+                this.emailPass = !this.emailDanger;
+            }
+            else{
+                this.emailDanger = false;
+                this.emailPass = false;
+                axios.post('/team/email', data).then(response => {
+                    if(typeof(response.data.result) === "boolean"){
+                        this.emailDanger = !response.data.result
+                        this.emailPass = !this.emailDanger;
+                    }else {
+                        this.emailDanger = false;
+                        this.emailPass = false;
+                    }
+                });
+            }
+        },
+        setRequired(){
+            var l = this.level
+            if(l == 5 || l==4 ||l==1)
+                return true;
+            return false;
         },
     }
 }

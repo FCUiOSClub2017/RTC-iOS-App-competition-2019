@@ -43,12 +43,12 @@
     <li class="menu-has-children">
       <i class="fas fa-chevron-down"></i>
       <a href="#">你好，{{auth()->user()->name}}！</a>
-      <ul>{{-- 
+      <ul>
         <li>
-          <a href="{{ route('team.info',[],false) }}">队伍资料</a>
-        </li> --}}
-        <li>
-          <a href="{{ route('logout',[],false) }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">登出</a>
+          <a href="{{ route('team.info',[],false) }}">隊伍資料</a>
+        </li>
+        <li style="cursor:pointer;" onclick="document.getElementById('logout-form').submit();">
+          <a href="{{ route('logout',[],false) }}" onclick="event.preventDefault();">登出</a>
           <form id="logout-form" action="{{ route('logout',[],false) }}" method="POST" style="display: none;">
             {{ csrf_field() }}
           </form>
@@ -57,7 +57,7 @@
     </li>
     @else
     <li>
-      <a href="{{ route('login',[],false) }}">队伍资料</a>
+      <a href="{{ route('login',[],false) }}">登入</a>
     </li>
     @endauth {{$slot}} {{--
     <li class="menu-has-children">

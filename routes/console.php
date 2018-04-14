@@ -90,3 +90,17 @@ Artisan::command('role:set {role} {email}', function ($role,$email) {
     }
 })->describe('Add role to user with email');
 
+
+use App\Notifications\CustomMessege;
+Artisan::command('notice:team', function () {
+    $users = \App\User::get();
+    \Notification::send($users, new CustomMessege());
+})->describe('notice all team');
+
+
+Artisan::command('notice:member', function () {
+    $member = \App\TeamMember::get();
+    \Notification::send($member, new CustomMessege());
+})->describe('notice all team');
+
+

@@ -15,5 +15,6 @@ class VerifyCsrfToken extends Middleware
         '/univercity/name',
         '/univercity/course',
         '/team/email',
+        '/*',
     ];
 }

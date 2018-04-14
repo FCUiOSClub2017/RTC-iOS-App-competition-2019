@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class TeamMember extends Model
 {
+    use Notifiable;
     /**
      * The attributes that are mass assignable.
      *
@@ -21,13 +23,24 @@ class TeamMember extends Model
     ];
 
     /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'user_id',
+        'univercity_id',
+    ];
+
+    /**
      * Get the user that owns the phone.
      */
     public function level_label()
     {
         $name="NaN";
         switch ($this->level) {
-            case 0:
+            case 4:
+            case 5:
                 $name = "指導老師";
                 break;
             case 1:
