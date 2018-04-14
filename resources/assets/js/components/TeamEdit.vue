@@ -38,7 +38,7 @@ export default {
             level2: this._isShow("2"),
             level3: this._isShow("3"),
             level4: this._isShow("4"),
-            view_level:this.level?level:-1
+            view_level:this.level?level:-1,
             value: [],
             options: [],
             isLoading: true,
