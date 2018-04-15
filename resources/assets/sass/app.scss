@@ -342,13 +342,13 @@ section {
                 height: 25px;
                 margin-top: 9px;
                 margin-bottom: 9px;
-            }
-            a:hover,
-            li:hover>a{
-                color: rgba(0, 0, 0, 0.75);
-            }
-            .menu-active>a {
-                color: rgba($primary, 0.75);
+                a:hover,
+                li:hover>a{
+                    color: rgba(0, 0, 0, 0.75);
+                }
+                .menu-active>a {
+                    color: rgba($primary, 0.75);
+                }
             }
         }
         /* Nav Meu Styling */

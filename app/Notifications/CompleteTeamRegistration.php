@@ -44,8 +44,7 @@ class CompleteTeamRegistration extends Notification implements ShouldQueue
             ->subject('2018 APP移動應用創新賽')
             ->greeting('您好！')
             ->line('您已成功加入參賽隊伍.')
-            ->action('官網', url(config('app.url')))
-            ->line('感謝您的報名!');
+            ->action('官網', url(config('app.url')));
     }
 
     /**

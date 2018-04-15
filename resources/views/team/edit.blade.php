@@ -2,7 +2,7 @@
 <section class="pt-3">
     @if ($errors->any())
         <div class="row justify-content-center py-2">
-            <div class="col-6 text-center text-danger h3">{{$errors->first()}}</div>
+            <div class="col-6 text-center text-danger h3 alert alert-danger">{{$errors->first()}}</div>
         </div>
     @endif
     <form method="post">

@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-04-13 13:23:52.
+    * Generated on 2018-04-15 12:51:47.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -39,6 +39,7 @@ namespace PHPSTORM_META {
         'view' => \Illuminate\View\Factory::class,
         'view.finder' => \Illuminate\View\FileViewFinder::class,
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+        'libphonenumber' => \libphonenumber\PhoneNumberUtil::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
         'cache.store' => \Illuminate\Cache\Repository::class,
@@ -47,6 +48,9 @@ namespace PHPSTORM_META {
         'redis.connection' => \Illuminate\Redis\Connections\PredisConnection::class,
         'Spatie\Permission\Contracts\Permission' => \Spatie\Permission\Models\Permission::class,
         'Spatie\Permission\Contracts\Role' => \Spatie\Permission\Models\Role::class,
+        'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'translation.loader' => \Overtrue\LaravelLang\FileLoader::class,
+        'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Contracts\Broadcasting\Broadcaster' => \Illuminate\Broadcasting\Broadcasters\LogBroadcaster::class,
@@ -134,7 +138,6 @@ namespace PHPSTORM_META {
         'queue.failer' => \Illuminate\Queue\Failed\DatabaseFailedJobProvider::class,
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
-        'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
@@ -142,8 +145,6 @@ namespace PHPSTORM_META {
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
-        'translation.loader' => \Overtrue\LaravelLang\FileLoader::class,
-        'translator' => \Illuminate\Translation\Translator::class,
     ]));
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
@@ -176,6 +177,7 @@ namespace PHPSTORM_META {
         'view' => \Illuminate\View\Factory::class,
         'view.finder' => \Illuminate\View\FileViewFinder::class,
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+        'libphonenumber' => \libphonenumber\PhoneNumberUtil::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
         'cache.store' => \Illuminate\Cache\Repository::class,
@@ -184,6 +186,9 @@ namespace PHPSTORM_META {
         'redis.connection' => \Illuminate\Redis\Connections\PredisConnection::class,
         'Spatie\Permission\Contracts\Permission' => \Spatie\Permission\Models\Permission::class,
         'Spatie\Permission\Contracts\Role' => \Spatie\Permission\Models\Role::class,
+        'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'translation.loader' => \Overtrue\LaravelLang\FileLoader::class,
+        'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Contracts\Broadcasting\Broadcaster' => \Illuminate\Broadcasting\Broadcasters\LogBroadcaster::class,
@@ -271,7 +276,6 @@ namespace PHPSTORM_META {
         'queue.failer' => \Illuminate\Queue\Failed\DatabaseFailedJobProvider::class,
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
-        'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
@@ -279,8 +283,6 @@ namespace PHPSTORM_META {
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
-        'translation.loader' => \Overtrue\LaravelLang\FileLoader::class,
-        'translator' => \Illuminate\Translation\Translator::class,
     ]));
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
@@ -313,6 +315,7 @@ namespace PHPSTORM_META {
         'view' => \Illuminate\View\Factory::class,
         'view.finder' => \Illuminate\View\FileViewFinder::class,
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+        'libphonenumber' => \libphonenumber\PhoneNumberUtil::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
         'cache.store' => \Illuminate\Cache\Repository::class,
@@ -321,6 +324,9 @@ namespace PHPSTORM_META {
         'redis.connection' => \Illuminate\Redis\Connections\PredisConnection::class,
         'Spatie\Permission\Contracts\Permission' => \Spatie\Permission\Models\Permission::class,
         'Spatie\Permission\Contracts\Role' => \Spatie\Permission\Models\Role::class,
+        'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'translation.loader' => \Overtrue\LaravelLang\FileLoader::class,
+        'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Contracts\Broadcasting\Broadcaster' => \Illuminate\Broadcasting\Broadcasters\LogBroadcaster::class,
@@ -408,7 +414,6 @@ namespace PHPSTORM_META {
         'queue.failer' => \Illuminate\Queue\Failed\DatabaseFailedJobProvider::class,
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
-        'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
@@ -416,8 +421,6 @@ namespace PHPSTORM_META {
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
-        'translation.loader' => \Overtrue\LaravelLang\FileLoader::class,
-        'translator' => \Illuminate\Translation\Translator::class,
     ]));
     override(\App::make(0), map([
         '' => '@',
@@ -450,6 +453,7 @@ namespace PHPSTORM_META {
         'view' => \Illuminate\View\Factory::class,
         'view.finder' => \Illuminate\View\FileViewFinder::class,
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+        'libphonenumber' => \libphonenumber\PhoneNumberUtil::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
         'cache.store' => \Illuminate\Cache\Repository::class,
@@ -458,6 +462,9 @@ namespace PHPSTORM_META {
         'redis.connection' => \Illuminate\Redis\Connections\PredisConnection::class,
         'Spatie\Permission\Contracts\Permission' => \Spatie\Permission\Models\Permission::class,
         'Spatie\Permission\Contracts\Role' => \Spatie\Permission\Models\Role::class,
+        'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'translation.loader' => \Overtrue\LaravelLang\FileLoader::class,
+        'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Contracts\Broadcasting\Broadcaster' => \Illuminate\Broadcasting\Broadcasters\LogBroadcaster::class,
@@ -545,7 +552,6 @@ namespace PHPSTORM_META {
         'queue.failer' => \Illuminate\Queue\Failed\DatabaseFailedJobProvider::class,
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
-        'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
@@ -553,8 +559,6 @@ namespace PHPSTORM_META {
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
-        'translation.loader' => \Overtrue\LaravelLang\FileLoader::class,
-        'translator' => \Illuminate\Translation\Translator::class,
     ]));
     override(\App::makeWith(0), map([
         '' => '@',
@@ -587,6 +591,7 @@ namespace PHPSTORM_META {
         'view' => \Illuminate\View\Factory::class,
         'view.finder' => \Illuminate\View\FileViewFinder::class,
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+        'libphonenumber' => \libphonenumber\PhoneNumberUtil::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
         'cache.store' => \Illuminate\Cache\Repository::class,
@@ -595,6 +600,9 @@ namespace PHPSTORM_META {
         'redis.connection' => \Illuminate\Redis\Connections\PredisConnection::class,
         'Spatie\Permission\Contracts\Permission' => \Spatie\Permission\Models\Permission::class,
         'Spatie\Permission\Contracts\Role' => \Spatie\Permission\Models\Role::class,
+        'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'translation.loader' => \Overtrue\LaravelLang\FileLoader::class,
+        'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Contracts\Broadcasting\Broadcaster' => \Illuminate\Broadcasting\Broadcasters\LogBroadcaster::class,
@@ -682,7 +690,6 @@ namespace PHPSTORM_META {
         'queue.failer' => \Illuminate\Queue\Failed\DatabaseFailedJobProvider::class,
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
-        'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
@@ -690,8 +697,6 @@ namespace PHPSTORM_META {
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
-        'translation.loader' => \Overtrue\LaravelLang\FileLoader::class,
-        'translator' => \Illuminate\Translation\Translator::class,
     ]));
     override(\app(0), map([
         '' => '@',
@@ -724,6 +729,7 @@ namespace PHPSTORM_META {
         'view' => \Illuminate\View\Factory::class,
         'view.finder' => \Illuminate\View\FileViewFinder::class,
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+        'libphonenumber' => \libphonenumber\PhoneNumberUtil::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
         'cache.store' => \Illuminate\Cache\Repository::class,
@@ -732,6 +738,9 @@ namespace PHPSTORM_META {
         'redis.connection' => \Illuminate\Redis\Connections\PredisConnection::class,
         'Spatie\Permission\Contracts\Permission' => \Spatie\Permission\Models\Permission::class,
         'Spatie\Permission\Contracts\Role' => \Spatie\Permission\Models\Role::class,
+        'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'translation.loader' => \Overtrue\LaravelLang\FileLoader::class,
+        'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Contracts\Broadcasting\Broadcaster' => \Illuminate\Broadcasting\Broadcasters\LogBroadcaster::class,
@@ -819,7 +828,6 @@ namespace PHPSTORM_META {
         'queue.failer' => \Illuminate\Queue\Failed\DatabaseFailedJobProvider::class,
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
-        'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
@@ -827,8 +835,6 @@ namespace PHPSTORM_META {
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
-        'translation.loader' => \Overtrue\LaravelLang\FileLoader::class,
-        'translator' => \Illuminate\Translation\Translator::class,
     ]));
     override(\resolve(0), map([
         '' => '@',
@@ -861,6 +867,7 @@ namespace PHPSTORM_META {
         'view' => \Illuminate\View\Factory::class,
         'view.finder' => \Illuminate\View\FileViewFinder::class,
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+        'libphonenumber' => \libphonenumber\PhoneNumberUtil::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
         'cache.store' => \Illuminate\Cache\Repository::class,
@@ -869,6 +876,9 @@ namespace PHPSTORM_META {
         'redis.connection' => \Illuminate\Redis\Connections\PredisConnection::class,
         'Spatie\Permission\Contracts\Permission' => \Spatie\Permission\Models\Permission::class,
         'Spatie\Permission\Contracts\Role' => \Spatie\Permission\Models\Role::class,
+        'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'translation.loader' => \Overtrue\LaravelLang\FileLoader::class,
+        'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Contracts\Broadcasting\Broadcaster' => \Illuminate\Broadcasting\Broadcasters\LogBroadcaster::class,
@@ -956,7 +966,6 @@ namespace PHPSTORM_META {
         'queue.failer' => \Illuminate\Queue\Failed\DatabaseFailedJobProvider::class,
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
-        'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
@@ -964,8 +973,6 @@ namespace PHPSTORM_META {
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
-        'translation.loader' => \Overtrue\LaravelLang\FileLoader::class,
-        'translator' => \Illuminate\Translation\Translator::class,
     ]));
 
     override(\Illuminate\Support\Arr::add(0), type(0));

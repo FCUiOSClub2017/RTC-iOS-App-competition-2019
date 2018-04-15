@@ -41,9 +41,9 @@ class CustomMessege extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('2018 APP移動應用創新賽 可以填寫報名啦～')
+            ->subject('2018 APP移動應用創新賽 可以填寫隊伍資料啦～')
             ->greeting('您好！')
-            ->line('各參賽隊伍你好，報名界面已開放。')
+            ->line('您好，通知您報名界面已開放。')
             ->action('點我填寫', url(config('app.url').route('team.info', [], false)));
     }
 

@@ -64,7 +64,7 @@ class VerifyEmail extends Notification implements ShouldQueue
             ->greeting('您好！')
             ->line('您會收到這封郵件是因為我們收到了您註冊比賽隊伍賬號的請求。')
             ->action('點我驗證', url(config('app.url').route('verify.process', $this->token, false)))
-            ->line('感謝您的報名!');
+            ->line('感謝您報名參賽!');
     }
 
     /**

@@ -69,27 +69,36 @@ class TeamController extends Controller
         $user = auth()->user();
         $request = request();
         $email=$request->input('email');
-        $isDuplicationMember = TeamMember::whereEmail($email)->first();
+        $isDuplicationMember = TeamMember::whereEmail($email)->orWhere('user_id','<>',$user->id)->where('level','<>',$level)->first();
         if(((int)$level) > 3)
             $isDuplicationMember = TeamMember::whereEmail($email)->where('level','<>',4)->where('level','<>',5)->first();
-        $isDuplication = $isDuplicationMember || $isDuplicationMember;
+        $isDuplication = $isDuplicationMember;
         if($isDuplication)
         {
             return redirect()->back()->withErrors(['error'=>"此電子郵件 $email 已被其他隊伍使用！"]);
         }
         $univercity = Univercity::where('name',request()->input('univercity'))->where('course',request()->input('course'))->first();
-        if($univercity){
-            $data = collect([
-                'name'=>$request->input('name'),
-                'email'=>$email,
-                'phone'=>$request->input('phone'),
-            ]);
-            $data->put('univercity_id',$univercity->id);
-            $team_member = TeamMember::updateOrCreate([
-                'level'=>$level,
-                'user_id'=>$user->id,
-            ],$data->toArray());
+
+        if(!$univercity){
+            return redirect()->back()->withErrors(['error'=>"學校/學系不存在！"]);
         }
+
+        $request->validate([
+            'name' => 'required|max:255',
+            'phone' => 'required|phone:TW',
+            'email' => 'required|email',
+        ]);
+
+        $data = collect([
+            'name'=>$request->input('name'),
+            'email'=>$email,
+            'phone'=>$request->input('phone'),
+        ]);
+        $data->put('univercity_id',$univercity->id);
+        $team_member = TeamMember::updateOrCreate([
+            'level'=>$level,
+            'user_id'=>$user->id,
+        ],$data->toArray());
         return redirect()->secure(route('team.info',[],false));
     }
 
@@ -128,21 +137,17 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function uniqueEmail()
+    public function uniqueEmail($level)
     {
+        $user = auth()->user();
         $email = request()->email;
-        $level = request()->level;
         if (!$email) 
             return [];
-        if($level == "5" || $level == "4"){
-            $teamMemberEmail = TeamMember::where('email',$email)->where('level','<>',5)->where('level','<>',4)->first();
-            if ($teamMemberEmail)
-                return ['result'=>false];
-            return ['result' => true];
+        $isDuplicationMember = TeamMember::whereEmail($email)->orWhere('user_id','<>',$user->id)->where('level','<>',$level)->first();
+        if((int)$level > 3){
+            $isDuplicationMember = TeamMember::whereEmail($email)->where('level','<>',4)->where('level','<>',5)->first();
         }
-        $userEmail = User::where('email',$email)->first();
-        $teamMemberEmail = TeamMember::where('email',$email)->first();
-        if ($userEmail || $teamMemberEmail) 
+        if ($isDuplicationMember) 
             return ['result'=>false];
         return ['result'=>true];
     }

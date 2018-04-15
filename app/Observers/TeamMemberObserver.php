@@ -25,12 +25,14 @@ class TeamMemberObserver
      * @param  \App\TeamMember  $TeamMember
      * @return void
      */
-    public function saving(TeamMember $TeamMember)
+    public function updating(TeamMember $TeamMember)
     {
-        $columns = $TeamMember->getDirty();
-        foreach ($columns as $column => $newValue) {
-            // if($column == 'email')
-            //     $TeamMember->notify(new UpdateTeamRegistration());
+        if($TeamMember->getOriginal('email') != $TeamMember->email){
+            $TeamMember->notify(new UpdateTeamRegistration($TeamMember->getOriginal('email'),$TeamMember->email));
         }
+        // foreach ($columns as $column => $newValue) {
+        //     if($column == 'email')
+        //         break;
+        // }
     }
 }

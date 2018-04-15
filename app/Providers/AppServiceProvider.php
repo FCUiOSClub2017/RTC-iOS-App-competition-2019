@@ -6,6 +6,7 @@ use URL;
 use Illuminate\Support\ServiceProvider;
 use App\TeamMember;
 use App\Observers\TeamMemberObserver;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
