@@ -57,4 +57,20 @@ class VerifyController extends Controller
     {
         return view('auth.verify.success');
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function resendEmail()
+    {
+        $user = auth()->user();
+        $verify = new UserVerify([
+            'token'=>str_random(40),
+        ]);
+        $user->verify()->save($verify);
+        $user->sendVerifyEmailNotification($verify->token);
+        return back();
+    }
 }

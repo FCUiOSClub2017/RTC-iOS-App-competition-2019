@@ -26,6 +26,7 @@ Auth::routes();
 
 Route::get('verify/notice', 'VerifyController@notice')->name('verify.notice');
 Route::get('verify/success', 'VerifyController@success')->name('verify.success');
+Route::post('verify/resend', 'VerifyController@resendEmail')->name('verify.resend');
 Route::get('verify/{token}', 'VerifyController@process')->name('verify.process');
 
 
