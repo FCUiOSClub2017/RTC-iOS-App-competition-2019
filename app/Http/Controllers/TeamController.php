@@ -32,6 +32,7 @@ class TeamController extends Controller
      */
     public function index()
     {
+        // dd(\Propaganistas\LaravelPhone\PhoneNumber::make('0966440833',"tw")->formatInternational());
         $user = auth()->user();
         $teamMember = $user->team_member()->orderBy('level')->get();
         $data = $teamMember->pluck('level');
@@ -69,10 +70,12 @@ class TeamController extends Controller
         $user = auth()->user();
         $request = request();
         $email=$request->input('email');
-        $isDuplicationMember = TeamMember::whereEmail($email)->orWhere('user_id','<>',$user->id)->where('level','<>',$level)->first();
+
+        $isDuplicationMember = TeamMember::whereEmail($email)->first();
+        $isSameMember = TeamMember::whereEmail($email)->where('user_id',$user->id)->where('level',$level)->first();
         if(((int)$level) > 3)
             $isDuplicationMember = TeamMember::whereEmail($email)->where('level','<>',4)->where('level','<>',5)->first();
-        $isDuplication = $isDuplicationMember;
+        $isDuplication = $isDuplicationMember && !$isSameMember;
         if($isDuplication)
         {
             return redirect()->back()->withErrors(['error'=>"此電子郵件 $email 已被其他隊伍使用！"]);
@@ -139,17 +142,19 @@ class TeamController extends Controller
      */
     public function uniqueEmail($level)
     {
-        $user = auth()->user();
         $email = request()->email;
         if (!$email) 
             return [];
-        $isDuplicationMember = TeamMember::whereEmail($email)->orWhere('user_id','<>',$user->id)->where('level','<>',$level)->first();
+        $user = auth()->user();
+        $isDuplicationMember = TeamMember::whereEmail($email)->first();
+        $isSameMember = TeamMember::whereEmail($email)->where('user_id',$user->id)->where('level',$level)->first();
         if((int)$level > 3){
             $isDuplicationMember = TeamMember::whereEmail($email)->where('level','<>',4)->where('level','<>',5)->first();
         }
-        if ($isDuplicationMember) 
-            return ['result'=>false];
-        return ['result'=>true];
+
+        $isDuplication = $isDuplicationMember && !$isSameMember;
+
+        return ['result'=>!$isDuplication];
     }
 
 }

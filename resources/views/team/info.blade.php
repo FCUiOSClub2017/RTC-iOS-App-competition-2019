@@ -42,7 +42,9 @@
             <a class="h5">{{$member->email}}</a>
         </div>
         <div class="col-12 col-sm-5 col-lg-2 my-1">
-            <a class="h5">{{$member->phone}}</a>
+            @if ($member->phone!=null && $member->phone != "")
+                <a class="h5">{{\Propaganistas\LaravelPhone\PhoneNumber::make($member->phone,"tw")->formatInternational()}}</a>
+            @endif
         </div>
         @if (Carbon\Carbon::now()
         <Carbon\Carbon::create(2018, 5, 8, 23, 59, 59, 'Asia/Taipei')) <div class="col-12 col-sm-5 col-lg-2 my-1">
