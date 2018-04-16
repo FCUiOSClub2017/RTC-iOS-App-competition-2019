@@ -1,4 +1,4 @@
-<section class="portfolio" id="sponsors">
+<section class="portfolio" id="organizer">
   <div class="container text-center">
     <h2 class="display-4">
           主辦單位

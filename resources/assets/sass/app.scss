@@ -335,15 +335,17 @@ section {
                 margin-right: 10px;
                 cursor: pointer;
             }
-            ul .menu-has-children svg {
-                padding: 5px;
-                font-size: 2rem;
-                color: #000;
-                height: 25px;
-                margin-top: 9px;
-                margin-bottom: 9px;
+            ul {
+                .menu-has-children svg {
+                    padding: 5px;
+                    font-size: 2rem;
+                    color: #000;
+                    height: 25px;
+                    margin-top: 9px;
+                    margin-bottom: 9px;
+                }
                 a:hover,
-                li:hover>a{
+                li:hover>a {
                     color: rgba(0, 0, 0, 0.75);
                 }
                 .menu-active>a {

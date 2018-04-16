@@ -38,6 +38,12 @@
           <a href="{{route('home',[],false)}}#related_statement">相關聲明</a>
         </li>
         <li>
+          <a href="{{route('home',[],false)}}#organizer">主辦單位</a>
+        </li>
+        <li>
+          <a href="{{route('home',[],false)}}#coorganiser">協辦單位</a>
+        </li>
+        <li>
           <a href="{{route('home',[],false)}}#sponsors">贊助商</a>
         </li>
       </ul>
