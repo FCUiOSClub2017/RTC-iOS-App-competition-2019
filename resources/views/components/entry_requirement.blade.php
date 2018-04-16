@@ -15,7 +15,7 @@
                                 <td class="align-middle">參賽者必須是台灣的⼤專院校的在學學⽣，包括⼤專⽣、碩⼠和博⼠⽣。</td>
                             </tr>
                             <tr>
-                                <td class="align-middle">學⽣報名以⼩組為單位，每組成員含指導⽼師不得超過 5 ⼈</td>
+                                <td class="align-middle">學生報名以小組為單位，每組成員最多3名，含指導⽼師不得超過 5 ⼈</td>
                             </tr>
                             <tr>
                                 <td class="align-middle">每隊均需推派隊⾧1名，代表該隊負責⽐賽聯繫、接洽⼊圍、得獎權利義務之⼀切相關事宜。</td>

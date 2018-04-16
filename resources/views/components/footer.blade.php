@@ -1,16 +1,24 @@
 <footer class="site-footer" id="footer">
   <div class="bottom">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-xs-12 text-lg-left text-center">
+    <div class="container-fulid">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-auto col-xs-12 text-lg-left text-center">
           <p class="copyright-text">
-            © FCU
+            © APP移動應用創新賽
           </p>
           <div class="credits">
-            <a href="http://www.fcu.edu.tw/">FCU</a> by Ahkui
+            <a href="http://www.fcu.edu.tw/">Design</a> by FCU
           </div>
         </div>
-        <div class="col-lg-6 col-xs-12 text-lg-right text-center">
+        <div class="col-auto col-xs-12 text-lg-left text-center">
+          <div class="credits">
+            聯繫信箱：<a href="mailto:stacse@straighta.com.tw">stacse@straighta.com.tw</a>
+          </div>
+          <div class="credits">
+            聯繫電話：Straight A客服專線（02）6608-1000
+          </div>
+        </div>
+        <div class="col-auto col-xs-12 text-lg-right text-center">
           <ul class="list-inline">
             @auth
             <li class="list-inline-item">
@@ -21,21 +29,6 @@
               <a href="{{route('home',[],false)}}">首頁</a>
             </li>
             @endif
-            <li class="list-inline-item">
-              <a href="{{route('home',[],false)}}#about">簡介</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="{{route('home',[],false)}}#timeline">競賽</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="{{route('home',[],false)}}#award">獎項</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="{{route('home',[],false)}}#portal">報名</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="{{route('home',[],false)}}#sponsors">贊助商</a>
-            </li>
             @auth
             <li class="list-inline-item">
               <a href="{{ route('logout',[],false) }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">登出</a>

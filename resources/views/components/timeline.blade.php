@@ -11,7 +11,7 @@
                 <a>報名截止</a>
               </div>
               <div class="circle-overlay">
-                <a>至多三名學生以及一名指導老師 (參賽者必須是台灣的大專院校的在學學生與專任教師)</a>
+                <a>至多三名學生以及二名指導老師 (參賽者必須是台灣的大專院校的在學學生與專任教師)</a>
                 {{-- <a>4⽉9⽇～5⽉8⽇填寫報名資料</a> --}}
               </div>
             </div>
@@ -57,10 +57,10 @@
       <div class="stats-col text-center col-8 col-sm-5 col-md-3 col-xl-2">
         <div class="ratio-1-1">
           <div class="circle">
-            <span class="stats-no"><a>7/04</a></span>
+            <span class="stats-no"><a>7/20</a></span>
             <div class="circle-overflow" data-toggle="modal-hide" data-target="#date7-04">
               <div class="circle-content">
-                <a>工作坊</a>
+                <a>APP 作品<br>繳交截止</a>
               </div>
               <div class="circle-overlay">
                 <a>於逢甲大學進行 Workshop 交流討論會,凡進入決賽的參賽隊伍皆可自由參加</a>
