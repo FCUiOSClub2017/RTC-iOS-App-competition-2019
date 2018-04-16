@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Role;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -27,7 +27,9 @@ class TeamListController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function teamlist(){
-        dd(Role::whereName('participant')->get());
-        return Role::whereName('participant');
+        $users = User::role('participant')->get();
+        return view('admin.teamlist')->with([
+            'users' => $users,
+        ]);
     }
 }

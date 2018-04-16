@@ -68,4 +68,11 @@ class User extends Authenticatable
         return $this->hasMany('App\TeamMember');
     }
 
+    private $teamMemberGroupByLevel;
+    public function teamMemberGroupByLevel(){
+        if(!$this->teamMemberGroupByLevel)
+            $this->teamMemberGroupByLevel = $this->team_member->groupBy('level')->map(function($item,$key){return $item->first();});
+        return $this->teamMemberGroupByLevel;
+    }
+
 }
