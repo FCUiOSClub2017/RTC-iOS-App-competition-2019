@@ -32,6 +32,9 @@
           <a href="{{route('home',[],false)}}#competition_review">競賽評審</a>
         </li>
         <li>
+          <a href="{{route('home',[],false)}}#review_and_awards">評審及評獎</a>
+        </li>
+        <li>
           <a href="{{route('home',[],false)}}#related_statement">相關聲明</a>
         </li>
         <li>
