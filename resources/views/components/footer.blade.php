@@ -1,7 +1,7 @@
 <footer class="site-footer" id="footer">
   <div class="bottom">
     <div class="container-fulid">
-      <div class="row justify-content-center align-items-center">
+      <div class="row justify-content-center align-items-center no-gutters">
         <div class="col-auto col-xs-12 text-lg-left text-center">
           <p class="copyright-text">
             © APP移動應用創新賽
