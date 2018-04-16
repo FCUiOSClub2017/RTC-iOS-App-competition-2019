@@ -1,3 +1,4 @@
+@extends('layouts.app') @section('content')
 <section class="competition_review" id="competition_review">
     <div class="container text-center px-3 px-md-4 px-lg-5">
         <h2 class="display-4 mb-3">競賽評審</h2>
@@ -8,7 +9,7 @@
                 <tr class="bg-primary text-white">
                     <th>項目</th>
                     <th>比重</th>
-                    <th  colspan="2">說明</th>
+                    <th colspan="2">說明</th>
                 </tr>
             </thead>
             <tbody>
@@ -68,3 +69,4 @@
         </table>
     </div>
 </section>
+@endsection

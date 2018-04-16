@@ -44,9 +44,16 @@
       <i class="fas fa-chevron-down"></i>
       <a href="#">你好，{{auth()->user()->name}}！</a>
       <ul>
+        @can('edit teammate')
         <li>
           <a href="{{ route('team.info',[],false) }}">隊伍資料</a>
         </li>
+        @endcan
+        @hasrole('admin')
+        <li>
+          <a href="{{ route('page.index',[],false) }}">編輯頁面</a>
+        </li>
+        @endhasrole
         <li style="cursor:pointer;" onclick="document.getElementById('logout-form').submit();">
           <a href="{{ route('logout',[],false) }}" onclick="event.preventDefault();">登出</a>
           <form id="logout-form" action="{{ route('logout',[],false) }}" method="POST" style="display: none;">

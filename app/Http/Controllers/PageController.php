@@ -18,11 +18,11 @@ class PageController extends Controller
         $this->middleware('is.admin');
     }
     public function index(){
-        return view('page.review_and_awards');
+        return view('page.index');
     }
 
     public function aboutEdit(){
-        return view('page.competition_review');
+        return view('page.about');
     }
 
     public function aboutUpdate(){
@@ -30,7 +30,7 @@ class PageController extends Controller
     }
 
     public function awardEdit(){
-        return view('page.related_statement');
+        return view('page.award');
     }
 
     public function awardUpdate(){
@@ -38,7 +38,7 @@ class PageController extends Controller
     }
 
     public function competitionReviewEdit(){
-        return view('page.award');
+        return view('page.competition_review');
     }
 
     public function competitionReviewUpdate(){
@@ -54,7 +54,7 @@ class PageController extends Controller
     }
 
     public function relatedStatementEdit(){
-        return view('page.index');
+        return view('page.related_statement');
     }
 
     public function relatedStatementUpdate(){
@@ -62,7 +62,7 @@ class PageController extends Controller
     }
 
     public function reviewAndAwardsEdit(){
-        return view('page.about');
+        return view('page.review_and_awards');
     }
 
     public function reviewAndAwardsUpdate(){

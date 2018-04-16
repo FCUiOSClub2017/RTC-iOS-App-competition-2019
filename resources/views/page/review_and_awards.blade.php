@@ -1,3 +1,4 @@
+@extends('layouts.app') @section('content')
 <section class="review_and_awards" id="review_and_awards">
     <div class="container text-center px-3 px-md-4 px-lg-5">
         <h2 class="display-4 mb-3">評審及評獎</h2>
@@ -10,3 +11,4 @@
         </ol>
     </div>
 </section>
+@endsection
