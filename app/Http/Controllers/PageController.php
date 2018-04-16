@@ -15,7 +15,7 @@ class PageController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('is.verify');
-        $this->middleware('is.admin');
+        $this->middleware('can.edit.website');
     }
     public function index(){
         return view('page.index');

@@ -64,5 +64,12 @@ class Kernel extends HttpKernel
         'is.participant' => \App\Http\Middleware\IsParticipant::class,
         'is.invigilator' => \App\Http\Middleware\IsInvigilator::class,
         'is.verify' => \App\Http\Middleware\IsVerify::class,
+        'can.set.admin'=> \App\Http\Middleware\CanSetAdmin::class
+        'can.set.user.role'=> \App\Http\Middleware\CanSetUserRole::class
+        'can.upload.file'=> \App\Http\Middleware\CanUploadFile::class
+        'can.review.all.file'=> \App\Http\Middleware\CanReviewAllFile::class
+        'can.edit.teammate'=> \App\Http\Middleware\CanEditTeammate::class
+        'can.edit.web.site'=> \App\Http\Middleware\CanEditWebSite::class
+
     ];
 }

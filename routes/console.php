@@ -56,6 +56,7 @@ Artisan::command('role:init', function () {
     $upload_file = Permission::firstOrCreate(['name' => 'upload file']);
     $review_all_file = Permission::firstOrCreate(['name' => 'review all file']);
     $edit_teammate = Permission::firstOrCreate(['name' => 'edit teammate']);
+    $edit_website = Permission::firstOrCreate(['name' => 'edit website']);
 
     $developer->syncPermissions([
         $set_admin,
@@ -63,11 +64,13 @@ Artisan::command('role:init', function () {
         $upload_file,
         $review_all_file,
         $edit_teammate,
+        $edit_website,
     ]);
 
     $admin->syncPermissions([
         $set_user_role,
         $review_all_file,
+        $edit_website,
     ]);
 
     $invigilator->syncPermissions([

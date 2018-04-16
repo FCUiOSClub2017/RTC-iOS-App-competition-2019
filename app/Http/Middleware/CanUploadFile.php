@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class IsDeveloper
+class CanUploadFile
 {
     /**
      * Handle an incoming request.
@@ -15,7 +15,7 @@ class IsDeveloper
      */
     public function handle($request, Closure $next)
     {
-        if($request->user()->hasAnyPermission(['set admin','set user role','upload file','review all file','edit teammate',]))
+        if($request->user()->hasAnyPermission(['upload file']))
             return $next($request);
         return back();
     }
