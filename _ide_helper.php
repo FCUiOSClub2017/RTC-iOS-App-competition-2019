@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.6.14 on 2018-04-15 12:51:46.
+ * Generated for Laravel 5.6.14 on 2018-04-16 02:19:25.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -6451,30 +6451,29 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Get the size of the queue.
+         * Get the number of queue jobs that are ready to process.
          *
-         * @param string $queue
+         * @param string|null $queue
          * @return int 
          * @static 
          */ 
-        public static function size($queue = null)
+        public static function readyNow($queue = null)
         {
-            return \Illuminate\Queue\SyncQueue::size($queue);
+            return \Laravel\Horizon\RedisQueue::readyNow($queue);
         }
         
         /**
          * Push a new job onto the queue.
          *
-         * @param string $job
+         * @param object|string $job
          * @param mixed $data
-         * @param string $queue
+         * @param string|null $queue
          * @return mixed 
-         * @throws \Exception|\Throwable
          * @static 
          */ 
         public static function push($job, $data = '', $queue = null)
         {
-            return \Illuminate\Queue\SyncQueue::push($job, $data, $queue);
+            return \Laravel\Horizon\RedisQueue::push($job, $data, $queue);
         }
         
         /**
@@ -6488,7 +6487,7 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function pushRaw($payload, $queue = null, $options = array())
         {
-            return \Illuminate\Queue\SyncQueue::pushRaw($payload, $queue, $options);
+            return \Laravel\Horizon\RedisQueue::pushRaw($payload, $queue, $options);
         }
         
         /**
@@ -6503,7 +6502,7 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function later($delay, $job, $data = '', $queue = null)
         {
-            return \Illuminate\Queue\SyncQueue::later($delay, $job, $data, $queue);
+            return \Laravel\Horizon\RedisQueue::later($delay, $job, $data, $queue);
         }
         
         /**
@@ -6515,7 +6514,85 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function pop($queue = null)
         {
-            return \Illuminate\Queue\SyncQueue::pop($queue);
+            return \Laravel\Horizon\RedisQueue::pop($queue);
+        }
+        
+        /**
+         * Migrate the delayed jobs that are ready to the regular queue.
+         *
+         * @param string $from
+         * @param string $to
+         * @return void 
+         * @static 
+         */ 
+        public static function migrateExpiredJobs($from, $to)
+        {
+            \Laravel\Horizon\RedisQueue::migrateExpiredJobs($from, $to);
+        }
+        
+        /**
+         * Delete a reserved job from the queue.
+         *
+         * @param string $queue
+         * @param \Illuminate\Queue\Jobs\RedisJob $job
+         * @return void 
+         * @static 
+         */ 
+        public static function deleteReserved($queue, $job)
+        {
+            \Laravel\Horizon\RedisQueue::deleteReserved($queue, $job);
+        }
+        
+        /**
+         * Delete a reserved job from the reserved queue and release it.
+         *
+         * @param string $queue
+         * @param \Illuminate\Queue\Jobs\RedisJob $job
+         * @param int $delay
+         * @return void 
+         * @static 
+         */ 
+        public static function deleteAndRelease($queue, $job, $delay)
+        {
+            \Laravel\Horizon\RedisQueue::deleteAndRelease($queue, $job, $delay);
+        }
+        
+        /**
+         * Get the size of the queue.
+         *
+         * @param string $queue
+         * @return int 
+         * @static 
+         */ 
+        public static function size($queue = null)
+        {
+            //Method inherited from \Illuminate\Queue\RedisQueue            
+            return \Laravel\Horizon\RedisQueue::size($queue);
+        }
+        
+        /**
+         * Get the queue or return the default.
+         *
+         * @param string|null $queue
+         * @return string 
+         * @static 
+         */ 
+        public static function getQueue($queue)
+        {
+            //Method inherited from \Illuminate\Queue\RedisQueue            
+            return \Laravel\Horizon\RedisQueue::getQueue($queue);
+        }
+        
+        /**
+         * Get the underlying Redis instance.
+         *
+         * @return \Illuminate\Contracts\Redis\Factory 
+         * @static 
+         */ 
+        public static function getRedis()
+        {
+            //Method inherited from \Illuminate\Queue\RedisQueue            
+            return \Laravel\Horizon\RedisQueue::getRedis();
         }
         
         /**
@@ -6530,7 +6607,7 @@ namespace Illuminate\Support\Facades {
         public static function pushOn($queue, $job, $data = '')
         {
             //Method inherited from \Illuminate\Queue\Queue            
-            return \Illuminate\Queue\SyncQueue::pushOn($queue, $job, $data);
+            return \Laravel\Horizon\RedisQueue::pushOn($queue, $job, $data);
         }
         
         /**
@@ -6546,7 +6623,7 @@ namespace Illuminate\Support\Facades {
         public static function laterOn($queue, $delay, $job, $data = '')
         {
             //Method inherited from \Illuminate\Queue\Queue            
-            return \Illuminate\Queue\SyncQueue::laterOn($queue, $delay, $job, $data);
+            return \Laravel\Horizon\RedisQueue::laterOn($queue, $delay, $job, $data);
         }
         
         /**
@@ -6561,7 +6638,7 @@ namespace Illuminate\Support\Facades {
         public static function bulk($jobs, $data = '', $queue = null)
         {
             //Method inherited from \Illuminate\Queue\Queue            
-            return \Illuminate\Queue\SyncQueue::bulk($jobs, $data, $queue);
+            return \Laravel\Horizon\RedisQueue::bulk($jobs, $data, $queue);
         }
         
         /**
@@ -6574,7 +6651,7 @@ namespace Illuminate\Support\Facades {
         public static function getJobExpiration($job)
         {
             //Method inherited from \Illuminate\Queue\Queue            
-            return \Illuminate\Queue\SyncQueue::getJobExpiration($job);
+            return \Laravel\Horizon\RedisQueue::getJobExpiration($job);
         }
         
         /**
@@ -6586,7 +6663,7 @@ namespace Illuminate\Support\Facades {
         public static function getConnectionName()
         {
             //Method inherited from \Illuminate\Queue\Queue            
-            return \Illuminate\Queue\SyncQueue::getConnectionName();
+            return \Laravel\Horizon\RedisQueue::getConnectionName();
         }
         
         /**
@@ -6599,7 +6676,7 @@ namespace Illuminate\Support\Facades {
         public static function setConnectionName($name)
         {
             //Method inherited from \Illuminate\Queue\Queue            
-            return \Illuminate\Queue\SyncQueue::setConnectionName($name);
+            return \Laravel\Horizon\RedisQueue::setConnectionName($name);
         }
         
         /**
@@ -6612,7 +6689,7 @@ namespace Illuminate\Support\Facades {
         public static function setContainer($container)
         {
             //Method inherited from \Illuminate\Queue\Queue            
-            \Illuminate\Queue\SyncQueue::setContainer($container);
+            \Laravel\Horizon\RedisQueue::setContainer($container);
         }
          
     }
@@ -12507,6 +12584,14 @@ namespace Spatie\Permission\Models {
  
 }
 
+namespace Laravel\Horizon { 
+
+    class Horizon {
+         
+    }
+ 
+}
+
 
 namespace  { 
 
@@ -14749,6 +14834,8 @@ namespace  {
     class Validator extends \Illuminate\Support\Facades\Validator {}
 
     class View extends \Illuminate\Support\Facades\View {}
+
+    class Horizon extends \Laravel\Horizon\Horizon {}
  
 }
 

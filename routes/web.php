@@ -37,6 +37,23 @@ Route::patch('team/{level}', 'TeamController@getTeamData')->name('team.data.get'
 Route::put('team/{level}', 'TeamController@uniqueEmail')->name('team.check.email');
 Route::delete('team/{level}', 'TeamController@clear')->name('team.clear');
 
+Route::get('page', 'PageController@index')->name('page.index');
+Route::get('page/about', 'PageController@aboutEdit')->name('page.about.edit');
+Route::post('page/about', 'PageController@aboutUpdate')->name('page.about.update');
+Route::get('page/award', 'PageController@awardEdit')->name('page.award.edit');
+Route::post('page/award', 'PageController@awardUpdate')->name('page.award.update');
+Route::get('page/competitionReview', 'PageController@competitionReviewEdit')->name('page.competitionReview.edit');
+Route::post('page/competitionReview', 'PageController@competitionReviewUpdate')->name('page.competitionReview.update');
+Route::get('page/entryRequirement', 'PageController@entryRequirementEdit')->name('page.entryRequirement.edit');
+Route::post('page/entryRequirement', 'PageController@entryRequirementUpdate')->name('page.entryRequirement.update');
+Route::get('page/relatedStatement', 'PageController@relatedStatementEdit')->name('page.relatedStatement.edit');
+Route::post('page/relatedStatement', 'PageController@relatedStatementUpdate')->name('page.relatedStatement.update');
+Route::get('page/reviewAndAwards', 'PageController@reviewAndAwardsEdit')->name('page.reviewAndAwards.edit');
+Route::post('page/reviewAndAwards', 'PageController@reviewAndAwardsUpdate')->name('page.reviewAndAwards.update');
+Route::get('page/workRequirement', 'PageController@workRequirementEdit')->name('page.workRequirement.edit');
+Route::post('page/workRequirement', 'PageController@workRequirementUpdate')->name('page.workRequirement.update');
+
+
 Route::get('/home', 'HomeController@index')->name('user');
 Route::get('/test', 'HomeController@test')->name('test');
 Route::get('role', 'HomeController@my_role')->name('test');

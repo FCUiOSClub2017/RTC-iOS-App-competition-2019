@@ -12,6 +12,7 @@ use App\Univercity;
 class TeamController extends Controller
 {
     private $errorMessage;
+
     /**
      * Create a new controller instance and set middleware.
      *
@@ -21,8 +22,7 @@ class TeamController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('is.verify');
-        $this->middleware('is.participant')->except('index');
-        $this->errorMessage=collect();
+        $this->middleware('is.admin');
     }
 
     /**
