@@ -22,7 +22,7 @@ class TeamController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('is.verify');
-        $this->middleware('is.participant')->except('index');
+        $this->middleware('is.participant');
         $this->errorMessage=collect();
     }
 
