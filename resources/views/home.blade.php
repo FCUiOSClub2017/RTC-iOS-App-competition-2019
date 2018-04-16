@@ -14,6 +14,7 @@
 @include('components.entry_requirement')
 @include('components.work_requirement')
 @include('components.competition_review')
+@include('components.review_and_awards')
 @include('components.related_statement')
 @include('components.sponsors')
 {{--
