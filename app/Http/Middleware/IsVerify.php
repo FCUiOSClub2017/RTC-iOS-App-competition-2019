@@ -17,6 +17,6 @@ class IsVerify
     {
         if($request->user()->verify)
             return $next($request);
-        return redirect()->secure('verify.notice');
+        return redirect()->route('verify.notice');
     }
 }
