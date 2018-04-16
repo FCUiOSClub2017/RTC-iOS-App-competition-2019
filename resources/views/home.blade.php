@@ -17,7 +17,7 @@
 @include('components.review_and_awards')
 @include('components.related_statement')
 @include('components.organizer')
-@include('components.coorganizer')
+@include('components.coorganiser')
 @include('components.sponsors')
 {{--
 <!-- Call to Action -->
