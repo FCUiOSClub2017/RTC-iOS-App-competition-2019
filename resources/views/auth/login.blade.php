@@ -37,10 +37,10 @@
                                 </button>
                             </div>
                             <div class="col-md-8 offset-md-4 mt-2">
-                                <span> 沒有帳號？ <a href="{{ route('register',[],false) }}">{{ __('點我註冊！') }}</a></span>
+                                <span> 沒有帳號？ <a href="{{ route('register') }}">{{ __('點我註冊！') }}</a></span>
                             </div>
                             <div class="col-md-8 offset-md-4">
-                                <span> 忘記密碼？ <a href="{{ route('password.request',[],false) }}">{{ __('點我取回密碼！') }}</a></span>
+                                <span> 忘記密碼？ <a href="{{ route('password.request') }}">{{ __('點我取回密碼！') }}</a></span>
                             </div>
                         </div>
                     </form>

@@ -50,16 +50,4 @@ class ResetPasswordController extends Controller
             'password' => 'required|confirmed|min:10',
         ];
     }
-
-    /**
-     * Get the response for a successful password reset.
-     *
-     * @param  string  $response
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
-     */
-    protected function sendResetResponse($response)
-    {
-        return redirect()->secure($this->redirectPath())
-                            ->with('status', trans($response));
-    }
 }

@@ -49,10 +49,10 @@
         @if (Carbon\Carbon::now()
         <Carbon\Carbon::create(2018, 5, 8, 23, 59, 59, 'Asia/Taipei')) <div class="col-12 col-sm-5 col-lg-2 my-1">
             <div class=" text-white btn-group" role="group" aria-label="Basic example">
-                <a class="p-3 btn btn-primary" href="{{ route('team.edit',['level'=>$member->level],false) }}">修改</a>
-                <a class="p-3 btn bg-danger" href="{{ route('team.clear',['level'=>$member->level],false) }}" onclick="event.preventDefault();document.getElementById('clear_team_member_data').submit();">清除</a>
+                <a class="p-3 btn btn-primary" href="{{ route('team.edit',['level'=>$member->level]) }}">修改</a>
+                <a class="p-3 btn bg-danger" href="{{ route('team.clear',['level'=>$member->level]) }}" onclick="event.preventDefault();document.getElementById('clear_team_member_data').submit();">清除</a>
             </div>
-            <form id="clear_team_member_data" action="{{ route('team.clear',['level'=>$member->level],false) }}" method="POST" style="display: none;">
+            <form id="clear_team_member_data" action="{{ route('team.clear',['level'=>$member->level]) }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
                 <input type="hidden" name="_method" value="delete">
             </form>

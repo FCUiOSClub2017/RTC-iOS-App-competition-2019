@@ -22,20 +22,20 @@
           <ul class="list-inline">
             @auth
             <li class="list-inline-item">
-              <a href="{{route('user',[],false)}}">你好，{{auth()->user()->name}}！</a>
+              <a href="{{route('user')}}">你好，{{auth()->user()->name}}！</a>
             </li>
-            @endauth @if (URL::current()!=route('home',[],false) && URL::current()!=route('home',[],false))
+            @endauth @if (URL::current()!=route('home') && URL::current()!=route('home'))
             @endif
             @auth
             <li class="list-inline-item">
-              <a href="{{ route('logout',[],false) }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">登出</a>
-              <form id="logout-form" action="{{ route('logout',[],false) }}" method="POST" style="display: none;">
+              <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">登出</a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
               </form>
             </li>
             @else
             <li class="list-inline-item">
-              <a href="{{ route('login',[],false) }}">登入</a>
+              <a href="{{ route('login') }}">登入</a>
             </li>
             @endauth
           </ul>

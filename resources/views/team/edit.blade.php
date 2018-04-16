@@ -14,11 +14,6 @@
                     <button type="submit" class="btn btn-primary">送出</button>
                 </div>
             </div>
-            <div class="row">
-            @forelse($errors as $error)
-                <div class="col-12">{{dump($error)}}</div>
-            @empty @endforelse
-            </div>
         </div>
     </form>
 </section>

@@ -21,16 +21,16 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
-    <link rel="icon" href="{{secure_asset('images/fcu.png')}}" type="image/png">
+    <link rel="icon" href="{{asset('images/fcu.png')}}" type="image/png">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <!-- Styles -->
-    <link href="{{secure_asset('/fonts/font.css')}}" rel="stylesheet">
-    <link href="{{secure_asset('/css/app.css')}}" rel="stylesheet">
+    <link href="{{asset('/fonts/font.css')}}" rel="stylesheet">
+    <link href="{{asset('/css/app.css')}}" rel="stylesheet">
     <!-- Scripts -->
-    <script src="{{secure_asset('/js/app.js')}}"></script>
-    <script src="{{secure_asset('/js/plugin.js')}}"></script>
+    <script src="{{asset('/js/app.js')}}"></script>
+    <script src="{{asset('/js/plugin.js')}}"></script>
     @yield('head')
 </head>
 

@@ -103,7 +103,7 @@ class TeamController extends Controller
             'level'=>$level,
             'user_id'=>$user->id,
         ],$data->toArray());
-        return redirect()->secure(route('team.info',[],false));
+        return redirect()->route('team.info');
     }
 
     /**
