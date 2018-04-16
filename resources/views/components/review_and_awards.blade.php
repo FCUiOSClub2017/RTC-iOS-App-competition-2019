@@ -1,7 +1,7 @@
 <section class="review_and_awards" id="review_and_awards">
     <div class="container text-center px-3 px-md-4 px-lg-5">
         <h2 class="display-4 mb-3">評審及評獎</h2>
-        <ol>
+        <ol class="text-left">
             <li class="h4">參賽作品篩選及初賽階段作品評審，均採取區域之間評委交叉評審的方式(即參賽學校學生的作品，不會由來自其本校的評委進行評審)，決賽階段評委會將對決賽參賽作品進行現場評分。</li>
             <li class="h4">初賽成績不作為決賽階段評審的依據。</li>
             <li class="h4">本次競賽的評審結果由評審團審定，並在比賽官方網站公佈。獲獎證書由主辦單位統一印製、頒發。頒獎典禮在決賽評審結束後進行。</li>

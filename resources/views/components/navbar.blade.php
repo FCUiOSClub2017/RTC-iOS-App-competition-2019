@@ -49,7 +49,12 @@
       <ul>
         @can('edit teammate')
         <li>
-          <a href="{{ route('team.info',[],false) }}">隊伍資料</a>
+          <a href="{{ route('team.info',[],false) }}">我的隊伍資料</a>
+        </li>
+        @endcan
+        @can('review all file')
+        <li>
+          <a href="{{ route('admin.team.list',[],false) }}">队伍列表</a>
         </li>
         @endcan
         @can('edit website')

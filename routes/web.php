@@ -61,3 +61,4 @@ Route::get('role', 'HomeController@my_role')->name('test');
 Route::post('univercity/name', 'UnivercityController@name')->name('univercity.name');
 Route::post('univercity/course', 'UnivercityController@course')->name('univercity.course');
 
+Route::get('admin/teamlist', 'Admin\TeamListController@teamlist')->name('admin.team.list');

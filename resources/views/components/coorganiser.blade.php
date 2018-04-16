@@ -1,7 +1,7 @@
 <section class="portfolio" id="sponsors">
   <div class="container text-center">
     <h2 class="display-4">
-          主辦單位
+        協辦單位
         </h2>
   </div>
   <div class="portfolio-grid">
