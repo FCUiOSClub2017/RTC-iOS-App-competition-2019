@@ -69,7 +69,7 @@ class Kernel extends HttpKernel
         'can.upload.file'=> \App\Http\Middleware\CanUploadFile::class,
         'can.review.all.file'=> \App\Http\Middleware\CanReviewAllFile::class,
         'can.edit.teammate'=> \App\Http\Middleware\CanEditTeammate::class,
-        'can.edit.web.site'=> \App\Http\Middleware\CanEditWebSite::class,
+        'can.edit.website'=> \App\Http\Middleware\CanEditWebSite::class,
 
     ];
 }
