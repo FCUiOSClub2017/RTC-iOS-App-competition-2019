@@ -15,8 +15,7 @@ class PageController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('is.verify');
-        $this->middleware('is.participant')->except('index');
-        $this->errorMessage=collect();
+        $this->middleware('is.admin');
     }
     public function index(){
         return view('page.review_and_awards');
