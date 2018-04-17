@@ -11,12 +11,12 @@
               <div class="row justify-content-around">
                 <div class="col-12 col-md-6">
                   <div class="card card-block">
-                    <a href="http://www.fcu.edi.tw/" class="sponsors rtc">逢甲大學 Apple 區域教育培訓中心 (RTC, Regional Training Center)</a>
+                    <a href="http://rtc.fcu.edu.tw/" class="sponsors rtc">逢甲大學 Apple 區域教育培訓中心 (RTC, Regional Training Center)</a>
                   </div>
                 </div>
                 <div class="col-12 col-md-6">
                   <div class="card card-block">
-                    <a href="http://litenet.com.tw/" class="sponsors studioa"></a>
+                    <a href="https://www.straighta.com.tw/" class="sponsors straighta">Straight A</a>
                   </div>
                 </div>
               </div>
@@ -31,12 +31,12 @@
             <div class="row justify-content-around">
               <div class="col-12 col-md-6">
                 <div class="card card-block">
-                  <a href="http://www.fcu.edi.tw/" class="sponsors apple">Apple Education Taiwan</a>
+                  <a href="http://www.apple.com/" class="sponsors apple">Apple Education Taiwan</a>
                 </div>
               </div>
               <div class="col-12 col-md-6">
                 <div class="card card-block">
-                  <a href="http://litenet.com.tw/" class="sponsors fcu">逢甲大學</a>
+                  <a href="http://www.fcu.edu.tw/" class="sponsors fcu">逢甲大學</a>
                 </div>
               </div>
             </div>
