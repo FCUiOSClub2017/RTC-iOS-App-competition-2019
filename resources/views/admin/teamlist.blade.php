@@ -32,13 +32,17 @@
         @foreach ($users as $user)
         <div class="row no-gutters align-items-center text-center pt-2">
             <div class="col-12 col-sm-5 col-lg-4 col-xl-2 my-1">
-                <a class="h5 text-primary">{{$user->name}}</a>
+                <a class="h3 text-primary">{{$user->name}}</a>
                 <br>
-                <a class="h5 text-primary">{{$user->email}}</a>
+                <a class="h6 text-primary">{{$user->email}}</a>
             </div>
             <div class="col-12 col-sm-5 col-lg-4 col-xl-2 my-1">
                 @if ($user->teamMemberGroupByLevel()->get(1))
-                <a class="h5">{{$user->teamMemberGroupByLevel()->get(1)->name}}</a>
+                <a class="h5">{{$user->teamMemberGroupByLevel()->get(1)->univercity->name}}</a>
+                <br>
+                <a class="h6">{{$user->teamMemberGroupByLevel()->get(1)->univercity->course}}</a>
+                <br>
+                <a class="h4">{{$user->teamMemberGroupByLevel()->get(1)->name}}</a>
                 <br>
                 <a class="h5">{{$user->teamMemberGroupByLevel()->get(1)->email}}</a>
                 <br>
@@ -47,7 +51,11 @@
             </div>
             <div class="col-12 col-sm-5 col-lg-4 col-xl-2 my-1">
                 @if ($user->teamMemberGroupByLevel()->get(2))
-                <a class="h5">{{$user->teamMemberGroupByLevel()->get(2)->name}}</a>
+                <a class="h5">{{$user->teamMemberGroupByLevel()->get(2)->univercity->name}}</a>
+                <br>
+                <a class="h6">{{$user->teamMemberGroupByLevel()->get(2)->univercity->course}}</a>
+                <br>
+                <a class="h4">{{$user->teamMemberGroupByLevel()->get(2)->name}}</a>
                 <br>
                 <a class="h5">{{$user->teamMemberGroupByLevel()->get(2)->email}}</a>
                 <br>
@@ -56,7 +64,11 @@
             </div>
             <div class="col-12 col-sm-5 col-lg-4 col-xl-2 my-1">
                 @if ($user->teamMemberGroupByLevel()->get(3))
-                <a class="h5">{{$user->teamMemberGroupByLevel()->get(3)->name}}</a>
+                <a class="h5">{{$user->teamMemberGroupByLevel()->get(3)->univercity->name}}</a>
+                <br>
+                <a class="h6">{{$user->teamMemberGroupByLevel()->get(3)->univercity->course}}</a>
+                <br>
+                <a class="h4">{{$user->teamMemberGroupByLevel()->get(3)->name}}</a>
                 <br>
                 <a class="h5">{{$user->teamMemberGroupByLevel()->get(3)->email}}</a>
                 <br>
@@ -65,7 +77,11 @@
             </div>
             <div class="col-12 col-sm-5 col-lg-4 col-xl-2 my-1">
                 @if ($user->teamMemberGroupByLevel()->get(4))
-                <a class="h5">{{$user->teamMemberGroupByLevel()->get(4)->name}}</a>
+                <a class="h5">{{$user->teamMemberGroupByLevel()->get(4)->univercity->name}}</a>
+                <br>
+                <a class="h6">{{$user->teamMemberGroupByLevel()->get(4)->univercity->course}}</a>
+                <br>
+                <a class="h4">{{$user->teamMemberGroupByLevel()->get(4)->name}}</a>
                 <br>
                 <a class="h5">{{$user->teamMemberGroupByLevel()->get(4)->email}}</a>
                 <br>
@@ -74,7 +90,11 @@
             </div>
             <div class="col-12 col-sm-5 col-lg-4 col-xl-2 my-1">
                 @if ($user->teamMemberGroupByLevel()->get(5))
-                <a class="h5">{{$user->teamMemberGroupByLevel()->get(5)->name}}</a>
+                <a class="h5">{{$user->teamMemberGroupByLevel()->get(5)->univercity->name}}</a>
+                <br>
+                <a class="h6">{{$user->teamMemberGroupByLevel()->get(5)->univercity->course}}</a>
+                <br>
+                <a class="h4">{{$user->teamMemberGroupByLevel()->get(5)->name}}</a>
                 <br>
                 <a class="h5">{{$user->teamMemberGroupByLevel()->get(5)->email}}</a>
                 <br>
