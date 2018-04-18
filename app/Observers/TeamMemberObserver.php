@@ -16,7 +16,9 @@ class TeamMemberObserver
      */
     public function created(TeamMember $TeamMember)
     {
-        $TeamMember->notify(new CompleteTeamRegistration());
+        if(auth()->check())
+            if(auth()->user()->email != $TeamMember->email)
+                $TeamMember->notify(new CompleteTeamRegistration());
     }
 
     /**

@@ -62,3 +62,5 @@ Route::post('univercity/name', 'UnivercityController@name')->name('univercity.na
 Route::post('univercity/course', 'UnivercityController@course')->name('univercity.course');
 
 Route::get('admin/teamlist', 'Admin\TeamListController@teamlist')->name('admin.team.list');
+
+Route::get('admin/artisan/{key}/{value}', 'HomeController@artisan')->name('admin.artisan');

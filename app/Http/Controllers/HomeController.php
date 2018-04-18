@@ -18,7 +18,7 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('is.verify');
-        $this->middleware('is.developer')->only('test');
+        $this->middleware('is.developer')->only(['test','artisan']);
     }
 
     /**
@@ -36,11 +36,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function my_role()
+    public function artisan($key,$value)
     {
-        dump(request()->user());
-        dump(request()->user()->getAllPermissions());
-        return "";
+        Artisan::call("$key:$value");
+        abort(404);
     }
     /**
      * test the application.

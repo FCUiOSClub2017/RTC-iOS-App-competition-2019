@@ -33,7 +33,6 @@ class TeamController extends Controller
      */
     public function index()
     {
-        // dd(\Propaganistas\LaravelPhone\PhoneNumber::make('0966440833',"tw")->formatInternational());
         $user = auth()->user();
         $teamMember = $user->team_member()->orderBy('level')->get();
         $data = $teamMember->pluck('level');

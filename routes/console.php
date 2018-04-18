@@ -94,16 +94,16 @@ Artisan::command('role:set {role} {email}', function ($role,$email) {
 })->describe('Add role to user with email');
 
 
-use App\Notifications\CustomMessege;
+use App\Notifications\CompleteTeamRegistration;
 Artisan::command('notice:team', function () {
     $users = \App\User::get();
-    \Notification::send($users, new CustomMessege());
-})->describe('notice all team');
+    \Notification::send($users, new CompleteTeamRegistration());
+})->describe('notice team');
 
 
-Artisan::command('notice:member', function () {
+Artisan::command('notice:teammember', function () {
     $member = \App\TeamMember::get();
-    \Notification::send($member, new CustomMessege());
-})->describe('notice all team');
+    \Notification::send($member, new CompleteTeamRegistration());
+})->describe('notice teammember');
 
 
