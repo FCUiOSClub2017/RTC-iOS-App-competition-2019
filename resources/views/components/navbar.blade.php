@@ -43,6 +43,19 @@
         <li>
           <a href="{{route('home')}}#sponsors">贊助商</a>
         </li>
+        <li class="menu-has-children">
+          <i class="fas fa-chevron-right"></i>
+          <a href="#">文件下載</a>
+          <ul>
+            <li>
+              <a href="/doc/2018年APP移動應用創新賽v1.2.pdf">章程</a>
+            </li>
+            <li>
+              <a href="/doc/2018年APP移動應用創新賽附件1~3.pdf">附件</a>
+            </li>
+          </ul>
+        </li>
+
       </ul>
     </li>
     @auth

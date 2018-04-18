@@ -302,7 +302,7 @@ section {
             z-index: 99;
             ul {
                 top: 0;
-                left: 100%;
+                left: -100%;
             }
             li {
                 min-width: 180px;
@@ -1161,5 +1161,26 @@ body.mobile-nav-active {
     }
     &.studioa {
         background-image: url(../img/sponsors/studioa.png);
+    }
+    &.rtc {
+        background-image: url(../img/sponsors/rtc.png);
+    }
+    &.eql {
+        background-image: url(../img/sponsors/eql.png);
+    }
+    &.pawbo {
+        background-image: url(../img/sponsors/pawbo.png);
+    }
+    &.straighta {
+        background-image: url(../img/sponsors/straighta.png);
+    }
+    &.apple {
+        background-image: url(../img/sponsors/apple.png);
+    }
+    &.fcu {
+        background-image: url(../img/sponsors/fcu.png);
+    }
+    &.tracmo {
+        background-image: url(../img/sponsors/tracmo.png);
     }
 }
