@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Role;
 use Permission;
+use Artisan;
 
 class HomeController extends Controller
 {
