@@ -29,7 +29,7 @@
         </div>
         <div class="col-12 col-lg-4 col-md-6 col-xl-3">
           <div class="card card-block">
-            <a href="http://www.eql.com.tw/" class="sponsors eql">eql</a>
+            <a href="http://www.eql.com.tw/" class="sponsors eql"></a>
           </div>
         </div>
         <div class="col-12 col-lg-4 col-md-6 col-xl-3">
@@ -40,12 +40,12 @@
         <div class="w-100 d-none d-lg-block d-xl-none"></div>
         <div class="col-12 col-lg-4 col-md-6 col-xl-3">
           <div class="card card-block">
-            <a href="https://www.pawbo.com/tw/" class="sponsors pawbo">pawbo</a>
+            <a href="https://www.pawbo.com/tw/" class="sponsors pawbo"></a>
           </div>
         </div>
         <div class="col-12 col-lg-4 col-md-6 col-xl-3">
           <div class="card card-block">
-            <a href="https://mytracmo.com/pages/tracmo-taiwan" class="sponsors tracmo">tracmo</a>
+            <a href="https://mytracmo.com/pages/tracmo-taiwan" class="sponsors tracmo"></a>
           </div>
         </div>
       </div>
