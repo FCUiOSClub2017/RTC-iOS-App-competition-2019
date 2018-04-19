@@ -29,7 +29,7 @@
             <div class="row justify-content-around">
               <div class="col-12 col-md-6">
                 <div class="card card-block">
-                  <a href="http://www.apple.com/" class="sponsors pt-0">Apple</a>
+                  <a href="http://www.apple.com/" class="sponsors apple"></a>
                 </div>
               </div>
               <div class="col-12 col-md-6">
