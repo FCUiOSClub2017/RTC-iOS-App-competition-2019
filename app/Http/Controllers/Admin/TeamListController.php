@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\User;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class TeamListController extends Controller
 {
-
     /**
      * Create a new controller instance and set middleware.
      *
@@ -26,8 +24,10 @@ class TeamListController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function teamlist(){
+    public function teamlist()
+    {
         $users = User::role('participant')->get();
+
         return view('admin.teamlist')->with([
             'users' => $users,
         ]);

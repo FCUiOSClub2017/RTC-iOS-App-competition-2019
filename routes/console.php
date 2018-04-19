@@ -20,7 +20,6 @@ Artisan::command('git:deploy', function () {
     exec($cmd, $output, $return);
     $this->comment(serialize($output));
     $this->comment(Artisan::call('migrate'));
-
 })->describe('Deploy project');
 
 Artisan::command('git:push {msg="update"}', function ($msg) {
@@ -31,14 +30,14 @@ Artisan::command('git:push {msg="update"}', function ($msg) {
     $cmd = 'git commit -m "'.$msg.'"';
     exec($cmd, $output, $return);
     $this->comment(serialize($output));
-    
+
     $cmd = 'git push origin master';
     exec($cmd, $output, $return);
     $this->comment(serialize($output));
-    
 })->describe('Push project to github');
 
-use Illuminate\Support\Facades\Redis;
+use App\Notifications\CompleteTeamRegistration;
+
 Artisan::command('redis:test', function () {
     Redis::set('name', 'Taylor');
     $this->comment(Redis::get('name'));
@@ -83,27 +82,24 @@ Artisan::command('role:init', function () {
     ]);
 })->describe('Initial Role and Permission');
 
-Artisan::command('role:set {role} {email}', function ($role,$email) {
+Artisan::command('role:set {role} {email}', function ($role, $email) {
     $developer_user = \App\User::whereEmail($email)->first();
-    if($developer_user){
+    if ($developer_user) {
         $developer_user->syncRoles($role);
         $this->comment($developer_user->id.' - '.$developer_user->email);
-    }else{
+    } else {
         $this->comment($email.' not found!');
     }
 })->describe('Add role to user with email');
 
+use Illuminate\Support\Facades\Redis;
 
-use App\Notifications\CompleteTeamRegistration;
 Artisan::command('notice:team', function () {
     $users = \App\User::get();
     \Notification::send($users, new CompleteTeamRegistration());
 })->describe('notice team');
 
-
 Artisan::command('notice:teammember', function () {
     $member = \App\TeamMember::get();
     \Notification::send($member, new CompleteTeamRegistration());
 })->describe('notice teammember');
-
-

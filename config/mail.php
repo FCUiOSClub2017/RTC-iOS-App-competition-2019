@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'no-reply@mail.fcu.edu.tw'),
-        'name' => env('MAIL_FROM_NAME', 'RTC 管理員'),
+        'name'    => env('MAIL_FROM_NAME', 'RTC 管理員'),
     ],
 
     /*

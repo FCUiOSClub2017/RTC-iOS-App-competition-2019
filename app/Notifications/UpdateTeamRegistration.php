@@ -3,21 +3,22 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
 
 class UpdateTeamRegistration extends Notification implements ShouldQueue
 {
     use Queueable;
     private $oldEmail;
     private $newEmail;
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($oldEmail,$newEmail)
+    public function __construct($oldEmail, $newEmail)
     {
         $this->oldEmail = $oldEmail;
         $this->newEmail = $newEmail;
@@ -26,7 +27,8 @@ class UpdateTeamRegistration extends Notification implements ShouldQueue
     /**
      * Get the notification's delivery channels.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
+     *
      * @return array
      */
     public function via($notifiable)
@@ -37,12 +39,13 @@ class UpdateTeamRegistration extends Notification implements ShouldQueue
     /**
      * Get the mail representation of the notification.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
+     *
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
+        return (new MailMessage())
             ->subject('2018 APP移動應用創新賽 資料更動')
             ->greeting('親愛的參賽者您好：')
             ->line("隊長已將您的電子郵件($this->oldEmail)更改至此電子郵件($this->newEmail)，貼心提醒您競賽日程相關如下，並預祝您贏得佳績！")
@@ -59,13 +62,13 @@ class UpdateTeamRegistration extends Notification implements ShouldQueue
             ->line('聯繫信箱：stacse@straighta.com.tw')
             ->line('聯繫電話：Straight A客服專線（02）6608-1000')
             ->line('感謝您參與!');
-            ;
     }
 
     /**
      * Get the array representation of the notification.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
+     *
      * @return array
      */
     public function toArray($notifiable)
