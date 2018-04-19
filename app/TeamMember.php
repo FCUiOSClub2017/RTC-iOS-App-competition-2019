@@ -14,11 +14,11 @@ class TeamMember extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 
-        'name', 
-        'email', 
+        'user_id',
+        'name',
+        'email',
         'phone',
-        'level', 
+        'level',
         'univercity_id',
     ];
 
@@ -35,24 +35,26 @@ class TeamMember extends Model
     /**
      * Get the user that owns the phone.
      */
-    static public function levelText($data=null)
+    public static function levelText($data = null)
     {
-        if($data==null)
+        if ($data == null) {
             $data = $this->level;
-        $name="NaN";
+        }
+        $name = 'NaN';
         switch ($data) {
             case 4:
             case 5:
-                $name = "指導老師";
+                $name = '指導老師';
                 break;
             case 1:
-                $name = "隊長";
+                $name = '隊長';
                 break;
             case 2:
             case 3:
-                $name = "隊員";
+                $name = '隊員';
                 break;
         }
+
         return $name;
     }
 

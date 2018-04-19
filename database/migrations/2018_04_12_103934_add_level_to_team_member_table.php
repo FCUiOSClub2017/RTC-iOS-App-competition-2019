@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddLevelToTeamMemberTable extends Migration
 {
@@ -26,7 +26,7 @@ class AddLevelToTeamMemberTable extends Migration
     public function down()
     {
         Schema::table('team_members', function (Blueprint $table) {
-                $table->dropColumn('level');
+            $table->dropColumn('level');
         });
     }
 }

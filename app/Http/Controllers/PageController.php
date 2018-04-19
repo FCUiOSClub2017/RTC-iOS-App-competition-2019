@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class PageController extends Controller
 {
     /**
@@ -17,64 +15,79 @@ class PageController extends Controller
         $this->middleware('is.verify');
         $this->middleware('can.set.admin');
     }
-    public function index(){
+
+    public function index()
+    {
         return view('page.index');
     }
 
-    public function aboutEdit(){
+    public function aboutEdit()
+    {
         return view('page.about');
     }
 
-    public function aboutUpdate(){
-        return "";
+    public function aboutUpdate()
+    {
+        return '';
     }
 
-    public function awardEdit(){
+    public function awardEdit()
+    {
         return view('page.award');
     }
 
-    public function awardUpdate(){
-        return "";
+    public function awardUpdate()
+    {
+        return '';
     }
 
-    public function competitionReviewEdit(){
+    public function competitionReviewEdit()
+    {
         return view('page.competition_review');
     }
 
-    public function competitionReviewUpdate(){
-        return "";
+    public function competitionReviewUpdate()
+    {
+        return '';
     }
 
-    public function entryRequirementEdit(){
+    public function entryRequirementEdit()
+    {
         return view('page.entry_requirement');
     }
 
-    public function entryRequirementUpdate(){
-        return "";
+    public function entryRequirementUpdate()
+    {
+        return '';
     }
 
-    public function relatedStatementEdit(){
+    public function relatedStatementEdit()
+    {
         return view('page.related_statement');
     }
 
-    public function relatedStatementUpdate(){
-        return "";
+    public function relatedStatementUpdate()
+    {
+        return '';
     }
 
-    public function reviewAndAwardsEdit(){
+    public function reviewAndAwardsEdit()
+    {
         return view('page.review_and_awards');
     }
 
-    public function reviewAndAwardsUpdate(){
-        return "";
+    public function reviewAndAwardsUpdate()
+    {
+        return '';
     }
 
-    public function workRequirementEdit(){
+    public function workRequirementEdit()
+    {
         return view('page.work_requirement');
     }
 
-    public function workRequirementUpdate(){
-        return "";
+    public function workRequirementUpdate()
+    {
+        return '';
     }
-
 }

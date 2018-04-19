@@ -29,7 +29,6 @@ Route::get('verify/success', 'VerifyController@success')->name('verify.success')
 Route::post('verify/resend', 'VerifyController@resendEmail')->name('verify.resend');
 Route::get('verify/{token}', 'VerifyController@process')->name('verify.process');
 
-
 Route::get('team', 'TeamController@index')->name('team.info');
 Route::get('team/{level}', 'TeamController@edit')->name('team.edit');
 Route::post('team/{level}', 'TeamController@update')->name('team.update');
@@ -52,7 +51,6 @@ Route::get('page/reviewAndAwards', 'PageController@reviewAndAwardsEdit')->name('
 Route::post('page/reviewAndAwards', 'PageController@reviewAndAwardsUpdate')->name('page.reviewAndAwards.update');
 Route::get('page/workRequirement', 'PageController@workRequirementEdit')->name('page.workRequirement.edit');
 Route::post('page/workRequirement', 'PageController@workRequirementUpdate')->name('page.workRequirement.update');
-
 
 Route::get('/home', 'HomeController@index')->name('user');
 Route::get('/test', 'HomeController@test')->name('test');

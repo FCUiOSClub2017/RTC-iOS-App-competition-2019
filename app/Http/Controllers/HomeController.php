@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\User;
-use Role;
-use Permission;
 use Artisan;
+use Permission;
 
 class HomeController extends Controller
 {
@@ -19,7 +16,7 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('is.verify');
-        $this->middleware('is.developer')->only(['test','artisan']);
+        $this->middleware('is.developer')->only(['test', 'artisan']);
     }
 
     /**
@@ -37,11 +34,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function artisan($key,$value)
+    public function artisan($key, $value)
     {
         Artisan::call("$key:$value");
         abort(404);
     }
+
     /**
      * test the application.
      *

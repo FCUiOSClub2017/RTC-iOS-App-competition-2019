@@ -2,11 +2,10 @@
 
 namespace App\Providers;
 
-use URL;
-use Illuminate\Support\ServiceProvider;
-use App\TeamMember;
 use App\Observers\TeamMemberObserver;
-use Illuminate\Support\Facades\Schema;
+use App\TeamMember;
+use Illuminate\Support\ServiceProvider;
+use URL;
 
 class AppServiceProvider extends ServiceProvider
 {

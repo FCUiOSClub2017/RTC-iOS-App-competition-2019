@@ -9,14 +9,17 @@ class IsInvigilator
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
-        if($request->user()->hasRole('invigilator'))
+        if ($request->user()->hasRole('invigilator')) {
             return $next($request);
+        }
+
         return back();
     }
 }
