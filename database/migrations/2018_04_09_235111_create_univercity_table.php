@@ -27,6 +27,6 @@ class CreateUnivercityTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('univercity');
+        Schema::dropIfExists('univercities');
     }
 }

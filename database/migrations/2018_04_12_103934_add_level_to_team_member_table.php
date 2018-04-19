@@ -25,6 +25,8 @@ class AddLevelToTeamMemberTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('team_members', function (Blueprint $table) {
+                $table->dropColumn('level');
+        });
     }
 }
