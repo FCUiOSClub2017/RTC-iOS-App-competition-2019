@@ -2,11 +2,11 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Spatie\Permission\Traits\HasRoles;
 use App\Notifications\ResetPassword;
 use App\Notifications\VerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
@@ -18,8 +18,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 
-        'email', 
+        'name',
+        'email',
         'password',
         'verify',
     ];
@@ -41,7 +41,8 @@ class User extends Authenticatable
     /**
      * Send the password reset notification.
      *
-     * @param  string  $token
+     * @param string $token
+     *
      * @return void
      */
     public function sendPasswordResetNotification($token)
@@ -52,7 +53,8 @@ class User extends Authenticatable
     /**
      * Send the verify notification.
      *
-     * @param  string  $token
+     * @param string $token
+     *
      * @return void
      */
     public function sendVerifyEmailNotification($token)
@@ -60,19 +62,26 @@ class User extends Authenticatable
         $this->notify(new VerifyEmail($token));
     }
 
-    public function verify(){
+    public function verify()
+    {
         return $this->hasOne('App\UserVerify');
     }
 
-    public function team_member(){
+    public function team_member()
+    {
         return $this->hasMany('App\TeamMember');
     }
 
     private $teamMemberGroupByLevel;
-    public function teamMemberGroupByLevel(){
-        if(!$this->teamMemberGroupByLevel)
-            $this->teamMemberGroupByLevel = $this->team_member->groupBy('level')->map(function($item,$key){return $item->first();});
+
+    public function teamMemberGroupByLevel()
+    {
+        if (!$this->teamMemberGroupByLevel) {
+            $this->teamMemberGroupByLevel = $this->team_member->groupBy('level')->map(function ($item, $key) {
+                return $item->first();
+            });
+        }
+
         return $this->teamMemberGroupByLevel;
     }
-
 }

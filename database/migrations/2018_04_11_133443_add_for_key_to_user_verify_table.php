@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddForKeyToUserVerifyTable extends Migration
 {
@@ -13,11 +13,9 @@ class AddForKeyToUserVerifyTable extends Migration
      */
     public function up()
     {
-        Schema::table('user_verifies', function(Blueprint $table)
-        {
+        Schema::table('user_verifies', function (Blueprint $table) {
             $table->foreign('user_id', 'FK_user_vrify_email')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
-
     }
 
     /**
@@ -27,8 +25,7 @@ class AddForKeyToUserVerifyTable extends Migration
      */
     public function down()
     {
-        Schema::table('user_verifies', function(Blueprint $table)
-        {
+        Schema::table('user_verifies', function (Blueprint $table) {
             $table->dropForeign('FK_user_vrify_email');
         });
     }

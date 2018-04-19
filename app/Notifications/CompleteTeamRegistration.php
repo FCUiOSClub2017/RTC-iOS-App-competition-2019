@@ -3,9 +3,9 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
 
 class CompleteTeamRegistration extends Notification implements ShouldQueue
 {
@@ -24,7 +24,8 @@ class CompleteTeamRegistration extends Notification implements ShouldQueue
     /**
      * Get the notification's delivery channels.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
+     *
      * @return array
      */
     public function via($notifiable)
@@ -35,12 +36,13 @@ class CompleteTeamRegistration extends Notification implements ShouldQueue
     /**
      * Get the mail representation of the notification.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
+     *
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
+        return (new MailMessage())
             ->subject('2018 APP移動應用創新賽')
             ->greeting('親愛的參賽者您好：')
             ->line('您已加入APP移動應用創新賽隊伍，貼心提醒您競賽日程相關如下，請於比賽官網上，按時繳交各項相關資料，並預祝您贏得佳績！')
@@ -62,7 +64,8 @@ class CompleteTeamRegistration extends Notification implements ShouldQueue
     /**
      * Get the array representation of the notification.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
+     *
      * @return array
      */
     public function toArray($notifiable)

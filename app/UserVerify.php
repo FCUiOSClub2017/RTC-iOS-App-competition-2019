@@ -20,8 +20,8 @@ class UserVerify extends Model
     }
 
     protected $fillable = [
-        'token', 
-        'user_id', 
+        'token',
+        'user_id',
     ];
 
     /**

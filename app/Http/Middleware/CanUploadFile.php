@@ -9,14 +9,17 @@ class CanUploadFile
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
-        if($request->user()->hasAnyPermission(['upload file']))
+        if ($request->user()->hasAnyPermission(['upload file'])) {
             return $next($request);
+        }
+
         return back();
     }
 }
