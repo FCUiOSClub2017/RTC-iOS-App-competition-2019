@@ -38,7 +38,7 @@ class InitialUnivercityList extends Command
      */
     public function handle()
     {
-        Univercity::truncate();
+        // Univercity::truncate();
         Univercity::firstOrCreate(['name'=>"國立政治大學",'course'=>"教育學系"]);
         Univercity::firstOrCreate(['name'=>"國立政治大學",'course'=>"華語文教學博士學位學程"]);
         Univercity::firstOrCreate(['name'=>"國立政治大學",'course'=>"華語文教學碩士學位學程"]);
