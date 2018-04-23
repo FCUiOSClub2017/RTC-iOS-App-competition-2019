@@ -9,7 +9,7 @@ use App\User;
 use PhpOffice\PhpSpreadsheet\Shared\Date;
 use App\TeamMember;
 
-class TeamListExport implements FromCollection, WithMapping,WithHeadings
+class TeamListExport implements FromCollection, WithHeadings
 {
     public function collection()
     {
@@ -18,55 +18,84 @@ class TeamListExport implements FromCollection, WithMapping,WithHeadings
         // dd($data->all());
         
         foreach ($data as $teamkey => $teamvalue) {
-            foreach ($teamvalue->team_member as $key => $value) {
-                $alldata->push([
-                    'team_name'=>$teamvalue->name,
-                    'team_email'=>$teamvalue->email,
-                    'school'=>$value->univercity->name,
-                    'course'=>$value->univercity->course,
-                    'level'=>TeamMember::levelText($value->level),
-                    'name'=>$value->name,
-                    'email'=>$value->email,
-                    'phone'=>$value->phone,
-                    'created_at'=>$teamvalue->created_at->toDateTimeString(),
-                ]);
+            $teamdata = collect([
+                'created_at'=>$teamvalue->created_at->toDateTimeString(),
+                'team_name'=>$teamvalue->name,
+                'team_email'=>$teamvalue->email,
+                'split'=>'',
+            ]);
+            for ($i=1;$i<6;$i++) {
+                $value = $teamvalue->team_member()->whereLevel($i)->first();
+                if ($value)
+                    $teamdata->push([
+                        'level'=>TeamMember::levelText($value->level),
+                        'school'=>$value->univercity->name,
+                        'course'=>$value->univercity->course,
+                        'name'=>$value->name,
+                        'email'=>$value->email,
+                        'phone'=>$value->phone,
+                        'split'=>'',
+                    ]);
+                else
+                    $teamdata->push([
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                    ]);
             }
+            $alldata->push($teamdata->flatten());
         }
-        // dump($alldata);
+        // dd($alldata->toArray());
 
         return $alldata;
-    }
-
-    /**
-    * @var Invoice $invoice
-    */
-    public function map($team): array
-    {
-        return [
-            $team['team_name'],
-            $team['team_email'],
-            $team['school'],
-            $team['course'],
-            $team['level'],
-            $team['name'],
-            $team['email'],
-            $team['phone'],
-            $team['created_at'],
-        ];
     }
 
     public function headings(): array
     {
         return [
-            'Team Name',
-            'Team Email',
-            'School',
-            'Course',
-            'Level',
-            'Name',
-            'Email',
-            'Phone',
-            'Date',
+            '建立時間',
+            '隊伍名稱',
+            '隊伍電子郵件',
+            '',
+            '職位',
+            '學校',
+            '系所',
+            '姓名',
+            '隊員 Email',
+            '手機號碼',
+            '',
+            '職位',
+            '學校',
+            '系所',
+            '姓名',
+            '隊員 Email',
+            '手機號碼',
+            '',
+            '職位',
+            '學校',
+            '系所',
+            '姓名',
+            '隊員 Email',
+            '手機號碼',
+            '',
+            '職位',
+            '學校',
+            '系所',
+            '姓名',
+            '隊員 Email',
+            '手機號碼',
+            '',
+            '職位',
+            '學校',
+            '系所',
+            '姓名',
+            '隊員 Email',
+            '手機號碼',
+            '',
         ];
     }
 }
