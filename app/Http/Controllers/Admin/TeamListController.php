@@ -44,6 +44,6 @@ class TeamListController extends Controller
     {
         $users = User::role('participant')->get();
 
-        return Excel::download(new TeamListExport(), 'TeamList.xlsx');
+        return Excel::download(new TeamListExport(), 'TeamList_'.\Carbon\Carbon::now()->toDateTimeString().'.xlsx');
     }
 }
