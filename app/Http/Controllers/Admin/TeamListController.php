@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Exports\TeamListExport;
+use Excel;
 
 class TeamListController extends Controller
 {
@@ -31,5 +33,18 @@ class TeamListController extends Controller
         return view('admin.teamlist')->with([
             'users' => $users,
         ]);
+    }
+
+    /**
+     * render team list view.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function download()
+    {
+        $users = User::role('participant')->get();
+
+        return Excel::download(new TeamListExport, 'TeamList.xlsx');
+
     }
 }

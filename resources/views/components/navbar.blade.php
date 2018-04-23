@@ -72,6 +72,9 @@
         <li>
           <a href="{{ route('admin.team.list') }}">队伍列表</a>
         </li>
+        <li>
+          <a href="{{ route('admin.team.list.download') }}">队伍列表下載(EXCEL)</a>
+        </li>
         @endcan
         @can('edit website')
         <li>
