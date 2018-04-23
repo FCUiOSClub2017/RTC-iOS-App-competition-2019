@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\TeamListExport;
 use App\Http\Controllers\Controller;
 use App\User;
-use App\Exports\TeamListExport;
 use Excel;
 
 class TeamListController extends Controller
@@ -44,7 +44,6 @@ class TeamListController extends Controller
     {
         $users = User::role('participant')->get();
 
-        return Excel::download(new TeamListExport, 'TeamList.xlsx');
-
+        return Excel::download(new TeamListExport(), 'TeamList.xlsx');
     }
 }

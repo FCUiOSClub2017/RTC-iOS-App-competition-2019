@@ -2,33 +2,33 @@
 
 namespace App\Exports;
 
+use App\TeamMember;
+use App\User;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
-use App\User;
 use PhpOffice\PhpSpreadsheet\Shared\Date;
-use App\TeamMember;
 
-class TeamListExport implements FromCollection, WithMapping,WithHeadings
+class TeamListExport implements FromCollection, WithMapping, WithHeadings
 {
     public function collection()
     {
         $data = User::role('participant')->with('team_member')->get();
         $alldata = collect();
         // dd($data->all());
-        
+
         foreach ($data as $teamkey => $teamvalue) {
             foreach ($teamvalue->team_member as $key => $value) {
                 $alldata->push([
-                    'team_name'=>$teamvalue->name,
-                    'team_email'=>$teamvalue->email,
-                    'school'=>$value->univercity->name,
-                    'course'=>$value->univercity->course,
-                    'level'=>TeamMember::levelText($value->level),
-                    'name'=>$value->name,
-                    'email'=>$value->email,
-                    'phone'=>$value->phone,
-                    'created_at'=>$teamvalue->created_at->toDateTimeString(),
+                    'team_name' => $teamvalue->name,
+                    'team_email'=> $teamvalue->email,
+                    'school'    => $value->univercity->name,
+                    'course'    => $value->univercity->course,
+                    'level'     => TeamMember::levelText($value->level),
+                    'name'      => $value->name,
+                    'email'     => $value->email,
+                    'phone'     => $value->phone,
+                    'created_at'=> $teamvalue->created_at->toDateTimeString(),
                 ]);
             }
         }
@@ -38,8 +38,8 @@ class TeamListExport implements FromCollection, WithMapping,WithHeadings
     }
 
     /**
-    * @var Invoice $invoice
-    */
+     * @var Invoice
+     */
     public function map($team): array
     {
         return [
