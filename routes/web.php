@@ -33,7 +33,7 @@ Route::get('team', 'TeamController@index')->name('team.info');
 Route::get('team/{level}', 'TeamController@edit')->name('team.edit');
 Route::post('team/{level}', 'TeamController@update')->name('team.update');
 Route::patch('team/{level}', 'TeamController@getTeamData')->name('team.data.get');
-Route::put('team/{level}', 'TeamController@uniqueEmail')->name('team.check.email');
+Route::put('team/{level}', 'TeamController@checkEmailDuplication')->name('team.check.email');
 Route::delete('team/{level}', 'TeamController@clear')->name('team.clear');
 
 Route::get('page', 'PageController@index')->name('page.index');

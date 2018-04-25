@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\TeamMember;
 use App\Univercity;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
 {
-    private $errorMessage;
 
     /**
      * Create a new controller instance and set middleware.
@@ -20,7 +20,6 @@ class TeamController extends Controller
         $this->middleware('auth');
         $this->middleware('is.verify');
         $this->middleware('can.edit.teammate');
-        $this->errorMessage = collect();
     }
 
     /**
@@ -71,19 +70,13 @@ class TeamController extends Controller
         $request = request();
         $email = $request->input('email');
 
-        $isDuplicationMember = TeamMember::whereEmail($email)->first();
-        $isSameMember = TeamMember::whereEmail($email)->where('user_id', $user->id)->where('level', $level)->first();
-        if (((int) $level) > 3) {
-            $isDuplicationMember = TeamMember::whereEmail($email)->where('level', '<>', 4)->where('level', '<>', 5)->first();
-        }
-        $isDuplication = $isDuplicationMember && !$isSameMember;
-        if ($isDuplication) {
+        if ($this->isDuplicationEmail($email,$level)) {
             return redirect()->back()->withErrors(['error'=>"此電子郵件 $email 已被其他隊伍使用！"]);
         }
         $univercity = Univercity::where('name', request()->input('univercity'))->where('course', request()->input('course'))->first();
 
         if (!$univercity) {
-            return redirect()->back()->withErrors(['error'=>'學校/學系不存在！']);
+            return redirect()->back()->withErrors(['error'=>'學校 / 學系不存在！']);
         }
 
         $request->validate([
@@ -141,25 +134,39 @@ class TeamController extends Controller
     }
 
     /**
-     * Check unique Email.
+     * Check email duplication response.
      *
      * @return \Illuminate\Http\Response
      */
-    public function uniqueEmail($level)
+    public function checkEmailDuplication($level)
     {
         $email = request()->email;
-        if (!$email) {
+        if (!$email) 
             return [];
-        }
+        return ['result'=>$this->isDuplicationEmail($email,$level)];
+    }
+
+    /**
+     * check email is unique or duplication
+     * @param  string  $email 
+     * @param  string  $level 
+     * @return boolean        return isDuplication
+     */
+    private function isDuplicationEmail($email,$level){
         $user = auth()->user();
+
         $isDuplicationMember = TeamMember::whereEmail($email)->first();
-        $isSameMember = TeamMember::whereEmail($email)->where('user_id', $user->id)->where('level', $level)->first();
-        if ((int) $level > 3) {
+
+        if ((int) $level > 3) 
             $isDuplicationMember = TeamMember::whereEmail($email)->where('level', '<>', 4)->where('level', '<>', 5)->first();
-        }
 
-        $isDuplication = $isDuplicationMember && !$isSameMember;
+        $isSameMember = TeamMember::whereEmail($email)->where('user_id', $user->id)->where('level', $level)->first();
 
-        return ['result'=>!$isDuplication];
+        if ($isDuplicationMember!=null && !$isSameMember) return true;
+
+        $isDuplicationTeamEmail = User::role('participant')->where('email',$email)->first();
+        if ($isDuplicationTeamEmail) return true;
+
+        return false;
     }
 }

@@ -127,7 +127,7 @@ export default {
             console.log(data)
             axios.put(window.location.href, data).then(response => {
                 if (typeof(response.data.result) === "boolean") {
-                    this.emailDanger = !response.data.result
+                    this.emailDanger = response.data.result
                     this.emailPass = !this.emailDanger;
                 } else {
                     this.emailDanger = false;
