@@ -16,7 +16,7 @@ window.Vue = require("vue");
 
 Vue.component("navbar", require("./components/navbar.vue"));
 Vue.component("teamedit", require("./components/TeamEdit.vue"));
-
+Vue.component('file-upload', require('vue-upload-component'))
 Rx.DOM.ready().subscribe(() => {
     const app = new Vue({
         el: "#app"

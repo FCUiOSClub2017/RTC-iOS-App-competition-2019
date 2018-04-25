@@ -38,6 +38,7 @@
         "superfish": "^1.7.10",
         "vide": "^0.5.1",
         "vue-multiselect": "^2.1.0",
+        "vue-upload-component": "^2.8.5",
         "waypoints": "^4.0.1"
     }
 }

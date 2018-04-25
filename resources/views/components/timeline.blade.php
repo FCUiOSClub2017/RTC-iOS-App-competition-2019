@@ -29,6 +29,7 @@
               </div>
               <div class="circle-overlay">
                 <a>請以A4版面書寫5~10頁以內，另作封面註明隊伍名稱與作品名稱，檔案格式請存成 PDF 檔，檔案名稱須同【聯絡人學校_聯絡人系級_聯絡人姓名_參賽APP名稱_APP作品】</a>
+                <a href="/doc/2018年APP移動應用創新賽附件1~3.pdf" style=" top:90%;color:aqua;" onclick="event.preventDefault();window.open('/doc/2018年APP移動應用創新賽附件1~3.pdf', '_blank');">附件</a>
                 {{-- <a>5⽉1⽇～5⽉23⽇參賽作品交件</a> --}}
               </div>
             </div>
@@ -46,6 +47,7 @@
               </div>
               <div class="circle-overlay">
                 <a>獲選進入決賽之隊伍，需於6/30前繳交，所在學校系所用印後的報名表如附件二，文件需整併成一個PDF檔,檔案名稱須同【聯絡人學校_聯絡 人系級_聯絡人姓名_參賽APP名稱】。</a>
+                <a href="/doc/2018年APP移動應用創新賽附件1~3.pdf" style=" top:90%;color:aqua;" onclick="event.preventDefault();window.open('/doc/2018年APP移動應用創新賽附件1~3.pdf', '_blank');">附件</a>
                 {{-- <a>獲選進入決賽之隊伍，必須在一周內提供每位成員的在學證明以及指導老師的教師資格證明</a> --}}
               </div>
             </div>
@@ -64,6 +66,7 @@
               </div>
               <div class="circle-overlay">
                 <a>提交決賽現場的提案簡報檔、SOURCE CODE、APP宣傳資料(附件三)，以及APP操作過程影片檔180秒，請存成一個資料夾,並壓縮成.zip檔，檔案名稱須同【聯絡人學校_聯絡人系級_聯絡人姓名_參賽APP名稱_APP作品】。</a>
+                <a href="/doc/2018年APP移動應用創新賽附件1~3.pdf" style=" top:90%;color:aqua;" onclick="event.preventDefault();window.open('/doc/2018年APP移動應用創新賽附件1~3.pdf', '_blank');">附件</a>
               </div>
             </div>
           </div>

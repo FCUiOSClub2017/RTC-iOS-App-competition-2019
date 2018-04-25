@@ -20,12 +20,12 @@
                         <div class="col-4">
                             <h4>姓名</h4></div>
                         <div class="col-8">
-                            <input type="text" v-model="name" v-bind:name="'name'" placeholder="姓名">
+                            <input type="text" v-model="name" name="name" placeholder="姓名" required>
                         </div>
                         <div class="col-4">
                             <h4>Email</h4></div>
                         <div class="col-8">
-                            <input v-model="email" type="email" v-bind:name="'email'" placeholder="電子郵箱" @change="emailOnChange">
+                            <input v-model="email" type="email" name="email" placeholder="電子郵箱" @change="emailOnChange" required>
                         </div>
                         <div class="col-4" v-if="emailDanger"></div>
                         <div class="col-8" v-if="emailDanger">
@@ -38,10 +38,10 @@
                         <div class="col-4">
                             <h4>手機號碼</h4></div>
                         <div class="col-8">
-                            <input type="tel" v-model="phone" v-bind:name="'phone'" placeholder="手機號碼" v-bind:required="required">
+                            <input type="tel" v-model="phone" name="phone" placeholder="手機號碼" v-bind:required="required">
                         </div>
-                        <input type="hidden" v-bind:name="'univercity'" v-bind:value="selectedUnivercityName">
-                        <input type="hidden" v-bind:name="'course'" v-bind:value="selectedUnivercityCourse">
+                        <input type="hidden" name="univercity" v-bind:value="selectedUnivercityName" required>
+                        <input type="hidden" name="course" v-bind:value="selectedUnivercityCourse" required>
                     </div>
                 </div>
             </div>

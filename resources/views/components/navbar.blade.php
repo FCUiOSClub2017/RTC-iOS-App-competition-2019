@@ -48,10 +48,10 @@
           <a href="#">文件下載</a>
           <ul>
             <li>
-              <a href="/doc/2018年APP移動應用創新賽v1.2.pdf">章程</a>
+              <a href="/doc/2018年APP移動應用創新賽v1.2.pdf" onclick="event.preventDefault();window.open('/doc/2018年APP移動應用創新賽v1.2.pdf', '_blank');">章程</a>
             </li>
             <li>
-              <a href="/doc/2018年APP移動應用創新賽附件1~3.pdf">附件</a>
+              <a href="/doc/2018年APP移動應用創新賽附件1~3.pdf" onclick="event.preventDefault();window.open('/doc/2018年APP移動應用創新賽附件1~3.pdf', '_blank');">附件</a>
             </li>
           </ul>
         </li>
