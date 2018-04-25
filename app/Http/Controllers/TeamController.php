@@ -164,7 +164,7 @@ class TeamController extends Controller
 
         if ($isDuplicationMember!=null && !$isSameMember) return true;
 
-        $isDuplicationTeamEmail = User::role('participant')->where('email',$email)->first();
+        $isDuplicationTeamEmail = User::role('participant')->where('id','<>',$user->id)->where('email',$email)->first();
         if ($isDuplicationTeamEmail) return true;
 
         return false;
