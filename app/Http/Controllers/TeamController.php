@@ -194,6 +194,7 @@ class TeamController extends Controller
         ) {
             return view('team.proposalUpload')->withErrors(['msg'=>'未開放！']);
         }
+
         return view('team.proposalUpload');
     }
 
