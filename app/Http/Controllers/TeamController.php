@@ -205,7 +205,7 @@ class TeamController extends Controller
     public function proposalUploadFile(Request $request)
     {
         request()->validate([
-            'proposal' => 'required|mimes:pdf|mimetypes:application/pdf',
+            'proposal' => 'required|mimes:pdf|mimetypes:application/pdf|max:10240',
         ]);
         if (
             !auth()->user()->hasRole('developer')
