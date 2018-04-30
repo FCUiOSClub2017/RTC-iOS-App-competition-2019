@@ -60,10 +60,6 @@
     @endif
     </div>
     @endforeach
-    <div class="row">
-        <div class="col">asd</div>
-        <div class="col"><file-upload>Upload File</file-upload></div>
-    </div>
     </div>
 </section>
 @endsection
