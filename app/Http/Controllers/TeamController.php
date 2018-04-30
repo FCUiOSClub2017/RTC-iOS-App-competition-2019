@@ -229,10 +229,10 @@ class TeamController extends Controller
     {
         if (Storage::exists(auth()->user()->id.'/proposal.pdf')) {
             return response(Storage::get(auth()->user()->id.'/proposal.pdf'))->withHeaders([
-                    'Content-Type' => 'application/pdf',
-                    'Cache-Control' => 'no-store, no-cache',
+                    'Content-Type'        => 'application/pdf',
+                    'Cache-Control'       => 'no-store, no-cache',
                     'Content-Disposition' => 'attachment; filename="'.auth()->user()->name.'_企劃書_'.Carbon::now()->toDateTimeString().'.pdf"',
-                ]);;
+                ]);
         }
 
         return redirect()->back()->withErrors(['msg'=>'檔案不存在']);
