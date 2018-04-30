@@ -205,7 +205,7 @@ class TeamController extends Controller
             !auth()->user()->hasRole('developer')
             && Carbon::now() < Carbon::create(2018, 5, 1, 0, 0, 0)
         ) {
-            return redirect()->back()->withErrors(['msg'=>'不在開放時間']);
+            return redirect()->back()->withErrors(['msg'=>'未開放！']);
         } else {
             request()->proposal->storeAs(auth()->user()->id, 'proposal.pdf');
 
@@ -221,7 +221,7 @@ class TeamController extends Controller
     public function proposalDownload()
     {
         if (Storage::exists(auth()->user()->id.'/proposal.pdf')) {
-            return Storage::download(auth()->user()->id.'/proposal.pdf', auth()->user()->name.'_proposal_'.Carbon::now()->toDateTimeString().'.pdf');
+            return Storage::download(auth()->user()->id.'/proposal.pdf', 'proposal_'.Carbon::now()->toDateTimeString().'.pdf');
         }
 
         return redirect()->back()->withErrors(['msg'=>'檔案不存在']);
