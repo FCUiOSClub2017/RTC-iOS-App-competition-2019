@@ -188,6 +188,12 @@ class TeamController extends Controller
      */
     public function proposalUploadView()
     {
+        if (
+            !auth()->user()->hasRole('developer')
+            && Carbon::now() < Carbon::create(2018, 5, 1, 0, 0, 0)
+        ) {
+            return view('team.proposalUpload')->withErrors(['msg'=>'未開放！']);
+        }
         return view('team.proposalUpload');
     }
 
