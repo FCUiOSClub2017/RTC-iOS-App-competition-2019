@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\TeamMember;
 use App\Univercity;
 use App\User;
-use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Storage;
 
 class TeamController extends Controller
@@ -182,18 +182,22 @@ class TeamController extends Controller
     }
 
     /**
-     * return proposal view
+     * return proposal view.
+     *
      * @return \Illuminate\Http\Response
      */
-    public function proposalUploadView(){
+    public function proposalUploadView()
+    {
         return view('team.proposalUpload');
     }
 
     /**
-     * upload proposal
+     * upload proposal.
+     *
      * @return \Illuminate\Http\Response
      */
-    public function proposalUploadFile(Request $request){
+    public function proposalUploadFile(Request $request)
+    {
         request()->validate([
             'proposal' => 'required|mimes:pdf|mimetypes:application/pdf',
         ]);
@@ -202,37 +206,44 @@ class TeamController extends Controller
             && Carbon::now() < Carbon::create(2018, 5, 1, 0, 0, 0)
         ) {
             return redirect()->back()->withErrors(['msg'=>'不在開放時間']);
-        }
-        else{
-            request()->proposal->storeAs(auth()->user()->id,'proposal.pdf');
-            return redirect()->back()->with('msg','成功上傳！');
+        } else {
+            request()->proposal->storeAs(auth()->user()->id, 'proposal.pdf');
+
+            return redirect()->back()->with('msg', '成功上傳！');
         }
     }
 
     /**
-     * download proposal
+     * download proposal.
+     *
      * @return \Illuminate\Http\Response
      */
-    public function proposalDownload(){
+    public function proposalDownload()
+    {
         if (Storage::exists(auth()->user()->id.'/proposal.pdf')) {
-            return Storage::download(auth()->user()->id.'/proposal.pdf',auth()->user()->name.'_proposal_'.Carbon::now()->toDateTimeString().'.pdf');
+            return Storage::download(auth()->user()->id.'/proposal.pdf', auth()->user()->name.'_proposal_'.Carbon::now()->toDateTimeString().'.pdf');
         }
+
         return redirect()->back()->withErrors(['msg'=>'檔案不存在']);
     }
 
     /**
-     * return proposal view
+     * return proposal view.
+     *
      * @return \Illuminate\Http\Response
      */
-    public function registerFormUploadView(){
+    public function registerFormUploadView()
+    {
         return view('team.registerFormUpload');
     }
 
     /**
-     * return proposal view
+     * return proposal view.
+     *
      * @return \Illuminate\Http\Response
      */
-    public function appUploadView(){
+    public function appUploadView()
+    {
         return view('team.appUpload');
     }
 }

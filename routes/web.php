@@ -45,7 +45,6 @@ Route::prefix('team')->group(function () {
         Route::post('proposal', 'TeamController@proposalUploadFile')->name('team.proposal.uplaod');
         Route::get('proposal/download', 'TeamController@proposalDownload')->name('team.proposal.download');
     });
-
 });
 
 Route::prefix('page')->group(function () {
@@ -73,9 +72,7 @@ Route::get('role', 'HomeController@my_role')->name('test');
 Route::prefix('univercity')->group(function () {
     Route::post('name', 'UnivercityController@name')->name('univercity.name');
     Route::post('course', 'UnivercityController@course')->name('univercity.course');
-
 });
-
 
 Route::prefix('admin')->group(function () {
     Route::get('teamlist', 'Admin\TeamListController@teamlist')->name('admin.team.list');
