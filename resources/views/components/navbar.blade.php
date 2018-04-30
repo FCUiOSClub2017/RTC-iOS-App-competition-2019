@@ -55,7 +55,6 @@
             </li>
           </ul>
         </li>
-
       </ul>
     </li>
     @auth
@@ -67,16 +66,17 @@
         <li>
           <a href="{{ route('team.info') }}">我的隊伍資料</a>
         </li>
-        @endcan
-        @can('review all file')
+        <li>
+          <a href="{{ route('team.proposal.uplaod') }}">企劃書上傳</a>
+        </li>
+        @endcan @can('review all file')
         <li>
           <a href="{{ route('admin.team.list') }}">队伍列表</a>
         </li>
         <li>
           <a href="{{ route('admin.team.list.download') }}">队伍列表下載(EXCEL)</a>
         </li>
-        @endcan
-        @can('edit website')
+        @endcan @can('edit website')
         <li>
           <a href="{{ route('page.index') }}">編輯頁面</a>
         </li>

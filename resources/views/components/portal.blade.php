@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="feature-col col-12 col-md-5">
-                <div class="card card-block text-center" style="cursor: pointer;" onclick="window.location='{{route('register')}}'">
+                <div class="card card-block text-center" style="cursor: pointer;" onclick="window.location='{{route('team.proposal.uplaod')}}'">
                     <div>
                         <div class="feature-icon">
                             <span class="fas fa-envelope"></span>
