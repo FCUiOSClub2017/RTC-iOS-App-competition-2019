@@ -29,37 +29,57 @@ Route::get('verify/success', 'VerifyController@success')->name('verify.success')
 Route::post('verify/resend', 'VerifyController@resendEmail')->name('verify.resend');
 Route::get('verify/{token}', 'VerifyController@process')->name('verify.process');
 
-Route::get('team', 'TeamController@index')->name('team.info');
-Route::get('team/{level}', 'TeamController@edit')->name('team.edit');
-Route::post('team/{level}', 'TeamController@update')->name('team.update');
-Route::patch('team/{level}', 'TeamController@getTeamData')->name('team.data.get');
-Route::put('team/{level}', 'TeamController@checkEmailDuplication')->name('team.check.email');
-Route::delete('team/{level}', 'TeamController@clear')->name('team.clear');
+Route::prefix('team')->group(function () {
+    Route::get('/', 'TeamController@index')->name('team.info');
 
-Route::get('page', 'PageController@index')->name('page.index');
-Route::get('page/about', 'PageController@aboutEdit')->name('page.about.edit');
-Route::post('page/about', 'PageController@aboutUpdate')->name('page.about.update');
-Route::get('page/award', 'PageController@awardEdit')->name('page.award.edit');
-Route::post('page/award', 'PageController@awardUpdate')->name('page.award.update');
-Route::get('page/competitionReview', 'PageController@competitionReviewEdit')->name('page.competitionReview.edit');
-Route::post('page/competitionReview', 'PageController@competitionReviewUpdate')->name('page.competitionReview.update');
-Route::get('page/entryRequirement', 'PageController@entryRequirementEdit')->name('page.entryRequirement.edit');
-Route::post('page/entryRequirement', 'PageController@entryRequirementUpdate')->name('page.entryRequirement.update');
-Route::get('page/relatedStatement', 'PageController@relatedStatementEdit')->name('page.relatedStatement.edit');
-Route::post('page/relatedStatement', 'PageController@relatedStatementUpdate')->name('page.relatedStatement.update');
-Route::get('page/reviewAndAwards', 'PageController@reviewAndAwardsEdit')->name('page.reviewAndAwards.edit');
-Route::post('page/reviewAndAwards', 'PageController@reviewAndAwardsUpdate')->name('page.reviewAndAwards.update');
-Route::get('page/workRequirement', 'PageController@workRequirementEdit')->name('page.workRequirement.edit');
-Route::post('page/workRequirement', 'PageController@workRequirementUpdate')->name('page.workRequirement.update');
+    Route::prefix('edit')->group(function () {
+        Route::get('{level}', 'TeamController@edit')->name('team.edit');
+        Route::post('{level}', 'TeamController@update')->name('team.update');
+        Route::patch('{level}', 'TeamController@getTeamData')->name('team.data.get');
+        Route::put('{level}', 'TeamController@checkEmailDuplication')->name('team.check.email');
+        Route::delete('{level}', 'TeamController@clear')->name('team.clear');
+    });
 
-Route::get('/home', 'HomeController@index')->name('user');
-Route::get('/test', 'HomeController@test')->name('test');
+    Route::prefix('upload')->group(function () {
+        Route::get('proposal', 'TeamController@proposalUploadView')->name('team.proposal.view');
+        Route::post('proposal', 'TeamController@proposalUploadFile')->name('team.proposal.uplaod');
+        Route::get('proposal/download', 'TeamController@proposalDownload')->name('team.proposal.download');
+    });
+
+});
+
+Route::prefix('page')->group(function () {
+    Route::get('', 'PageController@index')->name('page.index');
+    Route::get('about', 'PageController@aboutEdit')->name('page.about.edit');
+    Route::post('about', 'PageController@aboutUpdate')->name('page.about.update');
+    Route::get('award', 'PageController@awardEdit')->name('page.award.edit');
+    Route::post('award', 'PageController@awardUpdate')->name('page.award.update');
+    Route::get('competitionReview', 'PageController@competitionReviewEdit')->name('page.competitionReview.edit');
+    Route::post('competitionReview', 'PageController@competitionReviewUpdate')->name('page.competitionReview.update');
+    Route::get('entryRequirement', 'PageController@entryRequirementEdit')->name('page.entryRequirement.edit');
+    Route::post('entryRequirement', 'PageController@entryRequirementUpdate')->name('page.entryRequirement.update');
+    Route::get('relatedStatement', 'PageController@relatedStatementEdit')->name('page.relatedStatement.edit');
+    Route::post('relatedStatement', 'PageController@relatedStatementUpdate')->name('page.relatedStatement.update');
+    Route::get('reviewAndAwards', 'PageController@reviewAndAwardsEdit')->name('page.reviewAndAwards.edit');
+    Route::post('reviewAndAwards', 'PageController@reviewAndAwardsUpdate')->name('page.reviewAndAwards.update');
+    Route::get('workRequirement', 'PageController@workRequirementEdit')->name('page.workRequirement.edit');
+    Route::post('workRequirement', 'PageController@workRequirementUpdate')->name('page.workRequirement.update');
+});
+
+Route::get('home', 'HomeController@index')->name('user');
+Route::get('test', 'HomeController@test')->name('test');
 Route::get('role', 'HomeController@my_role')->name('test');
 
-Route::post('univercity/name', 'UnivercityController@name')->name('univercity.name');
-Route::post('univercity/course', 'UnivercityController@course')->name('univercity.course');
+Route::prefix('univercity')->group(function () {
+    Route::post('name', 'UnivercityController@name')->name('univercity.name');
+    Route::post('course', 'UnivercityController@course')->name('univercity.course');
 
-Route::get('admin/teamlist', 'Admin\TeamListController@teamlist')->name('admin.team.list');
-Route::get('admin/teamlist/download', 'Admin\TeamListController@download')->name('admin.team.list.download');
+});
 
-Route::get('admin/artisan/{key}/{value}', 'HomeController@artisan')->name('admin.artisan');
+
+Route::prefix('admin')->group(function () {
+    Route::get('teamlist', 'Admin\TeamListController@teamlist')->name('admin.team.list');
+    Route::get('teamlist/download', 'Admin\TeamListController@download')->name('admin.team.list.download');
+
+    Route::get('artisan/{key}/{value}', 'HomeController@artisan')->name('admin.artisan');
+});

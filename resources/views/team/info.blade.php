@@ -43,7 +43,7 @@
         </div>
         <div class="col-12 col-sm-5 col-lg-2 my-1">
             @if ($member->phone!=null && $member->phone != "")
-                <a class="h5">{{\Propaganistas\LaravelPhone\PhoneNumber::make($member->phone,"tw")->formatInternational()}}</a>
+            <a class="h5">{{\Propaganistas\LaravelPhone\PhoneNumber::make($member->phone,"tw")->formatInternational()}}</a>
             @endif
         </div>
         @if (Carbon\Carbon::now()
@@ -60,6 +60,10 @@
     @endif
     </div>
     @endforeach
+    <div class="row">
+        <div class="col">asd</div>
+        <div class="col"><file-upload>Upload File</file-upload></div>
+    </div>
     </div>
 </section>
 @endsection
