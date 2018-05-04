@@ -72,6 +72,7 @@ Route::get('role', 'HomeController@my_role')->name('test');
 Route::prefix('univercity')->group(function () {
     Route::post('name', 'UnivercityController@name')->name('univercity.name');
     Route::post('course', 'UnivercityController@course')->name('univercity.course');
+    Route::post('all', 'UnivercityController@all')->name('univercity.all');
 });
 
 Route::prefix('admin')->group(function () {

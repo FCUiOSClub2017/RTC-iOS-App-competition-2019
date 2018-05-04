@@ -11,7 +11,7 @@ class TeamListExport implements FromCollection, WithHeadings
 {
     public function collection()
     {
-        $data = User::role('participant')->with('team_member')->get();
+        $data = User::role('participant')->whereVerify(true)->with('team_member')->get();
         $alldata = collect();
         // dd($data->all());
 
@@ -65,35 +65,35 @@ class TeamListExport implements FromCollection, WithHeadings
             '系所',
             '姓名',
             '隊員 Email',
-            '手機號碼',
+            '聯絡電話',
             '',
             '職位',
             '學校',
             '系所',
             '姓名',
             '隊員 Email',
-            '手機號碼',
+            '聯絡電話',
             '',
             '職位',
             '學校',
             '系所',
             '姓名',
             '隊員 Email',
-            '手機號碼',
+            '聯絡電話',
             '',
             '職位',
             '學校',
             '系所',
             '姓名',
             '隊員 Email',
-            '手機號碼',
+            '聯絡電話',
             '',
             '職位',
             '學校',
             '系所',
             '姓名',
             '隊員 Email',
-            '手機號碼',
+            '聯絡電話',
             '',
         ];
     }

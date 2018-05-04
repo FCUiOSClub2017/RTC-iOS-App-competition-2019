@@ -28,7 +28,7 @@ class TeamListController extends Controller
      */
     public function teamlist()
     {
-        $users = User::role('participant')->get();
+        $users = User::role('participant')->whereVerify(true)->get();
 
         return view('admin.teamlist')->with([
             'users' => $users,
@@ -42,8 +42,6 @@ class TeamListController extends Controller
      */
     public function download()
     {
-        $users = User::role('participant')->get();
-
         return Excel::download(new TeamListExport(), 'TeamList_'.\Carbon\Carbon::now()->toDateTimeString().'.xlsx');
     }
 }

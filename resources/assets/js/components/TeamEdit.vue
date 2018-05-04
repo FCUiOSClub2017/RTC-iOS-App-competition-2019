@@ -36,9 +36,9 @@
                             <a class="text-success">此電子郵箱可以使用！</a>
                         </div>
                         <div class="col-4">
-                            <h4>手機號碼</h4></div>
+                            <h4>聯絡電話</h4></div>
                         <div class="col-8">
-                            <input type="tel" v-model="phone" name="phone" placeholder="手機號碼" v-bind:required="required">
+                            <input type="tel" v-model="phone" name="phone" placeholder="聯絡電話" v-bind:required="required">
                         </div>
                         <input type="hidden" name="univercity" v-bind:value="selectedUnivercityName" required>
                         <input type="hidden" name="course" v-bind:value="selectedUnivercityCourse" required>
