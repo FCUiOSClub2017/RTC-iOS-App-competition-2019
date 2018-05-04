@@ -56,7 +56,8 @@ class UnivercityController extends Controller
         return Cache::get('univercity_'.$name.'_'.$course);
     }
 
-    public function all(){
+    public function all()
+    {
         return Univercity::all();
     }
 }
