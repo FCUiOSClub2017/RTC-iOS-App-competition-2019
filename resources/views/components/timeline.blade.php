@@ -5,8 +5,8 @@
       <div class="stats-col text-center col-8 col-sm-5 col-md-3 col-xl-2">
         <div class="ratio-1-1">
           <div class="circle">
-            <span class="stats-no"><a>5/08</a></span>
-            <div class="circle-overflow" data-toggle="modal-hide" data-target="#date5-08">
+            <span class="stats-no"><a>5/15</a></span>
+            <div class="circle-overflow" data-toggle="modal-hide" data-target="#date5-15">
               <div class="circle-content">
                 <a>報名截止</a>
               </div>
