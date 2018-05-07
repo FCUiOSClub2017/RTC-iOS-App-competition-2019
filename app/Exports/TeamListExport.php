@@ -32,7 +32,7 @@ class TeamListExport implements FromCollection, WithHeadings
                         'course'=> $value->univercity->course,
                         'name'  => $value->name,
                         'email' => $value->email,
-                        'phone' => PhoneNumber::make($value->phone,"tw")->formatInternational(),
+                        'phone' => PhoneNumber::make($value->phone, 'tw')->formatInternational(),
                         'split' => '',
                     ]);
                 } else {
