@@ -46,7 +46,7 @@
                 <br>
                 <a class="h5">{{$user->teamMemberGroupByLevel()->get(1)->email}}</a>
                 <br>
-                <a class="h5">{{\Propaganistas\LaravelPhone\PhoneNumber::make($user->teamMemberGroupByLevel()->get(1)->phone,"tw")->formatInternational()}}</a>
+                <a class="h5">{{PhoneNumber::make($user->teamMemberGroupByLevel()->get(1)->phone,"tw")->formatInternational()}}</a>
                 @endif
             </div>
             <div class="col-12 col-sm-5 col-lg-4 col-xl-2 my-1">
@@ -59,7 +59,7 @@
                 <br>
                 <a class="h5">{{$user->teamMemberGroupByLevel()->get(2)->email}}</a>
                 <br>
-                <a class="h5">{{\Propaganistas\LaravelPhone\PhoneNumber::make($user->teamMemberGroupByLevel()->get(2)->phone,"tw")->formatInternational()}}</a>
+                <a class="h5">{{PhoneNumber::make($user->teamMemberGroupByLevel()->get(2)->phone,"tw")->formatInternational()}}</a>
                 @endif
             </div>
             <div class="col-12 col-sm-5 col-lg-4 col-xl-2 my-1">
@@ -72,7 +72,7 @@
                 <br>
                 <a class="h5">{{$user->teamMemberGroupByLevel()->get(3)->email}}</a>
                 <br>
-                <a class="h5">{{\Propaganistas\LaravelPhone\PhoneNumber::make($user->teamMemberGroupByLevel()->get(3)->phone,"tw")->formatInternational()}}</a>
+                <a class="h5">{{PhoneNumber::make($user->teamMemberGroupByLevel()->get(3)->phone,"tw")->formatInternational()}}</a>
                 @endif
             </div>
             <div class="col-12 col-sm-5 col-lg-4 col-xl-2 my-1">
@@ -85,7 +85,7 @@
                 <br>
                 <a class="h5">{{$user->teamMemberGroupByLevel()->get(4)->email}}</a>
                 <br>
-                <a class="h5">{{\Propaganistas\LaravelPhone\PhoneNumber::make($user->teamMemberGroupByLevel()->get(4)->phone,"tw")->formatInternational()}}</a>
+                <a class="h5">{{PhoneNumber::make($user->teamMemberGroupByLevel()->get(4)->phone,"tw")->formatInternational()}}</a>
                 @endif
             </div>
             <div class="col-12 col-sm-5 col-lg-4 col-xl-2 my-1">
@@ -98,9 +98,9 @@
                 <br>
                 <a class="h5">{{$user->teamMemberGroupByLevel()->get(5)->email}}</a>
                 <br>
-                <a class="h5">{{\Propaganistas\LaravelPhone\PhoneNumber::make($user->teamMemberGroupByLevel()->get(5)->phone,"tw")->formatInternational()}}</a>
+                <a class="h5">{{PhoneNumber::make($user->teamMemberGroupByLevel()->get(5)->phone,"tw")->formatInternational()}}</a>
                 @endif {{-- @if ($user->phone!=null && $user->phone != "")
-                <a class="h5">{{\Propaganistas\LaravelPhone\PhoneNumber::make($member->phone,"tw")->formatInternational()}}</a>
+                <a class="h5">{{PhoneNumber::make($member->phone,"tw")->formatInternational()}}</a>
                 @endif --}}
             </div>
         </div>

@@ -70,5 +70,6 @@ class Kernel extends HttpKernel
         'can.review.all.file'=> \App\Http\Middleware\CanReviewAllFile::class,
         'can.edit.teammate'  => \App\Http\Middleware\CanEditTeammate::class,
         'can.edit.website'   => \App\Http\Middleware\CanEditWebSite::class,
+        'deadline.register'  => \App\Http\Middleware\DeadlineOfRegister::class,
     ];
 }

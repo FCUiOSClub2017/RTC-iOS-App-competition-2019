@@ -182,19 +182,12 @@ class TeamController extends Controller
     }
 
     /**
-     * return proposal view.
+     * return proposal manage view.
      *
      * @return \Illuminate\Http\Response
      */
     public function proposalUploadView()
     {
-        if (
-            !auth()->user()->hasRole('developer')
-            && Carbon::now() < Carbon::create(2018, 5, 1, 0, 0, 0)
-        ) {
-            return view('team.proposalUpload')->withErrors(['msg'=>'未開放！']);
-        }
-
         return view('team.proposalUpload');
     }
 
@@ -205,16 +198,16 @@ class TeamController extends Controller
      */
     public function proposalUploadFile(Request $request)
     {
-        request()->validate([
-            'proposal' => 'required|mimes:pdf|mimetypes:application/pdf|max:10240',
-        ]);
         if (
             !auth()->user()->hasRole('developer')
-            && Carbon::now() < Carbon::create(2018, 5, 1, 0, 0, 0)
+            && Carbon::now()->gt(Carbon::create(2018, 5, 24, 0, 0, 0))
         ) {
-            return redirect()->back()->withErrors(['msg'=>'未開放！']);
+            return redirect()->back()->withErrors(['msg'=>'不在開放時間內！']);
         } else {
-            request()->proposal->storeAs(auth()->user()->id, 'proposal.pdf');
+            $request->validate([
+                'proposal' => 'required|mimes:pdf|mimetypes:application/pdf|max:10240',
+            ]);
+            $request->proposal->storeAs(auth()->user()->id, 'proposal.pdf');
 
             return redirect()->back()->with('msg', '成功上傳！');
         }
@@ -239,7 +232,7 @@ class TeamController extends Controller
     }
 
     /**
-     * return proposal view.
+     * return register form manage view.
      *
      * @return \Illuminate\Http\Response
      */
@@ -249,7 +242,7 @@ class TeamController extends Controller
     }
 
     /**
-     * return proposal view.
+     * return app manage view.
      *
      * @return \Illuminate\Http\Response
      */

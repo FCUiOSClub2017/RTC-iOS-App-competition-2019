@@ -6,6 +6,7 @@ use App\TeamMember;
 use App\User;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
+use PhoneNumber;
 
 class TeamListExport implements FromCollection, WithHeadings
 {
@@ -31,7 +32,7 @@ class TeamListExport implements FromCollection, WithHeadings
                         'course'=> $value->univercity->course,
                         'name'  => $value->name,
                         'email' => $value->email,
-                        'phone' => $value->phone,
+                        'phone' => PhoneNumber::make($value->phone,"tw")->formatInternational(),
                         'split' => '',
                     ]);
                 } else {
