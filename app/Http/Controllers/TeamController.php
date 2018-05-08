@@ -136,20 +136,19 @@ class TeamController extends Controller
     }
 
     /**
-     * Rename team
+     * Rename team.
      *
      * @return \Illuminate\Http\Response
      */
     public function rename(Request $request)
     {
-                
-
         $request->validate([
                    'name'     => 'required|string|max:255|unique:users',
                ]);
         $user = auth()->user();
         $user->name = $request->input('name');
         $user->save();
+
         return back();
     }
 
