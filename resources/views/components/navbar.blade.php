@@ -62,19 +62,23 @@
       <i class="fas fa-chevron-down"></i>
       <a href="#">你好，{{auth()->user()->name}}！</a>
       <ul>
-        @can('edit teammate')
+        @can('edit teammate') @if (Carbon::create(2018, 5, 16, 0, 0, 0)->gt(Carbon::now()))
         <li>
-          <a href="{{ route('team.info') }}">我的隊伍資料</a>
+          <a href="#" data-toggle="modal" data-target="#teamRenameModal" onclick="$($(this).data('target')).modal('show')">隊名修改</a>
+        </li>
+        @endif
+        <li>
+          <a href="{{ route('team.info') }}">隊伍資料</a>
         </li>
         <li>
-          <a href="{{ route('team.proposal.uplaod') }}">企劃書上傳</a>
+          <a href="{{ route('team.proposal.uplaod') }}">企劃書管理</a>
         </li>
         @endcan @can('review all file')
         <li>
           <a href="{{ route('admin.team.list') }}">队伍列表</a>
         </li>
         <li>
-          <a href="{{ route('admin.team.list.download') }}">队伍列表下載(EXCEL)</a>
+          <a href="{{ route('admin.team.list.download') }}" download>队伍列表下載(EXCEL)</a>
         </li>
         @endcan @can('edit website')
         <li>
@@ -135,3 +139,4 @@
     </li> --}}
   </ul>
 </navbar>
+@include('modal.rename')

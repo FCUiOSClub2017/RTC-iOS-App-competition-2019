@@ -45,6 +45,7 @@ Route::prefix('team')->group(function () {
         Route::post('proposal', 'TeamController@proposalUploadFile')->name('team.proposal.uplaod');
         Route::get('proposal/download', 'TeamController@proposalDownload')->name('team.proposal.download');
     });
+    Route::post('rename', 'TeamController@rename')->name('team.rename');
 });
 
 Route::prefix('page')->group(function () {

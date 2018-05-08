@@ -21,6 +21,7 @@ class TeamController extends Controller
         $this->middleware('auth');
         $this->middleware('is.verify');
         $this->middleware('can.edit.teammate');
+        $this->middleware('deadline.register')->only('rename');
     }
 
     /**
@@ -131,6 +132,24 @@ class TeamController extends Controller
             $target->delete();
         }
 
+        return back();
+    }
+
+    /**
+     * Rename team
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function rename(Request $request)
+    {
+                
+
+        $request->validate([
+                   'name'     => 'required|string|max:255|unique:users',
+               ]);
+        $user = auth()->user();
+        $user->name = $request->input('name');
+        $user->save();
         return back();
     }
 
