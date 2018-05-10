@@ -2,13 +2,13 @@
 
 namespace App\Jobs;
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
 use App\User;
 use Carbon;
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
 
 class RemoveNotVerifyAccount implements ShouldQueue
 {
@@ -31,11 +31,11 @@ class RemoveNotVerifyAccount implements ShouldQueue
      */
     public function handle()
     {
-
         $users = User::whereVerify(false)->get();
         foreach ($users as $user) {
-            if(Carbon::now()->diffInMinutes($user->created_at) > 15)
+            if (Carbon::now()->diffInMinutes($user->created_at) > 15) {
                 $user->delete();
+            }
         }
     }
 

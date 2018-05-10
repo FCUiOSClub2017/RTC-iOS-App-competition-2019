@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Exports\TeamListExport;
 use App\Http\Controllers\Controller;
 use App\User;
-use Excel;
-use Zipper;
-use Storage;
 use Carbon;
+use Excel;
+use Storage;
+use Zipper;
 
 class TeamController extends Controller
 {
@@ -49,29 +49,34 @@ class TeamController extends Controller
     }
 
     /**
-     * document download
+     * document download.
      *
-     * @return 
+     * @return
      */
-    public function documentDownload(){
+    public function documentDownload()
+    {
         $users = User::role('participant')->whereVerify(true)->get();
         $users = User::whereVerify(true)->get();
-        $directorys = $users->map(function($e){
+        $directorys = $users->map(function ($e) {
             $data = null;
             $files = Storage::allFiles($e->id);
-            if (collect($files)->count()>0) 
+            if (collect($files)->count() > 0) {
                 $data = $files;
-            return collect(['data'=>$data,'id'=>$e->id,'name'=>$e->name]);
+            }
+
+            return collect(['data'=>$data, 'id'=>$e->id, 'name'=>$e->name]);
         });
         $zip = Zipper::make(storage_path().'/app/document.zip');
         foreach ($directorys as $item) {
-            if ($item['data']!=null) {
+            if ($item['data'] != null) {
                 $zip->folder($item['name']);
-                foreach ($item['data'] as $file) 
+                foreach ($item['data'] as $file) {
                     $zip->add(storage_path().'/app/'.$file);
+                }
             }
         }
         $zip->close();
-        return Storage::download('document.zip','document_'.Carbon::now()->toDateTimeString().'.zip');
+
+        return Storage::download('document.zip', 'document_'.Carbon::now()->toDateTimeString().'.zip');
     }
 }
