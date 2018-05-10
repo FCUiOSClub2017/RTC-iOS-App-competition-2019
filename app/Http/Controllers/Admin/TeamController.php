@@ -56,7 +56,6 @@ class TeamController extends Controller
     public function documentDownload()
     {
         $users = User::role('participant')->whereVerify(true)->get();
-        $users = User::whereVerify(true)->get();
         $directorys = $users->map(function ($e) {
             $data = null;
             $files = Storage::allFiles($e->id);
