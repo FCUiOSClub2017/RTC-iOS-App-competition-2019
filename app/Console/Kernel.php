@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Jobs\RemoveNotVerifyAccount;
 
 class Kernel extends ConsoleKernel
 {
@@ -27,6 +28,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('git:deploy')
                  ->everyMinute();
+        $schedule->job(new RemoveNotVerifyAccount)->everyMinute();
     }
 
     /**

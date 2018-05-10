@@ -10,6 +10,7 @@
                             <p class="text-primary h3">沒有收到？
                                 <a href="{{ route('verify.resend') }}" onclick="event.preventDefault();document.getElementById('verify-resend').submit();">重新發送驗證信</a>
                             </p>
+                            <p class="text-primary h4">請於 15 分鐘內完成驗證</p>
                             <form id="verify-resend" action="{{ route('verify.resend') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>

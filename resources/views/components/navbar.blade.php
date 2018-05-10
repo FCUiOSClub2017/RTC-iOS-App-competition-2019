@@ -75,10 +75,16 @@
         </li>
         @endcan @can('review all file')
         <li>
+          <a href="{{ route('news.edit') }}">最新消息投稿(測試)</a>
+        </li>
+        <li>
           <a href="{{ route('admin.team.list') }}">队伍列表</a>
         </li>
         <li>
           <a href="{{ route('admin.team.list.download') }}" download>队伍列表下載(EXCEL)</a>
+        </li>
+        <li>
+          <a href="{{ route('admin.team.document.download') }}" download>參賽队伍資料下載(ZIP)</a>
         </li>
         @endcan @can('edit website')
         <li>

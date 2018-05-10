@@ -79,5 +79,5 @@ window.Fontawesome = fontawesome;
 /**
  * Import RxJS
  */
-window.Rx = require('rxjs/Rx');
-require('rx-dom');
+// window.Rx = require('rxjs/Rx');
+// require('rx-dom');

@@ -10,10 +10,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="form-group">
-          <label for="name" class="col-form-label">隊名:</label>
-          <input type="text" class="form-control" id="name" name="name" value="{{auth()->user()->name}}" required>
-        </div>
+      <vue-input title="隊名" valid="沒有重複" invalid="不可以使用" default-value="{{auth()->user()->name}}" required name="name" check-valid validator-url="/team/check/name"></vue-input>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary bg-secondary" data-dismiss="modal">取消</button>

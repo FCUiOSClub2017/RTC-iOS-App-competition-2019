@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => 'can.review.all.file'], function () {
+    // Route::post('/admin/filemanager/upload', '\Unisharp\Laravelfilemanager\controllers\UploadController@upload');
+});
+
 Route::get('/', function () {
     return view('home');
 })->name('home');
@@ -77,8 +81,20 @@ Route::prefix('univercity')->group(function () {
 });
 
 Route::prefix('admin')->group(function () {
-    Route::get('teamlist', 'Admin\TeamListController@teamlist')->name('admin.team.list');
-    Route::get('teamlist/download', 'Admin\TeamListController@download')->name('admin.team.list.download');
+    Route::get('team/list', 'Admin\TeamController@teamlist')->name('admin.team.list');
+    Route::get('team/list/download', 'Admin\TeamController@download')->name('admin.team.list.download');
+
+    Route::get('team/document/download', 'Admin\TeamController@documentDownload')->name('admin.team.document.download');
 
     Route::get('artisan/{key}/{value}', 'HomeController@artisan')->name('admin.artisan');
+
+    Route::get('news/edit', function () {
+        return view('admin.news.edit');
+    })->name('news.edit');
+
+    Route::post('news/edit', function () {
+        return back()->withInput(['content'=>request()->input('content')]);
+    })->name('news.save');
+
+
 });

@@ -31,6 +31,8 @@
     <!-- Scripts -->
     <script src="{{asset('/js/app.js')}}"></script>
     <script src="{{asset('/js/plugin.js')}}"></script>
+    {{-- <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script> --}}
+    {{-- <script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script> --}}
     @yield('head')
 </head>
 
@@ -44,8 +46,6 @@
         @yield('content')
         <a class="scrolltop" href="#"><span class="fas fa-angle-up"></span></a>
     </div>
-    <script>
-    </script>
 </body>
 
 </html>

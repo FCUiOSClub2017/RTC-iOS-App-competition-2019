@@ -23,6 +23,7 @@ mix.combine([
 
 mix.copyDirectory('resources/assets/sass/apple/font', 'public/fonts');
 mix.copyDirectory('resources/assets/svg', 'public/svg');
+mix.copyDirectory('resources/assets/ckeditor', 'public/ckeditor');
 
 mix.scripts([
     'node_modules/jquery-migrate/dist/jquery-migrate.min.js',

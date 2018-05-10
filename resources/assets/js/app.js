@@ -16,8 +16,9 @@ window.Vue = require("vue");
 
 Vue.component("navbar", require("./components/navbar.vue"));
 Vue.component("teamedit", require("./components/TeamEdit.vue"));
-Vue.component('file-upload', require('vue-upload-component'))
-Rx.DOM.ready().subscribe(() => {
+Vue.component('vue-input', require('./components/Input.vue'))
+
+$(document).ready(function() {
     const app = new Vue({
         el: "#app"
     });
@@ -35,7 +36,7 @@ Rx.DOM.ready().subscribe(() => {
             }
         }
     });
-    Rx.DOM.scroll(document).subscribe((x) => {
+    $(document).on('scroll', _.throttle((x) => {
         var Wscroll = $(window).scrollTop() + $('.nav').height();
         $('section').each(function() {
             var ThisOffset = $(this).offset();
@@ -44,7 +45,7 @@ Rx.DOM.ready().subscribe(() => {
                 $('a[href*="#' + $(this).attr('id') + '"]').parent().addClass('menu-active')
             }
         });
-    });
+    }, 50));
 
     // Tooltip & popovers
     $("[data-toggle=\"tooltip\"]").tooltip();

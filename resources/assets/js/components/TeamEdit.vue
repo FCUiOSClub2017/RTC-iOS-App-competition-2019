@@ -68,6 +68,7 @@ export default {
             name: null,
             phone: null,
             required: true,
+            id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
         }
     },
     mounted: function() {},

@@ -38,10 +38,12 @@ Artisan::command('git:push {msg="update"}', function ($msg) {
 
 use App\Notifications\CompleteTeamRegistration;
 
-Artisan::command('redis:test', function () {
-    Redis::set('name', 'Taylor');
-    $this->comment(Redis::get('name'));
-    \App\Jobs\RegistedAccount::dispatch();
+Artisan::command('ahkui', function () {
+    $users = \App\User::whereVerify(false);
+    foreach ($users as $user) {
+        if(Carbon::now()->diffInMinutes($user->created_at) > 15)
+            $user->delete();
+    }
 })->describe('Push project to github');
 
 Artisan::command('role:init', function () {
