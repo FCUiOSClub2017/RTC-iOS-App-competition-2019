@@ -95,6 +95,4 @@ Route::prefix('admin')->group(function () {
     Route::post('news/edit', function () {
         return back()->withInput(['content'=>request()->input('content')]);
     })->name('news.save');
-
-
 });

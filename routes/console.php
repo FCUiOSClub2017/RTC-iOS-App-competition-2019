@@ -41,8 +41,9 @@ use App\Notifications\CompleteTeamRegistration;
 Artisan::command('ahkui', function () {
     $users = \App\User::whereVerify(false);
     foreach ($users as $user) {
-        if(Carbon::now()->diffInMinutes($user->created_at) > 15)
+        if (Carbon::now()->diffInMinutes($user->created_at) > 15) {
             $user->delete();
+        }
     }
 })->describe('Push project to github');
 
@@ -93,8 +94,6 @@ Artisan::command('role:set {role} {email}', function ($role, $email) {
         $this->comment($email.' not found!');
     }
 })->describe('Add role to user with email');
-
-use Illuminate\Support\Facades\Redis;
 
 Artisan::command('notice:team', function () {
     $users = \App\User::get();
