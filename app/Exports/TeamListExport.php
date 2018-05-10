@@ -18,7 +18,7 @@ class TeamListExport implements FromCollection, WithHeadings
 
         foreach ($data as $teamkey => $teamvalue) {
             $teamdata = collect([
-                'id'=> $teamvalue->id,
+                'id'        => $teamvalue->id,
                 'created_at'=> $teamvalue->created_at->toDateTimeString(),
                 'team_name' => $teamvalue->name,
                 'team_email'=> $teamvalue->email,

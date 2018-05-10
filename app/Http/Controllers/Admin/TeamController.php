@@ -75,9 +75,10 @@ class TeamController extends Controller
             }
         }
         $zip->close();
-        if(Storage::exists('document.zip'))
+        if (Storage::exists('document.zip')) {
             return Storage::download('document.zip', 'document_'.Carbon::now()->toDateTimeString().'.zip');
-        else
+        } else {
             return back();
+        }
     }
 }
