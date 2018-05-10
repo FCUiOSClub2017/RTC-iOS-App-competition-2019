@@ -65,7 +65,7 @@ class VerifyEmail extends Notification implements ShouldQueue
         return (new MailMessage())
             ->subject('2018 APP移動應用創新賽')
             ->greeting('親愛的參賽者您好：')
-            ->line('您收到這封郵件是因為我們必須驗證電子郵件正確。')
+            ->line('您收到這封郵件是因為我們必須驗證您的電子郵件正確，請於 15 分鐘內完成驗證。')
             ->action('點我驗證', url(config('app.url').route('verify.process', $this->token, false)))
             ->line('貼心提醒您競賽日程相關如下，並預祝您贏得佳績！')
             ->line('1.  線上報名：2018年4月16日〜5月8日填寫報名資料，團隊成員於報名截止日後，不得更換。')

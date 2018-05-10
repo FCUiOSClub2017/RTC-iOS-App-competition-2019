@@ -68,14 +68,16 @@ class TeamController extends Controller
         $zip = Zipper::make(storage_path().'/app/document.zip');
         foreach ($directorys as $item) {
             if ($item['data'] != null) {
-                $zip->folder($item['name']);
+                $zip->folder($item['id'].'_'.$item['name']);
                 foreach ($item['data'] as $file) {
                     $zip->add(storage_path().'/app/'.$file);
                 }
             }
         }
         $zip->close();
-
-        return Storage::download('document.zip', 'document_'.Carbon::now()->toDateTimeString().'.zip');
+        if(Storage::exists('document.zip'))
+            return Storage::download('document.zip', 'document_'.Carbon::now()->toDateTimeString().'.zip');
+        else
+            return back();
     }
 }
