@@ -32,4 +32,14 @@ class ResetPassword extends OriginalResetPassword implements ShouldQueue
             ->action('重置密碼', url(config('app.url').route('password.reset', $this->token, false)))
             ->line('若您沒有請求重置密碼，請忽略此郵件。');
     }
+
+    /**
+     * Get the tags that should be assigned to the job.
+     *
+     * @return array
+     */
+    public function tags()
+    {
+        return ['ResetPassword'];
+    }
 }
