@@ -26,9 +26,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command('horizon:snapshot')
+                 ->everyFiveMinutes();
         $schedule->command('git:deploy')
                  ->everyMinute();
-        $schedule->job(new RemoveNotVerifyAccount())->everyMinute();
+        $schedule->job(new RemoveNotVerifyAccount())
+                 ->everyFiveMinutes();
     }
 
     /**
