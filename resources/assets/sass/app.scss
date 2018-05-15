@@ -8,6 +8,10 @@
 @import '~bootstrap/scss/bootstrap';
 @import "node_modules/vue-multiselect/dist/vue-multiselect.min";
 
+
+/* ==================================================
+  General
+  ================================================== */
 * {
     font-family: "AppleEN", 'AppleTC-Medium', 'Noto Sans TC', "Raleway", Helvetica, Arial, sans-serif;
 }
@@ -20,10 +24,14 @@ input:not([type=checkbox]):not([type=radio]) {
     font-size: 16px;
     width: 100%;
     color: #35495e;
-    &:not(.form-control){
+    &:not(.form-control) {
         border: 1px solid #e8e8e8;
 
     }
+}
+
+.cursor-pointer{
+    cursor:pointer;
 }
 
 .navbar-laravel {
@@ -46,8 +54,14 @@ h6 {
 
 p {
     line-height: 1.55;
-    color: $text-color;
     font-size: 400%;
+    color: $text-color;
+}
+
+.bootstrap-original p {
+    line-height: inherit;
+    font-size: inherit;
+    color: inherit;
 }
 
 h1 {
@@ -74,10 +88,6 @@ h4 {
     font-size: 18px;
 }
 
-/* ==================================================
-  General
-  ================================================== */
-
 a {
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
@@ -96,7 +106,7 @@ html, body {
     min-height: 100vh;
 }
 
-.btn {
+.btn:not(.bootstrap-original) {
     background-color: $primary;
     font-weight: 800;
     color: $text-color;
@@ -113,7 +123,7 @@ html, body {
     }
 }
 
-.btn-ghost {
+.btn-ghost:not(.bootstrap-original) {
     border: 3px solid #fff;
     background-color: transparent;
 

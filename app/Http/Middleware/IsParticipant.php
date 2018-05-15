@@ -16,6 +16,10 @@ class IsParticipant
      */
     public function handle($request, Closure $next)
     {
+        if ($request->user()->hasRole('developer')) {
+            return $next($request);
+        }
+
         if ($request->user()->hasRole('participant')) {
             return $next($request);
         }

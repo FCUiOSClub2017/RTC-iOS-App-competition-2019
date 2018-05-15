@@ -18,17 +18,39 @@ $(document).ready(function() {
 });
 </script>
 @endsection @section('content')
-<div class="container pt-3">
+<div class="container pt-3 bootstrap-original">
+        <div class="row pb-3 justify-content-between">
+        <div class="col-auto">
+            <a class="btn  bootstrap-original btn-primary" href="{{route('news.index')}}">返回列表</a>
+        </div>
+        <div class="col-auto">
+            <a class="btn  bootstrap-original btn-success" href="{{route('news.edit')}}">新消息</a>
+        </div>
+    </div>
+{!! Form::open(['route' => ['news.save',$id]]) !!}
     <div class="row">
+        <div class="col-2">
+            <datepicker :value="new Date({{old('year',$year)}},{{old('month',$month)}},{{old('day',$day)}})" name="date" :minimum-view="'day'" :maximum-view="'day'" :bootstrap-styling="true">
+                <div slot="beforeCalendarHeader" class="calender-header">
+                    Choose a Date
+                </div>
+            </datepicker>
+        </div>
         <div class="col">
-            {!! Form::open(['route' => 'news.save']) !!}
-            <textarea name="content" class="form-control" id="ckeditor">{!! old("content", "內容在這邊") !!}</textarea>
-            {!! Form::close() !!}
+            <input type="text" name="title" value="{{old('title',$title)}}" placeholder="標題">
         </div>
     </div>
     <div class="row pt-3">
         <div class="col">
-            <div id="ckeditor-preview">{!! old("content", "內容在這邊") !!}</div>
+            <textarea name="content" class="form-control" id="ckeditor">{!! old("content", $content) !!}</textarea>
+        </div>
+    </div>
+    {!! Form::close() !!} @php $randomStr1 = str_random(10); $randomStr2 = str_random(10); @endphp
+    <div class="row pt-3 bootstrap-original">
+        <div class="col">
+            <div id="news" class="shadow rounded">
+                @component('components.news.card') @slot('title') {{old("title", $title)}} @endslot @slot('content',old("content", $content)) @slot('route',route('news.edit',$id)) @slot('parent','news') @slot('firstShow',true) @endcomponent
+            </div>
         </div>
     </div>
 </div>

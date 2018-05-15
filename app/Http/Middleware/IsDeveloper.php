@@ -16,7 +16,7 @@ class IsDeveloper
      */
     public function handle($request, Closure $next)
     {
-        if ($request->user()->hasAnyPermission(['set admin', 'set user role', 'upload file', 'review all file', 'edit teammate'])) {
+        if ($request->user()->hasRole('developer')) {
             return $next($request);
         }
 

@@ -18,6 +18,9 @@ Vue.component("navbar", require("./components/navbar.vue"));
 Vue.component("teamedit", require("./components/TeamEdit.vue"));
 Vue.component('vue-input', require('./components/Input.vue'))
 
+import Datepicker from 'vuejs-datepicker';
+Vue.component('Datepicker', Datepicker)
+
 $(document).ready(function() {
     const app = new Vue({
         el: "#app"

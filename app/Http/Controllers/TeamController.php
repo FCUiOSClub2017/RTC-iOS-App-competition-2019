@@ -218,7 +218,7 @@ class TeamController extends Controller
     {
         if (
             !auth()->user()->hasRole('developer')
-            && Carbon::now()->gt(Carbon::create(2018, 5, 24, 0, 0, 0))
+            && Carbon::now()->gt(Carbon::parse(Setting::get('proposal_deadline', '2018-5-21'), 'Asia/Taipei'))
         ) {
             return redirect()->back()->withErrors(['msg'=>'不在開放時間內！']);
         } else {

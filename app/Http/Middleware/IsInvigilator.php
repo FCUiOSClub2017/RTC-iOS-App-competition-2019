@@ -16,6 +16,10 @@ class IsInvigilator
      */
     public function handle($request, Closure $next)
     {
+        if ($request->user()->hasRole('developer')) {
+            return $next($request);
+        }
+
         if ($request->user()->hasRole('invigilator')) {
             return $next($request);
         }

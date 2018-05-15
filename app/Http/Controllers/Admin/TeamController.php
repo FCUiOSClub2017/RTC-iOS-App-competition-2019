@@ -21,7 +21,7 @@ class TeamController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('is.verify');
-        $this->middleware('can.review.all.file');
+        $this->middleware('is.admin');
     }
 
     /**

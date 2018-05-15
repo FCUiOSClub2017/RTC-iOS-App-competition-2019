@@ -1,4 +1,4 @@
-@auth @can('edit teammate') @if (Carbon::create(2018, 5, 16, 0, 0, 0)->gt(Carbon::now()))
+@auth @can('edit teammate') @if (Carbon::parse(Setting::get('register_deadline', '2018-5-21'), 'Asia/Taipei')->gt(Carbon::now()))
 <div class="modal fade" id="teamRenameModal" tabindex="-1" role="dialog" aria-labelledby="teamRenameModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

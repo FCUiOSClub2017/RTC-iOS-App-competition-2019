@@ -62,7 +62,7 @@
       <i class="fas fa-chevron-down"></i>
       <a href="#">你好，{{auth()->user()->name}}！</a>
       <ul>
-        @can('edit teammate') @if (Carbon::create(2018, 5, 16, 0, 0, 0)->gt(Carbon::now()))
+        @can('edit teammate') @if (Carbon::parse(Setting::get('register_deadline', '2018-5-21'), 'Asia/Taipei')->gt(Carbon::now()))
         <li>
           <a href="#" data-toggle="modal" data-target="#teamRenameModal" onclick="$($(this).data('target')).modal('show')">隊名修改</a>
         </li>
