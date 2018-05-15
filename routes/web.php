@@ -90,12 +90,8 @@ Route::prefix('admin')->group(function () {
 
     Route::get('artisan/{key}/{value}', 'HomeController@artisan')->name('admin.artisan');
     Route::prefix('news')->group(function () {
-
         Route::get('/', 'Admin\NewsController@index')->name('news.index');
         Route::get('edit/{id?}', 'Admin\NewsController@edit')->name('news.edit');
         Route::post('save/{id?}', 'Admin\NewsController@save')->name('news.save');
-
     });
-
-
 });

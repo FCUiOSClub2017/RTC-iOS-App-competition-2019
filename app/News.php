@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
-
     /**
      * The attributes that are mass assignable.
      *
@@ -19,7 +18,7 @@ class News extends Model
     ];
 
     protected $casts = [
-        'date'=>'datetime',
+        'date'=> 'datetime',
     ];
 
     /**
@@ -28,6 +27,6 @@ class News extends Model
      * @var array
      */
     protected $hidden = [
-        // 
+        //
     ];
 }
