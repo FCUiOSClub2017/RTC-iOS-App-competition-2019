@@ -24,7 +24,9 @@ Route::get('profile', function () {
 })->name('profile');
 
 Route::prefix('team')->group(function () {
-        Route::get('/', function(){return redirect()->route('team.info');});
+    Route::get('/', function () {
+        return redirect()->route('team.info');
+    });
     Route::get('verify/notice', 'VerifyController@notice')->name('verify.notice');
     Route::get('verify/success', 'VerifyController@success')->name('verify.success');
     Route::post('verify/resend', 'VerifyController@resendEmail')->name('verify.resend');
@@ -90,6 +92,4 @@ Route::prefix('admin')->group(function () {
         Route::get('workRequirement', 'PageController@workRequirementEdit')->name('page.workRequirement.edit');
         Route::post('workRequirement', 'PageController@workRequirementUpdate')->name('page.workRequirement.update');
     });
-
-
 });

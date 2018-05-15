@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Carbon\Carbon;
 use App\News;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
@@ -26,10 +26,12 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        $news = News::orderBy('date','decs')->get()->all();
+    public function index()
+    {
+        $news = News::orderBy('date', 'decs')->get()->all();
+
         return view('admin.news.index')->with([
-            'news'=>$news,
+            'news'=> $news,
         ]);
     }
 
@@ -38,46 +40,51 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit($id=null){
+    public function edit($id = null)
+    {
         $news = News::find($id);
-        if(!$news) {
+        if (!$news) {
             $news = new News();
             $news->date = Carbon::now();
         }
+
         return view('admin.news.edit')->with([
-            'content'=>$news->content,
-            'year'=>$news->date->year,
-            'month'=>$news->date->month - 1,
-            'day'=>$news->date->day,
-            'title'=>$news->title,
-            'id'=>$news->id,
+            'content'=> $news->content,
+            'year'   => $news->date->year,
+            'month'  => $news->date->month - 1,
+            'day'    => $news->date->day,
+            'title'  => $news->title,
+            'id'     => $news->id,
         ]);
     }
 
     /**
-     * save news content
-     * @param  interger $id news id
+     * save news content.
+     *
+     * @param interger $id news id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function save($id=null){
+    public function save($id = null)
+    {
         $date = Carbon::parse(request()->input('date'));
         $news = News::find($id);
 
-        if(!$news) {
+        if (!$news) {
             $news = new News();
         }
 
-        $news->content=request()->input('content');
-        $news->date=$date;
-        $news->title=request()->input('title');
+        $news->content = request()->input('content');
+        $news->date = $date;
+        $news->title = request()->input('title');
         $news->save();
 
-        return redirect()->route('admin.news.edit',$news->id)->withInput([
-            'content'=>request()->input('content'),
-            'year'=>$date->year,
-            'month'=>$date->month - 1,
-            'day'=>$date->day,
-            'title'=>request()->input('title'),
+        return redirect()->route('admin.news.edit', $news->id)->withInput([
+            'content'=> request()->input('content'),
+            'year'   => $date->year,
+            'month'  => $date->month - 1,
+            'day'    => $date->day,
+            'title'  => request()->input('title'),
         ]);
     }
 }
