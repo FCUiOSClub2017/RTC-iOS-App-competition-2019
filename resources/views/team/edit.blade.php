@@ -7,7 +7,7 @@
     @endif
     <form method="post">
         @csrf
-        <teamedit title="{{\App\TeamMember::levelText($level)}}"></teamedit>
+        <teamedit title="{{\App\TeamMember::levelText($level)}}" level="{{$level}}"></teamedit>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">

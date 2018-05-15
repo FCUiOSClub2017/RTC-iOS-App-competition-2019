@@ -25,11 +25,7 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function teamlist()
+    public function index()
     {
-        $users = User::role('participant')->whereVerify(true)->get();
-
-        return view('admin.teamlist')->with([
-            'users' => $users,
-        ]);
+        return view('admin.index');
     }}

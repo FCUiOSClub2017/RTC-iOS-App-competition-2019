@@ -29,6 +29,7 @@
     <link href="{{asset('/fonts/font.css')}}" rel="stylesheet">
     <link href="{{asset('/css/app.css')}}" rel="stylesheet">
     <!-- Scripts -->
+    @routes
     <script src="{{asset('/js/app.js')}}"></script>
     <script src="{{asset('/js/plugin.js')}}"></script>
     {{-- <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script> --}}

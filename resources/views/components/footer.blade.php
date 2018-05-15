@@ -22,7 +22,7 @@
           <ul class="list-inline">
             @auth
             <li class="list-inline-item">
-              <a href="{{route('user')}}">你好，{{auth()->user()->name}}！</a>
+              <a>你好，{{auth()->user()->name}}！</a>
             </li>
             @endauth @if (URL::current()!=route('home') && URL::current()!=route('home'))
             @endif

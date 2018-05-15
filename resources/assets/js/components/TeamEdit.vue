@@ -51,7 +51,7 @@
 <script>
 import Multiselect from 'vue-multiselect'
 export default {
-    props: ['title'],
+    props: ['title','level'],
     components: { Multiselect },
     data() {
         return {
@@ -77,7 +77,7 @@ export default {
     },
     methods: {
         getTeamData() {
-            axios.patch(window.location.href).then(response => {
+            axios.patch(route('team.data.get',this.level)).then(response => {
                 var data = response.data.result
                 if (data) {
                     this.email = data.email
@@ -94,7 +94,7 @@ export default {
         },
         asyncFindForUnivercityName(query) {
             this.isLoadingForUnivercityName = true;
-            axios.post('/univercity/name', { name: query }).then(response => {
+            axios.post(route('univercity.name'), { name: query }).then(response => {
                 this.optionsForUnivercityName = response.data
                 this.isLoadingForUnivercityName = false
             })
@@ -110,14 +110,13 @@ export default {
                 name: this.selectedUnivercityName ? this.selectedUnivercityName : "",
                 course: query
             };
-            axios.post('/univercity/course', data).then(response => {
+            axios.post(route('univercity.course'), data).then(response => {
                 this.optionsForUnivercityCourse = response.data
                 this.isLoadingForUnivercityCourse = false
             })
         },
         emailOnChange({ type, target }) {
             var data = {
-                level: this.level,
                 email: target.value
             };
             if (data.email == "" || data.email == null) {
@@ -126,7 +125,7 @@ export default {
                 return;
             }
             console.log(data)
-            axios.put(window.location.href, data).then(response => {
+            axios.put(route('team.check.email',this.level), data).then(response => {
                 if (typeof(response.data.result) === "boolean") {
                     this.emailDanger = response.data.result
                     this.emailPass = !this.emailDanger;

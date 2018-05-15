@@ -72,7 +72,7 @@ class NewsController extends Controller
         $news->title=request()->input('title');
         $news->save();
 
-        return redirect()->route('news.edit',$news->id)->withInput([
+        return redirect()->route('admin.news.edit',$news->id)->withInput([
             'content'=>request()->input('content'),
             'year'=>$date->year,
             'month'=>$date->month - 1,
