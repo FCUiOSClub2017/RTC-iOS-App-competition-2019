@@ -66,8 +66,7 @@
         <li>
           <a href="{{route('admin.dashboard')}}">Admin Dashboard</a>
         </li>
-        @endif
-        @can('edit teammate') @if (Carbon::parse(Setting::get('register_deadline', '2018-5-21'), 'Asia/Taipei')->gt(Carbon::now()))
+        @endif @can('edit teammate') @if (auth()->user()->verify === true && Carbon::parse(Setting::get('register_deadline', '2018-5-21'), 'Asia/Taipei')->gt(Carbon::now()))
         <li>
           <a href="#" data-toggle="modal" data-target="#teamRenameModal" onclick="$($(this).data('target')).modal('show')">隊名修改</a>
         </li>
@@ -78,11 +77,11 @@
         <li>
           <a href="{{ route('team.proposal.uplaod') }}">企劃書管理</a>
         </li>
-        @endcan @can('edit website')
+        @endcan @if (auth()->user()->verify === true)
         <li>
-          <a href="{{ route('page.index') }}">編輯頁面</a>
+          <a href="{{route('change.password.form')}}">密碼修改</a>
         </li>
-        @endcan
+        @endif
         <li style="cursor:pointer;" onclick="document.getElementById('logout-form').submit();">
           <a href="{{ route('logout') }}" onclick="event.preventDefault();">登出</a>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

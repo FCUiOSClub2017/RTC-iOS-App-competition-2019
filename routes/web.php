@@ -19,10 +19,16 @@ Route::get('/coming-soon', function () {
     return view('coming-soon');
 })->name('coming-soon');
 
-Route::get('profile', function () {
+Route::prefix('profile')->group(function () {
+Route::get('/', function () {
     return view('profile');
 })->name('profile');
+Route::post('/changePassword','Auth\ChangePasswordController@changePassword')->name('change.password.save');
+    
 
+Route::get('/changePassword','Auth\ChangePasswordController@showChangePasswordForm')->name('change.password.form');
+});
+ 
 Route::prefix('team')->group(function () {
     Route::get('/', function () {
         return redirect()->route('team.info');
