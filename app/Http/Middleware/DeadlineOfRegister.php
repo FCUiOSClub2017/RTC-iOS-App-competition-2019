@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Carbon\Carbon;
 use Closure;
+use Setting;
 
 class DeadlineOfRegister
 {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Setting;
 
 class AdminController extends Controller
 {
@@ -25,6 +26,17 @@ class AdminController extends Controller
      */
     public function index()
     {
+        return view('admin.index');
+    }
+
+    /**
+     * render team list view.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function deadlineOfRegister()
+    {
+        Setting::set();
         return view('admin.index');
     }
 }
