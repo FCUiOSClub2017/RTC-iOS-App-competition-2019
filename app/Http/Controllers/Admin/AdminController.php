@@ -37,6 +37,7 @@ class AdminController extends Controller
     public function deadlineOfRegister()
     {
         Setting::set();
+
         return view('admin.index');
     }
 }
