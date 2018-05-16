@@ -62,11 +62,11 @@
       <i class="fas fa-chevron-down"></i>
       <a href="#">你好，{{auth()->user()->name}}！</a>
       <ul>
-        @if (auth()->user()->hasAnyRole(['admin','developer']))
+        @hasanyrole ('admin|developer')
         <li>
           <a href="{{route('admin.dashboard')}}">Admin Dashboard</a>
         </li>
-        @endif @can('edit teammate') @if (auth()->user()->verify === true && Carbon::parse(Setting::get('register_deadline', '2018-5-21'), 'Asia/Taipei')->gt(Carbon::now()))
+        @endhasanyrole @can('edit teammate') @if (auth()->user()->verify === true && Carbon::parse(Setting::get('register_deadline', '2018-5-21'), 'Asia/Taipei')->gt(Carbon::now()))
         <li>
           <a href="#" data-toggle="modal" data-target="#teamRenameModal" onclick="$($(this).data('target')).modal('show')">隊名修改</a>
         </li>
@@ -84,9 +84,6 @@
         @endif
         <li style="cursor:pointer;" onclick="document.getElementById('logout-form').submit();">
           <a href="{{ route('logout') }}" onclick="event.preventDefault();">登出</a>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            {{ csrf_field() }}
-          </form>
         </li>
       </ul>
     </li>
@@ -136,4 +133,7 @@
     </li> --}}
   </ul>
 </navbar>
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+  {{ csrf_field() }}
+</form>
 @include('modal.rename')

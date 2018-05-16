@@ -19,7 +19,7 @@
                         <div class="form-group{{ $errors->has('current-password') ? ' has-error' : '' }}">
                             <label for="new-password" class="col-md-4 control-label">Current Password</label>
                             <div class="col-md-6">
-                                <input id="current-password" type="password" class="form-control" name="current-password" required> @if ($errors->has('current-password'))
+                                <input id="current-password" type="password" class="form-control" name="current-password" required autofocus> @if ($errors->has('current-password'))
                                 <span class="help-block"><strong>{{ $errors->first('current-password') }}</strong></span> @endif
                             </div>
                         </div>

@@ -9,16 +9,37 @@ use Hash;
 
 class ChangePasswordController extends Controller
 {
-     public function __construct()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
         $this->middleware('auth');
         $this->middleware('is.verify');
     }
-     public function showChangePasswordForm(){
+    
+    /**
+     * show change password form
+     * @return \Illuminate\Http\Response
+     */
+    public function showChangePasswordForm(){
         return view('auth.passwords.change');
     }
+
+    /**
+     * change user password
+     * @param  Request $request
+     * @return \Illuminate\Http\Response
+     */
     public function changePassword(Request $request){
  
+        $validatedData = $request->validate([
+            'current-password' => 'required|string|min:10',
+            'new-password'     => 'required|string|min:10|confirmed',
+        ]);
+
         if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
             // The passwords matches
             return redirect()->back()->with("error","Your current password does not matches with the password you provided. Please try again.");
@@ -29,11 +50,6 @@ class ChangePasswordController extends Controller
             return redirect()->back()->with("error","New Password cannot be same as your current password. Please choose a different password.");
         }
  
-        $validatedData = $request->validate([
-            'current-password' => 'required',
-            'new-password' => 'required|string|min:6|confirmed',
-        ]);
- 
         //Change Password
         $user = Auth::user();
         $user->password = bcrypt($request->get('new-password'));
@@ -42,4 +58,22 @@ class ChangePasswordController extends Controller
         return redirect()->back()->with("success","Password changed successfully !");
  
     }
+
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param array $data
+     *
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name'     => 'required|string|max:255|unique:users',
+            'email'    => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:10|confirmed',
+        ]);
+    }
+
+
 }
