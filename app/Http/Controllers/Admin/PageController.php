@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 
-class EditPageController extends Controller
+class PageController extends Controller
 {
     /**
      * Create a new controller instance and set middleware.
