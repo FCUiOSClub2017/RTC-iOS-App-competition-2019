@@ -7,8 +7,8 @@ use App\Univercity;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Storage;
 use Setting;
+use Storage;
 
 class TeamController extends Controller
 {
