@@ -13,7 +13,7 @@
                 <a class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="row justify-content-between">
                         <div class="col">1</div>
-                        <div class="col-auto"><datepicker :bootstrap-styling="true" :language="zh"></datepicker></div>
+                        <div class="col-auto"><datepicker :bootstrap-styling="true"></datepicker></div>
                     </div>
                 </a>
             </div>
