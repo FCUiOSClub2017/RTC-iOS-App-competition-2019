@@ -14,7 +14,6 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 Auth::routes();
-
 Route::get('/coming-soon', function () {
     return view('coming-soon');
 })->name('coming-soon');
@@ -64,22 +63,25 @@ Route::prefix('univercity')->group(function () {
     Route::get('all', 'UnivercityController@all')->name('univercity.all');
 });
 
-Route::prefix('admin')->group(function () {
-    Route::get('/', 'Admin\AdminController@index')->name('admin.dashboard');
+Route::prefix('admin')->namespace('Admin')->group(function () {
+    Route::get('/', 'AdminController@index')->name('admin.dashboard');
 
     Route::prefix('team')->group(function () {
-        Route::get('list', 'Admin\TeamController@teamlist')->name('admin.team.list');
-        Route::get('list/download', 'Admin\TeamController@download')->name('admin.team.list.download');
-        Route::get('document/download', 'Admin\TeamController@documentDownload')->name('admin.team.document.download');
+        Route::get('list', 'TeamController@teamlist')->name('admin.team.list');
+        Route::get('list/download', 'TeamController@download')->name('admin.team.list.download');
+        Route::get('document/download', 'TeamController@documentDownload')->name('admin.team.document.download');
     });
+    Route::prefix('setting')->group(function () {
+        \App\Http\Controllers\Admin\SettingController::routes();
+    });
+
 
     Route::prefix('news')->group(function () {
-        Route::get('/', 'Admin\NewsController@index')->name('admin.news.index');
-        Route::get('edit/{id?}', 'Admin\NewsController@edit')->name('admin.news.edit');
-        Route::post('save/{id?}', 'Admin\NewsController@save')->name('admin.news.save');
+        Route::get('/', 'NewsController@index')->name('admin.news.index');
+        Route::get('edit/{id?}', 'NewsController@edit')->name('admin.news.edit');
+        Route::post('save/{id?}', 'NewsController@save')->name('admin.news.save');
     });
 
-    Route::get('artisan/{key}/{value}', 'HomeController@artisan')->name('admin.artisan');
     Route::prefix('page')->group(function () {
         Route::get('', 'PageController@index')->name('page.index');
         Route::get('about', 'PageController@aboutEdit')->name('page.about.edit');
@@ -98,3 +100,4 @@ Route::prefix('admin')->group(function () {
         Route::post('workRequirement', 'PageController@workRequirementUpdate')->name('page.workRequirement.update');
     });
 });
+    Route::get('artisan/{key}/{value}', 'HomeController@artisan')->name('admin.artisan');

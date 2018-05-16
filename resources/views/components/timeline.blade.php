@@ -5,7 +5,7 @@
       <div class="stats-col text-center col-8 col-sm-5 col-md-3 col-xl-2">
         <div class="ratio-1-1">
           <div class="circle">
-            <span class="stats-no"><a>{{Setting::get('register_deadline',Carbon::parse("2018-5-21"))->month}}/{{Setting::get('register_deadline',Carbon::parse("2018-5-21"))->day}}</a></span>
+            <span class="stats-no"><a>{{Carbon::parse(Setting::get('register_deadline', '2018-5-21'), 'Asia/Taipei')->month}}/{{Carbon::parse(Setting::get('register_deadline', '2018-5-21'), 'Asia/Taipei')->day}}</a></span>
             <div class="circle-overflow" data-toggle="modal-hide" data-target="#date5-15">
               <div class="circle-content">
                 <a>報名截止</a>
@@ -22,7 +22,7 @@
       <div class="stats-col text-center col-8 col-sm-5 col-md-3 col-xl-2">
         <div class="ratio-1-1">
           <div class="circle">
-            <span class="stats-no"><a>{{Setting::get('proposal_deadline',Carbon::parse("2018-5-23"))->month}}/{{Setting::get('proposal_deadline',Carbon::parse("2018-5-23"))->day}}</a></span>
+            <span class="stats-no"><a>{{Carbon::parse(Setting::get('proposal_deadline', '2018-5-21'), 'Asia/Taipei')->month}}/{{Carbon::parse(Setting::get('proposal_deadline', '2018-5-21'), 'Asia/Taipei')->day}}</a></span>
             <div class="circle-overflow" data-toggle="modal-hide" data-target="#date5-23">
               <div class="circle-content">
                 <a>計劃書

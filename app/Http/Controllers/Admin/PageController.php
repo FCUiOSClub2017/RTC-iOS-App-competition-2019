@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-class PageController extends Controller
+use App\Http\Controllers\Controller;
+
+class EditPageController extends Controller
 {
     /**
      * Create a new controller instance and set middleware.
@@ -18,12 +20,12 @@ class PageController extends Controller
 
     public function index()
     {
-        return view('page.index');
+        return view('admin.editPage.index');
     }
 
     public function aboutEdit()
     {
-        return view('page.about');
+        return view('admin.editPage.about');
     }
 
     public function aboutUpdate()
@@ -33,7 +35,7 @@ class PageController extends Controller
 
     public function awardEdit()
     {
-        return view('page.award');
+        return view('admin.editPage.award');
     }
 
     public function awardUpdate()
@@ -43,7 +45,7 @@ class PageController extends Controller
 
     public function competitionReviewEdit()
     {
-        return view('page.competition_review');
+        return view('admin.editPage.competition_review');
     }
 
     public function competitionReviewUpdate()
@@ -53,7 +55,7 @@ class PageController extends Controller
 
     public function entryRequirementEdit()
     {
-        return view('page.entry_requirement');
+        return view('admin.editPage.entry_requirement');
     }
 
     public function entryRequirementUpdate()
@@ -63,7 +65,7 @@ class PageController extends Controller
 
     public function relatedStatementEdit()
     {
-        return view('page.related_statement');
+        return view('admin.editPage.related_statement');
     }
 
     public function relatedStatementUpdate()
@@ -73,7 +75,7 @@ class PageController extends Controller
 
     public function reviewAndAwardsEdit()
     {
-        return view('page.review_and_awards');
+        return view('admin.editPage.review_and_awards');
     }
 
     public function reviewAndAwardsUpdate()
@@ -83,7 +85,7 @@ class PageController extends Controller
 
     public function workRequirementEdit()
     {
-        return view('page.work_requirement');
+        return view('admin.editPage.work_requirement');
     }
 
     public function workRequirementUpdate()
