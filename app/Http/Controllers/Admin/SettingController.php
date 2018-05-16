@@ -47,7 +47,7 @@ class SettingController extends Controller
     }
 
     /**
-     * config proposal deadline.
+     * config register form deadline.
      *
      * @return \Illuminate\Http\Response
      */
@@ -72,7 +72,7 @@ class SettingController extends Controller
     }
 
     /**
-     * config proposal deadline.
+     * config app deadline.
      *
      * @return \Illuminate\Http\Response
      */
