@@ -75,7 +75,6 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
         \App\Http\Controllers\Admin\SettingController::routes();
     });
 
-
     Route::prefix('news')->group(function () {
         Route::get('/', 'NewsController@index')->name('admin.news.index');
         Route::get('edit/{id?}', 'NewsController@edit')->name('admin.news.edit');
