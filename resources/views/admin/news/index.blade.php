@@ -1,9 +1,9 @@
 @extends('layouts.app') @section('content')
 <div class="container pt-3">
-    <div class="row pb-3">
-        <div class="col"> </div>
-        <div class="col">
-            <a class="btn btn-secondary" href="{{route('admin.news.edit')}}">新消息</a>
+    <div class="row pb-3 justify-content-between">
+        <div class="col-auto"></div>
+        <div class="col-auto">
+            <a class="btn bootstrap-original btn-success" href="{{route('admin.news.edit')}}">新消息</a>
         </div>
     </div>
     <div class="row pb-3">

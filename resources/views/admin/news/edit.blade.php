@@ -19,15 +19,15 @@ $(document).ready(function() {
 </script>
 @endsection @section('content')
 <div class="container pt-3 bootstrap-original">
-        <div class="row pb-3 justify-content-between">
+    <div class="row pb-3 justify-content-between">
         <div class="col-auto">
-            <a class="btn  bootstrap-original btn-primary" href="{{route('admin.news.index')}}">返回列表</a>
+            <a class="btn bootstrap-original btn-primary" href="{{route('admin.news.index')}}">返回列表</a>
         </div>
         <div class="col-auto">
-            <a class="btn  bootstrap-original btn-success" href="{{route('admin.news.edit')}}">新消息</a>
+            <a class="btn bootstrap-original btn-success" href="{{route('admin.news.edit')}}">新消息</a>
         </div>
     </div>
-{!! Form::open(['route' => ['admin.news.save',$id]]) !!}
+    {!! Form::open(['route' => ['admin.news.save',$id]]) !!}
     <div class="row">
         <div class="col-2">
             <datepicker :value="new Date({{old('year',$year)}},{{old('month',$month)}},{{old('day',$day)}})" name="date" :minimum-view="'day'" :maximum-view="'day'" :bootstrap-styling="true">

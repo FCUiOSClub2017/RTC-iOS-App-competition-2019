@@ -19,7 +19,6 @@ Vue.component("teamedit", require("./components/TeamEdit.vue"));
 Vue.component('vue-input', require('./components/Input.vue'))
 
 import Datepicker from 'vuejs-datepicker';
-import {en, zh} from 'vuejs-datepicker/dist/locale'
 Vue.component('Datepicker', Datepicker)
 
 $(document).ready(function() {
