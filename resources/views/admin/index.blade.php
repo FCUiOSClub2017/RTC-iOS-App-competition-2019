@@ -40,7 +40,7 @@
                 </a>
                 <a class="list-group-item list-group-item-action flex-column align-items-start">
                     @php $randomStr = str_random(10); @endphp
-                    {!! Form::open(['route' => 'admin.config.deadline.proposal','onSubmit'=>"axios.post(this.action,{date:this.date.value}).then((response)=>{\$('#$randomStr').text(response.data.date)});return false;"]) !!}
+                    {!! Form::open(['route' => 'admin.config.deadline.register.form','onSubmit'=>"axios.post(this.action,{date:this.date.value}).then((response)=>{\$('#$randomStr').text(response.data.date)});return false;"]) !!}
                     <div class="row justify-content-between align-items-center">
                         <div class="col">報名資料補繳截止時間： <span id="{{$randomStr}}">{{Setting::get('register_form_deadline',"2018-06-30 23:59:59")}}</span></div>
                         <div class="col-auto">
@@ -54,7 +54,7 @@
                 </a>
                 <a class="list-group-item list-group-item-action flex-column align-items-start">
                     @php $randomStr = str_random(10); @endphp
-                    {!! Form::open(['route' => 'admin.config.deadline.proposal','onSubmit'=>"axios.post(this.action,{date:this.date.value}).then((response)=>{\$('#$randomStr').text(response.data.date)});return false;"]) !!}
+                    {!! Form::open(['route' => 'admin.config.deadline.app','onSubmit'=>"axios.post(this.action,{date:this.date.value}).then((response)=>{\$('#$randomStr').text(response.data.date)});return false;"]) !!}
                     <div class="row justify-content-between align-items-center">
                         <div class="col">App 上傳截止時間： <span id="{{$randomStr}}">{{Setting::get('app_upload_deadline',"2018-07-20 23:59:59")}}</span></div>
                         <div class="col-auto">
