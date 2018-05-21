@@ -13,7 +13,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="align-middle" rowspan="3">特獎</td>
+                    <td class="align-middle" rowspan="3">作品基本參數</td>
                     <td class="align-middle" rowspan="3">30 分</td>
                     <td class="align-middle">功能性</td>
                     <td class="align-middle">10 分</td>
@@ -27,7 +27,7 @@
                     <td class="align-middle">10 分</td>
                 </tr>
                 <tr>
-                    <td class="align-middle" rowspan="4">特獎</td>
+                    <td class="align-middle" rowspan="4">作品創新與特⾊之處</td>
                     <td class="align-middle" rowspan="4">40 分</td>
                     <td class="align-middle">設計理念</td>
                     <td class="align-middle">10 分</td>
@@ -45,7 +45,7 @@
                     <td class="align-middle">10 分</td>
                 </tr>
                 <tr>
-                    <td class="align-middle" rowspan="2">特獎</td>
+                    <td class="align-middle" rowspan="2">前景評估</td>
                     <td class="align-middle" rowspan="2">20 分</td>
                     <td class="align-middle">意義：⽤⼾的需求程度</td>
                     <td class="align-middle">10 分</td>
@@ -55,7 +55,7 @@
                     <td class="align-middle">10 分</td>
                 </tr>
                 <tr>
-                    <td class="align-middle" rowspan="2">特獎</td>
+                    <td class="align-middle" rowspan="2">作品資料完整性和品質</td>
                     <td class="align-middle" rowspan="2">10 分</td>
                     <td class="align-middle">資料⿑全度(功能說明,原型設計,應⽤ demo 等)</td>
                     <td class="align-middle">5 分</td>
