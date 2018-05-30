@@ -26,7 +26,7 @@
                     </div>
                     <div>
                         <h3>檔案上傳</h3>
-                        <p> 參賽隊伍請於5/1~5/23，以A4版面書寫5至10頁以內,另作封面註明隊伍名稱與作品名稱,檔案格式請存成 PDF 檔,檔案名稱須同【聯絡人學校 _聯絡人系級_聯絡人姓名_參賽APP名稱_企劃書】,檔案大小請避免超過10MB。 </p>
+                        <p> 參賽隊伍請於5/1 ~ {{Carbon::parse(Setting::get('proposal_deadline', '2018-5-21'), 'Asia/Taipei')->month}}/{{Carbon::parse(Setting::get('proposal_deadline', '2018-5-21'), 'Asia/Taipei')->day}}，以A4版面書寫5至10頁以內,另作封面註明隊伍名稱與作品名稱,檔案格式請存成 PDF 檔,檔案名稱須同【聯絡人學校 _聯絡人系級_聯絡人姓名_參賽APP名稱_企劃書】,檔案大小請避免超過10MB。 </p>
                     </div>
                 </div>
             </div>

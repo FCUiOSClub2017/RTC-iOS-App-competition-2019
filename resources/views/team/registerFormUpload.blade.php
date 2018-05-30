@@ -23,6 +23,11 @@
                         <button class="col-auto btn btn-primary" type="submit">上傳</button>
                         <a class="btn col-auto" type="submit" href="{{route('team.proposal.download')}}">下載</a>
                     </div>
+                    <div class="row justify-content-around py-2">
+                        <div class="col-12">
+                            <a>2018/5/31 23:59:59 企劃書提交截止日期之前，各參賽隊伍可隨時修改、優化、重新上傳已更新的競賽文件資料。企劃書將以提交截止日前上傳的最後一版為，逾期將不再受理。</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
