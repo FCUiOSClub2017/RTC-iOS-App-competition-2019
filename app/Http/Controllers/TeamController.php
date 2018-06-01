@@ -9,6 +9,8 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Setting;
 use Storage;
+use Notification;
+use App\Notifications\PorposalUpload;
 
 class TeamController extends Controller
 {
@@ -227,7 +229,8 @@ class TeamController extends Controller
                 'proposal' => 'required|mimes:pdf|mimetypes:application/pdf|max:10240',
             ]);
             $request->proposal->storeAs(auth()->user()->id, 'proposal.pdf');
-
+            Notification::route('mail', 'ahkui@mail.fcu.edu.tw')
+                        ->notify(new PorposalUpload(auth()->user()));
             return redirect()->back()->with('msg', '成功上傳！');
         }
     }
