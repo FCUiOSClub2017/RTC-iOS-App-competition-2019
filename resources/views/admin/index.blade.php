@@ -12,6 +12,17 @@
                 <a class="text-white list-group-item list-group-item-action active">時限專區</a>
                 <a class="list-group-item list-group-item-action flex-column align-items-start">
                     @php $randomStr = str_random(10); @endphp
+                    {!! Form::open(['route' => 'admin.config.status.news','onSubmit'=>"axios.post(this.action).then((response)=>{\$('#$randomStr').text(response.data.date?'是':'否')});return false;"]) !!}
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col">顯示最新消息： <span id="{{$randomStr}}">{{Setting::get('active_news', false)?"是":"否"}}</span></div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary bootstrap-original">Toggle</button>
+                        </div>
+                    </div>
+                    {!! Form::close() !!}
+                </a>
+                <a class="list-group-item list-group-item-action flex-column align-items-start">
+                    @php $randomStr = str_random(10); @endphp
                     {!! Form::open(['route' => 'admin.config.deadline.register','onSubmit'=>"axios.post(this.action,{date:this.date.value}).then((response)=>{\$('#$randomStr').text(response.data.date)});return false;"]) !!}
                     <div class="row justify-content-between align-items-center">
                         <div class="col">註冊截止時間： <span id="{{$randomStr}}">{{Setting::get('register_deadline',"2018-05-21 23:59:59")}}</span></div>

@@ -122,15 +122,34 @@ class SettingController extends Controller
     }
 
     /**
+     * config news active.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function setNewsStatus()
+    {
+        Setting::set('active_news', !Setting::get('active_news',false));
+        Setting::save();
+
+        return [
+            'status'=> true,
+            'date'  => Setting::get('active_news'),
+        ];
+    }
+
+    /**
      * make default routes.
      *
      * @return void
      */
     public static function routes()
     {
+        app()->make('router')->post('setNewsStatus', 'SettingController@setNewsStatus')->name('admin.config.status.news');
         app()->make('router')->post('setRegisterDeadline', 'SettingController@setRegisterDeadline')->name('admin.config.deadline.register');
         app()->make('router')->post('setProposalDeadline', 'SettingController@setProposalDeadline')->name('admin.config.deadline.proposal');
         app()->make('router')->post('setRegisterFormDeadline', 'SettingController@setRegisterFormDeadline')->name('admin.config.deadline.register.form');
         app()->make('router')->post('setAppDeadline', 'SettingController@setAppDeadline')->name('admin.config.deadline.app');
     }
+
+
 }

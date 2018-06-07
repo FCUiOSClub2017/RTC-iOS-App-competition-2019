@@ -10,9 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 Route::get('/coming-soon', function () {
     return view('coming-soon');
@@ -79,6 +77,7 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
         Route::get('/', 'NewsController@index')->name('admin.news.index');
         Route::get('edit/{id?}', 'NewsController@edit')->name('admin.news.edit');
         Route::post('save/{id?}', 'NewsController@save')->name('admin.news.save');
+        Route::delete('delete/{id}', 'NewsController@delete')->name('admin.news.delete');
     });
 
     Route::prefix('page')->group(function () {

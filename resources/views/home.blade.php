@@ -7,6 +7,7 @@
 @endsection
 <!-- Content -->
 @section('content')
+@include('components.news',['news'=>$news])
 @include('components.about')
 @include('components.timeline')
 @include('components.award')

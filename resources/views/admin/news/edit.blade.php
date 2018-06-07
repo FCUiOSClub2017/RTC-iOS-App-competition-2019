@@ -2,18 +2,19 @@
 <script src="{{asset('/ckeditor/ckeditor.js')}}"></script>
 <script>
 var options = {
-    filebrowserImageBrowseUrl: '{{config("lfm.url_prefix")}}?type=Images',
-    filebrowserImageUploadUrl: '{{config("lfm.url_prefix")}}/upload?type=Images&responseType=json&_token=' + $('meta[name="csrf-token"]').attr('content'),
-    filebrowserBrowseUrl: '{{config("lfm.url_prefix")}}?type=Files',
-    filebrowserUploadUrl: '{{config("lfm.url_prefix")}}/upload?type=Files&responseType=json&_token=' + $('meta[name="csrf-token"]').attr('content')
+    filebrowserImageBrowseUrl: '/{{config("lfm.url_prefix")}}?type=Images',
+    filebrowserImageUploadUrl: '/{{config("lfm.url_prefix")}}/upload?type=Images&responseType=json&_token=' + $('meta[name="csrf-token"]').attr('content'),
+    filebrowserBrowseUrl: '/{{config("lfm.url_prefix")}}?type=Files',
+    filebrowserUploadUrl: '/{{config("lfm.url_prefix")}}/upload?type=Files&responseType=json&_token=' + $('meta[name="csrf-token"]').attr('content')
 };
 $(document).ready(function() {
     var editor = CKEDITOR.replace('ckeditor', options);
     CKEDITOR.config.language = 'zh-tw';
     editor.on('change', function(evt) {
-        // getData() returns CKEditor's HTML content.
-        console.log('Total bytes: ' + evt.editor.getData().length);
-        $('#ckeditor-preview').html(evt.editor.getData())
+        $('.card-body').html(evt.editor.getData())
+    });
+    $('input[name="title"]').keydown(function(event) {
+        $('.card-header a:first').html($(this).val())
     });
 });
 </script>
@@ -49,7 +50,7 @@ $(document).ready(function() {
     <div class="row pt-3 bootstrap-original">
         <div class="col">
             <div id="news" class="shadow rounded">
-                @component('components.admin.news.card') @slot('title') {{old("title", $title)}} @endslot @slot('content',old("content", $content)) @slot('route',route('admin.news.edit',$id)) @slot('parent','news') @slot('firstShow',true) @endcomponent
+                @component('components.admin.news.card',['id'=>$id]) @slot('title') {{old("title", $title)}} @endslot @slot('content',old("content", $content)) @slot('route',route('admin.news.edit',$id)) @slot('parent','news') @slot('firstShow',true) @endcomponent
             </div>
         </div>
     </div>

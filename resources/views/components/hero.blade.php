@@ -9,7 +9,11 @@
       </div>
     </div>
     <div class="col-md-12">
+        @if (Setting::get('active_news', false))
+      <a class="btn btn-full" href="#news"> 最新消息 </a>
+      @else
       <a class="btn btn-full" href="#about"> 進入 </a>
+      @endif
     </div>
   </div>
 </section>

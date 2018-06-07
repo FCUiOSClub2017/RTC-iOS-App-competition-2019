@@ -87,4 +87,21 @@ class NewsController extends Controller
             'title'  => request()->input('title'),
         ]);
     }
+
+    /**
+     * delete news.
+     *
+     * @param interger $id news id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function delete($id)
+    {
+        $news = News::find($id);
+
+        if ($news) {
+            $news->delete();
+        }
+        return redirect()->route('admin.news.index');
+    }
 }

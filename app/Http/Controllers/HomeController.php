@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Artisan;
 use Permission;
+use App\News;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -14,8 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('is.verify');
+        $this->middleware('auth')->except(['index']);
         $this->middleware('is.developer')->only(['test', 'artisan']);
     }
 
@@ -26,7 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home')->with([
+            'news'=>News::where('date', '<=', Carbon::now())->get(),
+        ]);
     }
 
     /**
