@@ -32,7 +32,7 @@ class ProposalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function proposalUploadView()
+    public function view()
     {
         return view('team.proposalUpload');
     }
@@ -42,7 +42,7 @@ class ProposalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function proposalUploadFile(Request $request)
+    public function upload(Request $request)
     {
         if (
             !auth()->user()->hasRole('developer')
@@ -65,7 +65,7 @@ class ProposalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function proposalDownload()
+    public function download()
     {
         if (Storage::exists(auth()->user()->id.'/proposal.pdf')) {
             return response(Storage::get(auth()->user()->id.'/proposal.pdf'))->withHeaders([

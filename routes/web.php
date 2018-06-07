@@ -47,9 +47,11 @@ Route::prefix('team')->group(function () {
 
     Route::prefix('files')->group(function () {
         Route::prefix('upload')->group(function () {
-            Route::get('proposal', 'Team\ProposalController@proposalUploadView')->name('team.proposal.view');
-            Route::post('proposal', 'Team\ProposalController@proposalUploadFile')->name('team.proposal.uplaod');
-            Route::get('proposal/download', 'Team\ProposalController@proposalDownload')->name('team.proposal.download');
+            Route::prefix('proposal')->group(function () {
+                Route::get('/', 'Team\ProposalController@view')->name('team.proposal.view');
+                Route::post('/', 'Team\ProposalController@upload')->name('team.proposal.uplaod');
+                Route::get('/download', 'Team\ProposalController@download')->name('team.proposal.download');
+            });
         });
     });
 });
