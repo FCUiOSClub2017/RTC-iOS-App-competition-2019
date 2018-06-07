@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Artisan;
-use Permission;
 use App\News;
+use Artisan;
 use Carbon\Carbon;
+use Permission;
 
 class HomeController extends Controller
 {
@@ -28,7 +28,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('home')->with([
-            'news'=>News::where('date', '<=', Carbon::now())->get(),
+            'news'=> News::where('date', '<=', Carbon::now())->get(),
         ]);
     }
 
