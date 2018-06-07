@@ -128,7 +128,7 @@ class SettingController extends Controller
      */
     public function setNewsStatus()
     {
-        Setting::set('active_news', !Setting::get('active_news',false));
+        Setting::set('active_news', !Setting::get('active_news', false));
         Setting::save();
 
         return [
@@ -150,6 +150,4 @@ class SettingController extends Controller
         app()->make('router')->post('setRegisterFormDeadline', 'SettingController@setRegisterFormDeadline')->name('admin.config.deadline.register.form');
         app()->make('router')->post('setAppDeadline', 'SettingController@setAppDeadline')->name('admin.config.deadline.app');
     }
-
-
 }
