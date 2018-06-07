@@ -29,29 +29,29 @@ Route::prefix('team')->group(function () {
     Route::get('/', function () {
         return redirect()->route('team.info');
     });
+    Route::post('rename', 'Team\HomeController@rename')->name('team.rename');
     Route::get('verify/notice', 'VerifyController@notice')->name('verify.notice');
     Route::get('verify/success', 'VerifyController@success')->name('verify.success');
     Route::post('verify/resend', 'VerifyController@resendEmail')->name('verify.resend');
     Route::get('verify/{token}', 'VerifyController@process')->name('verify.process');
     Route::prefix('teammate')->group(function () {
-        Route::get('/', 'TeamController@index')->name('team.info');
+        Route::get('/', 'Team\HomeController@index')->name('team.info');
         Route::prefix('edit')->group(function () {
-            Route::get('{level}', 'TeamController@edit')->name('team.edit');
-            Route::post('{level}', 'TeamController@update')->name('team.update');
-            Route::patch('{level}', 'TeamController@getTeamData')->name('team.data.get');
-            Route::put('{level}', 'TeamController@checkEmailDuplication')->name('team.check.email');
-            Route::delete('{level}', 'TeamController@clear')->name('team.clear');
+            Route::get('{level}', 'Team\HomeController@edit')->name('team.edit');
+            Route::post('{level}', 'Team\EditController@update')->name('team.update');
+            Route::patch('{level}', 'Team\EditController@getTeamData')->name('team.data.get');
+            Route::put('{level}', 'Team\EditController@checkEmailDuplication')->name('team.check.email');
+            Route::delete('{level}', 'Team\HomeController@clear')->name('team.clear');
         });
     });
 
     Route::prefix('files')->group(function () {
         Route::prefix('upload')->group(function () {
-            Route::get('proposal', 'TeamController@proposalUploadView')->name('team.proposal.view');
-            Route::post('proposal', 'TeamController@proposalUploadFile')->name('team.proposal.uplaod');
-            Route::get('proposal/download', 'TeamController@proposalDownload')->name('team.proposal.download');
+            Route::get('proposal', 'Team\ProposalController@proposalUploadView')->name('team.proposal.view');
+            Route::post('proposal', 'Team\ProposalController@proposalUploadFile')->name('team.proposal.uplaod');
+            Route::get('proposal/download', 'Team\ProposalController@proposalDownload')->name('team.proposal.download');
         });
     });
-    Route::post('rename', 'TeamController@rename')->name('team.rename');
 });
 
 Route::prefix('univercity')->group(function () {
@@ -98,4 +98,3 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
         Route::post('workRequirement', 'PageController@workRequirementUpdate')->name('page.workRequirement.update');
     });
 });
-    Route::get('artisan/{key}/{value}', 'HomeController@artisan')->name('admin.artisan');
