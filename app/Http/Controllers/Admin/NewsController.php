@@ -102,6 +102,7 @@ class NewsController extends Controller
         if ($news) {
             $news->delete();
         }
+
         return redirect()->route('admin.news.index');
     }
 }
