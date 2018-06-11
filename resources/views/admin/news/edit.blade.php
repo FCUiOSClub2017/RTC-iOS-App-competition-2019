@@ -38,7 +38,7 @@ $(document).ready(function() {
             </datepicker>
         </div>
         <div class="col">
-            <input type="text" name="title" value="{{old('title',$title)}}" placeholder="標題">
+            <input type="text" name="title" value="{{old('title',$title)}}" placeholder="標題" required>
         </div>
     </div>
     <div class="row pt-3">
