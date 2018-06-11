@@ -28,7 +28,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('home')->with([
-            'news'=> News::where('date', '<=', Carbon::now())->get(),
+            'news'=> News::where('date', '<=', Carbon::now())->orderBy('date', 'decs')->get(),
         ]);
     }
 
