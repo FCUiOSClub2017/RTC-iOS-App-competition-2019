@@ -20,7 +20,7 @@
             <a href="{{route('home')}}#award">獎項</a>
         </li>
         <li>
-            <a href="{{route('home')}}#portal">報名</a>
+            <a href="{{route('home')}}#portal">傳送門</a>
         </li>
         <li class="menu-has-children">
             <i class="fas fa-chevron-down"></i>
