@@ -35,7 +35,7 @@ class RegisterFormController extends Controller
     }
 
     /**
-     * upload proposal.
+     * upload register_form.
      *
      * @return \Illuminate\Http\Response
      */
@@ -43,14 +43,14 @@ class RegisterFormController extends Controller
     {
         if (
             !auth()->user()->hasRole('developer')
-            && Carbon::now()->gt(Carbon::parse(Setting::get('proposal_deadline', '2018-5-21'), 'Asia/Taipei'))
+            && Carbon::now()->gt(Carbon::parse(Setting::get('register_form_deadline', '2018-5-21'), 'Asia/Taipei'))
         ) {
             return redirect()->back()->withErrors(['msg'=>'不在開放時間內！']);
         } else {
             $request->validate([
-                'proposal' => 'required|mimes:pdf|mimetypes:application/pdf|max:10240',
+                'register_form' => 'required|mimes:pdf|mimetypes:application/pdf|max:10240',
             ]);
-            $request->proposal->storeAs(auth()->user()->id, 'proposal.pdf');
+            $request->register_form->storeAs(auth()->user()->id, 'register_form.pdf');
             Notification::route('mail', 'ahkui@mail.fcu.edu.tw')
                         ->notify(new PorposalUpload(auth()->user()));
 
@@ -59,17 +59,17 @@ class RegisterFormController extends Controller
     }
 
     /**
-     * download proposal.
+     * download register_form.
      *
      * @return \Illuminate\Http\Response
      */
     public function download()
     {
-        if (Storage::exists(auth()->user()->id.'/proposal.pdf')) {
-            return response(Storage::get(auth()->user()->id.'/proposal.pdf'))->withHeaders([
+        if (Storage::exists(auth()->user()->id.'/register_form.pdf')) {
+            return response(Storage::get(auth()->user()->id.'/register_form.pdf'))->withHeaders([
                     'Content-Type'        => 'application/pdf',
                     'Cache-Control'       => 'no-store, no-cache',
-                    'Content-Disposition' => 'attachment; filename="'.auth()->user()->name.'_企劃書_'.Carbon::now()->toDateTimeString().'.pdf"',
+                    'Content-Disposition' => 'attachment; filename="'.auth()->user()->name.'_報名表_'.Carbon::now()->toDateTimeString().'.pdf"',
                 ]);
         }
 

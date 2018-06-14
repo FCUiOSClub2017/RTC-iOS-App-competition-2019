@@ -81,6 +81,12 @@
                 <li>
                     <a href="{{ route('team.proposal.uplaod') }}">企劃書管理</a>
                 </li>
+                <li>
+                    <a href="{{ route('team.register.form.uplaod') }}">報名表格補件管理</a>
+                </li>
+                <li>
+                    <a href="{{ route('team.app.uplaod') }}">App 上傳管理</a>
+                </li>
                 @endcan @if (auth()->user()->verify === true)
                 <li>
                     <a href="{{route('change.password.form')}}">密碼修改</a>

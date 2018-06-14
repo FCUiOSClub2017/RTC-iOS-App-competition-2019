@@ -1,6 +1,6 @@
 @extends('layouts.app') @section('content')
 <section class="pt-3">
-    {!! Form::open(['route' => 'team.proposal.uplaod','enctype'=>'multipart/form-data']) !!}
+    {!! Form::open(['route' => 'team.register.form.uplaod','enctype'=>'multipart/form-data']) !!}
     <div class="container">
         @if ($errors->any())
         <div class="row justify-content-center py-2">
@@ -13,7 +13,7 @@
         @endif
         <div class="row justify-content-center py-2">
             <div class="form-group col-12 col-md-6 col-xl-4">
-                {!! Form::file('proposal',['class'=>'form-control py-2','id'=>'proposal','aria-describedby'=>'ProposalHelp','required'=>'true']) !!}
+                {!! Form::file('register_form',['class'=>'form-control py-2','id'=>'register_form','aria-describedby'=>'ProposalHelp','required'=>'true']) !!}
             </div>
         </div>
         <div class="row justify-content-center">
@@ -21,11 +21,11 @@
                 <div class="container">
                     <div class="row justify-content-around py-2">
                         <button class="col-auto btn btn-primary" type="submit">上傳</button>
-                        <a class="btn col-auto" type="submit" href="{{route('team.proposal.download')}}">下載</a>
+                        <a class="btn col-auto" type="submit" href="{{route('team.register.form.download')}}">下載</a>
                     </div>
                     <div class="row justify-content-around py-2">
                         <div class="col-12">
-                            <a>2018/5/31 23:59:59 企劃書提交截止日期之前，各參賽隊伍可隨時修改、優化、重新上傳已更新的競賽文件資料。企劃書將以提交截止日前上傳的最後一版為，逾期將不再受理。</a>
+                            <a>請於 {{Carbon::parse(Setting::get('register_form_deadline', '2018-5-21'), 'Asia/Taipei')->toDateTimeString()}} 前補繳報名資料，謝謝。</a>
                         </div>
                     </div>
                 </div>

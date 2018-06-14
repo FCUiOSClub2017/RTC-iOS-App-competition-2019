@@ -81,4 +81,38 @@ class TeamController extends Controller
             return back();
         }
     }
+
+    /**
+     * document download.
+     *
+     * @return
+     */
+    public function qualifiersDownload()
+    {
+        $users = User::role('participant')->whereVerify(true)->whereIn('id', array(19,20,22,30,31,33,38,56,59,65,67,82,84,86,88,90,91,93,94,98,175))->get();
+        $directorys = $users->map(function ($e) {
+            $data = null;
+            $files = Storage::allFiles($e->id);
+            if (collect($files)->count() > 0) {
+                $data = $files;
+            }
+
+            return collect(['data'=>$data, 'id'=>$e->id, 'name'=>$e->name]);
+        });
+        $zip = Zipper::make(storage_path().'/app/qualifiers.zip');
+        foreach ($directorys as $item) {
+            if ($item['data'] != null) {
+                $zip->folder($item['id'].'_'.$item['name']);
+                foreach ($item['data'] as $file) {
+                    $zip->add(storage_path().'/app/'.$file);
+                }
+            }
+        }
+        $zip->close();
+        if (Storage::exists('qualifiers.zip')) {
+            return Storage::download('qualifiers.zip', 'qualifiers_'.Carbon::now()->toDateTimeString().'.zip');
+        } else {
+            return back();
+        }
+    }
 }

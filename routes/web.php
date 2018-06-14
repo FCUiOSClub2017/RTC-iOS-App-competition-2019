@@ -52,6 +52,16 @@ Route::prefix('team')->group(function () {
                 Route::post('/', 'Team\ProposalController@upload')->name('team.proposal.uplaod');
                 Route::get('/download', 'Team\ProposalController@download')->name('team.proposal.download');
             });
+            Route::prefix('registerForm')->group(function () {
+                Route::get('/', 'Team\RegisterFormController@view')->name('team.register.form.view');
+                Route::post('/', 'Team\RegisterFormController@upload')->name('team.register.form.uplaod');
+                Route::get('/download', 'Team\RegisterFormController@download')->name('team.register.form.download');
+            });
+            Route::prefix('app')->group(function () {
+                Route::get('/', 'Team\AppController@view')->name('team.app.view');
+                Route::post('/', 'Team\AppController@upload')->name('team.app.uplaod');
+                Route::get('/download', 'Team\AppController@download')->name('team.app.download');
+            });
         });
     });
 });
@@ -70,6 +80,7 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
         Route::get('list', 'TeamController@teamlist')->name('admin.team.list');
         Route::get('list/download', 'TeamController@download')->name('admin.team.list.download');
         Route::get('document/download', 'TeamController@documentDownload')->name('admin.team.document.download');
+        Route::get('qualifiers/download', 'TeamController@qualifiersDownload')->name('admin.team.qualifiers.download');
     });
     Route::prefix('setting')->group(function () {
         \App\Http\Controllers\Admin\SettingController::routes();

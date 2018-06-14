@@ -9,6 +9,7 @@
                 <a class="text-white list-group-item list-group-item-action active">下載專區</a>
                 <a href="{{route('admin.team.list.download')}}" class="list-group-item list-group-item-action">隊伍列表</a>
                 <a href="{{route('admin.team.document.download')}}" class="list-group-item list-group-item-action">隊伍檔案</a>
+                <a href="{{route('admin.team.qualifiers.download')}}" class="list-group-item list-group-item-action">進入初賽隊伍檔案</a>
                 <a class="text-white list-group-item list-group-item-action active">時限專區</a>
                 <a class="list-group-item list-group-item-action flex-column align-items-start">
                     @php $randomStr = str_random(10); @endphp
