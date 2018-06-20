@@ -53,6 +53,8 @@ class ProposalController extends Controller
             $request->proposal->storeAs(auth()->user()->id, 'proposal.pdf');
             Notification::route('mail', 'ahkui@mail.fcu.edu.tw')
                         ->notify(new PorposalUpload(auth()->user()));
+            Notification::route('mail', 'stacse@straighta.com.tw')
+                        ->notify(new PorposalUpload(auth()->user()));
 
             return redirect()->back()->with('msg', '成功上傳！');
         }

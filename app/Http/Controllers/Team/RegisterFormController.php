@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Team;
 
 use App\Http\Controllers\Controller;
-use App\Notifications\PorposalUpload;
+use App\Notifications\RegisterFormUpload;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Notification;
@@ -52,6 +52,8 @@ class RegisterFormController extends Controller
             ]);
             $request->register_form->storeAs(auth()->user()->id, 'register_form.pdf');
             Notification::route('mail', 'ahkui@mail.fcu.edu.tw')
+                        ->notify(new RegisterFormUpload(auth()->user()));
+            Notification::route('mail', 'stacse@straighta.com.tw')
                         ->notify(new PorposalUpload(auth()->user()));
 
             return redirect()->back()->with('msg', '成功上傳！');
