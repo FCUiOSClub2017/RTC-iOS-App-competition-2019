@@ -54,7 +54,7 @@ class RegisterFormController extends Controller
             Notification::route('mail', 'ahkui@mail.fcu.edu.tw')
                         ->notify(new RegisterFormUpload(auth()->user()));
             Notification::route('mail', 'stacse@straighta.com.tw')
-                        ->notify(new PorposalUpload(auth()->user()));
+                        ->notify(new RegisterFormUpload(auth()->user()));
 
             return redirect()->back()->with('msg', '成功上傳！');
         }
