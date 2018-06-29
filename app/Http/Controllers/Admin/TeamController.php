@@ -115,4 +115,69 @@ class TeamController extends Controller
             return back();
         }
     }
+
+    /**
+     * qualifiers app download.
+     *
+     * @return
+     */
+    public function qualifiersFormDownload()
+    {
+        $filename = 'qualifiers_form';
+        $users = User::role('participant')->whereVerify(true)->whereIn('id', [19, 20, 22, 30, 31, 33, 38, 56, 59, 65, 67, 82, 84, 86, 88, 90, 91, 93, 94, 98, 175])->get();
+        $directorys = $users->map(function ($e) {
+            $data = null;
+            if (Storage::exists($e->id.'/register_form.pdf'))
+                $data = ['register_form.pdf'];
+            return collect(['data'=>$data, 'id'=>$e->id, 'name'=>$e->name]);
+        });
+        $zip = Zipper::make(storage_path().'/app/'.$filename.'.zip');
+        foreach ($directorys as $item) {
+            if ($item['data'] != null) {
+                $zip->folder($item['id'].'_'.$item['name']);
+                foreach ($item['data'] as $file) {
+                    $zip->add(storage_path().'/app/'.$file);
+                }
+            }
+        }
+        $zip->close();
+        if (Storage::exists($filename.'.zip')) {
+            return Storage::download($filename.'.zip', $filename.'_'.Carbon::now()->toDateTimeString().'.zip');
+        } else {
+            return back();
+        }
+    }
+
+    /**
+     * qualifiers app download.
+     *
+     * @return
+     */
+    public function qualifiersAppDownload()
+    {
+        $filename = 'qualifiers_app';
+        $users = User::role('participant')->whereVerify(true)->whereIn('id', [19, 20, 22, 30, 31, 33, 38, 56, 59, 65, 67, 82, 84, 86, 88, 90, 91, 93, 94, 98, 175])->get();
+        $directorys = $users->map(function ($e) {
+            $data = null;
+            if (Storage::exists($e->id.'/app.zip'))
+                $data = ['app.zip'];
+            return collect(['data'=>$data, 'id'=>$e->id, 'name'=>$e->name]);
+        });
+        $zip = Zipper::make(storage_path().'/app/'.$filename.'.zip');
+        foreach ($directorys as $item) {
+            if ($item['data'] != null) {
+                $zip->folder($item['id'].'_'.$item['name']);
+                foreach ($item['data'] as $file) {
+                    $zip->add(storage_path().'/app/'.$file);
+                }
+            }
+        }
+        $zip->close();
+        if (Storage::exists($filename.'.zip')) {
+            return Storage::download($filename.'.zip', $filename.'_'.Carbon::now()->toDateTimeString().'.zip');
+        } else {
+            return back();
+        }
+    }
+
 }

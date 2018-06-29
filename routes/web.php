@@ -80,7 +80,9 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
         Route::get('list', 'TeamController@teamlist')->name('admin.team.list');
         Route::get('list/download', 'TeamController@download')->name('admin.team.list.download');
         Route::get('document/download', 'TeamController@documentDownload')->name('admin.team.document.download');
-        Route::get('qualifiers/download', 'TeamController@qualifiersDownload')->name('admin.team.qualifiers.download');
+        Route::get('qualifiers/full/download', 'TeamController@qualifiersDownload')->name('admin.team.qualifiers.download');
+        Route::get('qualifiers/form/download', 'TeamController@qualifiersFormDownload')->name('admin.team.qualifiers.form.download');
+        Route::get('qualifiers/app/download', 'TeamController@qualifiersAppDownload')->name('admin.team.qualifiers.app.download');
     });
     Route::prefix('setting')->group(function () {
         \App\Http\Controllers\Admin\SettingController::routes();
