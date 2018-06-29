@@ -128,7 +128,7 @@ class TeamController extends Controller
         $directorys = $users->map(function ($e) {
             $data = null;
             if (Storage::exists($e->id.'/register_form.pdf'))
-                $data = ['register_form.pdf'];
+                $data = [$e->id.'/register_form.pdf'];
             return collect(['data'=>$data, 'id'=>$e->id, 'name'=>$e->name]);
         });
         $zip = Zipper::make(storage_path().'/app/'.$filename.'.zip');
@@ -160,7 +160,7 @@ class TeamController extends Controller
         $directorys = $users->map(function ($e) {
             $data = null;
             if (Storage::exists($e->id.'/app.zip'))
-                $data = ['app.zip'];
+                $data = [$e->id.'/app.zip'];
             return collect(['data'=>$data, 'id'=>$e->id, 'name'=>$e->name]);
         });
         $zip = Zipper::make(storage_path().'/app/'.$filename.'.zip');
