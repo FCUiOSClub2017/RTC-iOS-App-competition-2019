@@ -6,7 +6,7 @@
                 <a class="text-white list-group-item list-group-item-action active">功能列表</a>
                 <a href="{{route('admin.news.index')}}" class="list-group-item list-group-item-action">最新消息管理</a>
                 <a href="{{route('admin.team.list')}}" class="list-group-item list-group-item-action">隊伍列表</a>
-                <a href="{{route('admin.team.qualifiers.app.list')}}" class="list-group-item list-group-item-action">初賽隊伍APP檔案列表</a>
+                <a href="{{route('admin.team.qualifiers.app.list')}}" class="list-group-item list-group-item-action">初賽隊伍APP檔案下載列表</a>
                 <a class="text-white list-group-item list-group-item-action active">下載專區</a>
                 <a href="{{route('admin.team.list.download')}}" class="list-group-item list-group-item-action">隊伍列表</a>
                 <a href="{{route('admin.team.document.download')}}" class="list-group-item list-group-item-action">隊伍檔案</a>
