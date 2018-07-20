@@ -33,7 +33,7 @@ class QualifiersAppController extends Controller
         $existsUsers = collect();
         $users->map(function ($e) use ($existsUsers) {
             if (Storage::exists($e->id.'/app.zip')) {
-                $existsUsers->push([$e->id=>Storage::allFiles($e->id),'path'=>Storage::path($e->id.'/app.zip')]);
+                $existsUsers->push([$e->id=>Storage::allFiles($e->id), 'path'=>Storage::path($e->id.'/app.zip')]);
             }
         });
 
@@ -54,16 +54,15 @@ class QualifiersAppController extends Controller
         $stream = $fs->readStream($file->path);
 
         return response()->stream(
-            function() use($stream) {
-                while(ob_end_flush());
+            function () use ($stream) {
+                while (ob_end_flush());
                 fpassthru($stream);
-            }, 
+            },
             200,
             [
-                'Content-Type' => $file->mime,
+                'Content-Type'        => $file->mime,
                 'Content-disposition' => 'attachment; filename="team_'.$id.'._'.$timeString.'.zip"',
             ]);
-        
 
         return Storage::download("$id/app.zip", "team_$id._$timeString.zip");
     }
