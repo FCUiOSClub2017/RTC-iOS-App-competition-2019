@@ -21,7 +21,21 @@ class QualifiersAppController extends Controller
         $this->middleware('is.verify');
         $this->middleware('is.admin');
     }
-
+    function sendHeaders($file, $type, $name=NULL)
+    {
+        if (empty($name))
+        {
+            $name = basename($file);
+        }
+        header('Pragma: public');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Cache-Control: private', false);
+        header('Content-Transfer-Encoding: binary');
+        header('Content-Disposition: attachment; filename="'.$name.'";');
+        header('Content-Type: ' . $type);
+        header('Content-Length: ' . filesize($file));
+    }
     /**
      * render team list view.
      *
@@ -50,20 +64,24 @@ class QualifiersAppController extends Controller
     public function download($id)
     {
         $timeString = Carbon::now()->toDateTimeString();
-        $fs = Storage::getDriver();
-        $stream = $fs->readStream($id.'/app.zip');
-
-        return response()->stream(
-            function () use ($stream) {
-                while (ob_end_flush());
-                fpassthru($stream);
-            },
-            200,
-            [
-                'Content-Type'        => 'application/zip',
-                'Content-disposition' => 'attachment; filename="team_'.$id.'._'.$timeString.'.zip"',
-            ]);
-
+        
+        $file = Storage::path($id.'/app.zip');
+        if (is_file($file))
+        {
+            $this->sendHeaders($file, 'application/zip', "team_$id._$timeString.zip");
+            $chunkSize = 1024 * 1024;
+            $handle = fopen($file, 'rb');
+            while (!feof($handle))
+            {
+                $buffer = fread($handle, $chunkSize);
+                echo $buffer;
+                ob_flush();
+                flush();
+            }
+            fclose($handle);
+            exit;
+        }
+        
         return Storage::download("$id/app.zip", "team_$id._$timeString.zip");
     }
 
