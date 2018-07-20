@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Exports\TeamListExport;
 use App\Http\Controllers\Controller;
 use App\User;
 use Carbon;
-use Excel;
 use Storage;
 use Zipper;
 
@@ -38,6 +36,7 @@ class QualifiersAppController extends Controller
                 $existsUsers->push($e->id);
             }
         });
+
         return view('admin.QualifiersApp')->with([
             'users' => $existsUsers,
         ]);
@@ -50,7 +49,7 @@ class QualifiersAppController extends Controller
      */
     public function download($id)
     {
-        return Storage::download("$id/app.zip","team_$id._${Carbon::now()->toDateTimeString()}.zip");
+        return Storage::download("$id/app.zip", "team_$id._${Carbon::now()->toDateTimeString()}.zip");
     }
 
     /**
