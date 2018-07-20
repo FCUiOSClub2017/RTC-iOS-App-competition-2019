@@ -60,7 +60,7 @@ class QualifiersAppController extends Controller
             },
             200,
             [
-                'Content-Type'        => $file->mime,
+                'Content-Type'        => 'application/zip',
                 'Content-disposition' => 'attachment; filename="team_'.$id.'._'.$timeString.'.zip"',
             ]);
 
