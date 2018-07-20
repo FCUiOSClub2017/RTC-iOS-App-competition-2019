@@ -48,7 +48,7 @@ class QualifiersAppController extends Controller
         $existsUsers = collect();
         $users->map(function ($e) use ($existsUsers) {
             if (Storage::exists($e->id.'/app.zip')) {
-                $existsUsers->push([$e->id=>Storage::allFiles($e->id), 'path'=>Storage::path($e->id.'/app.zip')]);
+                $existsUsers->push($e->id);
             }
         });
 
