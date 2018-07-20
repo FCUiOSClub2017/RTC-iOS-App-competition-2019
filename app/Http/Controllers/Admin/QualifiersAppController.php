@@ -50,6 +50,7 @@ class QualifiersAppController extends Controller
     public function download($id)
     {
         $timeString = Carbon::now()->toDateTimeString();
+
         return Storage::download("$id/app.zip", "team_$id._$timeString.zip");
     }
 
