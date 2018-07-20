@@ -51,7 +51,7 @@ class QualifiersAppController extends Controller
     {
         $timeString = Carbon::now()->toDateTimeString();
         $fs = Storage::getDriver();
-        $stream = $fs->readStream($file->path);
+        $stream = $fs->readStream(Storage::path($e->id.'/app.zip'));
 
         return response()->stream(
             function () use ($stream) {
