@@ -4,7 +4,7 @@
         <div class="col">
             <div class="list-group">
                 @foreach($users as $user)
-                <a href="{{route('admin.team.qualifiers.app.list',$user)}}" class="list-group-item list-group-item-action">第{{$user}}組</a>
+                <a href="{{route('admin.team.qualifiers.app.download',$user)}}" class="list-group-item list-group-item-action">第{{$user}}組</a>
                 @endforeach
             </div>
         </div>
