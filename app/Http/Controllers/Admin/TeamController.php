@@ -89,7 +89,7 @@ class TeamController extends Controller
      */
     public function qualifiersDownload()
     {
-        $users = User::role('participant')->whereVerify(true)->whereIn('id', [19, 20, 22, 30, 31, 33, 38, 56, 59, 65, 67, 82, 84, 86, 88, 90, 91, 93, 94, 98, 175])->get();
+        $users = User::whereVerify(true)->whereIn('id', [19, 20, 22, 30, 31, 33, 38, 56, 59, 65, 67, 82, 84, 86, 88, 90, 91, 93, 94, 98, 175])->get();
         $directorys = $users->map(function ($e) {
             $data = null;
             $files = Storage::allFiles($e->id);
@@ -124,7 +124,7 @@ class TeamController extends Controller
     public function qualifiersFormDownload()
     {
         $filename = 'qualifiers_form';
-        $users = User::role('participant')->whereVerify(true)->whereIn('id', [19, 20, 22, 30, 31, 33, 38, 56, 59, 65, 67, 82, 84, 86, 88, 90, 91, 93, 94, 98, 175])->get();
+        $users = User::whereVerify(true)->whereIn('id', [19, 20, 22, 30, 31, 33, 38, 56, 59, 65, 67, 82, 84, 86, 88, 90, 91, 93, 94, 98, 175])->get();
         $directorys = $users->map(function ($e) {
             $data = null;
             if (Storage::exists($e->id.'/register_form.pdf')) {
@@ -158,7 +158,7 @@ class TeamController extends Controller
     public function qualifiersAppDownload()
     {
         $filename = 'qualifiers_app';
-        $users = User::role('participant')->whereVerify(true)->whereIn('id', [19, 20, 22, 30, 31, 33, 38, 56, 59, 65, 67, 82, 84, 86, 88, 90, 91, 93, 94, 98, 175])->get();
+        $users = User::whereVerify(true)->whereIn('id', [19, 20, 22, 30, 31, 33, 38, 56, 59, 65, 67, 82, 84, 86, 88, 90, 91, 93, 94, 98, 175])->get();
         $directorys = $users->map(function ($e) {
             $data = null;
             if (Storage::exists($e->id.'/app.zip')) {
