@@ -38,6 +38,7 @@ class AppController extends Controller
         header('Content-Type: '.$type);
         header('Content-Length: '.filesize($file));
     }
+
     /**
      * return app manage view.
      *
@@ -96,6 +97,7 @@ class AppController extends Controller
                 fclose($handle);
                 exit;
             }
+
             return response(Storage::get(auth()->user()->id.'/app.zip'))->withHeaders([
                     'Content-Type'        => 'application/zip',
                     'Cache-Control'       => 'no-store, no-cache',
