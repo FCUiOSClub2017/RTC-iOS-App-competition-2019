@@ -24,6 +24,20 @@ class AppController extends Controller
         $this->middleware('can.edit.teammate');
     }
 
+    public function sendHeaders($file, $type, $name = null)
+    {
+        if (empty($name)) {
+            $name = basename($file);
+        }
+        header('Pragma: public');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Cache-Control: private', false);
+        header('Content-Transfer-Encoding: binary');
+        header('Content-Disposition: attachment; filename="'.$name.'";');
+        header('Content-Type: '.$type);
+        header('Content-Length: '.filesize($file));
+    }
     /**
      * return app manage view.
      *
@@ -68,6 +82,20 @@ class AppController extends Controller
     public function download()
     {
         if (Storage::exists(auth()->user()->id.'/app.zip')) {
+            $file = Storage::path(auth()->user()->id.'/app.zip');
+            if (is_file($file)) {
+                $this->sendHeaders($file, 'application/zip', "team_$id._$timeString.zip");
+                $chunkSize = 1024 * 1024;
+                $handle = fopen($file, 'rb');
+                while (!feof($handle)) {
+                    $buffer = fread($handle, $chunkSize);
+                    echo $buffer;
+                    ob_flush();
+                    flush();
+                }
+                fclose($handle);
+                exit;
+            }
             return response(Storage::get(auth()->user()->id.'/app.zip'))->withHeaders([
                     'Content-Type'        => 'application/zip',
                     'Cache-Control'       => 'no-store, no-cache',
