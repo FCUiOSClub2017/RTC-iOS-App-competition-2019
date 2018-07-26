@@ -82,8 +82,9 @@ class AppController extends Controller
      */
     public function download()
     {
-        if (Storage::exists(auth()->user()->id.'/app.zip')) {
-            $file = Storage::path(auth()->user()->id.'/app.zip');
+        $id = auth()->user()->id;
+        if (Storage::exists($id.'/app.zip')) {
+            $file = Storage::path($id.'/app.zip');
             if (is_file($file)) {
                 $this->sendHeaders($file, 'application/zip', "team_$id._$timeString.zip");
                 $chunkSize = 1024 * 1024;
