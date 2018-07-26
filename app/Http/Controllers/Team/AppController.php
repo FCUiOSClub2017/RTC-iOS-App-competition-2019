@@ -83,6 +83,7 @@ class AppController extends Controller
     public function download()
     {
         $id = auth()->user()->id;
+        $timeString = Carbon::now()->toDateTimeString();
         if (Storage::exists($id.'/app.zip')) {
             $file = Storage::path($id.'/app.zip');
             if (is_file($file)) {
@@ -102,7 +103,7 @@ class AppController extends Controller
             return response(Storage::get(auth()->user()->id.'/app.zip'))->withHeaders([
                     'Content-Type'        => 'application/zip',
                     'Cache-Control'       => 'no-store, no-cache',
-                    'Content-Disposition' => 'attachment; filename="'.auth()->user()->name.'_APP_'.Carbon::now()->toDateTimeString().'.zip"',
+                    'Content-Disposition' => 'attachment; filename="'.auth()->user()->name.'_APP_'.$timeString.'.zip"',
                 ]);
         }
 
