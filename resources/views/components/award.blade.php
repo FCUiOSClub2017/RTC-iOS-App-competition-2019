@@ -31,10 +31,15 @@
                     <td class="align-middle">iPad 128GB 價值 NT$13,900乙台<br/>指導老師獎金 NT$6,000</td>
                 </tr>
                 <tr>
-                    <td class="align-middle">佳作</td>
+                    <td class="align-middle">優勝</td>
                     <td class="align-middle">1隊</td>
                     <td class="align-middle">iPad 32GB 價值 NT$10,900 乙台<br/>指導老師獎金 NT$3,000</td>
                 </tr>
+                <!--tr>
+                    <td class="align-middle">佳作</td>
+                    <td class="align-middle">5隊</td>
+                    <td class="align-middle">iPad 32GB 價值 NT$10,900 乙台<br/>指導老師獎金 NT$3,000</td>
+                </tr-->
             </tbody>
         </table>
     </div>
