@@ -2,7 +2,7 @@
 
     <div class="container text-center px-3 px-md-4 px-lg-5">
     
-        <h2 class="display-4 mb-3" style="background-image: url(images/table.png);background-size: cover; border-radius: 35px;">作品要求</h2>
+        <h2 class="display-4 mb-3">作品要求</h2>
         <ol class="text-left">
         
             <li class="h4">本次大賽參賽作品須為具有一定功能的原創性應用程式，該APP應基於 iOS 系統設計開發，並以蘋果公司的產品組合及開發工具為基礎。鼓勵參賽隊伍下載使用 Swift 語言進行開發。</li>

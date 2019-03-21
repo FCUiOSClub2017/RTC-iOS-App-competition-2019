@@ -1,7 +1,7 @@
 @if (Setting::get('active_news', false))
 <section class="news" id="news">
     <div class="container px-3 px-md-4 px-lg-5">
-        <h2 class="display-4 text-center" style="background-image: url(images/table.png);background-size: cover; border-radius: 35px;">最新消息</h2>
+        <h2 class="display-4 text-center">最新消息</h2>
         <div class="row "App>
             <div class="col bootstrap-original">
                 <div id="news" class="shadow rounded">

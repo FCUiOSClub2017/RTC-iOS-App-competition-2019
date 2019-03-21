@@ -1,6 +1,6 @@
 <section class="timeline" id="timeline">
   <div class="container text-center px-xl-5">
-    <h2 class="display-4 mb-5" style="background-image: url(images/table.png);background-size: cover; border-radius: 35px;">競賽日程</h2>
+    <h2 class="display-4 mb-5">競賽日程</h2>
   </div>
   <div class="container-fulid text-center px-xl-5">
     <div class="no-gutters row stats-row justify-content-around justify-content-xl-around">

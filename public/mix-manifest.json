@@ -1,5 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
     "/css/coming-soon.css": "/css/coming-soon.css",
     "/js/coming-soon.js": "/js/coming-soon.js",
     "/fonts/font.css": "/fonts/font.css",
@@ -9,6 +10,5 @@
     "/images/banner-desktop.png": "/images/banner-desktop.png",
     "/images/banner-mobile.png": "/images/banner-mobile.png",
     "/images/bg-mobile-fallback.jpg": "/images/bg-mobile-fallback.jpg",
-    "/mp4/bg.mp4": "/mp4/bg.mp4",
-    "/css/app.css": "/css/app.css"
+    "/mp4/bg.mp4": "/mp4/bg.mp4"
 }

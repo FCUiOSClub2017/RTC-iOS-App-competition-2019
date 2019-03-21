@@ -1,6 +1,6 @@
 <section class="award" id="award">
     <div class="container text-center px-3 px-md-4 px-lg-5">
-        <h2 class="display-4 mb-3" style="background-image: url(images/table.png);background-size: cover; border-radius: 35px;">得獎者獎項</h2>
+        <h2 class="display-4 mb-3">得獎者獎項</h2>
         <table class="table table-bordered align-middle"App>
             <thead>
                 <tr>
