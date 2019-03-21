@@ -8,13 +8,13 @@
 @import '~bootstrap/scss/bootstrap';
 @import "node_modules/vue-multiselect/dist/vue-multiselect.min";
 
-
 /* ==================================================
   General
   ================================================== */
 * {
     font-family: "AppleEN", 'AppleTC-Medium', 'Noto Sans TC', "Raleway", Helvetica, Arial, sans-serif;
 }
+
 
 input:not([type=checkbox]):not([type=radio]) {
     min-height: 40px;
@@ -49,7 +49,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: $primary;
+    color: $primary-word;
 }
 
 p {
@@ -61,7 +61,7 @@ p {
 .bootstrap-original p {
     line-height: inherit;
     font-size: inherit;
-    color: inherit;
+    color: white;
 }
 
 h1 {
@@ -104,7 +104,11 @@ a {
 html, body {
     background-image: url("../img/bg.png");
     background-size: cover;
-    min-height: 100vh;
+    min-height: 110vh;
+    color: white;
+}
+td, ul{
+    color: white;
 }
 
 .btn:not(.bootstrap-original) {
@@ -400,7 +404,7 @@ section {
                     transition: 0.3s;
                 }
                 a {
-                    color: #333;
+                    color: #white;
                     -webkit-transition: none;
                     -o-transition: none;
                     transition: none;
@@ -521,7 +525,7 @@ body.mobile-nav-active {
 .about {
     p {
         font-size: 150%;
-        color: $black;
+        color: $white;
     }
 }
 
@@ -541,7 +545,7 @@ body.mobile-nav-active {
     .stats-col .circle {
         content: "";
         font-weight: 500;
-        color: #666;
+        color: white;
         border: 6px solid #0878a4;
         border-radius: 50%;
         position: absolute;
@@ -717,7 +721,7 @@ body.mobile-nav-active {
         }
         p {
             font-size: 14px;
-            color: #999;
+            color: white;
         }
     }
 }
@@ -751,7 +755,7 @@ body.mobile-nav-active {
 .portfolio {
     background-color: #fff; // padding-bottom: 0;
     h2 {
-        color: $primary;
+        color: $primary-word;
         margin-bottom: 25px;
     }
 }
@@ -822,7 +826,7 @@ body.mobile-nav-active {
 
 .team {
     h2 {
-        color: $primary;
+        color: $primary-word;
     }
     .card {
         &>a {
@@ -902,12 +906,12 @@ body.mobile-nav-active {
 
         .card-title {
             font-size: 24px;
-            color: #333;
+            color: white;
         }
 
         .card-text {
             font-size: 18px;
-            color: #999;
+            color: white;
         }
     }
 
@@ -1070,8 +1074,6 @@ body.mobile-nav-active {
 
 
 
-
-
 /* ==================================================
   Responsive Styling
   ================================================== */
@@ -1088,6 +1090,7 @@ body.mobile-nav-active {
     p,
     .block p {
         margin: 0;
+        color: white;
     }
     .hero-brand {
         margin-bottom: 35px;
@@ -1101,9 +1104,11 @@ body.mobile-nav-active {
     }
     h2 {
         margin-bottom: 25px;
+        color: white;
     }
     h3 {
         font-size: 14px;
+        color: white;
     }
     .hero {
         padding: 75px 0;

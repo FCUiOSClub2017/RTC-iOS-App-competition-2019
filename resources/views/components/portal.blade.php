@@ -11,7 +11,7 @@
                     </div>
                     <div>
                         <h3>決賽隊伍 繳交書面報名表</h3>
-                        <pApp> 凡進入決賽隊伍，{{Carbon::parse(Setting::get('register_form_deadline', '2019-6-30'), 'Asia/Taipei')}} 前須提交參賽隊伍所在學校系所用印後的報名表(請至網頁上6/15比賽流程內下載附件)，文件需整併成一個PDF檔，不限制檔案名稱，任一人未於時間內繳交者，則取消該隊決賽資格。</p>
+                        <p> 凡進入決賽隊伍，{{Carbon::parse(Setting::get('register_form_deadline', '2019-6-30'), 'Asia/Taipei')}} 前須提交參賽隊伍所在學校系所用印後的報名表(請至網頁上6/15比賽流程內下載附件)，文件需整併成一個PDF檔，不限制檔案名稱，任一人未於時間內繳交者，則取消該隊決賽資格。</p>
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                     </div>
                     <div>
                         <h3>決賽隊伍 繳交App作品</h3>
-                        <pApp> 決賽隊伍請於 {{Carbon::parse(Setting::get('app_upload_deadline', '2019-7-26'), 'Asia/Taipei')}} 前上傳資料, 詳細內容請<a href="{{route('team.app.uplaod')}}">點我</a>謝謝。 </p>
+                        <p> 決賽隊伍請於 {{Carbon::parse(Setting::get('app_upload_deadline', '2019-7-26'), 'Asia/Taipei')}} 前上傳資料, 詳細內容請<a href="{{route('team.app.uplaod')}}">點我</a>謝謝。 </p>
                     </div>
                 </div>
             </div>
