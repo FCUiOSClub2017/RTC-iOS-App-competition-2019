@@ -44,7 +44,7 @@
                 <a class="h5">{{PhoneNumber::make($member->phone,"tw")->formatInternational()}}</a>
                 @endif
             </div>
-            @if (Carbon::now()->lt(Carbon::parse(Setting::get('register_deadline', '2018-5-21'), 'Asia/Taipei')))
+            @if (Carbon::now()->lt(Carbon::parse(Setting::get('register_deadline', '2019-5-15'), 'Asia/Taipei')))
             <div class="col-12 col-sm-5 col-lg-2 my-1">
                 <div class=" text-white btn-group" role="group" aria-label="Basic example">
                     <a class="p-3 btn btn-primary" href="{{ route('team.edit',['level'=>$member->level]) }}">修改</a>

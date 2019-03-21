@@ -12,11 +12,6 @@
             <a href="http://www.myvita.com.tw/" class="sponsors sigmu"></a>
           </div>
         </div>
-        <div class="col-12 col-lg-4 col-md-6 col-xl-3">
-          <div class="card card-block">
-            <a href="http://litenet.com.tw/" class="sponsors litenet"></a>
-          </div>
-        </div>
         <div class="col-12 col-lg-4 col-sm-6 col-xl-3">
           <div class="card card-block">
             <a href="https://www.studioa.com.tw/" class="sponsors studioa"></a>
@@ -24,7 +19,7 @@
         </div>
         <div class="col-12 col-lg-4 col-md-6 col-xl-3">
           <div class="card card-block">
-            <a href="http://www.foracare.com.tw/" class="sponsors fora"></a>
+            <a href="http://www.taidoc.com.tw/" class="sponsors taidoc"></a>
           </div>
         </div>
         <div class="col-12 col-lg-4 col-md-6 col-xl-3">
@@ -43,11 +38,11 @@
             <a href="https://www.pawbo.com/tw/" class="sponsors pawbo"></a>
           </div>
         </div>
-        <div class="col-12 col-lg-4 col-md-6 col-xl-3">
+       <!--  <div class="col-12 col-lg-4 col-md-6 col-xl-3">
           <div class="card card-block">
             <a href="https://mytracmo.com/pages/tracmo-taiwan" class="sponsors tracmo"></a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

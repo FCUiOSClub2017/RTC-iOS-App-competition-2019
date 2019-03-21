@@ -37,7 +37,7 @@
                                 </button>
                             </div>
                             <div class="col-md-8 offset-md-4 mt-2">
-                                @if (Carbon::parse(Setting::get('register_deadline', '2018-5-21'), 'Asia/Taipei')->gt(Carbon::now()))
+                                @if (Carbon::parse(Setting::get('register_deadline', '2019-5-15'), 'Asia/Taipei')->gt(Carbon::now()))
                                 <span> 沒有帳號？ <a href="{{ route('register') }}">{{ __('點我註冊！') }}</a></span> @endif
                             </div>
                             <div class="col-md-8 offset-md-4">

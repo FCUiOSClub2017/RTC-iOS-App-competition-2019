@@ -12,7 +12,16 @@
         </div>
         <div class="col col-xs-12 text-lg-left text-center">
           <div class="credits">
+            比賽網站：<a href="https://rtc.fcu.edu.tw/">rtc.fcu.edu.tw</a>
+          </div>
+          <div class="credits">
             聯繫信箱：<a href="mailto:stacse@straighta.com.tw">stacse@straighta.com.tw</a>
+          </div>
+          <div class="credits">
+            聯繫地址：台中市西屯區文華路100號 
+          </div>
+          <div class="credits">
+            逢甲大學 Apple RTC 區域教育培訓中心
           </div>
           <div class="credits">
             聯繫電話：Straight A客服專線（02）6608-1000

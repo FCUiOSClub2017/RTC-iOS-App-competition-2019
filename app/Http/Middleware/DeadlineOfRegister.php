@@ -18,7 +18,7 @@ class DeadlineOfRegister
      */
     public function handle($request, Closure $next)
     {
-        if (Carbon::parse(Setting::get('register_deadline', '2018-5-21'), 'Asia/Taipei')->lt(Carbon::now())) {
+        if (Carbon::parse(Setting::get('register_deadline', '2019-5-15'), 'Asia/Taipei')->lt(Carbon::now())) {
             if (auth()->check()) {
                 if (!auth()->user()->hasRole('developer')) {
                     return redirect()->back()->withErrors(['msg'=>'不在開放時間內！']);

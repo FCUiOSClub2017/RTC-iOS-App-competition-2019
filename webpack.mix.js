@@ -21,7 +21,7 @@ mix.combine([
         'resources/assets/sass/apple/css/font.css',
     ], 'public/fonts/font.css');
 
-mix.copyDirectory('resources/assets/sass/apple/font', 'public/fonts');
+mix.copyDirectory('resources/assets/sass/apple/font', 'public/fonts'); 
 mix.copyDirectory('resources/assets/svg', 'public/svg');
 mix.copyDirectory('resources/assets/ckeditor', 'public/ckeditor');
 

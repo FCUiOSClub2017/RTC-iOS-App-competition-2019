@@ -25,7 +25,7 @@
                     </div>
                     <div class="row justify-content-around py-2">
                         <div class="col-12">
-                            <a>請於 {{Carbon::parse(Setting::get('register_form_deadline', '2018-5-21'), 'Asia/Taipei')->toDateTimeString()}} 前補繳報名資料，謝謝。</a>
+                            <a>請於 {{Carbon::parse(Setting::get('register_form_deadline', '2019-6-30'), 'Asia/Taipei')->toDateTimeString()}} 前補繳報名資料，謝謝。</a>
                         </div>
                     </div>
                 </div>

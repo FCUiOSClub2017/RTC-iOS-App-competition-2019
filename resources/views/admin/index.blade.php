@@ -28,9 +28,9 @@
                     @php $randomStr = str_random(10); @endphp
                     {!! Form::open(['route' => 'admin.config.deadline.register','onSubmit'=>"axios.post(this.action,{date:this.date.value}).then((response)=>{\$('#$randomStr').text(response.data.date)});return false;"]) !!}
                     <div class="row justify-content-between align-items-center">
-                        <div class="col">註冊截止時間： <span id="{{$randomStr}}">{{Setting::get('register_deadline',"2018-05-21 23:59:59")}}</span></div>
+                        <div class="col">註冊截止時間： <span id="{{$randomStr}}">{{Setting::get('register_deadline',"2019-05-15 23:59:59")}}</span></div>
                         <div class="col-auto">
-                            <datepicker :value="new Date('{{Setting::get('register_deadline',"2018-05-21 23:59:59")}}')" :bootstrap-styling="true" name="date"></datepicker>
+                            <datepicker :value="new Date('{{Setting::get('register_deadline',"2019-05-15 23:59:59")}}')" :bootstrap-styling="true" name="date"></datepicker>
                         </div>
                         <div class="col-auto">
                             <button type="submit" class="btn btn-primary bootstrap-original">Apply</button>
@@ -42,9 +42,9 @@
                     @php $randomStr = str_random(10); @endphp
                     {!! Form::open(['route' => 'admin.config.deadline.proposal','onSubmit'=>"axios.post(this.action,{date:this.date.value}).then((response)=>{\$('#$randomStr').text(response.data.date)});return false;"]) !!}
                     <div class="row justify-content-between align-items-center">
-                        <div class="col">企劃書上傳截止時間： <span id="{{$randomStr}}">{{Setting::get('proposal_deadline',"2018-05-23 23:59:59")}}</span></div>
+                        <div class="col">企劃書上傳截止時間： <span id="{{$randomStr}}">{{Setting::get('proposal_deadline',"2019-06-10 23:59:59")}}</span></div>
                         <div class="col-auto">
-                            <datepicker :value="new Date('{{Setting::get('proposal_deadline',"2018-05-23 23:59:59")}}')" :bootstrap-styling="true" name="date"></datepicker>
+                            <datepicker :value="new Date('{{Setting::get('proposal_deadline',"2019-06-10 23:59:59")}}')" :bootstrap-styling="true" name="date"></datepicker>
                         </div>
                         <div class="col-auto">
                             <button type="submit" class="btn btn-primary bootstrap-original">Apply</button>
@@ -56,9 +56,9 @@
                     @php $randomStr = str_random(10); @endphp
                     {!! Form::open(['route' => 'admin.config.deadline.register.form','onSubmit'=>"axios.post(this.action,{date:this.date.value}).then((response)=>{\$('#$randomStr').text(response.data.date)});return false;"]) !!}
                     <div class="row justify-content-between align-items-center">
-                        <div class="col">報名資料補繳截止時間： <span id="{{$randomStr}}">{{Setting::get('register_form_deadline',"2018-06-30 23:59:59")}}</span></div>
+                        <div class="col">報名資料補繳截止時間： <span id="{{$randomStr}}">{{Setting::get('register_form_deadline',"2019-06-30 23:59:59")}}</span></div>
                         <div class="col-auto">
-                            <datepicker :value="new Date('{{Setting::get('register_form_deadline',"2018-06-30 23:59:59")}}')" :bootstrap-styling="true" name="date"></datepicker>
+                            <datepicker :value="new Date('{{Setting::get('register_form_deadline',"2019-06-29 23:59:59")}}')" :bootstrap-styling="true" name="date"></datepicker>
                         </div>
                         <div class="col-auto">
                             <button type="submit" class="btn btn-primary bootstrap-original">Apply</button>
@@ -70,9 +70,9 @@
                     @php $randomStr = str_random(10); @endphp
                     {!! Form::open(['route' => 'admin.config.deadline.app','onSubmit'=>"axios.post(this.action,{date:this.date.value}).then((response)=>{\$('#$randomStr').text(response.data.date)});return false;"]) !!}
                     <div class="row justify-content-between align-items-center">
-                        <div class="col">App 上傳截止時間： <span id="{{$randomStr}}">{{Setting::get('app_upload_deadline',"2018-07-20 23:59:59")}}</span></div>
+                        <div class="col">App 上傳截止時間： <span id="{{$randomStr}}">{{Setting::get('app_upload_deadline',"2019-07-26 23:59:59")}}</span></div>
                         <div class="col-auto">
-                            <datepicker :value="new Date('{{Setting::get('app_upload_deadline',"2018-07-20 23:59:59")}}')" :bootstrap-styling="true" name="date"></datepicker>
+                            <datepicker :value="new Date('{{Setting::get('app_upload_deadline',"2019-07-26 23:59:59")}}')" :bootstrap-styling="true" name="date"></datepicker>
                         </div>
                         <div class="col-auto">
                             <button type="submit" class="btn btn-primary bootstrap-original">Apply</button>

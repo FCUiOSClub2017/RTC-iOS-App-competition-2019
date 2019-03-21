@@ -43,7 +43,7 @@ class RegisterFormController extends Controller
     {
         if (
             !auth()->user()->hasRole('developer')
-            && Carbon::now()->gt(Carbon::parse(Setting::get('register_form_deadline', '2018-5-21'), 'Asia/Taipei'))
+            && Carbon::now()->gt(Carbon::parse(Setting::get('register_form_deadline', '2019-6-30'), 'Asia/Taipei'))
         ) {
             return redirect()->back()->withErrors(['msg'=>'不在開放時間內！']);
         } else {

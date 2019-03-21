@@ -58,7 +58,7 @@ class AppController extends Controller
     {
         if (
             !auth()->user()->hasRole('developer')
-            && Carbon::now()->gt(Carbon::parse(Setting::get('app_upload_deadline', '2018-5-21'), 'Asia/Taipei'))
+            && Carbon::now()->gt(Carbon::parse(Setting::get('app_upload_deadline', '2019-5-15'), 'Asia/Taipei'))
         ) {
             return redirect()->back()->withErrors(['msg'=>'不在開放時間內！']);
         } else {
