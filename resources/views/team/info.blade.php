@@ -1,6 +1,6 @@
 @extends('layouts.app') @section('content')
 <section class="pt-3">
-    <div class="container">
+    <div class="container" id="editTeamList">
         <div class="row text-center bg-primary text-white py-2">
             <div class="d-lg-none col-12">
                 <a class="h4">參賽資料</a>

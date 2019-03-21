@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" id="teamEdit">
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-5 col col-sm-9 col-md-7">
                 <div class="container pb-3">
@@ -12,29 +12,35 @@
                         <div class="col-8">
                             <Multiselect v-model="selectedUnivercityName" :options="optionsForUnivercityName" :loading="isLoadingForUnivercityName" :searchable="true" :internal-search="false" :hide-selected="false" :close-on-select="true" :clear-on-select="true" :show-no-results="false" :show-labels="false" :max-height="300" @search-change="asyncFindForUnivercityName" @select="onSelectUnivercityName" placeholder="" />
                         </div>
+                        <br><br>
                         <div class="col-4">
                             <h4>學系</h4></div>
                         <div class="col-8">
                             <Multiselect v-model="selectedUnivercityCourse" :options="optionsForUnivercityCourse" :loading="isLoadingForUnivercityCourse" :searchable="true" :internal-search="false" :hide-selected="false" :close-on-select="true" :clear-on-select="true" :show-no-results="false" :max-height="300" :show-labels="false" @search-change="asyncFindForUnivercityCourse" placeholder="" />
                         </div>
+                        <br><br>
                         <div class="col-4">
                             <h4>姓名</h4></div>
                         <div class="col-8">
                             <input type="text" v-model="name" name="name" placeholder="姓名" required>
                         </div>
+                        <br><br>
                         <div class="col-4">
                             <h4>Email</h4></div>
                         <div class="col-8">
                             <input v-model="email" type="email" name="email" placeholder="電子郵箱" @change="emailOnChange" required>
                         </div>
+                        <br><br>
                         <div class="col-4" v-if="emailDanger"></div>
                         <div class="col-8" v-if="emailDanger">
                             <a class="text-danger">此電子郵箱已被其他隊伍註冊！</a>
                         </div>
+                        <br><br>
                         <div class="col-4" v-if="emailPass"></div>
                         <div class="col-8" v-if="emailPass">
                             <a class="text-success">此電子郵箱可以使用！</a>
                         </div>
+                        <br><br>
                         <div class="col-4">
                             <h4>聯絡電話</h4></div>
                         <div class="col-8">

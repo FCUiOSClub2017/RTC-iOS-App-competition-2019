@@ -297,6 +297,11 @@ section {
 # Navigation Menu
 --------------------------------------------------------------*/
 
+#header {
+    background-image: url(../img/table.png);
+    background-size: cover;
+}
+
 #nav-menu-container {
     margin: 0;
     position: absolute;
@@ -519,6 +524,33 @@ body.mobile-nav-active {
     position: fixed;
     background: rgba(0, 0, 0, 0.6);
     display: none;
+}
+
+
+/* ==================================================
+  TeamEdit Styling
+================================================== */
+
+#editTeamList {
+    div {
+        color: white;
+    }
+    .bg-background {
+        background-image: url(../img/table.png);
+        background-size: cover; 
+        border-radius: 20px;
+        color: white;
+    }
+}
+
+#teamEdit {
+    h3, h4 {
+        color: white;
+    }
+
+    button {
+        background-color: $btn-color;
+    }
 }
 
 /* ==================================================

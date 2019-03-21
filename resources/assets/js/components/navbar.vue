@@ -1,6 +1,6 @@
 <template>
     <div ref="navRoot" id="nav-bar">
-        <header id="header" style="background-image: url(images/table.png);background-size: cover;">
+        <header id="header">
             <div class="container-fulid">
                 <div class="row no-gutters px-3 justify-content-end">
                     <div id="logo" class="col col-auto">
