@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-6">
           <div class="container text-center">
-            <h2 class="display-4">主辦單位</h2>
+            <h1 class="display-4" style="color: #0878a4">主辦單位</h2>
           </div>
           <div class="container">
             <div class="row justify-content-around">
@@ -23,7 +23,7 @@
         </div>
         <div class="col-6">
           <div class="container text-center">
-            <h2 class="display-4">協辦單位</h2>
+            <h1 class="display-4" style="color: #0878a4">協辦單位</h2>
           </div>
           <div class="container">
             <div class="row justify-content-around">

@@ -1,8 +1,8 @@
 <section class="portfolio pt-1" id="sponsors">
   <div class="container text-center">
-    <h2 class="display-4">
+    <h1 class="display-4" style="color: #0878a4">
           贊助廠商
-        </h2>
+        </h1>
   </div>
   <div class="portfolio-grid">
     <div class="container">

@@ -35,7 +35,7 @@
               </div>
               <div class="circle-overlay">
                 <a>請在6⽉10⽇前以A4版面書寫5至10頁，另作封面註明隊伍名稱與作品名稱，檔案格式存成 PDF 檔，檔案名稱須同【聯絡人學校_聯絡人系級_聯絡人姓名_APP名稱_企劃書】</a>
-                <a href="/doc/2018年APP移動應用創新賽附件1~3.pdf" style=" top:90%;color:aqua;" onclick="event.preventDefault();window.open('/doc/2018年APP移動應用創新賽附件1~3.pdf', '_blank');">附件</a>
+                <a href="/doc/2019年APP移動應用創新賽附件1~3.pdf" style=" top:90%;color:aqua;" onclick="event.preventDefault();window.open('/doc/2019年APP移動應用創新賽附件1~3.pdf', '_blank');">附件</a>
 
                 {{--
                 <a>5⽉1⽇～6⽉10⽇參賽作品交件</a> 
@@ -57,7 +57,7 @@
               </div>
               <div class="circle-overlay">
                 <a>獲選進入決賽之隊伍，&nbsp &nbsp<br>需於 {{Carbon::parse(Setting::get('register_form_deadline', '2018-06-30'), 'Asia/Taipei')->month}}/{{Carbon::parse(Setting::get('register_form_deadline', '2018-06-30'), 'Asia/Taipei')->day}} 前繳交報名表&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<br>如附件二，文件需整併成一個PDF檔,檔名稱須同【聯絡人學校_聯絡 人系級_聯絡人姓名_參賽APP名稱】, 未滿二十歲者，需再繳交「法定代理人同意書」，任一人未繳交則取消該隊決賽資格，由下一順序之參賽隊伍遞補。。</a>
-                <a href="/doc/2018年APP移動應用創新賽附件1~3.pdf" style=" top:90%;color:aqua;" onclick="event.preventDefault();window.open('/doc/2018年APP移動應用創新賽附件1~3.pdf', '_blank');">附件</a>
+                <a href="/doc/2019年APP移動應用創新賽附件1~3.pdf" style=" top:90%;color:aqua;" onclick="event.preventDefault();window.open('/doc/2019年APP移動應用創新賽附件1~3.pdf', '_blank');">附件</a>
                 {{--
                 <a>獲選進入決賽之隊伍，必須在一周內提供每位成員的在學證明以及指導老師的教師資格證明</a> --}}
               </div>
@@ -78,7 +78,7 @@
               </div>
               <div class="circle-overlay">
                 <a>提交決賽現場的提案&nbsp &nbsp &nbsp<br>簡報檔、SOURCE CODE、&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<br>APP宣傳資料(附件三)，以及APP操作過程影片檔180秒,MP4格式,需上傳Youtube並把網站填入簡報中，請存成一個資料夾,並壓縮成.zip檔，檔案名稱須同【聯絡人學校_聯絡人系級_聯絡人姓名_參賽APP名稱_APP作品】。</a>
-                <a href="/doc/2018年APP移動應用創新賽附件1~3.pdf" style=" top:90%;color:aqua;" onclick="event.preventDefault();window.open('/doc/2018年APP移動應用創新賽附件1~3.pdf', '_blank');">附件</a>
+                <a href="/doc/2019年APP移動應用創新賽附件1~3.pdf" style=" top:90%;color:aqua;" onclick="event.preventDefault();window.open('/doc/2019年APP移動應用創新賽附件1~3.pdf', '_blank');">附件</a>
               </div>
             </div>
           </div>

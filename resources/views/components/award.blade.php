@@ -3,7 +3,7 @@
         <h2 class="display-4 mb-3">得獎者獎項</h2>
         <table class="table table-bordered align-middle"App>
             <thead>
-                <tr>
+                <tr class="bg-primary text-white">
                     <th>名次</th>
                     <th>隊數</th>
                     <th>獎品</th>
