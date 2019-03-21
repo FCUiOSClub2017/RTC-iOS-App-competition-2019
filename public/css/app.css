@@ -11014,7 +11014,7 @@ html,
 body {
   background-image: url(/images/bg.png?6e86e8c760ec4cde56c85c410ed55fbe);
   background-size: cover;
-  min-height: 110vh;
+  min-height: 100vh;
   color: white;
 }
 
