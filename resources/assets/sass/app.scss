@@ -527,31 +527,7 @@ body.mobile-nav-active {
 }
 
 
-/* ==================================================
-  TeamEdit Styling
-================================================== */
 
-#editTeamList {
-    div {
-        color: white;
-    }
-    .bg-background {
-        background-image: url(../img/table.png);
-        background-size: cover; 
-        border-radius: 20px;
-        color: white;
-    }
-}
-
-#teamEdit {
-    h3, h4 {
-        color: white;
-    }
-
-    button {
-        background-color: $btn-color;
-    }
-}
 
 /* ==================================================
   About Styling
@@ -572,47 +548,12 @@ body.mobile-nav-active {
 }
 
 /* ==================================================
-  Timeline Styling
-================================================== */
-
-.timeline {
-    a {
-        color: $white;
-    }
-
-    h2 {
-        background-image: url(../img/table.png);
-        background-size: cover; 
-        border-radius: 20px;
-        color: white;
-    }
-}
-
-/* ==================================================
   Award Styling
 ================================================== */
 
 .award {
 
     table {
-           color: white;
-    }
-
-    h2 {
-        background-image: url(../img/table.png);
-        background-size: cover; 
-        border-radius: 20px;
-        color: white;
-    }
-}
-
-/* ==================================================
-  Portal Styling
-================================================== */
-
-.features {
-
-    h3, p {
            color: white;
     }
 
@@ -720,6 +661,18 @@ body.mobile-nav-active {
 ================================================== */
 
 .timeline {
+
+    a {
+        color: $white;
+    }
+
+    h2 {
+        background-image: url(../img/table.png);
+        background-size: cover; 
+        border-radius: 20px;
+        color: white;
+    }
+
     .stats-row {
         margin-top: 65px;
     }
@@ -878,6 +831,17 @@ body.mobile-nav-active {
 
 .features {
     padding-bottom: 45px;
+
+    h3, p {
+           color: white;
+    }
+
+    h2 {
+        background-image: url(../img/table.png);
+        background-size: cover; 
+        border-radius: 20px;
+        color: white;
+    }
 
     .feature-col {
         display: table;
@@ -1102,6 +1066,33 @@ body.mobile-nav-active {
     }
 
 }
+
+#editTeamList {
+    div {
+        color: white;
+    }
+    .bg-background {
+        background-image: url(../img/table.png);
+        background-size: cover; 
+        border-radius: 20px;
+        color: white;
+    }
+}
+
+#teamEdit {
+    h3, h4 {
+        color: white;
+    }
+
+    button {
+        background-color: $btn-color;
+    }
+}
+
+#teamRegisterFormUpload, #teamProposalUpload, #teamAppUpload{
+    color: white;
+}
+
 
 
 

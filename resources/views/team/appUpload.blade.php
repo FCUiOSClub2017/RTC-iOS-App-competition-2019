@@ -1,7 +1,7 @@
 @extends('layouts.app') @section('content')
 <section class="pt-3">
     {!! Form::open(['route' => 'team.app.uplaod','enctype'=>'multipart/form-data']) !!}
-    <div class="container">
+    <div class="container" id="teamAppUpload">
         @if ($errors->any())
         <div class="row justify-content-center py-2">
             <div class="col-6 text-center text-danger h3 alert alert-danger">{{$errors->first()}}</div>

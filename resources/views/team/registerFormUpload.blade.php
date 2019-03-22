@@ -1,5 +1,5 @@
 @extends('layouts.app') @section('content')
-<section class="pt-3">
+<section class="pt-3" id="teamRegisterFormUpload">
     {!! Form::open(['route' => 'team.register.form.uplaod','enctype'=>'multipart/form-data']) !!}
     <div class="container">
         @if ($errors->any())
