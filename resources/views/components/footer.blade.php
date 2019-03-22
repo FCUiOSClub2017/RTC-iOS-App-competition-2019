@@ -1,6 +1,6 @@
 <footer class="site-footer" id="footer">
   <div class="bottom">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row justify-content-center align-items-center">
         <div class="col col-xs-12 text-lg-left text-center">
           <p class="copyright-text">

@@ -1,5 +1,5 @@
 <section class="timeline" id="timeline">
-  <div class="container text-center px-xl-5">
+  <div class="container-fluid text-center px-xl-5">
     <h2 class="display-4 mb-5">競賽日程</h2>
   </div>
   <div class="container-fulid text-center px-xl-5">

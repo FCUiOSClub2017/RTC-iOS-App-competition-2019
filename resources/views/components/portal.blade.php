@@ -1,5 +1,5 @@
 <section class="features" id="portal">
-    <div class="container">
+    <div class="container-fluid">
         <h2 class="text-center display-4">傳送門</h2>
         <div class="row justify-content-around">
             <div class="feature-col col-12 col-md-5">

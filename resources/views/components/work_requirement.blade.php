@@ -1,6 +1,6 @@
 <section class="work_requirement" id="work_requirement">
 
-    <div class="container text-center px-3 px-md-4 px-lg-5">
+    <div class="container-fluid text-center px-3 px-md-4 px-lg-5">
     
         <h2 class="display-4 mb-3">作品要求</h2>
         <ol class="text-left">

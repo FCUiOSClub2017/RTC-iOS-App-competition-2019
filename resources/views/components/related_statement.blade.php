@@ -1,5 +1,5 @@
 <section class="related_statement" id="related_statement">
-    <div class="container text-center px-3 px-md-4 px-lg-5">
+    <div class="container-fluid text-center px-3 px-md-4 px-lg-5">
         <h2 class="display-4 mb-3">相關聲明</h2>
         <ol class="text-left">
             <li class="h4">參賽隊伍／參賽個人在此保證參賽作品的原創性（即所有為本次大賽開發並提交的作品），不侵犯任何第三方的知識產權或其他權益，同時符合所有適用的法律法規。</li>

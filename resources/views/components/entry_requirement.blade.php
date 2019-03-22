@@ -1,6 +1,6 @@
 <section class="entry_requirement" id="entry_requirement">
 
-    <div class="container text-center px-3 px-md-4 px-lg-5">
+    <div class="container-fluid text-center px-3 px-md-4 px-lg-5">
         <h2 class="display-4 mb-3">參賽要求</h2>
     </div>
     <div class="container-fluid text-center px-3 px-md-4 px-lg-5">

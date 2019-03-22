@@ -1,5 +1,5 @@
 <section class="competition_review" id="competition_review">
-    <div class="container text-center px-3 px-md-4 px-lg-5">
+    <div class="container-fluid text-center px-3 px-md-4 px-lg-5">
         <h2 class="display-4 mb-3">競賽評審</h2>
         <h3>提交的參賽作品將由⼤賽評委評審，評審委員將由主辦單位選定，
 ⼈員包括學校教師（不超過1/3）以 及Apple 、贊助企業⼈員共同構成（⼈數總數為奇數），決賽階段，評審委員將由主辦單位在⼤賽評審委員團隊中抽籤選出，⾄決賽現場評分。評審將基於以下標準評分，滿分共計 100 分。</h3>
