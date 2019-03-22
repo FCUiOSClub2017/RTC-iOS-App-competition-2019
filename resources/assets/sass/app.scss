@@ -24,10 +24,12 @@ input:not([type=checkbox]):not([type=radio]) {
     width: 100%;
     color: #35495e;
     &:not(.form-control) {
-        border: 1px solid #e8e8e8;
+
+    /* border: 1px solid #e8e8e8; */
 
     }
 }
+
 
 .cursor-pointer{
     cursor:pointer;
@@ -383,7 +385,7 @@ section {
         a:hover,
         li:hover>a,
         .menu-active>a {
-            color: rgba(255, 255, 255, 0.75);
+            color: rgba(255, 255, 255, 0.50);
         }
         a {
             padding: 22px 15px 18px 15px;
@@ -1086,6 +1088,10 @@ body.mobile-nav-active {
 
     button {
         background-color: $btn-color;
+    }
+
+    div .col-4, div .col-8, div .col-12 {
+        padding: 10px;
     }
 }
 
