@@ -28,12 +28,12 @@
                 <tr>
                     <td class="align-middle">三獎</td>
                     <td class="align-middle">1隊</td>
-                    <td class="align-middle">指導老師獎金 NT$6,000</td>
+                    <td class="align-middle">獎金 NT$6,000</td>
                 </tr>
                 <tr>
                     <td class="align-middle">優勝</td>
                     <td class="align-middle">1隊</td>
-                    <td class="align-middle">指導老師獎金 NT$3,000</td>
+                    <td class="align-middle">獎金 NT$3,000</td>
                 </tr>
                 <tr>
                     <td colspan="3" class="align-middle">特獎、一等獎、二等獎得獎者，可自費參加由浙江大學舉辦「總決賽選手集訓營」。</td>
