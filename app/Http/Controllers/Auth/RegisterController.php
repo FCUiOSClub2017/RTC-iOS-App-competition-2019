@@ -38,9 +38,10 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct(){
+
         $this->middleware('deadline.register');
+        $this->middleware('begin.register');
         $this->middleware('guest');
     }
 
