@@ -26,6 +26,20 @@
                 </a>
                 <a class="list-group-item list-group-item-action flex-column align-items-start">
                     @php $randomStr = str_random(10); @endphp
+                    {!! Form::open(['route' => 'admin.config.begin.register','onSubmit'=>"axios.post(this.action,{date:this.date.value}).then((response)=>{\$('#$randomStr').text(response.data.date)});return false;"]) !!}
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col">註冊開始時間： <span id="{{$randomStr}}">{{Setting::get('register_begin_date',"2019-03-31 23:59:59")}}</span></div>
+                        <div class="col-auto">
+                            <datepicker :value="new Date('{{Setting::get('register_begin_date',"2019-03-31 23:59:59")}}')" :bootstrap-styling="true" name="date"></datepicker>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary bootstrap-original">Apply</button>
+                        </div>
+                    </div>
+                    {!! Form::close() !!}
+                </a>
+                <a class="list-group-item list-group-item-action flex-column align-items-start">
+                    @php $randomStr = str_random(10); @endphp
                     {!! Form::open(['route' => 'admin.config.deadline.register','onSubmit'=>"axios.post(this.action,{date:this.date.value}).then((response)=>{\$('#$randomStr').text(response.data.date)});return false;"]) !!}
                     <div class="row justify-content-between align-items-center">
                         <div class="col">註冊截止時間： <span id="{{$randomStr}}">{{Setting::get('register_deadline',"2019-05-15 23:59:59")}}</span></div>

@@ -9,6 +9,7 @@ use Setting;
 
 class SettingController extends Controller
 {
+
     /**
      * Create a new controller instance.
      *
@@ -19,6 +20,31 @@ class SettingController extends Controller
         $this->middleware('auth');
         $this->middleware('is.verify');
         $this->middleware('is.admin');
+    }
+
+    /**
+     * config register deadline.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function setRegisterBeginDate()
+    {
+        $date = request()->input('date');
+        if (!$date) {
+            return [
+                'status'=> false,
+            ];
+        }
+        $date = Carbon::parse($date);
+        $date->addDay();
+        $date->subSecond();
+        Setting::set('register_begin_date', $date->toDateTimeString());
+        Setting::save();
+
+        return [
+            'status'=> true,
+            'date'  => Setting::get('register_begin_date'),
+        ];
     }
 
     /**
@@ -145,6 +171,7 @@ class SettingController extends Controller
     public static function routes()
     {
         app()->make('router')->post('setNewsStatus', 'SettingController@setNewsStatus')->name('admin.config.status.news');
+        app()->make('router')->post('setRegisterBeginDate', 'SettingController@setRegisterBeginDate')->name('admin.config.begin.register');
         app()->make('router')->post('setRegisterDeadline', 'SettingController@setRegisterDeadline')->name('admin.config.deadline.register');
         app()->make('router')->post('setProposalDeadline', 'SettingController@setProposalDeadline')->name('admin.config.deadline.proposal');
         app()->make('router')->post('setRegisterFormDeadline', 'SettingController@setRegisterFormDeadline')->name('admin.config.deadline.register.form');

@@ -71,5 +71,6 @@ class Kernel extends HttpKernel
         'can.edit.teammate'  => \App\Http\Middleware\CanEditTeammate::class,
         'can.edit.website'   => \App\Http\Middleware\CanEditWebSite::class,
         'deadline.register'  => \App\Http\Middleware\DeadlineOfRegister::class,
+        'begin.register'     => \App\Http\Middleware\StartDateOfRegister::class,
     ];
 }

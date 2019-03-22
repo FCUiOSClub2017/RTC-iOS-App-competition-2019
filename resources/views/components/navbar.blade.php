@@ -70,7 +70,7 @@
                 <li>
                     <a href="{{route('admin.dashboard')}}">Admin Dashboard</a>
                 </li>
-                @endhasanyrole @can('edit teammate') @if (auth()->user()->verify === true && Carbon::parse(Setting::get('register_deadline', '2019-5-15'), 'Asia/Taipei')->gt(Carbon::now()))
+                @endhasanyrole @can('edit teammate') @if (auth()->user()->verify === true && Carbon::parse(Setting::get('register_deadline', '2019-5-15'), 'Asia/Taipei')->gt(Carbon::now()) && Carbon::parse(Setting::get('register_deadline', '2019-5-15'), 'Asia/Taipei')->gt(Carbon::now()))
                 <li>
                     <a href="#" data-toggle="modal" data-target="#teamRenameModal" onclick="$($(this).data('target')).modal('show')">隊名修改</a>
                 </li>

@@ -18,6 +18,7 @@ class HomeController extends Controller
         $this->middleware('auth');
         $this->middleware('is.verify');
         $this->middleware('can.edit.teammate');
+        $this->middleware('begin.register')->only('rename');
         $this->middleware('deadline.register')->only('rename');
     }
 
