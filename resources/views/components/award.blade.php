@@ -13,27 +13,27 @@
                 <tr>
                     <td class="align-middle">特獎</td>
                     <td class="align-middle">1隊</td>
-                    <td class="align-middle">MacBook Pro 13吋 128GB<br/>價值 $41,900 乙台<br/>指導老師獎金 NT$20,000</td>
+                    <td class="align-middle">MacBook Pro 13吋 128GB<br/>價值 $41,900 乙台<br/>指導老師獎金 NT$10,000</td>
                 </tr>
                 <tr>
                     <td class="align-middle">一獎</td>
                     <td class="align-middle">1隊</td>
-                    <td class="align-middle">iPhone XR 128GB 價值 NT$28,900 乙台<br/>指導老師獎金 NT$15,000</td>
+                    <td class="align-middle">iPhone XR 64GB 價值 NT$26,900 乙台<br/>指導老師獎金 NT$8,000</td>
                 </tr>
                 <tr>
                     <td class="align-middle">二獎</td>
                     <td class="align-middle">1隊</td>
-                    <td class="align-middle">iPad Pro 11吋 64GB 價值 NT$26,900 乙台<br/>指導老師獎金 NT$10,000</td>
+                    <td class="align-middle">iPad Air 64GB Wi-Fi 價值 NT$16,900 乙台<br/>指導老師獎金 NT$6,000</td>
                 </tr>
                 <tr>
                     <td class="align-middle">三獎</td>
                     <td class="align-middle">1隊</td>
-                    <td class="align-middle">獎金 NT$6,000</td>
+                    <td class="align-middle">Straight A商品卷 NTD$12,000 獎金 NT$5,000</td>
                 </tr>
                 <tr>
                     <td class="align-middle">優勝</td>
                     <td class="align-middle">1隊</td>
-                    <td class="align-middle">獎金 NT$3,000</td>
+                    <td class="align-middle">Straight A商品卷 NTD$9,000 獎金 NT$3000</td>
                 </tr>
                 <tr>
                     <td colspan="3" class="align-middle">特獎、一等獎、二等獎得獎者，可自費參加由浙江大學舉辦「總決賽選手集訓營」。</td>
