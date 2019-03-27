@@ -32,9 +32,9 @@
         @foreach ($users as $user)
         <div class="row no-gutters align-items-center text-center pt-2" id="teamList">
             <div class="col-12 col-sm-5 col-lg-4 col-xl-2 my-1">
-                <a class="h3 text-primary">{{$user->name}}</a>
+                <a class="h3 team-name">{{$user->name}}</a>
                 <br>
-                <a class="h6 text-primary">{{$user->email}}</a>
+                <a class="h6 team-name">{{$user->email}}</a>
             </div>
             <div class="col-12 col-sm-5 col-lg-4 col-xl-2 my-1">
                 @if ($user->teamMemberGroupByLevel()->get(1))
