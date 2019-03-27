@@ -30,7 +30,7 @@
             </div>
         </div>
         @foreach ($users as $user)
-        <div class="row no-gutters align-items-center text-center pt-2">
+        <div class="row no-gutters align-items-center text-center pt-2" id="teamList">
             <div class="col-12 col-sm-5 col-lg-4 col-xl-2 my-1">
                 <a class="h3 text-primary">{{$user->name}}</a>
                 <br>
