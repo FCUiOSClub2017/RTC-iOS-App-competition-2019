@@ -46,7 +46,7 @@ class UpdateTeamRegistration extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage())
-            ->subject('2018 APP移動應用創新賽 資料更動')
+            ->subject('2019 APP移動應用創新賽 資料更動')
             ->greeting('親愛的參賽者您好：')
             ->line("隊長已將您的電子郵件($this->oldEmail)更改至此電子郵件($this->newEmail)，貼心提醒您競賽日程相關如下，並預祝您贏得佳績！")
             ->line('1.  線上報名（2019年04月01日〜5月15日），參賽隊伍皆須通過大賽網站報名註冊，同時須完整填寫報名資料。')

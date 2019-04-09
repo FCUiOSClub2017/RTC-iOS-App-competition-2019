@@ -26,7 +26,7 @@ class ResetPassword extends OriginalResetPassword implements ShouldQueue
         }
 
         return (new MailMessage())
-            ->subject('2018 APP移動應用創新賽 密碼重置')
+            ->subject('2019 APP移動應用創新賽 密碼重置')
             ->greeting('親愛的參賽者您好：')
             ->line('你會收到這封郵件是因為我們收到了您請求重置密碼。')
             ->action('重置密碼', url(config('app.url').route('password.reset', $this->token, false)))
