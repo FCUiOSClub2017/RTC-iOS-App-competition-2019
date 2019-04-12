@@ -101,6 +101,10 @@
         <li>
             <a href="{{ route('login') }}">登入</a>
         </li>
+        @if (Carbon::parse(Setting::get('register_deadline', '2019-5-15'), 'Asia/Taipei')->gt(Carbon::now()) && !Carbon::parse(Setting::get('register_begin_date', '2019-4-01'), 'Asia/Taipei')->gt(Carbon::now()))
+        <li>
+            <a href="{{ route('register') }}">注冊</a>
+        </li>@endif
         @endauth {{$slot}} {{--
         <li class="menu-has-children">
             <i class="fas fa-chevron-down"></i>
