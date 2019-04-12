@@ -19,9 +19,9 @@
     <br>
     <div class="col-md-12">
         @if (Setting::get('active_news', false))
-      <a class="btn" style="background-color: hsl(314, 66%, 59%);" href="#news"> 最新消息 </a>
+      <a class="btn" style="background-color: transparent;" href="#news"> 最新消息 </a>
       @else
-      <a class="btn" style="background-color: hsl(314, 66%, 59%);" href="#about"> 進入 </a>
+      <a class="btn" style="background-color: transparent;" href="#about"> 進入 </a>
       @endif
     </div>
   </div>
