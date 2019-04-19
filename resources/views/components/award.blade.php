@@ -38,7 +38,7 @@
                 <tr>
                     <td class="align-middle">中保無限菁英獎</td>
                     <td class="align-middle">最高可達3隊</td>
-                    <td class="align-middle">MacBook Air價值$31,900乙台/ 指導老師獎金 $8,000（作品要求：前五名獎得者之作品若聚焦於「智慧家庭」、「智慧醫療」、「災害防治」，任一項相關應用，特頒發此獎項。）</td>
+                    <td class="align-middle">MacBook Air價值$31,900乙台/ 指導老師獎金 $8,000 <br>作品要求：前五名獎得者之作品若聚焦於「智慧家庭」、「智慧醫療」、「災害防治」，任一項相關應用，特頒發此獎項。）</td>
                 </tr>
                 <tr>
                     <td colspan="3" class="align-middle">特獎、一等獎、二等獎得獎者，可自費參加由浙江大學舉辦「總決賽選手集訓營」。</td>
