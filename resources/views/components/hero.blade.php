@@ -9,6 +9,13 @@
       </div>
     </div>
     @auth
+      <div class="col-md-12">
+           @if (Setting::get('active_news', false))
+             <a class="btn" style="background-color: hsl(314, 66%, 59%);" href="#news"> 最新消息 </a>
+           @else
+             <a class="btn" style="background-color: hsl(314, 66%, 59%);" href="#about"> 進入 </a>
+           @endif
+       </div>
     @else
       @if (Carbon::parse(Setting::get('register_deadline', '2019-5-15'), 'Asia/Taipei')->gt(Carbon::now()) && !Carbon::parse(Setting::get('register_begin_date', '2019-4-01'), 'Asia/Taipei')->gt(Carbon::now()))
         <div class="col-md-12">
