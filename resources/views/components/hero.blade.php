@@ -20,7 +20,7 @@
              <a class="btn" style="background-color: transparent;" href="#news"> 最新消息 </a>
            @else
              <a class="btn" style="background-color: transparent;" href="#about"> 進入 </a>
-           @endif3
+           @endif
         </div>
       @else
         <div class="col-md-12">
@@ -28,7 +28,7 @@
              <a class="btn" style="background-color: hsl(314, 66%, 59%);" href="#news"> 最新消息 </a>
            @else
              <a class="btn" style="background-color: hsl(314, 66%, 59%);" href="#about"> 進入 </a>
-           @endif3
+           @endif
         </div>
       @endif
     @endauth
