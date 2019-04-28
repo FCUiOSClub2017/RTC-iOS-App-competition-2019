@@ -14,15 +14,23 @@
         <div class="col-md-12">
               <a class="btn" style="background-color: hsl(314, 66%, 59%);" href="{{ route('register') }}"> 立即報名 </a>
         </div>
+        <br>
+        <div class="col-md-12">
+           @if (Setting::get('active_news', false))
+             <a class="btn" style="background-color: transparent;" href="#news"> 最新消息 </a>
+           @else
+             <a class="btn" style="background-color: transparent;" href="#about"> 進入 </a>
+           @endif3
+        </div>
+      @else
+        <div class="col-md-12">
+           @if (Setting::get('active_news', false))
+             <a class="btn" style="background-color: transparent;" href="#news"> 最新消息 </a>
+           @else
+             <a class="btn" style="background-color: transparent;" href="#about"> 進入 </a>
+           @endif3
+        </div>
       @endif
     @endauth
-    <br>
-    <div class="col-md-12">
-        @if (Setting::get('active_news', false))
-      <a class="btn" style="background-color: transparent;" href="#news"> 最新消息 </a>
-      @else
-      <a class="btn" style="background-color: transparent;" href="#about"> 進入 </a>
-      @endif
-    </div>
   </div>
 </section>
