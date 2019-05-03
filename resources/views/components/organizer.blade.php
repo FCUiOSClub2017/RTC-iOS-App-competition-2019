@@ -37,6 +37,11 @@
                   <a href="http://www.fcu.edu.tw/" class="sponsors fcu"></a>
                 </div>
               </div>
+              <!-- <div class="col-12 col-md-4">
+                <div class="card card-block">
+                  <a href="https://www.tku.edu.tw/" class="sponsors tku"></a>
+                </div>
+              </div> -->
             </div>
           </div>
         </div>

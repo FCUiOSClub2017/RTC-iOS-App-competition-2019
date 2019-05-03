@@ -1,7 +1,7 @@
 <section class="award" id="award">
     <div class="container-fluid text-center px-3 px-md-4 px-lg-5">
         <h2 class="display-4 mb-3">得獎者獎項</h2>
-        <table class="table table-bordered align-middle"App>
+        <table class="table table-bordered align-middle">
             <thead>
                 <tr class="bg-primary text-white">
                     <th>名次</th>
@@ -53,5 +53,9 @@
                 </tr-->
             </tbody>
         </table>
+        <br>
+        <h3 style="display: inline;font-size: 45px;">決賽證明</h3>&nbsp&nbsp<span style="color: white;font-size: 24px;">經主辦單位審核進入決賽之20名隊伍，隊伍成員每人皆可獲得決賽證明書乙份。</span>
+        <br><br><br><br>
+        <h3 style="display: inline;font-size: 45px;">參賽證明</h3>&nbsp&nbsp<span style="color: white;font-size: 24px;">經主辦單位審核進入初賽並完成繳交企劃書之隊伍，隊伍成員每人皆可獲得參賽證明書乙份。</span>
     </div>
 </section>

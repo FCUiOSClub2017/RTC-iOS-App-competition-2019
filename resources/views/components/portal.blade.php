@@ -2,7 +2,21 @@
     <div class="container-fluid">
         <h2 class="text-center display-4">傳送門</h2>
         <div class="row justify-content-around">
-            <div class="feature-col col-12 col-md-5">
+
+            <div class="feature-col col-12 col-md-4">
+                <div class="card card-block text-center" style="cursor: pointer;" onclick="window.location='{{route('team.proposal.uplaod')}}'">
+                    <div>
+                        <div class="feature-icon">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>企劃書 提交</h3>
+                        <p> 企劃書提交將在{{Carbon::parse(Setting::get('proposal_deadline', '2019-6-10'), 'Asia/Taipei')->toDateTimeString()}} 截止，在那之前各參賽隊伍可隨時修改、優化、重新上傳已更新的競賽文件資料。企劃書將以提交截止日前上傳的最後一版為，逾期將不再受理。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-col col-12 col-md-4">
                 <div class="card card-block text-center" style="cursor: pointer;" onclick="window.location='{{route('team.register.form.uplaod')}}'">
                     <div>
                         <div class="feature-icon">
@@ -15,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="feature-col col-12 col-md-5">
+            <div class="feature-col col-12 col-md-4">
                 <div class="card card-block text-center" style="cursor: pointer;" onclick="window.location='{{route('team.app.uplaod')}}'">
                     <div>
                         <div class="feature-icon">
