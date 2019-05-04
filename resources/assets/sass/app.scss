@@ -1352,35 +1352,13 @@ body.mobile-nav-active {
     background-color: transparent;
     background-position: 50% 50%;
     transform: scale(0.85);
-    &.atomax {
-        background-image: url(../img/sponsors/atomax.png);
-    }
-    &.taidoc {
-        background-image: url(../img/sponsors/taidoc.png);
-    }
-    &.litenet {
-        background-image: url(../img/sponsors/litenet.png);
-    }
-    &.opro9 {
-        background-image: url(../img/sponsors/opro9.png);
-    }
-    &.qblinks {
-        background-image: url(../img/sponsors/qblinks.png);
-    }
-    &.sigmu {
-        background-image: url(../img/sponsors/sigmu.png);
-    }
-    &.studioa {
-        background-image: url(../img/sponsors/studioa.png);
-    }
+
+
+
+    //Organiser
+
     &.rtc {
         background-image: url(../img/sponsors/rtc.png);
-    }
-    &.eql {
-        background-image: url(../img/sponsors/eql.png);
-    }
-    &.pawbo {
-        background-image: url(../img/sponsors/pawbo.png);
     }
     &.straighta {
         background-image: url(../img/sponsors/straighta.png);
@@ -1390,6 +1368,61 @@ body.mobile-nav-active {
     }
     &.fcu {
         background-image: url(../img/sponsors/fcu-big.png);
+    }
+    &.tku {
+        background-image: url(../img/sponsors/tku.png);
+    }
+
+
+
+    //Sponsor
+
+    &.infinite {
+        background-image: url(../img/sponsors/infinite.png);
+    }
+    &.oprog {
+        background-image: url(../img/sponsors/oprog.png);
+    }
+    &.uag {
+        background-image: url(../img/sponsors/uag.png);
+    }
+    &.rhino {
+        background-image: url(../img/sponsors/rhino.png);
+    }
+    &.litenet {
+        background-image: url(../img/sponsors/litenet.png);
+    }
+    &.studioa {
+        background-image: url(../img/sponsors/studioa.png);
+    }
+
+
+    &.audiotech {
+        background-image: url(../img/sponsors/audiotech.png);
+    }
+    &.speck {
+        background-image: url(../img/sponsors/speck.png);
+    }
+    &.pqi {
+        background-image: url(../img/sponsors/pqi.png);
+    }
+    &.elecom {
+        background-image: url(../img/sponsors/elecom.png);
+    }
+    &.spigen {
+        background-image: url(../img/sponsors/spigen.png);
+    }
+    &.vokamo {
+        background-image: url(../img/sponsors/vokamo.png);
+    }
+    &.nomad {
+        background-image: url(../img/sponsors/nomad.png);
+    }
+    &.laut {
+        background-image: url(../img/sponsors/laut.png);
+    }
+    &.jbl {
+        background-image: url(../img/sponsors/jbl.png);
     }
     &.tracmo {
         background-image: url(../img/sponsors/tracmo.png);
