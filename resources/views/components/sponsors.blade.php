@@ -27,11 +27,6 @@
           <div class="card card-block">
           </div>
         </div>
-        <div class="col-6 col-lg-3 col-md-6 col-xl-3">
-          <div class="card card-block">
-            <a href="https://www.studioa.com.tw/categories/uag" class="sponsors uag"></a>
-          </div>
-        </div>
         <div class="col-6 col-lg-3 col-sm-6 col-xl-3">
           <div class="card card-block">
             <a href="http://shop.opro9.com/v2/official" class="sponsors oprog"></a>
@@ -39,7 +34,12 @@
         </div>
         <div class="col-6 col-lg-3 col-md-6 col-xl-3">
           <div class="card card-block">
-            <a href="https://rhinoshield.tw/pages/solidsuit" class="sponsors rhino"></a>
+            <a href="https://www.studioa.com.tw/categories/uag" class="sponsors uag" style="transform: scale(0.6)"></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 col-md-6 col-xl-3">
+          <div class="card card-block">
+            <a href="https://rhinoshield.tw/pages/solidsuit" class="sponsors rhino" style="transform: scale(0.6)"></a>
           </div>
         </div>
         <div class="col-0 col-lg-1 col-sm-0 col-xl-1">
