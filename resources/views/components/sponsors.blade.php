@@ -68,7 +68,7 @@
         </div>
         <div class="col-4 col-lg-2 col-md-4 col-xl-2">
           <div class="card card-block">
-            <a href="http://www.elecom.com.tw" class="sponsors elecom"></a>
+            <a href="http://www.elecom.com.tw" class="sponsors elecom" style="transform: scale(1.35)"></a>
           </div>
         </div>
         <div class="col-4 col-lg-2 col-md-4 col-xl-2">
