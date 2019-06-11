@@ -51,8 +51,6 @@ class RegisterFormController extends Controller
                 'register_form' => 'required|mimes:pdf|mimetypes:application/pdf|max:10240',
             ]);
             $request->register_form->storeAs(auth()->user()->id, 'register_form.pdf');
-            Notification::route('mail', 'ahkui@mail.fcu.edu.tw')
-                        ->notify(new RegisterFormUpload(auth()->user()));
             Notification::route('mail', 'stacse@straighta.com.tw')
                         ->notify(new RegisterFormUpload(auth()->user()));
 
