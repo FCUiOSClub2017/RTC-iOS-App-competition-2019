@@ -66,8 +66,6 @@ class AppController extends Controller
                 'app' => 'required|mimes:zip|mimetypes:application/zip, application/octet-stream, application/x-zip-compressed, multipart/x-zip|max:1048576',
             ]);
             $request->app->storeAs(auth()->user()->id, 'app.zip');
-            Notification::route('mail', 'ahkui@mail.fcu.edu.tw')
-                        ->notify(new AppUpload(auth()->user()));
             Notification::route('mail', 'stacse@straighta.com.tw')
                         ->notify(new AppUpload(auth()->user()));
 
