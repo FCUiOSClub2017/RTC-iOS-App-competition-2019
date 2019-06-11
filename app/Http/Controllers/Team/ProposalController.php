@@ -51,8 +51,6 @@ class ProposalController extends Controller
                 'proposal' => 'required|mimes:pdf|mimetypes:application/pdf|max:10240',
             ]);
             $request->proposal->storeAs(auth()->user()->id, 'proposal.pdf');
-            Notification::route('mail', 'ahkui@mail.fcu.edu.tw')
-                        ->notify(new PorposalUpload(auth()->user()));
             Notification::route('mail', 'stacse@straighta.com.tw')
                         ->notify(new PorposalUpload(auth()->user()));
 
