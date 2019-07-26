@@ -22,6 +22,7 @@ class TeamController extends Controller
         $this->middleware('auth');
         $this->middleware('is.verify');
         $this->middleware('is.admin');
+        ini_set('max_execution_time', 0);
     }
 
     /**
