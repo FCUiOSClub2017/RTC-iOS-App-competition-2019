@@ -44,7 +44,7 @@ class QualifiersAppController extends Controller
      */
     public function index()
     {
-        $users = User::whereVerify(true)->whereIn('id', [19, 20, 22, 30, 31, 33, 38, 56, 59, 65, 67, 82, 84, 86, 88, 90, 91, 93, 94, 98, 175])->get();
+        $users = User::whereVerify(true)->whereIn('id', [10, 20, 27, 58, 60, 62, 69, 73, 98, 108, 118, 119, 120, 122, 123, 127, 160, 162, 228, 234])->get();
         $existsUsers = collect();
         $users->map(function ($e) use ($existsUsers) {
             if (Storage::exists($e->id.'/app.zip')) {
@@ -92,7 +92,7 @@ class QualifiersAppController extends Controller
     public function qualifiersAppDownload()
     {
         $filename = 'qualifiers_app';
-        $users = User::whereVerify(true)->whereIn('id', [19, 20, 22, 30, 31, 33, 38, 56, 59, 65, 67, 82, 84, 86, 88, 90, 91, 93, 94, 98, 175])->get();
+        $users = User::whereVerify(true)->whereIn('id', [10, 20, 27, 58, 60, 62, 69, 73, 98, 108, 118, 119, 120, 122, 123, 127, 160, 162, 228, 234])->get();
         $directorys = $users->map(function ($e) {
             $data = null;
             if (Storage::exists($e->id.'/app.zip')) {
